@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>杂项 on Terminal</title><link>/tags/%E6%9D%82%E9%A1%B9/</link><description>Recent content in 杂项 on Terminal</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 1970 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%9D%82%E9%A1%B9/index.xml" rel="self" type="application/rss+xml"/><item><title>渲染测试</title><link>/posts/rendering-test/</link><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/posts/rendering-test/</guid><description>二级标题 三级标题 四级标题 五级标题 六级标题 二级开始 子标题 子标题 二级结束 粗体
+斜体
+删除线
+引用
+换行
+分段
+表头 1 表头 2 表头 3 靠左对齐 居中对齐 靠右对齐 inline code
+inline code with $LaTeX$ (should not be parsed)
+# A code example print(&amp;#39;hello world!&amp;#39;) $Inline : \LaTeX$
+正整数立方和求和公式：
+$$ \begin{aligned} \sum_{i=1}^n i^3 &amp;amp;=(\sum_{i=1}^n i)^2 \newline &amp;amp;=\frac {n^2(n+1)^2}4 \newline \end{aligned} $$</description><content>&lt;h2 id="二级标题">二级标题&lt;/h2>
+&lt;h3 id="三级标题">三级标题&lt;/h3>
+&lt;h4 id="四级标题">四级标题&lt;/h4>
+&lt;h5 id="五级标题">五级标题&lt;/h5>
+&lt;h6 id="六级标题">六级标题&lt;/h6>
+&lt;h2 id="二级开始">二级开始&lt;/h2>
+&lt;h3 id="子标题">子标题&lt;/h3>
+&lt;h3 id="子标题-1">子标题&lt;/h3>
+&lt;h2 id="二级结束">二级结束&lt;/h2>
+&lt;p>&lt;strong>粗体&lt;/strong>&lt;/p>
+&lt;p>&lt;em>斜体&lt;/em>&lt;/p>
+&lt;p>&lt;del>删除线&lt;/del>&lt;/p>
+&lt;hr>
+&lt;hr>
+&lt;blockquote>
+&lt;p>引用&lt;br>
+换行&lt;/p>
+&lt;p>分段&lt;/p>
+&lt;/blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">表头 1&lt;/th>
+&lt;th style="text-align:center">表头 2&lt;/th>
+&lt;th style="text-align:right">表头 3&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">靠左对齐&lt;/td>
+&lt;td style="text-align:center">居中对齐&lt;/td>
+&lt;td style="text-align:right">靠右对齐&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>inline code&lt;/code>&lt;/p>
+&lt;p>&lt;code>inline code with $LaTeX$ (should not be parsed)&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#75715e"># A code example&lt;/span>
+&lt;span style="color:#66d9ef">print&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;hello world!&amp;#39;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>$Inline : \LaTeX$&lt;/p>
+&lt;p>正整数立方和求和公式：&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\sum_{i=1}^n i^3
+&amp;amp;=(\sum_{i=1}^n i)^2 \newline
+&amp;amp;=\frac {n^2(n+1)^2}4 \newline
+\end{aligned}
+$$&lt;/p>
+&lt;p>欧拉函数的性质之一：&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\varphi : * : I &amp;amp;= id \newline
+\sum_{d|n} \varphi(d) &amp;amp;= n \newline
+\end{aligned}
+$$&lt;/p>
+&lt;p>It was terribly cold and nearly dark on the last evening of the old year, and the snow was falling fast. In the cold and the darkness, a poor little girl, with bare head and naked feet, roamed through the streets. It is true she had on a pair of slippers when she left home, but they were not of much use. They were very large, so large, indeed, that they had belonged to her mother, and the poor little creature had lost them in running across the street to avoid two carriages that were rolling along at a terrible rate. One of the slippers she could not find, and a boy seized upon the other and ran away with it, saying that he could use it as a cradle, when he had children of his own. So the little girl went on with her little naked feet, which were quite red and blue with the cold. In an old apron she carried a number of matches, and had a bundle of them in her hands. No one had bought anything of her the whole day, nor had anyone given her even a penny. Shivering with cold and hunger, she crept along; poor little child, she looked the picture of misery. The snowflakes fell on her long, fair hair, which hung in curls on her shoulders, but she regarded them not.&lt;/p></content></item></channel></rss>
