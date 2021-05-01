@@ -1,0 +1,1625 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>算法 on Beyond Moonlight</title><link>/main/tags/%E7%AE%97%E6%B3%95/</link><description>Recent content in 算法 on Beyond Moonlight</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/main/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>套路总结</title><link>/main/posts/oi-summary/</link><pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate><guid>/main/posts/oi-summary/</guid><description>&lt;p>&lt;strong>警告&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>为提供良好的做题体验，本文不会提醒某题需要的其他算法。你需要对所有基础算法有所了解，并至少看得懂题解 / 愿意使用搜索引擎。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>部分题意可能经简化后有扭曲，但保证给出的简单概括是合理的。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若有不清楚题目该如何解决，且本文没有给出来源 / 网上搜索不到的情况，可以联系我交流。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>内容警告&lt;/strong>（Content Warning）：本文含有以下内容：&lt;/p>
+&lt;ul>
+&lt;li>咕了&lt;/li>
+&lt;/ul></description><content>&lt;p>&lt;strong>警告&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>为提供良好的做题体验，本文不会提醒某题需要的其他算法。你需要对所有基础算法有所了解，并至少看得懂题解 / 愿意使用搜索引擎。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>部分题意可能经简化后有扭曲，但保证给出的简单概括是合理的。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若有不清楚题目该如何解决，且本文没有给出来源 / 网上搜索不到的情况，可以联系我交流。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>内容警告&lt;/strong>（Content Warning）：本文含有以下内容：&lt;/p>
+&lt;ul>
+&lt;li>咕了&lt;/li>
+&lt;/ul>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="目录">目录&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#%E7%9B%AE%E5%BD%95">目录&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%8E%A8%E8%8D%90%E8%B5%84%E6%96%99">推荐资料&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#stl">STL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%B4%AA%E5%BF%83">贪心&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E4%B8%80%E7%B1%BB%E7%BB%8F%E5%85%B8%E7%9A%84%E6%A0%91%E5%BD%A2%E6%9F%93%E8%89%B2%E9%97%AE%E9%A2%98">一类经典的树形染色问题&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#dp">DP&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-1">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%AF%B9%E6%A0%91%E5%BD%A2%E6%80%81%E7%9A%84%E7%8A%B6%E5%8E%8B">对树形态的状压&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E4%BD%8D-dp-%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7">数位 DP 的一个小技巧&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-2">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%91%A8%E6%9C%9F%E7%90%86%E8%AE%BA">周期理论&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#kmp">KMP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#ac-%E8%87%AA%E5%8A%A8%E6%9C%BA">AC 自动机&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sa">SA&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sam">SAM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pam%E4%B8%8D%E5%A4%AA%E4%BC%9A">PAM（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hash">Hash&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">序列数据结构&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91--st-%E8%A1%A8--%E7%8C%AB%E6%A0%91%E6%AF%94%E8%BE%83">线段树 / ST 表 / 猫树比较&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%88%86%E5%9D%97--%E6%A0%B9%E5%8F%B7%E5%88%86%E6%B2%BB">分块 / 根号分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%8E%AB%E9%98%9F">莫队&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%88%86%E6%B2%BB">分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91">线段树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%88%86%E6%B2%BB">线段树分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%B9%B3%E8%A1%A1%E6%A0%91">平衡树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#k-d-tree">K-D Tree&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bitset">Bitset&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%85%B6%E4%BB%96">其他&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E6%A0%91%E4%B8%8A--%E5%9B%BE%E4%B8%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">树上 / 图上数据结构&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#dfs-%E5%BA%8F--%E6%8B%AC%E5%8F%B7%E5%BA%8F--%E6%AC%A7%E6%8B%89%E5%BA%8F">DFS 序 / 括号序 / 欧拉序&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%A2%84%E5%A4%84%E7%90%86%E6%A0%91--%E6%8D%A2%E6%A0%B9">预处理树 / 换根&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84--%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83%E4%B8%8D%E5%A4%AA%E4%BC%9A">树的直径 / 树的重心（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#kruskal-%E9%87%8D%E6%9E%84%E6%A0%91">Kruskal 重构树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%82%B9%E5%88%86%E6%B2%BB--%E8%BE%B9%E5%88%86%E6%B2%BB">点分治 / 边分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%82%B9%E5%88%86%E6%A0%91--%E8%BE%B9%E5%88%86%E6%A0%91%E4%B8%8D%E5%A4%AA%E4%BC%9A">点分树 / 边分树（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%87%8D%E9%93%BE%E5%89%96%E5%88%86">重链剖分&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%95%BF%E9%93%BE%E5%89%96%E5%88%86%E4%B8%8D%E5%A4%AA%E4%BC%9A">长链剖分（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6">树上启发式合并&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E8%BF%9E%E8%BE%B9--%E6%9C%80%E7%9F%AD%E8%B7%AF">数据结构优化连边 / 最短路&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lct">LCT&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%99%9A%E6%A0%91%E4%B8%8D%E5%A4%AA%E4%BC%9A">虚树（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%9C%86%E6%96%B9%E6%A0%91%E4%B8%8D%E5%A4%AA%E4%BC%9A">圆方树（不太会）&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%9B%BE%E8%AE%BA">图论&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-3">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BD%91%E7%BB%9C%E6%B5%81">网络流&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%94%9F%E6%88%90%E6%A0%91">生成树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%89%B2%E7%82%B9--%E5%BF%85%E7%BB%8F%E8%BE%B9">割点 / 必经边&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%85%B6%E4%BB%96-1">其他&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E5%AD%A6">数学&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%A6%82%E7%8E%87">期望与概率&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%9F%A9%E9%98%B5">矩阵&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%A1%8C%E5%88%97%E5%BC%8F">行列式&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%80%A7%E5%9F%BA">线性基&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#fwt">FWT&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F--%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0">多项式 / 生成函数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC">拉格朗日插值&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%80%A7%E9%80%92%E6%8E%A8">线性递推&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%89%B9%E5%BE%81%E6%96%B9%E7%A8%8B">特征方程&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E8%AE%BA%E4%B8%8E%E8%AE%A1%E6%95%B0">数论与计数&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-4">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%B4%A8%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3--%E8%B4%A8%E6%95%B0%E5%88%A4%E6%96%AD">质因数分解 / 质数判断&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%AE%B9%E6%96%A5">容斥&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BB%84%E5%90%88%E6%95%B0">组合数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#crt--excrt">CRT / exCRT&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86--%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86">欧拉定理 / 扩展欧拉定理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0">斯特林数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%AF%B9%E7%A7%B0%E8%BD%AC%E5%8C%96">对称转化&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%8E%AB%E5%8F%8D">莫反&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%80%A7%E7%AD%9B">线性筛&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%9D%9C%E6%95%99%E7%AD%9B">杜教筛&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%B4%9D%E5%B0%94%E7%BA%A7%E6%95%B0">贝尔级数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#powerful-number-%E7%AD%9B">Powerful Number 筛&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%A8%A1%E8%BF%90%E7%AE%97">模运算&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%8E%9F%E6%A0%B9">原根&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%85%B6%E4%BB%96-2">其他&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC">表达式求值&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%9D%82%E9%A1%B9">杂项&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%8D%A1%E5%B8%B8%E5%B0%8F%E6%8A%80%E5%B7%A7">卡常小技巧&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>$~$
+$~$&lt;/p>
+&lt;h2 id="推荐资料">推荐资料&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://oi-wiki.org/">OI Wiki&lt;/a>：应该不用介绍吧……自己查了查 OI Wiki 才发现自己也整理漏了很多很多很多内容。&lt;/li>
+&lt;li>&lt;a href="http://zory.ink/posts/d645486d.html">Zory 的个人博客&lt;/a>：Zory 先辈写了很多整理，感觉非常全。推荐阅读：&lt;a href="http://zory.ink/posts/d645486d.html">置顶 -「OI之路」目录&lt;/a>；&lt;a href="https://zory.ink/posts/80c8.html">「置顶」套路集锦&lt;/a>。&lt;/li>
+&lt;li>&lt;a href="https://www.bilibili.com/video/BV1GJ411x7h7">Moonlight 的套路整理&lt;/a>：一年前写的，虽然不太全但还是可以看看的。&lt;/li>
+&lt;li>你自己的刷题记录：比写不出题更绝望的是，你以前见过甚至写过这道题，但是忘了怎么写。&lt;/li>
+&lt;/ul>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="stl">STL&lt;/h2>
+&lt;p>几个常见的错误：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>std::distance(set)&lt;/code>：$O(n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>std::lower_bound(set)&lt;/code>：$O(n)$。请使用 &lt;code>set.lower_bound(val)&lt;/code> $O(\log n)$ 代替。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>multiset.count(val)&lt;/code>：$O(\text{ans})$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>unordered_set&lt;/code>（不自定义 Hash 函数）：可被卡到 $O(n)$（参见 &lt;a href="https://codeforces.com/blog/entry/62393">Blowing up unordered_map, and how to stop getting hacked on it - neal&lt;/a>）。请使用自定义 Hash 函数或手写 Hash 表代替。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>测试代码：&lt;a href="https://www.luogu.com.cn/paste/0ze24t5n">https://www.luogu.com.cn/paste/0ze24t5n&lt;/a>。&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="贪心">贪心&lt;/h2>
+&lt;h3 id="常识">常识&lt;/h3>
+&lt;p>基础：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>邻项贪心：对于要求重排某个序列 ${A_n}$ 使得 $f(A')$ 最小，可考虑证明仅存在唯一一个 $A'$ 使得 $A'$ 不能通过交换邻项让 $f(A')$ 减小。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>邻位交换：参见&lt;a href="https://www.luogu.com.cn/blog/moonoshawott/adjacent-exchange">邻位交换总结&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可反悔式贪心：考虑进行某个决策后，如果撤回该决策会有什么影响。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>经典模型：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>有 $n$ 个正整数对 $(a_i, b_i)$，求重排使得 $\max_{i = 1}^n \frac{\prod_{j = 1}^i a_{p_j}}{b_{p_i}}$ 最小。&lt;br>
+$n \leq 1000$，$a_i, b_i \leq 10000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2603">「NOIP2012」国王游戏&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $2n$ 个小球，小球有黑白两种颜色，每种颜色都有 $n$ 个，权值分别从 $1$ 到 $n$。可以交换相邻两个小球，请使得同色小球权值递增，并求出最少交换次数。&lt;br>
+$n \leq 2000$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc097/tasks/arc097_c">ARC097E Sorted and Sorted&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一个字符串 $S$，每次操作可以交换相邻两个字符，求将 $S$ 变成回文串的最少操作次数。&lt;br>
+$|S| \leq 2 \times 10^5$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc088/tasks/arc088_c">ARC088E Papple Sort&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一个 $n$ 个元素的环形序列 ${A_n}$，在其中选出 $m$ 个互不相邻的元素，求选出元素之和的最大值。&lt;br>
+$n, m \leq 2 \times 10^5$，$|A_i| \leq 1000$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P1792">「国家集训队」种树&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $n$ 个外卖员和 $m$ 个餐厅，第 $i$ 个外卖员位于 $x_i$，第 $j$ 个餐厅位于 $y_j$，有容量 $c_j$ 和单位价格 $w_j$。&lt;br>
+要求将每个外卖员对应到一个餐厅中，使得餐厅价格之和+外卖员到餐厅的距离最小。&lt;br>
+$n, m \leq 10^5$，$0 \leq x_i, y_j, c_j, w_j \leq 10^9$。&lt;br>
+Source：&lt;a href="https://uoj.ac/problem/455">「UER #8」雪灾与外卖&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="一类经典的树形染色问题">一类经典的树形染色问题&lt;/h3>
+&lt;p>可能需要使用 DP 等算法。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，初始所有点都是白色的。可以把某个点染色黑色，求要让每个白点到最近黑点距离小于等于 $k$ 的最少染色点数。&lt;br>
+$n, k \leq 10^5$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P3942">洛谷 P3942 将军令&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，若干关键点。把 $m$ 个点染黑，其他点染白，求让所有关键点到最近黑点的距离的最大值最小。&lt;br>
+$n, m \leq 3 \times 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2165">「POI2011 R3 Day0」炸药 Dynamite&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，边有正整数边权。把 $k$ 个点染黑，其他点染白，求黑点两两距离加白点两两距离的最大值。&lt;br>
+$n, k \leq 3000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2124">「HAOI2015」树上染色&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，初始所有点都是白色的，染黑点 $i$ 需要花费 $w_i$。给出 $m$ 个关键点，请染黑部分点使得每个关键点到最近黑点距离小于等于 $d$ 且总花费最小。&lt;br>
+$n, m \leq 5 \times 10^5$，$k \leq 20$，$1 \leq w_i \leq 1000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2024">「JLOI / SHOI2016」侦查守卫&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="dp">DP&lt;/h2>
+&lt;h3 id="常识-1">常识&lt;/h3>
+&lt;p>基本操作：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>单调队列 / 单调栈 / 树上线段树合并维护 DP。&lt;br>
+**线段树合并可通过维护区间和的方式，实现同复杂度的 $\min$ 卷积 $F_i = \sum_{\min{j, k} = i} G_jH_k$。**&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>四边形不等式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>决策单调性。通常需要保证函数结构平移等价（例如函数 $y = a + \sqrt {x - b}$ 平移等价于 $y = \sqrt x$，但不平移等价于 $y = 2\sqrt x$）。&lt;br>
+可以说，一些利用单调性优化 DP 的方式（斜率优化维护凸包之类），都可以用决策单调性的核心思想（考虑 $j$ 对 $dp[i]$ 的贡献 $f_j(i)$ 的图像）解决。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>交换变量与值：$F[i][j]$ 为最大化 $k$，则可考虑能否设 $F[i][k]$ 为最大化 $j$，可减少状态数或方便转移。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>树上动态 DP。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>经典模型：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>对所有的 $n$ 排列 $p$ 计算 $f(p)$ 之和：设 $F[i]$ 为 $i$ 排列的所有 $f(p)$ 之和，从 $F[i - 1]$ 转移至 $F[i]$ 时考虑 $p_i$ 的值。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出若干个区间限制，求长度为 $n$ 的合法 01 序列种数：设 $F[i]$ 为已决定完 $A_{1 \ldots i}$ 的值且 $A_i = 0$ 的方案数，考虑在 $i$ 之前的第一个 $0$ 的位置 $j$ 进行 $O(n^2)$ 转移。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>划分数的 $O(n \sqrt n)$ 做法。&lt;br>
+&lt;strong>对于大数的 DP 做法也可应用到许多的题目中。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 ${a_n}$，求满足 $\forall 1 \leq i &amp;lt; n$，$a_{p_i}\cdot a_{p_{i + 1}}$ 不为完全平方数的排列 ${p_n}$ 的数量 $\bmod\ (10^9 + 7)$。&lt;br>
+$n \leq 300$，$a_i \leq 10^9$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/840/C">CF840C On the Bench&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，表示有长度为 $n$ 的数列 ${A_n}$ 且 $0 \leq A_i &amp;lt; 2^k$。$m$ 个限制 $l_i, r_i, x_i$ 表示区间 $[l_i, r_i]$ 的按位与为 $x_i$。求满足限制的 ${A_n}$ 个数 $\bmod\ 998244353$。&lt;br>
+$n, m \leq 5 \times 10^5$，$k \leq 30$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1327/F">CF1327F AND Segments&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，询问有多少个&lt;strong>可重&lt;/strong>集合 $S$ 满足和为 $k$ 且 $S$ 内的元素都为 $1, \frac 12, \frac 14, \frac 18, \ldots$。&lt;br>
+$n, k \leq 3000$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc107/tasks/arc107_d">ARC107D Number of Multisets&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n$ 个元素的序列 ${A_n}$，要求划分为若干段使得权值和最大。&lt;br>
+权值的计算方式：对每个段独立选择一个 $x$，并设该段中 $x$ 出现次数为 $c$，则该段的权值为 $xc^2$。&lt;br>
+$n \leq 10^5$，$1 \leq A_i \leq 10^4$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P5504">「JSOI2011」柠檬&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n \times n$ 的矩阵 $w_{i, j}$ 以及一个整数 $k$，要求将 $[1, n]$ 划分为 $k$ 个**连续**的区间 $[1, p_1), [p_1, p_2), \ldots, [p_{k - 1}, n]$，要求所有区间费用和最小。&lt;br>
+区间 $[l, r]$ 的费用为 $\sum_{i = l}^r \sum_{j = l}^r w_{i, j}$。&lt;br>
+$n \leq 4000$，$k \leq 800$，$0 \leq w_{i, j} \leq 9$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/321/E">CF321E Ciel and Gondolas&lt;/a>&lt;br>
+Hint：本题存在 $O(n \log w_{i, j})$ 解法。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="对树形态的状压">对树形态的状压&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>设 $f(r, S)$ 表示以 $r$ 为根，子树内&lt;strong>不包括自己&lt;/strong>的节点集合为 $S$ 的方案数。则
+$$f(r, S) = \sum_{p \in S} \sum_{T \subseteq S, \min(S) \in T, p \in T} f(r, S - T) f(p, T - {p})$$
+理解：枚举新增的子树。设该子树以 $p$ 为根，该子树内点集为 $T - {p}$，则有如上的转移式。&lt;br>
+$\min(S) \in T$ 是为了防止重复枚举（思考：为什么）。如只要求最优方案可将此句删去。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设 $f(r, S)$ 表示以 $r$ 为根，子树点集为 $S$（包括自己）的最小费用，则
+$$f(r, S) \leftarrow \min{f(r, S), f(p, S)} \tag{1}$$
+$$f(r, S \cup {p}) \leftarrow \min{f(r, S \cup{p}), f(r, S) + w_{r, p}} \tag{2}$$
+理解：$(1)$ 式换根，$(2)$ 式从当前根扩展一个点。&lt;br>
+是**最小斯坦纳树**使用的 DP 方式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设 $f(d, S)$ 表示当前已扩展集合为 $S$，已经进行了 $d$ 次扩展的最大价值，则
+$$f(d, S) = \max_{T \subseteq S}{f(d - 1, S - T) + \sum_{p \in T} w(d, p, S - T)}$$
+理解：模拟从根节点开始 BFS 的过程。&lt;br>
+比起 2. 可以维护当前节点深度，但复杂些。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>有一棵 $n$ 个点的树 $T$，根节点为 $1$。&lt;br>
+$q$ 个限制，形如 $\text{lca}(a_i, b_i) = c_i$ 或存在边 $(a_i, b_i)$。&lt;br>
+求符合限制的树 $T$ 的方案数。&lt;br>
+$n \leq 13$，$q \leq 100$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/599/E">CF599E Sandy and Nuts&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一个 $n$ 个点的图，图有边权。求一棵有根生成树使得 $\sum_{p \neq r} \text{depth}(p) \cdot \text{wfa}_p$ 最小，其中 $r$ 为根节点，$\text{depth}(p)$ 为点 $p$ 的深度，$\text{wfa}_p$ 为 $p$ 到父亲的边的边权。&lt;br>
+$n \leq 12$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2318">「NOIP2017」宝藏&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="数位-dp-的一个小技巧">数位 DP 的一个小技巧&lt;/h3>
+&lt;p>&lt;em>对于给定的 $n$，计算所有 $x &amp;lt; n$ 的 $f(x)$ 之和。&lt;/em>&lt;/p>
+&lt;p>可以枚举 $i$，令 $x$ 的最高 $i$ 位与 $n$ 相同，最高第 $i + 1$ 位小于 $n$ 的最高第 $i + 1$ 位，剩下的部分就没有限制了。对简单的题目使用这个技巧，可以省去写数位 DP 的麻烦。&lt;/p>
+&lt;p>&lt;strong>注意！这里是取不到 $n$ 的，因此如果你要取 $n$ 需要特判。&lt;/strong>&lt;/p>
+&lt;p>e.g. 计算 $n$ 以内有多少个正整数 $x$ 满足 $x$ 的二进制表示有偶数个 $1$。&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="字符串">字符串&lt;/h2>
+&lt;h3 id="常识-2">常识&lt;/h3>
+&lt;ol>
+&lt;li>对于多个询问的题目，若每次询问都是给出一个询问串 $t_i$ 且 $\sum |t_i| \leq M$，则询问串长度种数为 $O(\sqrt M)$。&lt;br>
+可基于此研究根号级别的暴力算法。&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给定一个字符串 $s$，以及 $n$ 个询问，每次给出整数 $k_i$ 和字符串 $m_i$，询问 $|t|$ 的最小值，其中 $t$ 为 $s$ 的子串且 $m_i$ 在 $t$ 中出现的次数不小于 $k_i$。&lt;br>
+$|s|, n, \sum |m_i| \leq 10^5$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/963/D">CF963D Frequency of String&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给定一个字符串 $S$，$m$ 个区间 $[l_i, r_i]$ 以及一个整数 $k$。$q$ 个询问，每次给出长度为 $k$ 的字符串 $w$ 和两个整数 $a, b$，询问
+$$\sum_{i = a}^b \text{count}(w_{l_i, r_i}, S)$$
+其中 $\text{count}(w, S)$ 表示字符串 $w$ 在字符串 $S$ 中的出现次数。&lt;br>
+$|S|, m, q, k, \sum |w| \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6031">「雅礼集训 2017 Day1」字符串&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="周期理论">周期理论&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>$k$ 为 $S$ 的周期，等价于 $S_{1 \ldots |S| - k + 1}$ 是 $S$ 的 Border。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若 $x, y$ 是 $S$ 的周期且 $x + y - \gcd(x, y) \leq |S|$，则 $\gcd(x, y)$ 也是 $S$ 的周期。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>最小周期必定存在且唯一，且最小周期的倍数也必定为周期。设最小周期为 $x_0$，则 $S$ 的所有周期为 $x_0, 2x_0, 3x_0, \ldots, \lfloor \frac {|S|}{x_0} \rfloor x_0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>所有 Border 长度可以被划分为 $O(\log |S|)$ 个等差序列。&lt;br>
+利用这一点可以加速跳失配指针，实现可持久化 KMP/AC 自动机 $O(\log n)$ 匹配。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="kmp">KMP&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>$\text{next}(i)$ 等价于前缀 $S_{1 \ldots i}$ 的最长真 Border 长度。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>前缀 $S_{1 \ldots i}$ 的真 Border 长度从大到小分别为 $\text{next}(i), \text{next}(\text{next}(i)), \ldots$。&lt;br>
+根据这个建出 next 树可以得到一些简单的性质。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KMP 的匹配是均摊 $O(1)$ 的，所以如果可持久化（e.g. 给模式串和文本串，要求把文本串问号替换为小写字母使得模式串出现次数最大）会导致退化为 $O(n)$。&lt;/strong>&lt;br>
+可以考虑带字符集 $O(n\Sigma)$ 处理（$f[i][c]$ 表示点 $i$ 处如果要匹配字符 $c$，会失配到哪个地方去），或利用 Border 理论 $O(n \log n)$ 处理。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出小写字母字符串 $S$，对其所有前缀 $S_{1 \ldots i}$ 求出其长度不超过 $\frac i2$ 的 Border 数量。&lt;br>
+$|S| \leq 10^6$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2246">「NOI2014」动物园&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="ac-自动机">AC 自动机&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>本质上是 Trie 上的 KMP。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Trie 上点 $v$ 代表的字符串在点 $u$ 代表的字符串中出现的次数，等于 $u$ 的所有 fail 祖先中，&lt;strong>在 Trie 上&lt;/strong>位于 $v$ 的子树内的点的个数。&lt;br>
+即在 $u, \text{fail}(u), \text{fail}(\text{fail}(u)), \ldots$ 中有多少个点，&lt;strong>在 Trie 上&lt;/strong>位于 $v$ 的子树内。&lt;br>
+是在两棵树上的限制（Fail 树上的祖先限制，Trie 树上的子树限制）。&lt;br>
+这一句话读起来有点绕，要记得理解。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出一棵 $n$ 个点的小写字母 Trie，$q$ 个询问，每次给出 $u, v$，询问 $u$ 代表的字符串在 $v$ 代表的字符串中出现的次数。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2444">「NOI2011」阿狸的打字机&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="sa">SA&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>注意 $rnk$ 数组要开两倍空间，否则你就得特判 $i + k \leq n$&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>注意 SA 倍增预处理是较大常数 $O(n \log n)$ 的，而不是线性（当然，也存在线性预处理 SA 的方法）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>**小技巧：为避免 $h$ 数组求解 $\text{lcp}$ 时的开闭区间讨论，可在每两个 $h_i, h_{i + 1}$ 中间塞入一个 $\infty$，将半开半闭区间转为闭区间。**&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可用 SA 将 $\text{lcp}$ 相关问题转为序列 RMQ 相关问题。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="sam">SAM&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>节点个数是 $2n - 1$ 的，记得开两倍空间&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于在 Trie 上的广义 SAM，BFS 建树复杂度 $O(n)$，DFS 建树复杂度 $O(n + \sum_{p\text{ is leafy}} \text{depth}(p))$，任意 Trie 则可以达到 $O(n^2)$。BFS 是离线的，DFS 是在线的。&lt;br>
+对于多串的广义 SAM，DFS/BFS 的复杂度都为 $O(n)$，因为 $O(\sum_{p\text{ is leafy}} \text{depth}(p)) = O(n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>每个节点都可能对应多个字符串&lt;/strong>，这一点必须特别注意，不要觉得在某个节点上就一定对应单一字符串了。例如跑 SAM 和子序列自动机的匹配只能做到 $O(n^2)$ 而不是 $O(n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点 $p &amp;gt; 0$ 代表的字符串长度区间为 $[\text{len}_{\text{link}_p} + 1, \text{len}_p]$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="pam不太会">PAM（不太会）&lt;/h3>
+&lt;ol>
+&lt;li>通常令 $0$ 为偶根，$1$ 为奇根。&lt;/li>
+&lt;/ol>
+&lt;h3 id="hash">Hash&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>生日攻击：对于 $m = \lceil \sqrt {2n} \rceil$ 个在 $[1, n] \cap \mathbb{N}$ 中均匀独立随机的变量，有约 $1 - \frac 1e \approx 63%$ 的概率存在两个值相等。
+$O(n)$ 求「区间内所有整数都出现偶数次」的子区间个数：$P &amp;raquo; n^2$&lt;br>
+Hash 实现询问两个子串是否相等：$P &amp;raquo; n$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>字符串 Hash 多用前缀 Hash，但部分情况下后缀更有用（e.g.&lt;a href="https://loj.ac/p/2053">「HNOI2016」大数&lt;/a>）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>特殊性质的 Hash：加法 Hash / 异或 Hash / $k$ 次方加法 Hash / $k$ 进制无进位加法 Hash&lt;br>
+碰撞极易，通常不用来判断严格相等，而是满足某个性质（无序性 / 异或性 / &amp;hellip;）的相等。&lt;br>
+若 ${A_n}$ 可离散化，可考虑给每个权值随机赋值加强正确性。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给 ${A_n}$，$q$ 次询问，询问区间 $[l, r]$ 排序后是否每个数仅出现一次且 $\max - \min = r - l$。&lt;br>
+$n, q \leq 5 \times 10^6$，$1 \leq A_i \leq 2.5 \times 10^7$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P3792">洛谷 P3792 由乃与大母神原型和偶像崇拜&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给 ${A_n}$，求有多少个区间，满足任意数在此区间中都出现了偶数次。&lt;br>
+$n \leq 2 \times 10^6$，$A_i \leq 10^6$。&lt;br>
+Source：经典题（提示：考虑上面 Tips 的 2 和 3）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给 ${A_n}$，求有多少个区间，满足任意数在此区间中都出现了 $0$ 或奇数次。&lt;br>
+$n \leq 2 \times 10^6$，$A_i \leq 10^6$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6187">LOJ #6187 Odd&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $m$ 个集合 $S_1, S_2, \ldots, S_m$。&lt;br>
+$n$ 种权值，第 $i$ 种权值在 $S_{L_i}, S_{L_i + 1}, \ldots, S_{R_i}$ 中各出现一次。&lt;br>
+对于区间 $[l, r]$，若由 $S_{l \ldots r}$ 并成的可重集合非空，且每种权值出现 $0$ 次或奇数次，则该区间是好的，长度为 $r - l + 1$。&lt;br>
+求所有好区间的长度之和。&lt;br>
+$n, m \leq 10^5$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/799/F">CF799F Beautiful fountains rows&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>维护一棵有根树，初始为空，点权为 $1 \ldots n$ 的整数。$m$ 次操作，每次给出 $u, M$，表示添加一个新的点，其父亲为 $u$，点权为 $M$，并且询问：&lt;br>
+从 $u$ 到根节点的路径上，是否所有权值出现次数都是 $3$ 的倍数；如果不是，是否只有一种权值出现次数不是 $3$ 的倍数；如果是，请你输出该权值。&lt;br>
+$n \leq 10^6$，$m \leq 2 \times 10^6$，强制在线。&lt;br>
+Source：&lt;a href="https://loj.ac/p/502">LOJ #502 「LibreOJ β Round」ZQC 的截图&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给定一个 $n$ 位十进制数字串 $S$ 和一个质数 $P$。$m$ 个询问，每次给出一个区间，询问区间内有多少个子串的值是 $P$ 的倍数。&lt;br>
+$n, m \leq 10^5$，$P \leq 10^9$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2053">「HNOI2016」大数&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="序列数据结构">序列数据结构&lt;/h2>
+&lt;h3 id="线段树--st-表--猫树比较">线段树 / ST 表 / 猫树比较&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">&lt;/th>
+&lt;th style="text-align:center">线段树&lt;/th>
+&lt;th style="text-align:center">ST 表&lt;/th>
+&lt;th style="text-align:center">猫树&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">空间&lt;/td>
+&lt;td style="text-align:center">$O(n)$&lt;/td>
+&lt;td style="text-align:center">$O(n \log n)$&lt;/td>
+&lt;td style="text-align:center">$O(n \log n)$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">单点修改 + 区间查询&lt;/td>
+&lt;td style="text-align:center">$O(\log n) - O(\log n)$&lt;/td>
+&lt;td style="text-align:center">$O(n) - O(1)$（要求：必须可重复贡献）&lt;/td>
+&lt;td style="text-align:center">$O(n) - O(1)$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">静态区间修改&lt;/td>
+&lt;td style="text-align:center">$O(\log n)$&lt;/td>
+&lt;td style="text-align:center">$O(1)$（要求：必须可重复贡献）&lt;/td>
+&lt;td style="text-align:center">$O(1)$（要求：必须满足结合律和交换律）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>线段树：对动态操作（有修改有查询）的支持较好，但在静态操作上可能劣于 ST 表和猫树；&lt;/p>
+&lt;p>ST 表 / 猫树：对静态操作的支持很好，但在动态操作上很劣（除非修改 / 查询次数严重不平衡）。&lt;/p>
+&lt;p>&lt;strong>修改查询次数严重不平衡&lt;/strong>：例如 $q_1$ 个单点修改，$q_2$ 个查询 RMQ，&lt;strong>当 $q_1n &amp;gt; q_2$ 时&lt;/strong>使用 ST 表可以做到 $O(q_2)$，而线段树只能 $O(q_2 \log n)$。&lt;/p>
+&lt;p>&lt;strong>注意：ST 表 / 猫树可以 $O(1)$ 维护静态区间修改（e.g. 区间取 $\max$ 操作），但对操作性质有一定要求。&lt;/strong>&lt;/p>
+&lt;p>&lt;em>注：猫树在静态区间修改上可能并不常用，因为只有当操作&lt;strong>无逆元、不可重复贡献、且满足结合律和分配律时&lt;/strong>猫树才优于 ST 表和线段树。这样的操作是很少的，例如区间乘法 $\bmod$ 合数，或区间复数乘法。&lt;/em>&lt;/p>
+&lt;h3 id="分块--根号分治">分块 / 根号分治&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>常见套路：当 $a, b \leq n$ 满足下面两个条件之一时，$(a, b)$ 只有 $O(n \log n)$ 种，且可以根号分治：&lt;br>
+1) 满足 $ab \leq n$；&lt;br>
+2) 或满足 $a \equiv n \pmod b$。&lt;br>
+这些条件可能不明显，但要尽可能通过题目分析出来。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>根号分治常见套路：&lt;br>
+1) 暴力和某个权值出现次数有关的，对权值出现次数根号分治；&lt;br>
+2) 跳着计算的（e.g. 令 $A_L, A_{L + k}, A_{L + 2k}, \ldots$ 分别加上 $x$），对跳的距离根号分治。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>看到 $n \leq 10^5$ 或者 $2 \times 10^5$，如果不太能 $\text{polylog}$ 就考虑分块&lt;/strong>！！！别整天对着一道 sb 分块题想 $\text{polylog}$ 解法了！！！！111&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>静态区间信息的经典做法：&lt;br>
+分块，预处理 $f[i][j]$ 表示块 $i$ 到块 $j$ 的贡献，把贡献变为「左边的散块」+「中间的整块」+「右边的散块」分别处理。&lt;br>
+当贡献可逆时，可用前缀和 $S[i]$ 直接维护（e.g. 块 $i$ 到块 $j$ 中 $x$ 的出现次数）。&lt;br>
+经典：区间众数，区间逆序对。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>另类的分块做法：按询问分 $O(\sqrt q)$ 块。每次询问时，对每个&lt;strong>尚未下放&lt;/strong>的修改操作暴力枚举考虑；每 $O(\sqrt q)$ 个询问就下放至今所有未下放的修改操作并重构。&lt;br>
+e.g. 带插入的区间问题：分 $O(\sqrt n)$ 个块，每次插入就暴力插；$O(\sqrt q)$ 个询问后就暴力重构所有块，这样可以保证所有块的大小永远都是 $O(\sqrt n)$ 的。&lt;br>
+经典：可插入区间第 $k$ 小。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出一个 $01$ 串 $s$，计算满足「长度为串中 $1$ 的个数的倍数」的子串数量。&lt;br>
+$|s| \leq 10^5$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1270/F">CF1270F Awesome Substrings&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $n$ 个点，编号为 $0 \ldots n - 1$，点有点权 $a_i$。你可以决定 $A, B$ 的值，决定后，高宏君会分别跳到 $0, A, A-B, 2A-B, 2A-2B, 3A-2B, \ldots$，直到跳到 $n - 1$ 停止。&lt;br>
+要求是每次落点必须在 $0 \ldots n - 1$ 处，且每个点只能落一次。&lt;br>
+求最大化经过点的点权之和。&lt;br>
+$n \leq 10^5$，$|a_i| \leq 10^9$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/abc128/tasks/abc128_f">ABC128F Frog Jump&lt;/a>&lt;br>
+Hint：本题有 $O(n \log n)$ 和 $O(n \sqrt n)$ 的解法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出一个数列 ${A_n}$，$q$ 次询问区间 $[l, r]$ 的众数。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6285">LOJ #6285 数列分块入门 9&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="莫队">莫队&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>基础：一般莫队，回滚莫队，树上莫队，带修莫队&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>莫队需要修改 $O((n + q) \sqrt n)$ 次，但询问只有 $O(q)$ 次，可考虑使用修改 $O(1)$ 询问 $O(\sqrt n)$ 的分块达成 $O((n + q) \sqrt n)$（分块平衡）&lt;br>
+e.g. 求区间 $[l_j, r_j]$ 不超过 $t_j$ 的整数种类数&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="分治">分治&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>切一刀分治：分治 $[l, r]$ 时，取中点 $m$ 并计算 $[l, m]$ 的后缀信息和 $[m + 1, r]$ 的前缀信息。&lt;br>
+对于询问区间跨过中点的，用处理的前缀信息和后缀信息合并回答答案；剩下的递归到两个区间分治处理。&lt;br>
+可认为是点分治的一类特殊情况（树形态为一条链）。&lt;br>
+经典应用：&lt;br>
+$O(n \log^2 n)$ 求所有子区间的最大子段和；&lt;br>
+$O((n^2 + q) n \log n)$ 求 $n \times n$ 网格图最短路（&lt;a href="https://loj.ac/p/2090">「ZJOI2016」旅行者&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CDQ 分治：分治 $[l, r]$ 时，取区间中点 $m$。&lt;br>
+先分治 $[l, m]$，然后计算 $[l, m]$ 所有元素对 $[m + 1, r]$ 所有元素的贡献，再分治 $[m + 1, r]$。&lt;br>
+经典应用：&lt;br>
+$O(n \log^2 n)$ 三维偏序以及二维偏序 LIS；&lt;br>
+$O(n \log^2 n)$ 半在线卷积（虽然被多项式求逆吊打）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>整体二分：对所有询问&lt;strong>同时&lt;/strong>二分答案 $[l, r]$。&lt;strong>注意分治 $[l, r]$ 时必须保证复杂度是 $O(r - l)$ 而不是 $O(n)$ 的，否则会导致复杂度退化为 $O(n^2)$。&lt;/strong>&lt;br>
+经典应用：$O(n \log^2 n)$ 带修区间第 $k$ 大。&lt;/p>
+&lt;ol>
+&lt;li>取中点 $m$；&lt;/li>
+&lt;li>计算 $[l, m]$ 的贡献；&lt;/li>
+&lt;li>枚举所有分配到该区间的询问，把询问分成 $[l, m]$ 和 $[m + 1, r]$ 两部分；&lt;/li>
+&lt;li>分治 $[m + 1, r]$；&lt;/li>
+&lt;li>消除 $[l, m]$ 的贡献；&lt;/li>
+&lt;li>分治 $[l, m]$。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="线段树">线段树&lt;/h3>
+&lt;p>基础：&lt;/p>
+&lt;ul>
+&lt;li>扫描线&lt;/li>
+&lt;li>可持久化线段树&lt;/li>
+&lt;li>树套树&lt;/li>
+&lt;li>二维区间加+区间求和&lt;/li>
+&lt;li>势能线段树（下溢除法 / 取模 $O(\log V)$ &lt;a href="https://loj.ac/p/6029">「雅礼集训 2017 Day1」市场&lt;/a>，开根 $O(\log \log V)$ &lt;a href="https://loj.ac/p/10128">LOJ #10128 「一本通 4.3 练习 2」花神游历各国&lt;/a>）&lt;/li>
+&lt;li>线段树合并 / 分裂&lt;/li>
+&lt;li>线段树维护矩阵乘法（区间加 + 询问区间斐波那契 $\text{fib}(A_i)$ 之和；&lt;a href="https://loj.ac/p/2980">「THUSCH 2017」大魔法师&lt;/a>）&lt;/li>
+&lt;li>线段树维护单调队列 / 单调栈 / 凸包&lt;/li>
+&lt;li>李超线段树&lt;/li>
+&lt;li>线段树区间历史最值&lt;/li>
+&lt;li>吉司机线段树&lt;/li>
+&lt;/ul>
+&lt;h3 id="线段树分治">线段树分治&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>概述：以复杂度乘上一个 $O(\log q)$ 为代价，支持&lt;strong>离线&lt;/strong>将只支持添加的数据结构转为可支持添加删除的数据结构。&lt;br>
+&lt;strong>对于伪强制在线（对添加操作可知道删除时间，即使删除时间是加密的）的题目可以一边分治一边修改。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于多个询问的题目，若询问之间有一定的单调性，可考虑能否用线段树同时维护 $q$ 个询问对应的答案。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>维护一个物品可重集合 $S$，$q$ 个操作，形如：&lt;br>
+&lt;code>1 v w e&lt;/code> 表示添加一个体积为 $v$ 价值为 $w$ 的物品，于第 $e$ 个操作后移除它；&lt;br>
+&lt;code>2 v&lt;/code> 询问 $S$ 的所有体积和为 $v$ 的子集中，价值之和的最大值。&lt;br>
+强制在线。&lt;br>
+$q, v, w \leq 15000$，时限 3s。&lt;br>
+Source：&lt;a href="https://loj.ac/p/534">「LibreOJ Round #6」花团&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, L, R$，以及 $n$ 个固定的指令，形如加 $a$、减 $a$、乘 $a$、加 $ax_0$。&lt;br>
+该程序接受一个输入 $x_0$，初始令 $x = x_0$，并依次进行 $n$ 个指令，每次指令后还会令 $x = \max(\min(x, R), L)$。&lt;strong>注意，$x_0$ 不会改变。&lt;/strong>&lt;br>
+给出 $q$ 个询问，每次给出 $x_0$，求操作后 $x$ 的值。&lt;br>
+$n, q \leq 10^5$，$1 \leq L, R, x_0, a \leq 10^9$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2228">「AHOI2014」奇怪的计算器&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="平衡树">平衡树&lt;/h3>
+&lt;p>感觉没什么好写的。区间翻转记得就行。&lt;/p>
+&lt;h3 id="k-d-tree">K-D Tree&lt;/h3>
+&lt;p>同上。&lt;/p>
+&lt;h3 id="bitset">Bitset&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>经典运用：01 矩阵乘法，01 矩阵高斯消元 / 行列式，背包可达性判断，传递闭包，$O(k\frac {n^2}w)$ 的 $k$ 维偏序&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>复杂度对应数据范围（1s，近似）：&lt;br>
+$O(\frac {n^2}w)$：$n \leq 50000$&lt;br>
+$O(\frac {n^3}w)$：$n \leq 1000$&lt;br>
+$O(\frac {n^4}w)$：$n \leq 300$&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="其他">其他&lt;/h3>
+&lt;ol>
+&lt;li>区间推平 -&amp;gt; 均摊&lt;br>
+1) 操作含区间覆盖 + 操作随机：期望 $O(1)$（珂朵莉树）&lt;br>
+2) 区间排序：权值线段树分裂 / 合并&lt;br>
+3) 保证区间询问时会顺便推平（e.g. 询问区间等于 $x$ 的数个数，并将该区间所有数变为 $x$）：均摊 $O(1)$&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出一个 $n$ 的全排列 ${A_n}$，$m$ 次操作，每次给定一个区间，将区间内的数升序排序或降序排序，最后询问 ${A_p}$ 的值。&lt;br>
+$n, m \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2055">「TJOI / HEOI2016」排序&lt;/a>&lt;br>
+Hint：本题在该要求下有很简单的写法，但可以扩展到支持区间排序和单点查询，且强制在线。&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="树上--图上数据结构">树上 / 图上数据结构&lt;/h2>
+&lt;h3 id="dfs-序--括号序--欧拉序">DFS 序 / 括号序 / 欧拉序&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>DFS 序：每次访问到一个未访问的节点就给其编号（记作 $\text{id}(u)$）。长度为 $n$。&lt;br>
+可以将子树问题转为区间问题。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>括号序：每次访问到一个未访问的节点就给其编号（称为左括号 $\text{st}(u)$），并在结束 &lt;code>dfs(u)&lt;/code> 时再次给其编号（称为右括号 $\text{ed}(u)$）。长度为 $2n$。&lt;br>
+可以处理&lt;strong>可减信息&lt;/strong>的路径查询，子树加，单点修改（将左括号视为加 $v$，将右括号视为减 $v$）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>欧拉序：每次访问到一个未访问的节点就给其编号（记作 $\text{id}(u)$），并在每次枚举儿子节点 $v$ 的 &lt;code>dfs(v)&lt;/code> 结束时，都令 $u$ 再次插入到序列末尾（此处不需要记编号）。长度为 $2n - 1$。&lt;br>
+性质：&lt;strong>当 $\text{id}_u \leq \text{id}_v$ 时，欧拉序区间 $[\text{id}_u, \text{id}_v]$ 内最小深度的点就是 $u, v$ 的 $\text{lca}$。&lt;/strong>&lt;br>
+预处理 ST 表可以实现 $O(n \log n)$ 预处理 + $O(1)$ 查询 $\text{lca}$。&lt;br>
+对于特殊性质的题目也有较大用处。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">a &lt;span style="color:#f92672">=&lt;/span> []
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">dfs&lt;/span>(u):
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;span style="color:#66d9ef">for&lt;/span> v &lt;span style="color:#f92672">in&lt;/span> sons(u):
+dfs(v)
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">bracket_dfs&lt;/span>(u):
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;span style="color:#66d9ef">for&lt;/span> v &lt;span style="color:#f92672">in&lt;/span> sons(u):
+bracket_dfs(v)
+a&lt;span style="color:#f92672">.&lt;/span>append(&lt;span style="color:#f92672">-&lt;/span>u)
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">euler_dfs&lt;/span>(u):
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;span style="color:#66d9ef">for&lt;/span> v &lt;span style="color:#f92672">in&lt;/span> sons(u):
+euler_dfs(v)
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>维护 $n$ 个点的树，有正边权。$q$ 次修改，每次修改一条边的边权，并询问树的直径。&lt;br>
+$n, q \leq 10^5$，边权 $\leq 2 \times 10^{13}$，强制在线。
+Source：&lt;a href="https://loj.ac/p/3163">「CEOI2019」动态直径&lt;/a>&lt;br>
+Hint：虽然可以用点分树做，但是有更方便的方式。&lt;/li>
+&lt;/ol>
+&lt;h3 id="预处理树--换根">预处理树 / 换根&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>如果需要支持森林的动态加边，且操作意外地可以离线，则可以考虑把最终的树形态弄出来，就可以转为一般的静态树问题。&lt;br>
+如果合并边遇到困难，可考虑类似 Kruskal 重构树的方式建立虚点。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于换根问题，可以考虑固定根为 $1$，而换根时只做个记号 $\text{root} \leftarrow u$，在子树操作时分类讨论一下。当然，不是所有题目都可以这么做。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="树的直径--树的重心不太会">树的直径 / 树的重心（不太会）&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>树的直径性质：&lt;br>
+1) 端点必定为叶节点；&lt;br>
+2) 设某一条直径的端点为 $s, t$，则点 $u$ 到树上某一点的最远距离等于 $\max{\text{dis}(u, s), \text{dis}(u, t)}$；&lt;br>
+3) &lt;strong>当边权非负时&lt;/strong>，将两棵树用一条边连接，得到新树的直径端点必为两棵树的四个直径端点之一。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>树的重心性质：&lt;br>
+1) 以重心为根，所有子树大小不超过 $\frac n2$；&lt;br>
+2) 重心不超过 $2$ 个，且如果有 $2$ 个，那么该树一定是对称的；&lt;br>
+3) 树的重心到所有点距离之和最小；&lt;br>
+4) &lt;strong>当边权为正整数时&lt;/strong>，将两棵树用一条边连接，得到新树的重心必在两棵树的重心的路径上。&lt;br>
+5) 广义重心：对于一个带非负点权，正边权的树，定义一个点 $u$ 的压力为所有点的点权乘上其到点 $u$ 的距离之和，则广义重心点 $u$ 满足 $u$ 的压力最小。&lt;br>
+&lt;strong>结论：重心和广义重心都只和点权有关，和边权无关。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://www.cnblogs.com/qlky/p/5781081.html">参考文献&lt;/a>&lt;/p>
+&lt;h3 id="kruskal-重构树">Kruskal 重构树&lt;/h3>
+&lt;p>最小瓶颈路权值等于 Kruskal 重构树上 $\text{lca}$ 的点权。&lt;/p>
+&lt;p>相对直接在最小生成树上查询路径边权最小值来说会更简单，可以做到 $O(1)$ 查询。&lt;/p>
+&lt;h3 id="点分治--边分治">点分治 / 边分治&lt;/h3>
+&lt;p>没什么特别的，边分治注意记得三度化即可。&lt;/p>
+&lt;h3 id="点分树--边分树不太会">点分树 / 边分树（不太会）&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>点分树：咕了&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>边分树合并：先对 $n$ 个点分别建一棵链 $T_i$（二叉的形式，称为边分树）。处理某个连通块时，断掉边 $e_k = (u, v)$ 后，令 $u$ 一侧所有点的 $T_i$ 都在叶子处长出一个左儿子，$v$ 一侧所有点的 $T_i$ 都在叶子处长出一个右儿子。&lt;br>
+合并两个边分树时按线段树合并合并即可。&lt;br>
+&lt;del>容易注意到，如果两棵边分树在某个位置都有节点（称其为 $x, y$），则 $x$ 的左儿子和 $y$ 的右儿子在边分过程中是通过边 $e_k$ 断开的，可以更新一下贡献。$y, x$ 同理。&lt;/del>&lt;br>
+&lt;em>这个我也写不清楚，读者自己能回忆起来就可以了。&lt;/em>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给两棵 $n$ 个点的树 $T, T'$，树带边权。定义两个点 $u, v$ 的错误距离为「$u, v$ 在 $T$ 上的深度之和」，减去「$u, v$ 在 $T$ 上的 $\text{lca}$ 深度」，再减去「$u, v$ 在 $T'$ 上的 $\text{lca}$ 深度」。&lt;br>
+求最大错误距离。&lt;br>
+$n \leq 366666$，边权绝对值 $\leq 2017011328$。
+Source：&lt;a href="https://loj.ac/p/2553">「CTSC2018」暴力写挂&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="重链剖分">重链剖分&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>$O(n \log n)$ 的树剖：在用线段树维护的同时，对每条重链开一个可 $O(1)$ 修改的数据结构（e.g. 可并堆；一个 &lt;code>int&lt;/code> 变量作为标记），则每个路径修改 / 路径查询都可转化为 $O(1)$ 条不完整的重链（在线段树上 $O(\log n)$ 查询）和 $O(\log n)$ 条完整的重链（在重链数据结构上 $O(1)$ 修改），则可实现 $O(n \log n)$ 的树链剖分。&lt;br>
+&lt;strong>不是所有题目都可以这么改。&lt;/strong>&lt;br>
+e.g.&lt;br>
+1) 路径修改 $a_i \leftarrow \min{a_i, x}$，路径询问 $\min{a_i}$；&lt;br>
+2) 维护黑白点树，支持单点反转颜色，查询路径上第一个遇到的黑点。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>也可以用来维护信息较麻烦的，根节点到路径上查询的题目。e.g. 动态 DP。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>维护一棵 $n$ 个点的带权树，$q$ 个操作，操作形如单点修改，路径求和，路径最小值询问。&lt;br>
+$n, q \leq 30000$，权值的绝对值不超过 $30000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2125">「HAOI2015」树上操作&lt;/a>&lt;br>
+Hint：本题有使用树剖 / 不使用树剖实现的 $O(n \log n)$ 解法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出一棵 $n$ 个点的树，根节点为 $1$，$q$ 个询问，每次给出 $l, r, z$，询问 $\sum_{i = l}^r \text{depth}(\text{lca}(i, z))$。&lt;br>
+$n, q \leq 50000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2558">「LNOI2014」LCA&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="长链剖分不太会">长链剖分（不太会）&lt;/h3>
+&lt;p>用来 $O(n)$ 解决形如 $f[u][i]$ 的树形 DP 问题，其中 $i$ 的取值只有 $O(h_u)$ 个（$h_u$ 表示 $u$ 子树内叶节点到 $u$ 的最大距离）。一般来说，这种题目都可以 $O(n \log n)$ 使用树上启发式合并解决。&lt;/p>
+&lt;p>简单地说，就是按 $h_u$ 进行链剖分，然后对于重儿子的信息 $O(1)$ 继承，其他暴力计算。当然也不是所有类似的都可以解决，反正根据问题具体分析吧。&lt;/p>
+&lt;p>&lt;strong>注意：必须是 Height 而不是 Depth（即是根据子树高度的 DP 而不是子树深度的 DP）。&lt;/strong>&lt;/p>
+&lt;p>例题：&lt;a href="https://loj.ac/p/2431">「POI2014」酒店 Hotel&lt;/a>&lt;/p>
+&lt;h3 id="树上启发式合并">树上启发式合并&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>注意：必须保证重儿子子树产生的贡献只被遍历一次！&lt;/strong>&lt;br>
+不好的例子：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solve&lt;/span>(u, keep):
+&lt;span style="color:#66d9ef">for&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> son[u] &lt;span style="color:#f92672">and&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> fa[u]:
+solve(to[i], false)
+solve(son[u], true)
+&lt;span style="color:#66d9ef">for&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> son[u] &lt;span style="color:#f92672">and&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> fa[u]:
+gather(to[i])
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">not&lt;/span> keep
+clear()
+&lt;span style="color:#66d9ef">else&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> maxdep downto &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#75715e"># 此处重儿子子树又再次贡献，导致复杂度退化为 O(n^2)&lt;/span>
+c[i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> c[i]
+c[&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="数据结构优化连边--最短路">数据结构优化连边 / 最短路&lt;/h3>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$n$ 个点，$q$ 次操作，每次给两个区间 $[l_1, r_1], [l_2, r_2]$，对 $0 \leq i \leq r_1 - l_1$ 合并点 $l_1 + i$ 和点 $l_2 + i$，最后询问连通块个数。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2014">「SCOI2016」萌萌哒&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$w \times h$ 的二维网格上有 $n$ 个城市 $(x_i, y_i)$。$m$ 个弹跳装置，利用第 $j$ 个装置可从城市 $p_j$ 跳到任意满足 $L_j \leq x_k \leq R_j, D_j \leq y_k \leq U_j$ 的城市 $k$，花费 $t_j$。&lt;br>
+求城市 $1$ 到其他城市的单源最短路径。&lt;br>
+$w, h \leq n \leq 7 \times 10^4$，$m \leq 1.5 \times 10^5$，$1 \leq t_j \leq 10^4$，128 MiB。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3159">「NOI2019」弹跳&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="lct">LCT&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>核心思想&lt;/strong>：动态的树链剖分。&lt;br>
+将树划分为多条树链，每条树链用 Splay 以深度为键值进行维护，并支持更改某个点的重儿子。&lt;br>
+&lt;strong>注意：单个 Splay 维护的是一条树链而不是原树。e.g. 某个点在其所在链上的祖先，是 Splay 内排名比它小的点，而不是它在 Splay 上的祖先。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>经典运用：&lt;br>
+1) 维护路径信息。&lt;br>
+2) 维护&lt;strong>只有加边操作&lt;/strong>的图的 MST。&lt;br>
+3) 维护动态路径染色 / 树链剖分问题。&lt;br>
+4) 维护子树信息。&lt;br>
+其维护子树信息的能力较为有限，需要满足可减性质。不满足可减的性质的（e.g. 子树最小值），可考虑用数据结构辅助维护（e.g. &lt;code>std::set&lt;/code>）。&lt;br>
+一般地：维护 $f_0[u]$ 表示轻儿子信息之和，$f[u]$ 表示 Splay 内所有信息之和。&lt;br>
+&lt;del>如果有先后顺序（e.g. 求连通块内所有点到 $u$ 的距离之和），则为了支持换根，需要设 $f[u][0]$ 表示 $u$ 在该树链上的祖先到 $u$ 的信息之和（Splay 左儿子的信息之和），$f[u][1]$ 表示 $u$ 在该树链上的最深的孙子到 $u$ 的信息之和（Splay 的右儿子信息之和）。&lt;/del>&lt;br>
+&lt;em>如果你看不懂也没关系，这个是写给我自己看的；只要你能做下面的例 3 就可以了。&lt;/em>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，根节点为 $1$，每个点有颜色。定义路径的权值为路径上节点颜色种类数。$q$ 个操作，操作形如：&lt;br>
+&lt;code>1 x&lt;/code> 把路径 $x \rightarrow 1$ 上染上一种全新的颜色；&lt;br>
+&lt;code>2 x y&lt;/code> 询问路径 $x \rightarrow y$ 的权值；&lt;br>
+&lt;code>3 x&lt;/code> 询问所有在 $x$ 子树内的点 $a$，路径 $a \rightarrow 1$ 的权值最大值。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2001">「SDOI2017」树点涂色&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>维护一个 $n$ 个点的&lt;strong>森林&lt;/strong>，初始无边。$q$ 个操作，支持加边及询问以 $y$ 为根时 $x$ 子树的大小。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2230">「BJOI2014」大融合&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>维护一个 $n$ 个点的&lt;strong>森林&lt;/strong>，点有黑白两种颜色。$q$ 个操作，支持加边，删边，改变单点颜色，询问同一连通块内所有黑点到 $u$ 的距离和。&lt;br>
+$n, q \leq 10^5$，边权 $\in [-10^7, 10^7]$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/558">「Antileaf&amp;rsquo;s Round」我们的 CPU 遭到攻击&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="虚树不太会">虚树（不太会）&lt;/h3>
+&lt;p>咕了&lt;/p>
+&lt;h3 id="圆方树不太会">圆方树（不太会）&lt;/h3>
+&lt;p>咕了&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="图论">图论&lt;/h2>
+&lt;h3 id="常识-3">常识&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>有一些题目可以转成图论 / 树模型，并且要善于发现模型的性质。&lt;br>
+如果你觉得这东西你不会做（e.g. 一般图最大权匹配；这个可以做，但是我不会），或者你已经知道这是一个 NP 问题（e.g. 一般图独立集计数），那就可以考虑找找图有什么性质了；或者如果 $n$ 较小，就暂时放弃多项式解法，考虑折半 / 按大小分类处理。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>常见模型：&lt;br>
+1) 每个点有且仅有一条出边：基环内向树&lt;br>
+2) 每个点有且仅有一条出边，有且仅有一条入边：若干个简单环&lt;br>
+3) 一棵树，每个点的度数不超过 $k$：$k - 1$ 叉树&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="网络流">网络流&lt;/h3>
+&lt;ol>
+&lt;li>经典模型：&lt;br>
+二分图最大权匹配；&lt;br>
+拆点，限制每个点只能被选一次；&lt;br>
+DAG 最小路径覆盖；&lt;br>
+行转左部点，列转右部点，左右连边为 $A_{i, j}$，构建二分图；&lt;br>
+奇偶染色 + 最小割；&lt;br>
+**最大权闭合子图**（元素可正可负，选了一些就得选另一些）；&lt;br>
+带上下界的最大流 / 可行流 / 最小流；&lt;br>
+退流。&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给定 $n$ 个元素 ${A_i}$，要求选了 $i$ 就必须选 $2i, 3i, \ldots$，询问选出的最大元素和。&lt;br>
+$n \leq 100$，$|A_i| \leq 10^9$。&lt;/li>
+&lt;/ol>
+&lt;h3 id="生成树">生成树&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>复习：矩阵树定理计算有根外向树 / 有根内向树的生成树个数。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>矩阵树定理中的元素可以是多项式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>另一种计算有根内向树的方法（外向 / 无根树同理）：对每个非根节点选一个出边（父亲），使得此时所有选出的边无环，则为一棵生成树。&lt;br>
+e.g. 一个 DAG 的以 $1$ 为根的外向生成树个数等于 $\prod_{i = 2}^n \text{indeg}_i$，其中 $\text{indeg}_i$ 为点 $i$ 的入度。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出一棵 $n$ 个点的带权无向图，定义一棵生成树的权值为所有边权的 $\gcd$ 乘上所有边权之和。求所有生成树的权值之和。&lt;br>
+$n \leq 30$，$1 \leq w_i \leq 152501$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3304">「联合省选 2020 A」作业题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>定义一个图的生成树是以节点 $s$ 为根的 BFS 树，当且仅当对任意节点 $t$，图中 $s$ 到 $t$ 的最短路径长度等于树上 $s$ 到 $t$ 的最短路径长度。&lt;br>
+给出一个 $n$ 个点 $m$ 条边的无向连通图，请对每对 $i, j$ 计算「同时是以节点 $i$ 为根的 BFS 树和以节点 $j$ 为根的 BFS 树」的生成树数量 $\bmod\ 998\ 244\ 353$ 的值。&lt;br>
+$n \leq 400$，$m \leq 600$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1495/D">CF1495D BFS Trees&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出一个 $n$ 个点 $m$ 条边的 DAG。给出 $x, y$，表示在 DAG 上添加了边 $(x, y)$，加完可能有环。请你求出以 $1$ 为根的有根外向生成树数量 $\bmod \ (10^9 + 7)$ 的值。&lt;br>
+$n \leq 10^5$，$m \leq 2 \times 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2115">「HNOI2015」落忆枫音&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="割点--必经边">割点 / 必经边&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>DAG 必经点：对于 DAG 上的任意三点 $s, t, p$，点 $p$ 为 $s$ 到 $t$ 路径上的必经点，当且仅当「$s$ 到 $p$ 的路径数」×「$p$ 到 $t$ 的路径数」=「$s$ 到 $t$ 的路径数」。必经边同理。&lt;br>
+放在模 $P$ 意义下计算就不会溢出了。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于边很多的图，如果要割两条边使得 $s$ 和 $t$ 不连通，则 $s \rightarrow t$ 的任意一条路径上的 $O(n)$ 条边，至少要有一条被割掉。&lt;br>
+这样就从 $O(m^2)$ 转向了 $O(nm)$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="其他-1">其他&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>最短路图是一个&lt;strong>图&lt;/strong>，不是树。&lt;br>
+边权为正整数时，最短路图是一个 DAG。&lt;br>
+边权为非负整数时，最短路图可能有环。&lt;br>
+若删去若干边破坏了最短路图上 $s, t$ 的连通性，则原图上 $s$ 到 $t$ 的最短路长度会变大。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>无向图 DFS 树无横叉边。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>非负权图最小环 $O(nm \log n)$ 解法&lt;/strong>：$O(n)$ 枚举根节点跑单源最短路径，再枚举每条边 $(u, v, w)$ 令 $\text{ans} \leftarrow \min{\text{ans}, \text{dis}(u) + \text{dis}(v) + w}$。&lt;br>
+每次跑是 $O(m \log n)$ 的，且能跑出正确答案当且仅当根节点在最小环上。&lt;strong>若已知最小环上点编号的最小值，可以优化到 $O(\text{minid} \cdot m \log n)$。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>LGV 引理：对于&lt;strong>DAG&lt;/strong>，给 $k$ 个起点 $s_i$ 和终点 $t_i$，求两两不相交路径数。这等于 $\text{det}(A)$，其中 $A_{i, j}$ 为 $s_i$ 到 $t_j$ 的路径数。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 ${A_n}$，$A_i$ 最多有 $7$ 个因子。选出一些数使得乘积为完全平方数，求最多能选多少个。&lt;br>
+$n \leq 10^5$，$A_i \leq 10^6$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1325/E">CF1325E Ehab&amp;rsquo;s REAL Number Theory Problem&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="数学">数学&lt;/h2>
+&lt;h3 id="期望与概率">期望与概率&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>期望逆设，概率正设（从 $i$ 走到 $n$ 的期望步数；从 $1$ 走到 $i$ 的概率）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>边期望转点期望，边概率转点概率。&lt;br>
+经过有向边 $(u, v)$ 的概率等于经过 $u$ 的概率除以 $u$ 的出度；&lt;br>
+经过有向边 $(u, v)$ 的期望次数等于经过 $u$ 的期望次数除以 $u$ 的出度。&lt;br>
+对于无向边，把 $u$ 和 $v$ 的贡献相加即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>图上经典模型：经过点 $p$ 的期望次数；从起点走到终点的期望步数；从起点走到某个特定终点的概率。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>小技巧：如果对于图上起点的期望不清楚要怎么写（例如是否需要加 $1$），可以再创建一个虚拟起点 $s$ 连一条有向边到起点 $1$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>期望转移为 DAG 时，可以直接 $O(n + m)$ 拓扑计算；&lt;br>
+否则可直接高斯消元 $O(n^3)$ 计算（带状矩阵 $O(nd^2)$ 计算）；&lt;br>
+若形式较特殊（e.g. 树上随机游走；每步 $p_i$ 概率加 $1$，$1 - p_i$ 概率重置为 $0$），可以考虑设参 $f_i = A(i)f_0 + B(i)$、$f_i = A(i)f_{i - 1} + B(i)$ 或 $f_i = A(i)f_0 + B(i)f_{\text{father}_i} + C(i)$ 等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给定一个 $n$ 个点 $m$ 条边的无向连通图，高宏君从 $1$ 开始，每次随机选一条出边走，走到 $n$ 立即停止，求每条边的期望经过次数。&lt;br>
+$n \leq 500$，$m \leq \frac {n(n - 1)}2$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2383">「HNOI2013」游走&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="矩阵">矩阵&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>多组询问矩阵加速：用矩阵乘矩阵预处理转移矩阵的 $2^k$ 次幂 $B^{2^k}$，询问时用向量乘矩阵进行转移。$O(k^3 \log n + qk^2 \log n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>注意：矩阵乘法仅满足结合律，不满足交换律！&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>注意：行向量 / 列向量乘矩阵，向量要放在矩阵前还是后。&lt;/strong>&lt;br>
+向量乘矩阵也符合矩阵乘法的性质。&lt;br>
+行向量乘矩阵：$1 \times n$ 矩阵乘上 $n \times n$ 的矩阵为 $1 \times n$ 的矩阵，向量在前；&lt;br>
+列向量乘矩阵：$n \times n$ 矩阵乘上 $n \times 1$ 的矩阵为 $n \times 1$ 的矩阵，向量在后。&lt;br>
+&lt;strong>为了方便，建议只使用行向量而不使用列向量。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>复习：广义矩阵乘法；高斯消元；带状矩阵 $O(nd^2)$ 消元；矩阵特征值；矩阵快速幂 $O(n^4 + n^2 \log p)$（几乎不考）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="行列式">行列式&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>行列式的性质：$\text{det}(AB) = \text{det}(A)\text{det}(B)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>行列式求解：高斯消元消成倒三角矩阵 $O(n^3)$ 计算。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>行列式可以消成倒三角矩阵算，不代表倒三角矩阵和原矩阵等价&lt;/strong>。e.g. 设 $A, B$ 的倒三角矩阵为 $A', B'$，则不一定有 $|\text{det}(A + B)| = |\text{det}(A' + B')|$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="线性基">线性基&lt;/h3>
+&lt;h3 id="fwt">FWT&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>子集卷积 $O(n \log^2 n)$；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>异或 / 异与 / 或 / 与卷积 $O(n \log n)$；&lt;br>
+或 FWT / 与 FWT 的过程就是做子集求和 $F_i' = \sum_{j \subseteq i} F_j$ / 超集求和 $F_i' = \sum_{i \subseteq j} F_j$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="多项式--生成函数">多项式 / 生成函数&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>多项式基础操作：&lt;br>
+三模数 NTT / 拆系数 FFT；&lt;br>
+多项式卷积、逆元、开根、取模、积分、求导、$\ln$、$\exp$；&lt;br>
+分治 DFT；&lt;br>
+对于 $k$ 次多项式 $f(x)$ 和给定的数 $a$，$O(k \log k)$ 计算 $f(x + a)$ 的各项系数（常用于倍增思路，如阶乘 $\bmod$ 大质数，求 $x^{\overline n}$）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>生成函数基础操作：&lt;br>
+$1 + x^k + x^{2k} + \ldots + x^{(n - 1)k} = \frac {1 - x^{nk}}{1 - x^k}$；&lt;br>
+$[x^n]\frac 1{1 - x^k} = \mathrm{C}^{k - 1}&lt;em>{n + k - 1}$；&lt;br>
+$e^x = \sum&lt;/em>{i = 0}^\infty \frac 1{i!}x^i$；&lt;br>
+$\ln (1 - x) = -\sum_{i = 1}^\infty \frac 1i x^i$（乘积转求和 / 构造 $k$ 次方求和）；&lt;br>
+将答案写成卷积的形式及解一元二次方程（卡特兰数 $F(x) = xF^2(x) + 1 \Rightarrow F(x) = \frac {1 - \sqrt{1 - 4x}}{2x}$）；&lt;br>
+半自我卷积和完全自我卷积 $O(n \log n)$；&lt;br>
+背包方案计数 $O(n \log n)$（&lt;a href="https://loj.ac/p/556">「Antileaf&amp;rsquo;s Round」咱们去烧菜吧&lt;/a>）；&lt;br>
+逆背包方案计数 $O(n \log n)$（&lt;a href="https://loj.ac/p/2271">「SDOI2017」遗忘的集合&lt;/a>）；&lt;br>
+对给定数列的 $0 \ldots k$ 次方分别求和 $O(n \log n)$（&lt;a href="https://loj.ac/p/2409">「THUPC 2017」小 L 的计算题 / Sum&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="拉格朗日插值">拉格朗日插值&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>重心拉格朗日插值 $O(qk \log M)$，配合离线求逆元可达到 $O(q(k + \log M))$（参见 &lt;a href="https://loj.ac/p/165">LOJ #165 拉格朗日插值&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>连续拉格朗日插值 $O(k \log k)$（参见 &lt;a href="https://loj.ac/p/166">LOJ #166 拉格朗日插值 2&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>在需要极多次多项式乘法和求和的情况下，使用拉格朗日插值可能更有优越性（多项式乘法 $O(n \log n)$ 而整数乘法是 $O(1)$ 的）。&lt;/strong>&lt;br>
+e.g. 对矩阵 $A$ 求 $\text{det}(A)$，其中 $A_{i, j}$ 为一个一次多项式 $a_{i, j} + b_{i, j}x$。&lt;br>
+使用多项式乘法 + 高斯消元：$O(n^4 \log n)$&lt;br>
+使用拉格朗日插值：$O(n^4)$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出一棵 $n$ 个点的树，请对每个 $0 \leq k &amp;lt; n$ 求出恰有 $k$ 条边与原树重合的 $n$ 个点的树的数量。&lt;br>
+$n \leq 100$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/917/D">CF917D Stranger Trees&lt;/a>&lt;br>
+Hint：本题存在 $O(n^2), O(n^3), O(n^4)$ 解法。&lt;/li>
+&lt;/ol>
+&lt;h3 id="线性递推">线性递推&lt;/h3>
+&lt;p>转为 $O(k^2 \log n)$ 的多项式乘法 / 取模。&lt;/p>
+&lt;p>加全家桶可以实现 $O(k \log k \log n)$。&lt;/p>
+&lt;h3 id="特征方程">特征方程&lt;/h3>
+&lt;p>任意 $k$ 次常系数线性递推 $f_n = \sum_{i = 1}^k a_if_{n - i}$ 都可转化为不超过 $k$ 个等比数列的带权点和 $f_n = \sum_{i = 1}^k \alpha_i p_i^n$。&lt;/p>
+&lt;p>设 $f_n = p^n$ 并代入递推式解一元 $k$ 次方程，则 $p$ 的 $k$ 个根就是 $p_1, p_2, \ldots, p_n$ 的值，再根据 $f_1, \ldots, f_k$ 即可解出 $\alpha_1, \alpha_2, \ldots, \alpha_k$。&lt;/p>
+&lt;p>由于一元三次方程以上求根公式太过复杂，通常 $k = 2$。&lt;/p>
+&lt;p>利用该方法可将麻烦的二次递推变为两个等比数列求和。&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给定 $n, k$，求斐波那契数列前 $n$ 项的 $k$ 次方和 $\bmod\ (10^9 + 9)$ 的值。&lt;br>
+$n \leq 10^{18}$，$k \leq 10^5$。&lt;br>
+Source：&lt;a href="https://zoj.pintia.cn/problem-sets/91827364500/problems/91827369735">ZOJ3774 Power of Fibonacci&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k, f(0), f(1)$ 以及集合 $S = {A_n}$。求对于所有大小为 $k$ 的子集 $T$，$f(\sum_{x \in T} x)$ 的和 $\bmod\ 99991$。$\forall i \geq 2, f(i) = 2f(i - 1) + 3f(i - 2)$。&lt;br>
+$n \leq 10^5$，$a_i \leq 10^9$，$f(0), f(1) &amp;lt; 99991$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6183">LOJ #6183 看无可看&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="数论与计数">数论与计数&lt;/h2>
+&lt;h3 id="常识-4">常识&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>$\lfloor \frac n{i^k} \rfloor$ 的取值只有 $O(\sqrt [k + 1]n)$ 种。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Powerful Number（质因子次数大于等于 $2$ 的整数）个数为 $O(\sqrt n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>质数 / 质数的正整数次方（$p^c$）个数为 $O(\frac n{\log n})$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$d(n)$ 是个很小的数字，不要直接觉得它很大 / 很小就放弃思考。$O(d(n)) &amp;lt; O(\sqrt n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>整除分块映射小技巧（多用于杜教筛 / 洲阁筛等）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">dn &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">|&lt;/span>{n &lt;span style="color:#f92672">//&lt;/span> i}&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#75715e"># dn 为 n // i 的取值种数&lt;/span>
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>(x): &lt;span style="color:#75715e"># 必须保证 x = n // i&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> x &lt;span style="color:#f92672">*&lt;/span> x &lt;span style="color:#f92672">&amp;lt;=&lt;/span> n: &lt;span style="color:#75715e"># 在 C++ 下请注意溢出&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> x
+&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;span style="color:#66d9ef">return&lt;/span> dn &lt;span style="color:#f92672">-&lt;/span> n &lt;span style="color:#f92672">/&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="6">
+&lt;li>
+&lt;p>光速幂：当底数 $b$ 固定时，可 $O(\sqrt p)$ 预处理 $O(1)$ 回答 $b^p \bmod m$ 的值。&lt;br>
+具体：设 $B = \lceil \sqrt m \rceil$，对 $0 \leq i &amp;lt; B$ 预处理 $b^i$ 和 $b^{iB}$。&lt;br>
+该分块思想也可用在众多的题目上，e.g. $O(1)$ 回答 int 范围的 $\text{popcount}$、$\text{highbit}$、$\lfloor \log_2 \rfloor$。&lt;br>
+模板题：&lt;a href="https://loj.ac/p/162">LOJ #162 快速幂 2&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>离线线性逆元：给定 $n$ 个数和模数 $p$，可以 $O(n + \log p)$ 计算每个数的逆元。（&lt;a href="https://loj.ac/p/161">LOJ #161 乘法逆元 2&lt;/a>）&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="质因数分解--质数判断">质因数分解 / 质数判断&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>暴力分解可预处理 $O(\sqrt V)$ 内的所有质数，达到预处理 $O(\sqrt V)$ 单个 $O(\frac {\sqrt V}{\log V})$ 的复杂度。&lt;br>
+当 $n \leq 10^5$，$V \leq 10^9$ 时可用 Exact Division 优化暴力在 0.3s 内分解（详见&lt;a href="#%E5%8D%A1%E5%B8%B8%E5%B0%8F%E6%8A%80%E5%B7%A7">卡常小技巧&lt;/a>章节）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>大质数判定：Miller-rabin $O(T\log^2 p)$，$T$ 为探测次数，$T \approx 15$ 时较优；&lt;br>
+大整数分解：Pollard-Rho $O(n^{\frac 14})$，常数较大，需要结合 Miller-Rabin。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\sqrt [3]n$ 分解法：适用于部分有特殊性质的题目。&lt;br>
+对所有 $a_i$ 仅分解掉 $\leq \sqrt[3]{a_i}$ 的质因子，则分解后的 $a_i' \in {1, p, pq}$，其中 $p, q$ 是两个大于 $\sqrt[3]{a_i}$ 的质数。在这之后，考虑对 $1, p, pq$ 三种情况特殊处理。&lt;br>
+尽管不是所有题目都可这样，但确实有能这样做的题目。一般是 $n \leq 10^5, a_i \leq 10^9$，且看起来和质因数分解有很强相关性的题目。&lt;br>
+虽然数据范围不大时可以被 Exact Division + 暴力分解卡过，但数据一大就还是得乖乖用 $\sqrt[3]{a_i}$ 分解。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>套路：对于要求 $a, b$ 乘积为完全 $k$ 次方数的题目，可以将 $a, b$ 中的 $k$ 次方因子除去，记作 $a', b'$，则对于一个 $a'$，仅有一个 $b'$ 使得 $a&amp;rsquo;b'$ 为完全 $k$ 次方数。&lt;/strong>&lt;br>
+这个 $b'$ 是可以简单计算的。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="容斥">容斥&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>基本操作：二项式反演，Min-max 反演，子集反演，单位根反演；&lt;br>
+恰好转为至少 / 至多，$1$ 转为 $\text{any} - 0$，至少有一个满足转为全都不满足。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>需要时可用 DP 维护容斥系数。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题（较难）：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>已知排列 ${p_n}$ 相邻两项的大小关系，求满足大小关系的排列 ${p_n}$ 数量。&lt;br>
+$n \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/575">「LibreOJ NOI Round #2」不等关系&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有一棵 $n$ 个点的树，树的形态已知，边有黑白两种颜色但未知。$m$ 个限制，每次给出 $u_i, v_i$，表示路径 $u_i \rightarrow v_i$ 上至少有一条黑色边。&lt;br>
+求所有 $2^{n - 1}$ 棵树中，满足限制的树的数量 $\bmod\ 998,244,353$。&lt;br>
+$n, m \leq 5 \times 10^5$，$u_i$ 为 $v_i$ 的祖先。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3340">「NOI2020」命运&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="组合数">组合数&lt;/h3>
+&lt;ol>
+&lt;li>基础操作：&lt;br>
+范德蒙德卷积 $\sum_{i=0}^k \mathrm{C}^i_n \mathrm{C}^{k - i}_m = \mathrm{C}^k_{n + m}$；
+降次 $\mathrm{C}^i_n = \mathrm{C}^{i - 1}_{n - 1} + \mathrm{C}^i_{n - 1}$；&lt;br>
+上指数求和 $\sum_{i = k}^n \mathrm{C}^k_i = \mathrm{C}^{k + 1}_{n + 1}$；&lt;br>
+下指数求和 $\sum_{i = 0}^n \mathrm{C}^i_n = 2^n$；&lt;br>
+二项式展开 $(a + b)^k = \sum_{i = 0}^k \mathrm{C}^i_k a^i b^{k - i}$；&lt;br>
+Lucas 定理 / 扩展 Lucas 定理；&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 $n, k, p, r$，求 $\sum_{i = 0}^n \mathrm{C}^{ik + r}_{nk}$ 对 $p$ 取模的值。&lt;br>
+$n \leq 10^9$，$0 \leq r &amp;lt; k \leq 50$，$2 \leq p &amp;lt; 2^{30}$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2143">「SHOI2017」组合数问题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$t$ 组数据，每次给出 $n, k$，求 $\sum_{i = 0}^k \mathrm{C}^i_n$ 对 $2333$ 取模的值。&lt;br>
+$t \leq 10^5$，$n, k \leq 10^{18}$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2038">「SHOI2015」超能粒子炮・改&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="crt--excrt">CRT / exCRT&lt;/h3>
+&lt;p>一般用来分解模数，例如题目给的模数为合数，则可分解为若干 $p^k$ 分别求解。有时模数虽然很大，但分解后的 $p^k$ 可能很小。&lt;/p>
+&lt;p>也可以用来缩小值域。例如，若知道答案不超过 $10^{18}$，可以选取 $P_1 = 10^9 + 7, P_2 = 10^9 + 9$，分别计算两个模数下的答案后合并。尤其在中间计算过程中需要实数的情况，用这种方法可以规避精度误差。&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 $n$ 个点 $m$ 条边的无向图，无重边无自环，求计算生成树个数。&lt;br>
+$n \leq 12$，$m \leq \frac {n(n - 1)}2$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/SP104">SP104 HIGH - Highways&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="欧拉定理--扩展欧拉定理">欧拉定理 / 扩展欧拉定理&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>欧拉定理：对于 $\gcd(a, m) = 1$，有 $a^{\varphi(m)} \equiv 1 \pmod m$。&lt;strong>注意：这不代表 $a^k \bmod m$ 的最小循环节为 $\varphi(m)$！&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>扩展欧拉定理：对于 $p \geq \varphi(m)$ 有 $a^p \equiv a^{p \bmod \varphi(m) + \varphi(m)} \pmod m$。直观理解：$a^k \bmod m$ 的循环节为 $m$，&lt;strong>但仅在 $k \geq \varphi(m)$ 后才正式进入循环节内。&lt;/strong>&lt;br>
+理解：类似于循环小数 $0.7879123123123 \ldots$，前面有一段是不循环的。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 $n, m, p, c$，一个数列 ${A_n}$，维护 $m$ 个操作，操作形如区间 $a_i \leftarrow c^{a_i}$，以及询问区间和 $\bmod\ p$。&lt;br>
+$n, m \leq 50000$，$p \leq 10^8$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2142">「SHOI2017」相逢是问候&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="斯特林数">斯特林数&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>第一类斯特林数 $\left[\begin{matrix}n \newline k\end{matrix}\right]$：圆排列划分数&lt;br>
+递推公式 $\left[\begin{matrix}n \newline k\end{matrix}\right] = \left[\begin{matrix}n - 1 \newline k - 1\end{matrix}\right] + (n - 1)\left[\begin{matrix}n - 1 \newline k\end{matrix}\right]$&lt;br>
+上升幂转普通幂 $x^{\overline k} = \sum_{i = 0}^k \left[\begin{matrix}k \newline i\end{matrix}\right]x^i$&lt;br>
+下降幂转普通幂 $x^{\underline k} = \sum_{i = 0}^k (-1)^{i + k} \left[\begin{matrix}k \newline i\end{matrix}\right]x^i$&lt;br>
+单行 $O(n \log n)$ 计算方法：倍增计算生成函数 $x^{\overline n}$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第二类斯特林数 $\left{\begin{matrix}n \newline k\end{matrix}\right}$：集合划分数&lt;br>
+递推公式 $\left{\begin{matrix}n \newline k\end{matrix}\right} = \left{\begin{matrix}n - 1 \newline k - 1\end{matrix}\right} + k\left{\begin{matrix}n - 1 \newline k\end{matrix}\right}$&lt;br>
+容斥公式 $\left{\begin{matrix}n \newline k\end{matrix}\right} = \frac 1{k!}\sum_{i = 0}^k (-1)^i \mathrm{C}^i_k (k - i)^n$&lt;br>
+普通幂转下降幂 $x^k = \sum_{i = 0}^k \left{\begin{matrix}k \newline i\end{matrix}\right}x^{\underline i}$&lt;br>
+单行 $O(n \log n)$ 计算方法：利用容斥公式转为 DFT 卷积&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>下降幂可简易离散积分 / 求导：&lt;br>
+$\Delta x^{\underline k} = (x + 1)^{\underline k} - x^{\underline k} = kx^{\underline {k - 1}}$&lt;br>
+$\sum_1^n x^{\underline k} = \sum_{i = 1}^{n - 1} x^{\underline k} = \frac {x^{\underline k + 1}}{k + 1}$&lt;br>
+下降幂其实等价于排列数（$n^{\underline k} = \mathrm{A}^k_n$），转化为 $\mathrm{C}^k_n$ 后也可用组合数上指数求和得到同样的积分公式。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 $n, x, p$ 以及一个 $m$ 次多项式 $f(k)$ 的系数 $a_0 \ldots a_m$，求
+$$\left(\sum_{k = 0}^n f(k) x^k \mathrm{C}^k_n\right) \bmod p$$&lt;br>
+$n, x, p, a_i \leq 10^9$，$m \leq 1000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3300">「联合省选 2020 A」组合数问题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，求 $x^n + \sum_{x = 1}^{n - 1} 2^{n - 1 - x}x^k$ 对 $10^9 + 7$ 取模后的值。&lt;br>
+$n \leq 10^{1000000}, k\leq 50000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6054">LOJ #6054 「from CommonAnts」一道数学题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="对称转化">对称转化&lt;/h3>
+&lt;p>如果某个模型具有对称性，可考虑利用对称性优化求解。&lt;/p>
+&lt;p>e.g. 抛掷 $2n$ 次硬币，求正面次数大于反面次数的概率。&lt;/p>
+&lt;p>注意到正面和反面是等价的，所以答案即为 $1$ 减去正面次数等于反面次数的概率，即 $1 - \frac {\mathrm{C}^n_{2n}}{2^{2n}}$。&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>有一个只有 &lt;code>0&lt;/code>、&lt;code>1&lt;/code> 和退格键的键盘，敲击键盘 $n$ 次最后得到的字符串为 $s$。给出 $n, s$，询问合法的方案数 $\bmod\ (10^9 + 7)$ 的值。&lt;br>
+$n, |s| \leq 5000$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc059/tasks/arc059_d">ARC059F Unhappy Hacking&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>多组数据，每次给出 $a, b, k$，令小 A 抛掷 $a$ 次硬币，小 B 抛掷 $b$ 次硬币，求小 A 正面次数大于小 B 正面次数的方案数 $\bmod\ 10^k$。&lt;br>
+$a, b \leq 10^{15}$，$0 \leq a - b \leq 10000$，$1 \leq k \leq 9$，数据组数不超过 $10$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2023">「AHOI / HNOI2017」抛硬币&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="莫反">莫反&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>基本套路：&lt;br>
+$I * \varphi = \text{id}$；&lt;br>
+$I * \mu = \epsilon$；&lt;br>
+$\text{id} * \mu = \varphi$&lt;strong>（注意和上一条区分）&lt;/strong>；&lt;br>
+$$\sum_{i = 1}^n [\gcd(i, n) = 1]i = \frac {\varphi(n)n}2 + [n = 1]\frac 12$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>$n$ 以内无大于等于 $k$ 次质因子的整数个数&lt;/strong>：
+$$\sum_{i = 1}^n [\nexists x \geq 2, x^k \mid i] = \sum_{i = 1}^n \sum_{d^k \mid n} \mu(d) = \sum_{d = 1}^{\lfloor \sqrt[k]n \rfloor} \mu(d) \lfloor \frac n{d^k} \rfloor$$
+当取 $k = 2$ 时即为 $\sum_{i = 1}^n \mu^2(i)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\mu, d, \varphi$ 的完全积性公式（不需要满足 $\gcd(a, b) = 1$）：
+$$d(ab) = \sum_{i|a} \sum_{j|b} [\gcd(i, j) = 1]$$
+$$\mu(ab) = \mu(a)\mu(b)[\gcd(a, b) = 1]$$
+$$\varphi(ab) = \varphi(a)\varphi(b) \frac {\gcd(a, b)}{\varphi(\gcd(a, b))}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>卡住的时候可以考虑：&lt;br>
+1) 交换求和顺序；&lt;br>
+2) 设 $F(n) = \ldots, S(n) = 1 + 2 + \ldots + n$，简化表达式以更方便考虑。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>形如 $\sum_{d \mid n} f(d)$ 的式子（$f(d)$ 为积性函数），当 $n$ 很大时可考虑对 $n$ 分解质因数，枚举质因子次数 $O(\sqrt n)$ 求解。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>注意对 $\prod$ 相关式子要谨慎处理，不要瞎交换变量（最好处理成指数后对求和 $\sum$ 的形式进行莫反）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;!-- 6. 注意 $[\gcd(i, j, k) = d] \neq \sum_{d | t} \mu(\frac td) [t \mid gcd(i, j, k)]$（旧试题）。 -->
+&lt;h3 id="线性筛">线性筛&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>线性筛可以线性筛&lt;strong>任意&lt;/strong>积性函数（只要在 $p^c$ 处可以均摊 $O(\log n)$ 求值即可）。&lt;br>
+小技巧：当 $i \bmod p_j = 0$ 时可以暴力计算 $ip_j = i&amp;rsquo;p_j^k$（$\gcd(i', p_j) = 1$），计算 $f(ip_j) = f(i') \times f(p_j^k)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于比较奇怪的函数，可设 $n = \prod_{i = 1}^k p_i^{c_i}$（即质因数分解）后考虑 $f(n)$ 的值。&lt;br>
+对于积性函数只需要考虑 $f(p^c)$ 的值。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果某个函数确实复杂，可以考虑差分 / 前缀和一下试试。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>整除分块线性筛（&lt;a href="https://loj.ac/p/6680">#6680. 「hyOI2019」henry_y 的函数&lt;/a>）了解一下？&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>$f(n)$ 为积性函数，$f(p^c) = cp^{kc^2}$。求 $\left(\sum_{i = 1}^n f(i)\right) \bmod 998244353$ 的值。&lt;br>
+$n \leq 3 \times 10^7$。&lt;br>
+Source：经典题&lt;/li>
+&lt;/ol>
+&lt;h3 id="杜教筛">杜教筛&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>杜教筛构造的几个常见思路：&lt;br>
+1) 狄利克雷卷积满足交换律和结合律 $f * g = g * f, f * g * h = f * (g * h)$。&lt;br>
+2) $\mu * I = \epsilon, \varphi * I = \text{id}$，用这个来消除一些不好算的函数。&lt;br>
+3) 对于&lt;strong>完全积性函数&lt;/strong> $f$，积性函数 $g, h$，有 $(f \cdot g) * (f \cdot h) = f \cdot (g * h)$。（求 $\text{id} \cdot \varphi$ 的前缀和）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>杜教筛可以知二求一，即对于 $f = g * h$，如果能计算 $g, h$ 的前缀和，自然也能计算 $f$ 的前缀和。e.g. 计算 $\varphi * \text{id}$ 的前缀和。&lt;br>
+&lt;strong>不要老是把要求的函数带到 $g$ 里面啊！&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>杜教筛和洲阁筛套数论分块，复杂度不变。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 $n, p$，求 $\sum_{i = 1}^n \sum_{j = 1}^n ij\gcd(i, j)$ 对 $p$ 取模的值。 &lt;br>
+$n \leq 10^{10}$，$p \leq 1.1 \times 10^9$，$p$ 为质数。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P3768">洛谷 P3768 简单的数学题&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>推荐题目（&lt;strong>强烈推荐！&lt;/strong>）：&lt;a href="https://darkbzoj.tk/problems?search=DZY+Loves+Math">DZY Loves Math 系列&lt;/a>&lt;/p>
+&lt;h3 id="贝尔级数">贝尔级数&lt;/h3>
+&lt;p>杜教筛构造函数的另一个思路。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>把狄利克雷卷积转为多项式卷积。&lt;br>
+定义式：$\forall p \in \mathbb{P}$，$B_p(f(x)) = \sum_{i = 0}^\infty f(p^i) x^i$；&lt;br>
+一些性质：&lt;br>
+$f = g * h \Leftrightarrow B_p(f(x)) = B_p(g(x))B_p(h(x))$&lt;br>
+$f = g + h \Leftrightarrow B_p(f(x)) = B_p(g(x)) + B_p(h(x))$&lt;br>
+$f = g \cdot \text{id}^k \Leftrightarrow B_p(f(x)) = B_p(f(p^kx))$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>常见函数的贝尔级数：&lt;br>
+$B_p(I) = \frac 1{1 - x}$；&lt;br>
+$B_p(\text{id}^k) = \frac 1{1 - p^kx}$；&lt;br>
+$B_p(\epsilon) = 1$；&lt;br>
+$B_p(\mu) = 1 - x$；&lt;br>
+$B_p(\mu^2) = 1 + x$；&lt;br>
+$B_p(\varphi) = B_p(I)B_p(\text{id}) = \frac 1{(1 - x)(1 - px)}$；&lt;br>
+$B_p(\lambda) = \frac 1{1 + x}$（$\lambda(\prod_{i = 1}^k p_i^{c_i}) = (-1)^{\sum_{i = 1}^k c_i}$）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;p>*设积性函数 $f(p^k) = p^k + \mu(p^k)$，求 $\sum_{i = 1}^n f(i)$。*&lt;/p>
+&lt;p>$B_p(f(x)) = B_p(\text{id}) + B_p(\lambda) - B_p(\epsilon) = \frac 1{1 - px} + \frac 1{1 + x} - 1$。&lt;/p>
+&lt;p>构造 $B_p(g(x)) = (1 - px)(1 + x)$，则 $g = (\mu \cdot \text{id}) * \mu^2$，$B_p(h(x)) = B_p(f(x))B_p(g(x)) = 1 + x + 1 - px - (1 - px)(1 + x) = 1 + px^2$，所以 $h = \mu^2 \cdot \text{id}$。&lt;/p>
+&lt;p>取 $h = \mu^2 \cdot \text{id}$，$g = \mu^2 * (\mu \cdot \text{id})$，杜教筛计算即可。&lt;/p>
+&lt;h3 id="powerful-number-筛">Powerful Number 筛&lt;/h3>
+&lt;p>要求&lt;strong>积性&lt;/strong>函数 $f(n)$ 的前缀和时，考虑构造简单&lt;strong>积性&lt;/strong>函数 $g(n)$ 质数拟合 $f(n)$（即对于 $p \in \mathbb{P}$ 有 $f(p) = g(p)$），再设&lt;strong>积性&lt;/strong>函数 $h(n)$ 使得 $f = g * h$，则 $h$ 仅在 Powerful Number 处有非零值。&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\sum_{i = 1}^n f(i) &amp;amp;= \sum_{i = 1}^n \sum_{d \mid i} g(d)h(\frac id) \newline
+&amp;amp;= \sum_{d \text{ is powerful number}, d \leq n} h(d) \sum_{i = 1}^{\lfloor \frac nd \rfloor} g(i) \newline
+\end{aligned}
+$$&lt;/p>
+&lt;p>注意到 $h$ 也为积性函数，所以可以枚举 $d$ 的质因数分解进行计算。&lt;/p>
+&lt;p>$$h(p^c) = f(p^c) - \sum_{i = 0}^{c - 1} h(p^i) g(p^{c - i})$$&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>求积性函数 $f(p^c) = p \oplus c$ 的前缀和 $\left(\sum_{i = 1}^n f(i) \right)\bmod (10^9 + 7)$。&lt;br>
+$n \leq 10^{10}$。&lt;br>
+注意到对于 $p &amp;gt; 2$ 有 $f(p) = p - 1$，因此设 $g = \varphi$ 进行拟合。当然这里我们要对包含 $2^k$ 因子的 $n$ 进行特殊处理，所以还要枚举 $2^1, 2^2, 2^3, \ldots$ 进行补足。&lt;br>
+复杂度为 $O(n^{\frac 23} + n^{\frac 12} \log n) = O(n^{\frac 23})$。~~结果这杜教筛跑不过 $O(\frac {n^{\frac 34}}{\log n})$ 的 Min_25 筛。~~&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求积性函数 $f(p^c) = p^k$ 的前缀和 $\left(\sum_{i = 1}^n f(i) \right)\bmod (10^9 + 7)$。&lt;br>
+$k \leq 10$，$n \leq 10^9$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="模运算">模运算&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>可以以牺牲部分正确率的代价，强行将计算放到模意义下考虑&lt;/strong>。&lt;br>
+这一方法有时也会引出一些弱化的但是有用的结论。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\bmod\ 2$ 意义下 $-1$ 和 $1$ 是等价的，比如行列式 / 容斥系数等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>中间计算过程需要 $\sqrt t$ 但 $t$ 在 $\bmod\ M$ 意义下没有二次剩余时，可考虑扩域将每个数 $x$ 表示为 $a + b\sqrt t$ 的形式（类比复数）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若要支持&lt;strong>整数域&lt;/strong>上的&lt;strong>乘除&lt;/strong>（&lt;strong>不能支持加减&lt;/strong>），可令 $x = ab$，其中 $a$ 为令 $\gcd(a, m) = 1$ 的最大整数 $a$。对于 $a$，当 $a &amp;gt; 0$ 时存在逆元 $a^{-1} \equiv a^{\varphi(m) - 1} \pmod m$，可以直接维护；对于 $b$，$b$ 的质因子都是 $m$ 的质因子，维护其质因子的指数即可。&lt;br>
+尽管如此，若只是支持乘除，也可以支持到实数域上；&lt;strong>但在求值或比较两个数是否相等时必须保证 $b \in \mathbb{N}$&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 $n$ 个 $m$ 维向量 $\vec {a_i}$，第 $i$ 个向量有费用 $c_i$。求选出若干向量，使得这些向量线性无关且总费用最小。&lt;br>
+$n, m \leq 500$，$0 \leq a_{i, j} \leq 1000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2108">「JLOI2015」装备购买&lt;/a>&lt;br>
+Hint：实数精度太难分析了，有更容易保证正确率的方法吗？&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求 $n + n$ 个点的二分图完全匹配数量 $\bmod\ 2$ 的值。&lt;br>
+$n \leq 100$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc054/tasks/arc054_c">ARC054C 鯛焼き&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, a, b, p$（$p$ 不一定为质数），求&lt;br>
+$$\sum_{i = 0}^{\lfloor \frac n2 \rfloor} a^ib^{n - 2i} \mathrm{C}^{2i}_n$$
+Source：&lt;a href="https://www.cometoj.com/contest/72/problem/%EF%BC%A4?problem_id=4033">CometOJ1851 [Contest #13]火鼠的皮衣-不焦躁的内心&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出模数 $M$，维护一个正整数 $x$，$q$ 次操作，支持令 $x$ 乘上给定的正整数 $m$ 或撤销第 $k$ 次操作（必定为乘法操作），每次操作后输出 $x \bmod M$。&lt;br>
+$q \leq 10^5$，$m \leq 10^9$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2573">「TJOI2018」数学计算&lt;/a>&lt;br>
+Hint：本题可强制在线。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="原根">原根&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>当 $m = 2, 4, p^c, 2p^c$（$p$ 为奇质数）时，模 $m$ 意义下有 $O(\varphi(\varphi(m))$ 个原根；否则无原根。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>只有当 $m$ 为质数时，原根的幂次 $g^p$ 才能取遍 $[1, m)$ 的所有整数。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>原根判断：$O(\sqrt m)$ 预处理，$O(\omega(m)\log m)$ 判断；求解最小原根；求解所有原根。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\mathbb{Z}_m$ 下对原根取离散对数 $\text{ind}_g(n) = x \text{ where } g^x \equiv n \pmod m$，可以类比为 $\mathbb{R}$ 下对 $e$ 取对数 $\ln n$。&lt;br>
+可将乘法转为加法 $ab = g^{\text{ind}_g(a) + \text{ind}_g(b)}$，幂次转为乘法 $a^b = g^{\text{ind}_g(a) \times b}$（&lt;strong>减少一个 $O(\log)$&lt;/strong>），但难以维护加减法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>单位根反演时，若模 $m$ 意义下存在单位根 $\omega_n = g^{\frac {\varphi(m)}n}$，可以直接计算其值，把多项式直接转为整数计算。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配合 nBSGS 可以做到 $O(q + \sqrt {qM})$ 求模质数 $M$ 的离散对数，配合 &lt;a href="https://www.ruanx.net/pohlig-hellman/">Pohlig-Hellman&lt;/a> 可以做到 $O(q \log M)$ 求 $M = 998244353$ 或 $10^9 + 9$ 的离散对数（对 $M = 10^9 + 7$ 无效）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$T$ 组数据，每次给出 $n, s, a_{0 \ldots 3}$，求 $\sum_{i = 0}^n \mathrm{C}^i_n s^i a_{i \bmod 4}$ 对 $998244353$ 取模的值。&lt;br>
+$T \leq 10^5$，$n \leq 10^{18}$，$a_i \leq 10^8$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6485">LOJ #6485 LJJ 学二项式定理&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，满足 $k$ 为 $2$ 的非负整数幂次，求 $\sum_{i = 0}^{\lfloor \frac nk \rfloor} \mathrm{C}^{ik}_n$ 对 $998244353$ 取模的值。&lt;br>
+$n \leq 10^{15}$，$k \leq 2^{20}$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6247">LOJ #6247 九个太阳&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="其他-2">其他&lt;/h2>
+&lt;h3 id="表达式求值">表达式求值&lt;/h3>
+&lt;p>&lt;del>不会真的只有我一个人 WC2021 T2 后缀表达式写错吧？哦，还真是，那没事了。&lt;/del>&lt;/p>
+&lt;p>咕了。&lt;/p>
+&lt;h3 id="杂项">杂项&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>求本质相同的方案数平方和 = 选出两个方案使其本质相同的方案数。&lt;br>
+e.g. 给出序列 ${A_n}$，求所有本质不同子序列出现次数的平方和。$n \leq 5000$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求 $\min(f(i), g(i))$ 可考虑以 $O(\log V)$ 的代价二分 $\min(f(i), g(i)) \geq \text{mid}$，转化为 $f(i) \geq \text{mid}$ 且 $g(i) \geq \text{mid}$。&lt;br>
+e.g. 给出长度为 $n$ 的字符串 $s$，$m$ 个询问，每次给出 $a, b, c, d$，询问 $s_{a \ldots b}$ 的所有**子串**与 $s_{c \ldots d}$ 的 $\text{lcp}$ 的最大值。&lt;br>
+$n, m \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2059">「TJOI / HEOI2016」字符串&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01 分数规划。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>带直线限制的类过河卒模型。做法是把终点沿直线对称翻转。&lt;br>
+e.g. 给出 $n, m$，询问任意前缀中 $1$ 的个数不少于 $0$ 的个数，且恰有 $n$ 个 $1$ 和 $m$ 个 $0$ 的字符串 $S$ 的种类数 $\bmod\ 20100403$。&lt;br>
+$n, m \leq 10^6$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P1641">「SCOI2010」生成字符串&lt;/a>&lt;br>
+$~$&lt;br>
+进阶：给出 $n, m$。高宏君在平面直角坐标系的 $(0, 0)$ 处，要走到 $(n + m + 1, n)$，任意时刻只能向上或向右走，且必须保证 $y \leq x \leq y + m + 1$，求方案数 $\bmod\ (10^9 + 7)$。&lt;br>
+$n, m \leq 10^6$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2109">「JLOI2015」骗我呢&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>最大中位数：二分答案 $\text{mid}$，令 $B_i = \begin{cases} 1, &amp;amp;A_i \leq \text{mid} \newline -1, &amp;amp;A_i &amp;gt; \text{mid} \end{cases}$，则某一序列中位数大于等于 $\text{mid}$ 当且仅当 $\sum B_i \geq 0$。&lt;br>
+最大平均数：二分答案 $\text{mid}$，令 $B_i = A_i - \text{mid}$，则某一序列平均数大于等于 $\text{mid}$ 当且仅当 $\sum B_i \geq 0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求区间出现次数严格大于 $\frac nk$ 的整数：维护当前候选整数集合 $S$ 以及 $S$ 中每个整数的“权值”，逐次加入 $x$：&lt;br>
+1) 若 $|S| = k - 1$，将 $S$ 中所有元素权值减去 $1$，权值变为 $0$ 的扔出 $S$；若操作后 $|S| &amp;lt; k - 1$，将 $x$ 加入 $S$，权值为 $1$。&lt;br>
+2) 否则，将 $x$ 加入 $S$，权值为 $1$。&lt;br>
+最后还需要对每个数验证是否出现次数大于 $\frac nk$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>经典题：求最长的众数不唯一区间。（&lt;a href="https://codeforces.ml/problemset/problem/1446/D1">CF1446D1 Frequency Problem (Easy Version)&lt;/a>）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求括号序列是否合法：括号序列合法当且仅当任意前缀和非负且总和为 $0$。&lt;br>
+e.g. 给定字符串 $S$，其中 $S_i \in {\texttt{(}, \texttt{)}, \texttt{?}}$，每个问号位置有两个代价 $a_i, b_i$，分别表示填入左括号的费用和右括号的费用，求填入括号使得串合法且费用最小。&lt;br>
+$|S| \leq 5 \times 10^4$，$1 \leq a_i, b_i \leq 10^6$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/3/D">CF3D Least Cost Bracket Sequence
+time limit per test1 second&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="卡常小技巧">卡常小技巧&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>对于 $n \leq 10^5$，$a_i \leq 10^9$，需要分解质因数的情况，可利用 &lt;a href="https://www.luogu.com.cn/blog/tsukimaru/solution-p5071">Exact Division&lt;/a> 优化后直接 $O(\sqrt a_i + n\frac {\sqrt a_i}{\log a_i})$ 暴力分解（用时约 0.2s~0.4s），而不需要进行 $\sqrt[3]{a_i}$ 分解或 Pollard-Rho。&lt;br>
+使用 Exact Division 优化后的暴力素数分解，1s 可运行约 $10^9$ 次计算。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>除法 / 取模常数很大，请尽可能减少除法 / 取模次数。&lt;br>
+gcc 会对常量（包括 &lt;code>const&lt;/code>）的除法 / 取余进行常数优化（约 3~4 倍），对变量（&lt;strong>包括全程不改变值的变量&lt;/strong>）则会直接使用内置除法。&lt;br>
+&lt;strong>请记得给常量加上 &lt;code>const&lt;/code> 修饰符，避免产生不必要的常数开销。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>循环展开。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>减小数组大小。数组过大（$\geq 10^7$）会导致常数变大。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>保证内存访问连续。访问 $A[k][1 \ldots n]$ 会比访问 $A[1 \ldots n][k]$ 更快。&lt;/p>
+&lt;/li>
+&lt;/ol></content></item></channel></rss>

@@ -1,0 +1,2857 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Beyond Moonlight</title><link>/main/posts/</link><description>Recent content in Posts on Beyond Moonlight</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/main/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>套路总结</title><link>/main/posts/oi-summary/</link><pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate><guid>/main/posts/oi-summary/</guid><description>&lt;p>&lt;strong>警告&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>为提供良好的做题体验，本文不会提醒某题需要的其他算法。你需要对所有基础算法有所了解，并至少看得懂题解 / 愿意使用搜索引擎。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>部分题意可能经简化后有扭曲，但保证给出的简单概括是合理的。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若有不清楚题目该如何解决，且本文没有给出来源 / 网上搜索不到的情况，可以联系我交流。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>内容警告&lt;/strong>（Content Warning）：本文含有以下内容：&lt;/p>
+&lt;ul>
+&lt;li>咕了&lt;/li>
+&lt;/ul></description><content>&lt;p>&lt;strong>警告&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>为提供良好的做题体验，本文不会提醒某题需要的其他算法。你需要对所有基础算法有所了解，并至少看得懂题解 / 愿意使用搜索引擎。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>部分题意可能经简化后有扭曲，但保证给出的简单概括是合理的。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若有不清楚题目该如何解决，且本文没有给出来源 / 网上搜索不到的情况，可以联系我交流。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>内容警告&lt;/strong>（Content Warning）：本文含有以下内容：&lt;/p>
+&lt;ul>
+&lt;li>咕了&lt;/li>
+&lt;/ul>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="目录">目录&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#%E7%9B%AE%E5%BD%95">目录&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%8E%A8%E8%8D%90%E8%B5%84%E6%96%99">推荐资料&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#stl">STL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%B4%AA%E5%BF%83">贪心&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E4%B8%80%E7%B1%BB%E7%BB%8F%E5%85%B8%E7%9A%84%E6%A0%91%E5%BD%A2%E6%9F%93%E8%89%B2%E9%97%AE%E9%A2%98">一类经典的树形染色问题&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#dp">DP&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-1">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%AF%B9%E6%A0%91%E5%BD%A2%E6%80%81%E7%9A%84%E7%8A%B6%E5%8E%8B">对树形态的状压&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E4%BD%8D-dp-%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7">数位 DP 的一个小技巧&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-2">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%91%A8%E6%9C%9F%E7%90%86%E8%AE%BA">周期理论&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#kmp">KMP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#ac-%E8%87%AA%E5%8A%A8%E6%9C%BA">AC 自动机&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sa">SA&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sam">SAM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pam%E4%B8%8D%E5%A4%AA%E4%BC%9A">PAM（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hash">Hash&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">序列数据结构&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91--st-%E8%A1%A8--%E7%8C%AB%E6%A0%91%E6%AF%94%E8%BE%83">线段树 / ST 表 / 猫树比较&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%88%86%E5%9D%97--%E6%A0%B9%E5%8F%B7%E5%88%86%E6%B2%BB">分块 / 根号分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%8E%AB%E9%98%9F">莫队&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%88%86%E6%B2%BB">分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91">线段树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%88%86%E6%B2%BB">线段树分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%B9%B3%E8%A1%A1%E6%A0%91">平衡树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#k-d-tree">K-D Tree&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bitset">Bitset&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%85%B6%E4%BB%96">其他&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E6%A0%91%E4%B8%8A--%E5%9B%BE%E4%B8%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">树上 / 图上数据结构&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#dfs-%E5%BA%8F--%E6%8B%AC%E5%8F%B7%E5%BA%8F--%E6%AC%A7%E6%8B%89%E5%BA%8F">DFS 序 / 括号序 / 欧拉序&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%A2%84%E5%A4%84%E7%90%86%E6%A0%91--%E6%8D%A2%E6%A0%B9">预处理树 / 换根&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84--%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83%E4%B8%8D%E5%A4%AA%E4%BC%9A">树的直径 / 树的重心（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#kruskal-%E9%87%8D%E6%9E%84%E6%A0%91">Kruskal 重构树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%82%B9%E5%88%86%E6%B2%BB--%E8%BE%B9%E5%88%86%E6%B2%BB">点分治 / 边分治&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%82%B9%E5%88%86%E6%A0%91--%E8%BE%B9%E5%88%86%E6%A0%91%E4%B8%8D%E5%A4%AA%E4%BC%9A">点分树 / 边分树（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%87%8D%E9%93%BE%E5%89%96%E5%88%86">重链剖分&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E9%95%BF%E9%93%BE%E5%89%96%E5%88%86%E4%B8%8D%E5%A4%AA%E4%BC%9A">长链剖分（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6">树上启发式合并&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E8%BF%9E%E8%BE%B9--%E6%9C%80%E7%9F%AD%E8%B7%AF">数据结构优化连边 / 最短路&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lct">LCT&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%99%9A%E6%A0%91%E4%B8%8D%E5%A4%AA%E4%BC%9A">虚树（不太会）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%9C%86%E6%96%B9%E6%A0%91%E4%B8%8D%E5%A4%AA%E4%BC%9A">圆方树（不太会）&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%9B%BE%E8%AE%BA">图论&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-3">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BD%91%E7%BB%9C%E6%B5%81">网络流&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%94%9F%E6%88%90%E6%A0%91">生成树&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%89%B2%E7%82%B9--%E5%BF%85%E7%BB%8F%E8%BE%B9">割点 / 必经边&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%85%B6%E4%BB%96-1">其他&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E5%AD%A6">数学&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%A6%82%E7%8E%87">期望与概率&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%9F%A9%E9%98%B5">矩阵&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%A1%8C%E5%88%97%E5%BC%8F">行列式&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%80%A7%E5%9F%BA">线性基&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#fwt">FWT&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F--%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0">多项式 / 生成函数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC">拉格朗日插值&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%80%A7%E9%80%92%E6%8E%A8">线性递推&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%89%B9%E5%BE%81%E6%96%B9%E7%A8%8B">特征方程&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E6%95%B0%E8%AE%BA%E4%B8%8E%E8%AE%A1%E6%95%B0">数论与计数&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%B8%B8%E8%AF%86-4">常识&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%B4%A8%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3--%E8%B4%A8%E6%95%B0%E5%88%A4%E6%96%AD">质因数分解 / 质数判断&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%AE%B9%E6%96%A5">容斥&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BB%84%E5%90%88%E6%95%B0">组合数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#crt--excrt">CRT / exCRT&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86--%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86">欧拉定理 / 扩展欧拉定理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0">斯特林数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%AF%B9%E7%A7%B0%E8%BD%AC%E5%8C%96">对称转化&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%8E%AB%E5%8F%8D">莫反&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%BA%BF%E6%80%A7%E7%AD%9B">线性筛&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%9D%9C%E6%95%99%E7%AD%9B">杜教筛&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E8%B4%9D%E5%B0%94%E7%BA%A7%E6%95%B0">贝尔级数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#powerful-number-%E7%AD%9B">Powerful Number 筛&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%A8%A1%E8%BF%90%E7%AE%97">模运算&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E5%8E%9F%E6%A0%B9">原根&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%85%B6%E4%BB%96-2">其他&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC">表达式求值&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%9D%82%E9%A1%B9">杂项&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E5%8D%A1%E5%B8%B8%E5%B0%8F%E6%8A%80%E5%B7%A7">卡常小技巧&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>$~$
+$~$&lt;/p>
+&lt;h2 id="推荐资料">推荐资料&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://oi-wiki.org/">OI Wiki&lt;/a>：应该不用介绍吧……自己查了查 OI Wiki 才发现自己也整理漏了很多很多很多内容。&lt;/li>
+&lt;li>&lt;a href="http://zory.ink/posts/d645486d.html">Zory 的个人博客&lt;/a>：Zory 先辈写了很多整理，感觉非常全。推荐阅读：&lt;a href="http://zory.ink/posts/d645486d.html">置顶 -「OI之路」目录&lt;/a>；&lt;a href="https://zory.ink/posts/80c8.html">「置顶」套路集锦&lt;/a>。&lt;/li>
+&lt;li>&lt;a href="https://www.bilibili.com/video/BV1GJ411x7h7">Moonlight 的套路整理&lt;/a>：一年前写的，虽然不太全但还是可以看看的。&lt;/li>
+&lt;li>你自己的刷题记录：比写不出题更绝望的是，你以前见过甚至写过这道题，但是忘了怎么写。&lt;/li>
+&lt;/ul>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="stl">STL&lt;/h2>
+&lt;p>几个常见的错误：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>std::distance(set)&lt;/code>：$O(n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>std::lower_bound(set)&lt;/code>：$O(n)$。请使用 &lt;code>set.lower_bound(val)&lt;/code> $O(\log n)$ 代替。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>multiset.count(val)&lt;/code>：$O(\text{ans})$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>unordered_set&lt;/code>（不自定义 Hash 函数）：可被卡到 $O(n)$（参见 &lt;a href="https://codeforces.com/blog/entry/62393">Blowing up unordered_map, and how to stop getting hacked on it - neal&lt;/a>）。请使用自定义 Hash 函数或手写 Hash 表代替。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>测试代码：&lt;a href="https://www.luogu.com.cn/paste/0ze24t5n">https://www.luogu.com.cn/paste/0ze24t5n&lt;/a>。&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="贪心">贪心&lt;/h2>
+&lt;h3 id="常识">常识&lt;/h3>
+&lt;p>基础：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>邻项贪心：对于要求重排某个序列 ${A_n}$ 使得 $f(A')$ 最小，可考虑证明仅存在唯一一个 $A'$ 使得 $A'$ 不能通过交换邻项让 $f(A')$ 减小。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>邻位交换：参见&lt;a href="https://www.luogu.com.cn/blog/moonoshawott/adjacent-exchange">邻位交换总结&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可反悔式贪心：考虑进行某个决策后，如果撤回该决策会有什么影响。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>经典模型：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>有 $n$ 个正整数对 $(a_i, b_i)$，求重排使得 $\max_{i = 1}^n \frac{\prod_{j = 1}^i a_{p_j}}{b_{p_i}}$ 最小。&lt;br>
+$n \leq 1000$，$a_i, b_i \leq 10000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2603">「NOIP2012」国王游戏&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $2n$ 个小球，小球有黑白两种颜色，每种颜色都有 $n$ 个，权值分别从 $1$ 到 $n$。可以交换相邻两个小球，请使得同色小球权值递增，并求出最少交换次数。&lt;br>
+$n \leq 2000$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc097/tasks/arc097_c">ARC097E Sorted and Sorted&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一个字符串 $S$，每次操作可以交换相邻两个字符，求将 $S$ 变成回文串的最少操作次数。&lt;br>
+$|S| \leq 2 \times 10^5$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc088/tasks/arc088_c">ARC088E Papple Sort&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一个 $n$ 个元素的环形序列 ${A_n}$，在其中选出 $m$ 个互不相邻的元素，求选出元素之和的最大值。&lt;br>
+$n, m \leq 2 \times 10^5$，$|A_i| \leq 1000$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P1792">「国家集训队」种树&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $n$ 个外卖员和 $m$ 个餐厅，第 $i$ 个外卖员位于 $x_i$，第 $j$ 个餐厅位于 $y_j$，有容量 $c_j$ 和单位价格 $w_j$。&lt;br>
+要求将每个外卖员对应到一个餐厅中，使得餐厅价格之和+外卖员到餐厅的距离最小。&lt;br>
+$n, m \leq 10^5$，$0 \leq x_i, y_j, c_j, w_j \leq 10^9$。&lt;br>
+Source：&lt;a href="https://uoj.ac/problem/455">「UER #8」雪灾与外卖&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="一类经典的树形染色问题">一类经典的树形染色问题&lt;/h3>
+&lt;p>可能需要使用 DP 等算法。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，初始所有点都是白色的。可以把某个点染色黑色，求要让每个白点到最近黑点距离小于等于 $k$ 的最少染色点数。&lt;br>
+$n, k \leq 10^5$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P3942">洛谷 P3942 将军令&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，若干关键点。把 $m$ 个点染黑，其他点染白，求让所有关键点到最近黑点的距离的最大值最小。&lt;br>
+$n, m \leq 3 \times 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2165">「POI2011 R3 Day0」炸药 Dynamite&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，边有正整数边权。把 $k$ 个点染黑，其他点染白，求黑点两两距离加白点两两距离的最大值。&lt;br>
+$n, k \leq 3000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2124">「HAOI2015」树上染色&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，初始所有点都是白色的，染黑点 $i$ 需要花费 $w_i$。给出 $m$ 个关键点，请染黑部分点使得每个关键点到最近黑点距离小于等于 $d$ 且总花费最小。&lt;br>
+$n, m \leq 5 \times 10^5$，$k \leq 20$，$1 \leq w_i \leq 1000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2024">「JLOI / SHOI2016」侦查守卫&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="dp">DP&lt;/h2>
+&lt;h3 id="常识-1">常识&lt;/h3>
+&lt;p>基本操作：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>单调队列 / 单调栈 / 树上线段树合并维护 DP。&lt;br>
+**线段树合并可通过维护区间和的方式，实现同复杂度的 $\min$ 卷积 $F_i = \sum_{\min{j, k} = i} G_jH_k$。**&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>四边形不等式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>决策单调性。通常需要保证函数结构平移等价（例如函数 $y = a + \sqrt {x - b}$ 平移等价于 $y = \sqrt x$，但不平移等价于 $y = 2\sqrt x$）。&lt;br>
+可以说，一些利用单调性优化 DP 的方式（斜率优化维护凸包之类），都可以用决策单调性的核心思想（考虑 $j$ 对 $dp[i]$ 的贡献 $f_j(i)$ 的图像）解决。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>交换变量与值：$F[i][j]$ 为最大化 $k$，则可考虑能否设 $F[i][k]$ 为最大化 $j$，可减少状态数或方便转移。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>树上动态 DP。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>经典模型：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>对所有的 $n$ 排列 $p$ 计算 $f(p)$ 之和：设 $F[i]$ 为 $i$ 排列的所有 $f(p)$ 之和，从 $F[i - 1]$ 转移至 $F[i]$ 时考虑 $p_i$ 的值。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出若干个区间限制，求长度为 $n$ 的合法 01 序列种数：设 $F[i]$ 为已决定完 $A_{1 \ldots i}$ 的值且 $A_i = 0$ 的方案数，考虑在 $i$ 之前的第一个 $0$ 的位置 $j$ 进行 $O(n^2)$ 转移。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>划分数的 $O(n \sqrt n)$ 做法。&lt;br>
+&lt;strong>对于大数的 DP 做法也可应用到许多的题目中。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 ${a_n}$，求满足 $\forall 1 \leq i &amp;lt; n$，$a_{p_i}\cdot a_{p_{i + 1}}$ 不为完全平方数的排列 ${p_n}$ 的数量 $\bmod\ (10^9 + 7)$。&lt;br>
+$n \leq 300$，$a_i \leq 10^9$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/840/C">CF840C On the Bench&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，表示有长度为 $n$ 的数列 ${A_n}$ 且 $0 \leq A_i &amp;lt; 2^k$。$m$ 个限制 $l_i, r_i, x_i$ 表示区间 $[l_i, r_i]$ 的按位与为 $x_i$。求满足限制的 ${A_n}$ 个数 $\bmod\ 998244353$。&lt;br>
+$n, m \leq 5 \times 10^5$，$k \leq 30$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1327/F">CF1327F AND Segments&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，询问有多少个&lt;strong>可重&lt;/strong>集合 $S$ 满足和为 $k$ 且 $S$ 内的元素都为 $1, \frac 12, \frac 14, \frac 18, \ldots$。&lt;br>
+$n, k \leq 3000$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc107/tasks/arc107_d">ARC107D Number of Multisets&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n$ 个元素的序列 ${A_n}$，要求划分为若干段使得权值和最大。&lt;br>
+权值的计算方式：对每个段独立选择一个 $x$，并设该段中 $x$ 出现次数为 $c$，则该段的权值为 $xc^2$。&lt;br>
+$n \leq 10^5$，$1 \leq A_i \leq 10^4$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P5504">「JSOI2011」柠檬&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n \times n$ 的矩阵 $w_{i, j}$ 以及一个整数 $k$，要求将 $[1, n]$ 划分为 $k$ 个**连续**的区间 $[1, p_1), [p_1, p_2), \ldots, [p_{k - 1}, n]$，要求所有区间费用和最小。&lt;br>
+区间 $[l, r]$ 的费用为 $\sum_{i = l}^r \sum_{j = l}^r w_{i, j}$。&lt;br>
+$n \leq 4000$，$k \leq 800$，$0 \leq w_{i, j} \leq 9$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/321/E">CF321E Ciel and Gondolas&lt;/a>&lt;br>
+Hint：本题存在 $O(n \log w_{i, j})$ 解法。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="对树形态的状压">对树形态的状压&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>设 $f(r, S)$ 表示以 $r$ 为根，子树内&lt;strong>不包括自己&lt;/strong>的节点集合为 $S$ 的方案数。则
+$$f(r, S) = \sum_{p \in S} \sum_{T \subseteq S, \min(S) \in T, p \in T} f(r, S - T) f(p, T - {p})$$
+理解：枚举新增的子树。设该子树以 $p$ 为根，该子树内点集为 $T - {p}$，则有如上的转移式。&lt;br>
+$\min(S) \in T$ 是为了防止重复枚举（思考：为什么）。如只要求最优方案可将此句删去。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设 $f(r, S)$ 表示以 $r$ 为根，子树点集为 $S$（包括自己）的最小费用，则
+$$f(r, S) \leftarrow \min{f(r, S), f(p, S)} \tag{1}$$
+$$f(r, S \cup {p}) \leftarrow \min{f(r, S \cup{p}), f(r, S) + w_{r, p}} \tag{2}$$
+理解：$(1)$ 式换根，$(2)$ 式从当前根扩展一个点。&lt;br>
+是**最小斯坦纳树**使用的 DP 方式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设 $f(d, S)$ 表示当前已扩展集合为 $S$，已经进行了 $d$ 次扩展的最大价值，则
+$$f(d, S) = \max_{T \subseteq S}{f(d - 1, S - T) + \sum_{p \in T} w(d, p, S - T)}$$
+理解：模拟从根节点开始 BFS 的过程。&lt;br>
+比起 2. 可以维护当前节点深度，但复杂些。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>有一棵 $n$ 个点的树 $T$，根节点为 $1$。&lt;br>
+$q$ 个限制，形如 $\text{lca}(a_i, b_i) = c_i$ 或存在边 $(a_i, b_i)$。&lt;br>
+求符合限制的树 $T$ 的方案数。&lt;br>
+$n \leq 13$，$q \leq 100$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/599/E">CF599E Sandy and Nuts&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给一个 $n$ 个点的图，图有边权。求一棵有根生成树使得 $\sum_{p \neq r} \text{depth}(p) \cdot \text{wfa}_p$ 最小，其中 $r$ 为根节点，$\text{depth}(p)$ 为点 $p$ 的深度，$\text{wfa}_p$ 为 $p$ 到父亲的边的边权。&lt;br>
+$n \leq 12$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2318">「NOIP2017」宝藏&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="数位-dp-的一个小技巧">数位 DP 的一个小技巧&lt;/h3>
+&lt;p>&lt;em>对于给定的 $n$，计算所有 $x &amp;lt; n$ 的 $f(x)$ 之和。&lt;/em>&lt;/p>
+&lt;p>可以枚举 $i$，令 $x$ 的最高 $i$ 位与 $n$ 相同，最高第 $i + 1$ 位小于 $n$ 的最高第 $i + 1$ 位，剩下的部分就没有限制了。对简单的题目使用这个技巧，可以省去写数位 DP 的麻烦。&lt;/p>
+&lt;p>&lt;strong>注意！这里是取不到 $n$ 的，因此如果你要取 $n$ 需要特判。&lt;/strong>&lt;/p>
+&lt;p>e.g. 计算 $n$ 以内有多少个正整数 $x$ 满足 $x$ 的二进制表示有偶数个 $1$。&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="字符串">字符串&lt;/h2>
+&lt;h3 id="常识-2">常识&lt;/h3>
+&lt;ol>
+&lt;li>对于多个询问的题目，若每次询问都是给出一个询问串 $t_i$ 且 $\sum |t_i| \leq M$，则询问串长度种数为 $O(\sqrt M)$。&lt;br>
+可基于此研究根号级别的暴力算法。&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给定一个字符串 $s$，以及 $n$ 个询问，每次给出整数 $k_i$ 和字符串 $m_i$，询问 $|t|$ 的最小值，其中 $t$ 为 $s$ 的子串且 $m_i$ 在 $t$ 中出现的次数不小于 $k_i$。&lt;br>
+$|s|, n, \sum |m_i| \leq 10^5$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/963/D">CF963D Frequency of String&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给定一个字符串 $S$，$m$ 个区间 $[l_i, r_i]$ 以及一个整数 $k$。$q$ 个询问，每次给出长度为 $k$ 的字符串 $w$ 和两个整数 $a, b$，询问
+$$\sum_{i = a}^b \text{count}(w_{l_i, r_i}, S)$$
+其中 $\text{count}(w, S)$ 表示字符串 $w$ 在字符串 $S$ 中的出现次数。&lt;br>
+$|S|, m, q, k, \sum |w| \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6031">「雅礼集训 2017 Day1」字符串&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="周期理论">周期理论&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>$k$ 为 $S$ 的周期，等价于 $S_{1 \ldots |S| - k + 1}$ 是 $S$ 的 Border。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若 $x, y$ 是 $S$ 的周期且 $x + y - \gcd(x, y) \leq |S|$，则 $\gcd(x, y)$ 也是 $S$ 的周期。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>最小周期必定存在且唯一，且最小周期的倍数也必定为周期。设最小周期为 $x_0$，则 $S$ 的所有周期为 $x_0, 2x_0, 3x_0, \ldots, \lfloor \frac {|S|}{x_0} \rfloor x_0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>所有 Border 长度可以被划分为 $O(\log |S|)$ 个等差序列。&lt;br>
+利用这一点可以加速跳失配指针，实现可持久化 KMP/AC 自动机 $O(\log n)$ 匹配。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="kmp">KMP&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>$\text{next}(i)$ 等价于前缀 $S_{1 \ldots i}$ 的最长真 Border 长度。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>前缀 $S_{1 \ldots i}$ 的真 Border 长度从大到小分别为 $\text{next}(i), \text{next}(\text{next}(i)), \ldots$。&lt;br>
+根据这个建出 next 树可以得到一些简单的性质。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KMP 的匹配是均摊 $O(1)$ 的，所以如果可持久化（e.g. 给模式串和文本串，要求把文本串问号替换为小写字母使得模式串出现次数最大）会导致退化为 $O(n)$。&lt;/strong>&lt;br>
+可以考虑带字符集 $O(n\Sigma)$ 处理（$f[i][c]$ 表示点 $i$ 处如果要匹配字符 $c$，会失配到哪个地方去），或利用 Border 理论 $O(n \log n)$ 处理。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出小写字母字符串 $S$，对其所有前缀 $S_{1 \ldots i}$ 求出其长度不超过 $\frac i2$ 的 Border 数量。&lt;br>
+$|S| \leq 10^6$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2246">「NOI2014」动物园&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="ac-自动机">AC 自动机&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>本质上是 Trie 上的 KMP。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Trie 上点 $v$ 代表的字符串在点 $u$ 代表的字符串中出现的次数，等于 $u$ 的所有 fail 祖先中，&lt;strong>在 Trie 上&lt;/strong>位于 $v$ 的子树内的点的个数。&lt;br>
+即在 $u, \text{fail}(u), \text{fail}(\text{fail}(u)), \ldots$ 中有多少个点，&lt;strong>在 Trie 上&lt;/strong>位于 $v$ 的子树内。&lt;br>
+是在两棵树上的限制（Fail 树上的祖先限制，Trie 树上的子树限制）。&lt;br>
+这一句话读起来有点绕，要记得理解。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出一棵 $n$ 个点的小写字母 Trie，$q$ 个询问，每次给出 $u, v$，询问 $u$ 代表的字符串在 $v$ 代表的字符串中出现的次数。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2444">「NOI2011」阿狸的打字机&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="sa">SA&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>注意 $rnk$ 数组要开两倍空间，否则你就得特判 $i + k \leq n$&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>注意 SA 倍增预处理是较大常数 $O(n \log n)$ 的，而不是线性（当然，也存在线性预处理 SA 的方法）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>**小技巧：为避免 $h$ 数组求解 $\text{lcp}$ 时的开闭区间讨论，可在每两个 $h_i, h_{i + 1}$ 中间塞入一个 $\infty$，将半开半闭区间转为闭区间。**&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可用 SA 将 $\text{lcp}$ 相关问题转为序列 RMQ 相关问题。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="sam">SAM&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>节点个数是 $2n - 1$ 的，记得开两倍空间&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于在 Trie 上的广义 SAM，BFS 建树复杂度 $O(n)$，DFS 建树复杂度 $O(n + \sum_{p\text{ is leafy}} \text{depth}(p))$，任意 Trie 则可以达到 $O(n^2)$。BFS 是离线的，DFS 是在线的。&lt;br>
+对于多串的广义 SAM，DFS/BFS 的复杂度都为 $O(n)$，因为 $O(\sum_{p\text{ is leafy}} \text{depth}(p)) = O(n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>每个节点都可能对应多个字符串&lt;/strong>，这一点必须特别注意，不要觉得在某个节点上就一定对应单一字符串了。例如跑 SAM 和子序列自动机的匹配只能做到 $O(n^2)$ 而不是 $O(n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点 $p &amp;gt; 0$ 代表的字符串长度区间为 $[\text{len}_{\text{link}_p} + 1, \text{len}_p]$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="pam不太会">PAM（不太会）&lt;/h3>
+&lt;ol>
+&lt;li>通常令 $0$ 为偶根，$1$ 为奇根。&lt;/li>
+&lt;/ol>
+&lt;h3 id="hash">Hash&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>生日攻击：对于 $m = \lceil \sqrt {2n} \rceil$ 个在 $[1, n] \cap \mathbb{N}$ 中均匀独立随机的变量，有约 $1 - \frac 1e \approx 63%$ 的概率存在两个值相等。
+$O(n)$ 求「区间内所有整数都出现偶数次」的子区间个数：$P &amp;raquo; n^2$&lt;br>
+Hash 实现询问两个子串是否相等：$P &amp;raquo; n$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>字符串 Hash 多用前缀 Hash，但部分情况下后缀更有用（e.g.&lt;a href="https://loj.ac/p/2053">「HNOI2016」大数&lt;/a>）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>特殊性质的 Hash：加法 Hash / 异或 Hash / $k$ 次方加法 Hash / $k$ 进制无进位加法 Hash&lt;br>
+碰撞极易，通常不用来判断严格相等，而是满足某个性质（无序性 / 异或性 / &amp;hellip;）的相等。&lt;br>
+若 ${A_n}$ 可离散化，可考虑给每个权值随机赋值加强正确性。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给 ${A_n}$，$q$ 次询问，询问区间 $[l, r]$ 排序后是否每个数仅出现一次且 $\max - \min = r - l$。&lt;br>
+$n, q \leq 5 \times 10^6$，$1 \leq A_i \leq 2.5 \times 10^7$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P3792">洛谷 P3792 由乃与大母神原型和偶像崇拜&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给 ${A_n}$，求有多少个区间，满足任意数在此区间中都出现了偶数次。&lt;br>
+$n \leq 2 \times 10^6$，$A_i \leq 10^6$。&lt;br>
+Source：经典题（提示：考虑上面 Tips 的 2 和 3）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给 ${A_n}$，求有多少个区间，满足任意数在此区间中都出现了 $0$ 或奇数次。&lt;br>
+$n \leq 2 \times 10^6$，$A_i \leq 10^6$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6187">LOJ #6187 Odd&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $m$ 个集合 $S_1, S_2, \ldots, S_m$。&lt;br>
+$n$ 种权值，第 $i$ 种权值在 $S_{L_i}, S_{L_i + 1}, \ldots, S_{R_i}$ 中各出现一次。&lt;br>
+对于区间 $[l, r]$，若由 $S_{l \ldots r}$ 并成的可重集合非空，且每种权值出现 $0$ 次或奇数次，则该区间是好的，长度为 $r - l + 1$。&lt;br>
+求所有好区间的长度之和。&lt;br>
+$n, m \leq 10^5$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/799/F">CF799F Beautiful fountains rows&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>维护一棵有根树，初始为空，点权为 $1 \ldots n$ 的整数。$m$ 次操作，每次给出 $u, M$，表示添加一个新的点，其父亲为 $u$，点权为 $M$，并且询问：&lt;br>
+从 $u$ 到根节点的路径上，是否所有权值出现次数都是 $3$ 的倍数；如果不是，是否只有一种权值出现次数不是 $3$ 的倍数；如果是，请你输出该权值。&lt;br>
+$n \leq 10^6$，$m \leq 2 \times 10^6$，强制在线。&lt;br>
+Source：&lt;a href="https://loj.ac/p/502">LOJ #502 「LibreOJ β Round」ZQC 的截图&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给定一个 $n$ 位十进制数字串 $S$ 和一个质数 $P$。$m$ 个询问，每次给出一个区间，询问区间内有多少个子串的值是 $P$ 的倍数。&lt;br>
+$n, m \leq 10^5$，$P \leq 10^9$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2053">「HNOI2016」大数&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="序列数据结构">序列数据结构&lt;/h2>
+&lt;h3 id="线段树--st-表--猫树比较">线段树 / ST 表 / 猫树比较&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">&lt;/th>
+&lt;th style="text-align:center">线段树&lt;/th>
+&lt;th style="text-align:center">ST 表&lt;/th>
+&lt;th style="text-align:center">猫树&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">空间&lt;/td>
+&lt;td style="text-align:center">$O(n)$&lt;/td>
+&lt;td style="text-align:center">$O(n \log n)$&lt;/td>
+&lt;td style="text-align:center">$O(n \log n)$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">单点修改 + 区间查询&lt;/td>
+&lt;td style="text-align:center">$O(\log n) - O(\log n)$&lt;/td>
+&lt;td style="text-align:center">$O(n) - O(1)$（要求：必须可重复贡献）&lt;/td>
+&lt;td style="text-align:center">$O(n) - O(1)$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">静态区间修改&lt;/td>
+&lt;td style="text-align:center">$O(\log n)$&lt;/td>
+&lt;td style="text-align:center">$O(1)$（要求：必须可重复贡献）&lt;/td>
+&lt;td style="text-align:center">$O(1)$（要求：必须满足结合律和交换律）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>线段树：对动态操作（有修改有查询）的支持较好，但在静态操作上可能劣于 ST 表和猫树；&lt;/p>
+&lt;p>ST 表 / 猫树：对静态操作的支持很好，但在动态操作上很劣（除非修改 / 查询次数严重不平衡）。&lt;/p>
+&lt;p>&lt;strong>修改查询次数严重不平衡&lt;/strong>：例如 $q_1$ 个单点修改，$q_2$ 个查询 RMQ，&lt;strong>当 $q_1n &amp;gt; q_2$ 时&lt;/strong>使用 ST 表可以做到 $O(q_2)$，而线段树只能 $O(q_2 \log n)$。&lt;/p>
+&lt;p>&lt;strong>注意：ST 表 / 猫树可以 $O(1)$ 维护静态区间修改（e.g. 区间取 $\max$ 操作），但对操作性质有一定要求。&lt;/strong>&lt;/p>
+&lt;p>&lt;em>注：猫树在静态区间修改上可能并不常用，因为只有当操作&lt;strong>无逆元、不可重复贡献、且满足结合律和分配律时&lt;/strong>猫树才优于 ST 表和线段树。这样的操作是很少的，例如区间乘法 $\bmod$ 合数，或区间复数乘法。&lt;/em>&lt;/p>
+&lt;h3 id="分块--根号分治">分块 / 根号分治&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>常见套路：当 $a, b \leq n$ 满足下面两个条件之一时，$(a, b)$ 只有 $O(n \log n)$ 种，且可以根号分治：&lt;br>
+1) 满足 $ab \leq n$；&lt;br>
+2) 或满足 $a \equiv n \pmod b$。&lt;br>
+这些条件可能不明显，但要尽可能通过题目分析出来。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>根号分治常见套路：&lt;br>
+1) 暴力和某个权值出现次数有关的，对权值出现次数根号分治；&lt;br>
+2) 跳着计算的（e.g. 令 $A_L, A_{L + k}, A_{L + 2k}, \ldots$ 分别加上 $x$），对跳的距离根号分治。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>看到 $n \leq 10^5$ 或者 $2 \times 10^5$，如果不太能 $\text{polylog}$ 就考虑分块&lt;/strong>！！！别整天对着一道 sb 分块题想 $\text{polylog}$ 解法了！！！！111&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>静态区间信息的经典做法：&lt;br>
+分块，预处理 $f[i][j]$ 表示块 $i$ 到块 $j$ 的贡献，把贡献变为「左边的散块」+「中间的整块」+「右边的散块」分别处理。&lt;br>
+当贡献可逆时，可用前缀和 $S[i]$ 直接维护（e.g. 块 $i$ 到块 $j$ 中 $x$ 的出现次数）。&lt;br>
+经典：区间众数，区间逆序对。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>另类的分块做法：按询问分 $O(\sqrt q)$ 块。每次询问时，对每个&lt;strong>尚未下放&lt;/strong>的修改操作暴力枚举考虑；每 $O(\sqrt q)$ 个询问就下放至今所有未下放的修改操作并重构。&lt;br>
+e.g. 带插入的区间问题：分 $O(\sqrt n)$ 个块，每次插入就暴力插；$O(\sqrt q)$ 个询问后就暴力重构所有块，这样可以保证所有块的大小永远都是 $O(\sqrt n)$ 的。&lt;br>
+经典：可插入区间第 $k$ 小。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出一个 $01$ 串 $s$，计算满足「长度为串中 $1$ 的个数的倍数」的子串数量。&lt;br>
+$|s| \leq 10^5$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1270/F">CF1270F Awesome Substrings&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有 $n$ 个点，编号为 $0 \ldots n - 1$，点有点权 $a_i$。你可以决定 $A, B$ 的值，决定后，高宏君会分别跳到 $0, A, A-B, 2A-B, 2A-2B, 3A-2B, \ldots$，直到跳到 $n - 1$ 停止。&lt;br>
+要求是每次落点必须在 $0 \ldots n - 1$ 处，且每个点只能落一次。&lt;br>
+求最大化经过点的点权之和。&lt;br>
+$n \leq 10^5$，$|a_i| \leq 10^9$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/abc128/tasks/abc128_f">ABC128F Frog Jump&lt;/a>&lt;br>
+Hint：本题有 $O(n \log n)$ 和 $O(n \sqrt n)$ 的解法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出一个数列 ${A_n}$，$q$ 次询问区间 $[l, r]$ 的众数。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6285">LOJ #6285 数列分块入门 9&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="莫队">莫队&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>基础：一般莫队，回滚莫队，树上莫队，带修莫队&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>莫队需要修改 $O((n + q) \sqrt n)$ 次，但询问只有 $O(q)$ 次，可考虑使用修改 $O(1)$ 询问 $O(\sqrt n)$ 的分块达成 $O((n + q) \sqrt n)$（分块平衡）&lt;br>
+e.g. 求区间 $[l_j, r_j]$ 不超过 $t_j$ 的整数种类数&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="分治">分治&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>切一刀分治：分治 $[l, r]$ 时，取中点 $m$ 并计算 $[l, m]$ 的后缀信息和 $[m + 1, r]$ 的前缀信息。&lt;br>
+对于询问区间跨过中点的，用处理的前缀信息和后缀信息合并回答答案；剩下的递归到两个区间分治处理。&lt;br>
+可认为是点分治的一类特殊情况（树形态为一条链）。&lt;br>
+经典应用：&lt;br>
+$O(n \log^2 n)$ 求所有子区间的最大子段和；&lt;br>
+$O((n^2 + q) n \log n)$ 求 $n \times n$ 网格图最短路（&lt;a href="https://loj.ac/p/2090">「ZJOI2016」旅行者&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CDQ 分治：分治 $[l, r]$ 时，取区间中点 $m$。&lt;br>
+先分治 $[l, m]$，然后计算 $[l, m]$ 所有元素对 $[m + 1, r]$ 所有元素的贡献，再分治 $[m + 1, r]$。&lt;br>
+经典应用：&lt;br>
+$O(n \log^2 n)$ 三维偏序以及二维偏序 LIS；&lt;br>
+$O(n \log^2 n)$ 半在线卷积（虽然被多项式求逆吊打）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>整体二分：对所有询问&lt;strong>同时&lt;/strong>二分答案 $[l, r]$。&lt;strong>注意分治 $[l, r]$ 时必须保证复杂度是 $O(r - l)$ 而不是 $O(n)$ 的，否则会导致复杂度退化为 $O(n^2)$。&lt;/strong>&lt;br>
+经典应用：$O(n \log^2 n)$ 带修区间第 $k$ 大。&lt;/p>
+&lt;ol>
+&lt;li>取中点 $m$；&lt;/li>
+&lt;li>计算 $[l, m]$ 的贡献；&lt;/li>
+&lt;li>枚举所有分配到该区间的询问，把询问分成 $[l, m]$ 和 $[m + 1, r]$ 两部分；&lt;/li>
+&lt;li>分治 $[m + 1, r]$；&lt;/li>
+&lt;li>消除 $[l, m]$ 的贡献；&lt;/li>
+&lt;li>分治 $[l, m]$。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="线段树">线段树&lt;/h3>
+&lt;p>基础：&lt;/p>
+&lt;ul>
+&lt;li>扫描线&lt;/li>
+&lt;li>可持久化线段树&lt;/li>
+&lt;li>树套树&lt;/li>
+&lt;li>二维区间加+区间求和&lt;/li>
+&lt;li>势能线段树（下溢除法 / 取模 $O(\log V)$ &lt;a href="https://loj.ac/p/6029">「雅礼集训 2017 Day1」市场&lt;/a>，开根 $O(\log \log V)$ &lt;a href="https://loj.ac/p/10128">LOJ #10128 「一本通 4.3 练习 2」花神游历各国&lt;/a>）&lt;/li>
+&lt;li>线段树合并 / 分裂&lt;/li>
+&lt;li>线段树维护矩阵乘法（区间加 + 询问区间斐波那契 $\text{fib}(A_i)$ 之和；&lt;a href="https://loj.ac/p/2980">「THUSCH 2017」大魔法师&lt;/a>）&lt;/li>
+&lt;li>线段树维护单调队列 / 单调栈 / 凸包&lt;/li>
+&lt;li>李超线段树&lt;/li>
+&lt;li>线段树区间历史最值&lt;/li>
+&lt;li>吉司机线段树&lt;/li>
+&lt;/ul>
+&lt;h3 id="线段树分治">线段树分治&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>概述：以复杂度乘上一个 $O(\log q)$ 为代价，支持&lt;strong>离线&lt;/strong>将只支持添加的数据结构转为可支持添加删除的数据结构。&lt;br>
+&lt;strong>对于伪强制在线（对添加操作可知道删除时间，即使删除时间是加密的）的题目可以一边分治一边修改。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于多个询问的题目，若询问之间有一定的单调性，可考虑能否用线段树同时维护 $q$ 个询问对应的答案。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>维护一个物品可重集合 $S$，$q$ 个操作，形如：&lt;br>
+&lt;code>1 v w e&lt;/code> 表示添加一个体积为 $v$ 价值为 $w$ 的物品，于第 $e$ 个操作后移除它；&lt;br>
+&lt;code>2 v&lt;/code> 询问 $S$ 的所有体积和为 $v$ 的子集中，价值之和的最大值。&lt;br>
+强制在线。&lt;br>
+$q, v, w \leq 15000$，时限 3s。&lt;br>
+Source：&lt;a href="https://loj.ac/p/534">「LibreOJ Round #6」花团&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, L, R$，以及 $n$ 个固定的指令，形如加 $a$、减 $a$、乘 $a$、加 $ax_0$。&lt;br>
+该程序接受一个输入 $x_0$，初始令 $x = x_0$，并依次进行 $n$ 个指令，每次指令后还会令 $x = \max(\min(x, R), L)$。&lt;strong>注意，$x_0$ 不会改变。&lt;/strong>&lt;br>
+给出 $q$ 个询问，每次给出 $x_0$，求操作后 $x$ 的值。&lt;br>
+$n, q \leq 10^5$，$1 \leq L, R, x_0, a \leq 10^9$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2228">「AHOI2014」奇怪的计算器&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="平衡树">平衡树&lt;/h3>
+&lt;p>感觉没什么好写的。区间翻转记得就行。&lt;/p>
+&lt;h3 id="k-d-tree">K-D Tree&lt;/h3>
+&lt;p>同上。&lt;/p>
+&lt;h3 id="bitset">Bitset&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>经典运用：01 矩阵乘法，01 矩阵高斯消元 / 行列式，背包可达性判断，传递闭包，$O(k\frac {n^2}w)$ 的 $k$ 维偏序&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>复杂度对应数据范围（1s，近似）：&lt;br>
+$O(\frac {n^2}w)$：$n \leq 50000$&lt;br>
+$O(\frac {n^3}w)$：$n \leq 1000$&lt;br>
+$O(\frac {n^4}w)$：$n \leq 300$&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="其他">其他&lt;/h3>
+&lt;ol>
+&lt;li>区间推平 -&amp;gt; 均摊&lt;br>
+1) 操作含区间覆盖 + 操作随机：期望 $O(1)$（珂朵莉树）&lt;br>
+2) 区间排序：权值线段树分裂 / 合并&lt;br>
+3) 保证区间询问时会顺便推平（e.g. 询问区间等于 $x$ 的数个数，并将该区间所有数变为 $x$）：均摊 $O(1)$&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出一个 $n$ 的全排列 ${A_n}$，$m$ 次操作，每次给定一个区间，将区间内的数升序排序或降序排序，最后询问 ${A_p}$ 的值。&lt;br>
+$n, m \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2055">「TJOI / HEOI2016」排序&lt;/a>&lt;br>
+Hint：本题在该要求下有很简单的写法，但可以扩展到支持区间排序和单点查询，且强制在线。&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="树上--图上数据结构">树上 / 图上数据结构&lt;/h2>
+&lt;h3 id="dfs-序--括号序--欧拉序">DFS 序 / 括号序 / 欧拉序&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>DFS 序：每次访问到一个未访问的节点就给其编号（记作 $\text{id}(u)$）。长度为 $n$。&lt;br>
+可以将子树问题转为区间问题。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>括号序：每次访问到一个未访问的节点就给其编号（称为左括号 $\text{st}(u)$），并在结束 &lt;code>dfs(u)&lt;/code> 时再次给其编号（称为右括号 $\text{ed}(u)$）。长度为 $2n$。&lt;br>
+可以处理&lt;strong>可减信息&lt;/strong>的路径查询，子树加，单点修改（将左括号视为加 $v$，将右括号视为减 $v$）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>欧拉序：每次访问到一个未访问的节点就给其编号（记作 $\text{id}(u)$），并在每次枚举儿子节点 $v$ 的 &lt;code>dfs(v)&lt;/code> 结束时，都令 $u$ 再次插入到序列末尾（此处不需要记编号）。长度为 $2n - 1$。&lt;br>
+性质：&lt;strong>当 $\text{id}_u \leq \text{id}_v$ 时，欧拉序区间 $[\text{id}_u, \text{id}_v]$ 内最小深度的点就是 $u, v$ 的 $\text{lca}$。&lt;/strong>&lt;br>
+预处理 ST 表可以实现 $O(n \log n)$ 预处理 + $O(1)$ 查询 $\text{lca}$。&lt;br>
+对于特殊性质的题目也有较大用处。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">a &lt;span style="color:#f92672">=&lt;/span> []
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">dfs&lt;/span>(u):
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;span style="color:#66d9ef">for&lt;/span> v &lt;span style="color:#f92672">in&lt;/span> sons(u):
+dfs(v)
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">bracket_dfs&lt;/span>(u):
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;span style="color:#66d9ef">for&lt;/span> v &lt;span style="color:#f92672">in&lt;/span> sons(u):
+bracket_dfs(v)
+a&lt;span style="color:#f92672">.&lt;/span>append(&lt;span style="color:#f92672">-&lt;/span>u)
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">euler_dfs&lt;/span>(u):
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;span style="color:#66d9ef">for&lt;/span> v &lt;span style="color:#f92672">in&lt;/span> sons(u):
+euler_dfs(v)
+a&lt;span style="color:#f92672">.&lt;/span>append(u)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>维护 $n$ 个点的树，有正边权。$q$ 次修改，每次修改一条边的边权，并询问树的直径。&lt;br>
+$n, q \leq 10^5$，边权 $\leq 2 \times 10^{13}$，强制在线。
+Source：&lt;a href="https://loj.ac/p/3163">「CEOI2019」动态直径&lt;/a>&lt;br>
+Hint：虽然可以用点分树做，但是有更方便的方式。&lt;/li>
+&lt;/ol>
+&lt;h3 id="预处理树--换根">预处理树 / 换根&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>如果需要支持森林的动态加边，且操作意外地可以离线，则可以考虑把最终的树形态弄出来，就可以转为一般的静态树问题。&lt;br>
+如果合并边遇到困难，可考虑类似 Kruskal 重构树的方式建立虚点。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于换根问题，可以考虑固定根为 $1$，而换根时只做个记号 $\text{root} \leftarrow u$，在子树操作时分类讨论一下。当然，不是所有题目都可以这么做。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="树的直径--树的重心不太会">树的直径 / 树的重心（不太会）&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>树的直径性质：&lt;br>
+1) 端点必定为叶节点；&lt;br>
+2) 设某一条直径的端点为 $s, t$，则点 $u$ 到树上某一点的最远距离等于 $\max{\text{dis}(u, s), \text{dis}(u, t)}$；&lt;br>
+3) &lt;strong>当边权非负时&lt;/strong>，将两棵树用一条边连接，得到新树的直径端点必为两棵树的四个直径端点之一。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>树的重心性质：&lt;br>
+1) 以重心为根，所有子树大小不超过 $\frac n2$；&lt;br>
+2) 重心不超过 $2$ 个，且如果有 $2$ 个，那么该树一定是对称的；&lt;br>
+3) 树的重心到所有点距离之和最小；&lt;br>
+4) &lt;strong>当边权为正整数时&lt;/strong>，将两棵树用一条边连接，得到新树的重心必在两棵树的重心的路径上。&lt;br>
+5) 广义重心：对于一个带非负点权，正边权的树，定义一个点 $u$ 的压力为所有点的点权乘上其到点 $u$ 的距离之和，则广义重心点 $u$ 满足 $u$ 的压力最小。&lt;br>
+&lt;strong>结论：重心和广义重心都只和点权有关，和边权无关。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://www.cnblogs.com/qlky/p/5781081.html">参考文献&lt;/a>&lt;/p>
+&lt;h3 id="kruskal-重构树">Kruskal 重构树&lt;/h3>
+&lt;p>最小瓶颈路权值等于 Kruskal 重构树上 $\text{lca}$ 的点权。&lt;/p>
+&lt;p>相对直接在最小生成树上查询路径边权最小值来说会更简单，可以做到 $O(1)$ 查询。&lt;/p>
+&lt;h3 id="点分治--边分治">点分治 / 边分治&lt;/h3>
+&lt;p>没什么特别的，边分治注意记得三度化即可。&lt;/p>
+&lt;h3 id="点分树--边分树不太会">点分树 / 边分树（不太会）&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>点分树：咕了&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>边分树合并：先对 $n$ 个点分别建一棵链 $T_i$（二叉的形式，称为边分树）。处理某个连通块时，断掉边 $e_k = (u, v)$ 后，令 $u$ 一侧所有点的 $T_i$ 都在叶子处长出一个左儿子，$v$ 一侧所有点的 $T_i$ 都在叶子处长出一个右儿子。&lt;br>
+合并两个边分树时按线段树合并合并即可。&lt;br>
+&lt;del>容易注意到，如果两棵边分树在某个位置都有节点（称其为 $x, y$），则 $x$ 的左儿子和 $y$ 的右儿子在边分过程中是通过边 $e_k$ 断开的，可以更新一下贡献。$y, x$ 同理。&lt;/del>&lt;br>
+&lt;em>这个我也写不清楚，读者自己能回忆起来就可以了。&lt;/em>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给两棵 $n$ 个点的树 $T, T'$，树带边权。定义两个点 $u, v$ 的错误距离为「$u, v$ 在 $T$ 上的深度之和」，减去「$u, v$ 在 $T$ 上的 $\text{lca}$ 深度」，再减去「$u, v$ 在 $T'$ 上的 $\text{lca}$ 深度」。&lt;br>
+求最大错误距离。&lt;br>
+$n \leq 366666$，边权绝对值 $\leq 2017011328$。
+Source：&lt;a href="https://loj.ac/p/2553">「CTSC2018」暴力写挂&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="重链剖分">重链剖分&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>$O(n \log n)$ 的树剖：在用线段树维护的同时，对每条重链开一个可 $O(1)$ 修改的数据结构（e.g. 可并堆；一个 &lt;code>int&lt;/code> 变量作为标记），则每个路径修改 / 路径查询都可转化为 $O(1)$ 条不完整的重链（在线段树上 $O(\log n)$ 查询）和 $O(\log n)$ 条完整的重链（在重链数据结构上 $O(1)$ 修改），则可实现 $O(n \log n)$ 的树链剖分。&lt;br>
+&lt;strong>不是所有题目都可以这么改。&lt;/strong>&lt;br>
+e.g.&lt;br>
+1) 路径修改 $a_i \leftarrow \min{a_i, x}$，路径询问 $\min{a_i}$；&lt;br>
+2) 维护黑白点树，支持单点反转颜色，查询路径上第一个遇到的黑点。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>也可以用来维护信息较麻烦的，根节点到路径上查询的题目。e.g. 动态 DP。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>维护一棵 $n$ 个点的带权树，$q$ 个操作，操作形如单点修改，路径求和，路径最小值询问。&lt;br>
+$n, q \leq 30000$，权值的绝对值不超过 $30000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2125">「HAOI2015」树上操作&lt;/a>&lt;br>
+Hint：本题有使用树剖 / 不使用树剖实现的 $O(n \log n)$ 解法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出一棵 $n$ 个点的树，根节点为 $1$，$q$ 个询问，每次给出 $l, r, z$，询问 $\sum_{i = l}^r \text{depth}(\text{lca}(i, z))$。&lt;br>
+$n, q \leq 50000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2558">「LNOI2014」LCA&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="长链剖分不太会">长链剖分（不太会）&lt;/h3>
+&lt;p>用来 $O(n)$ 解决形如 $f[u][i]$ 的树形 DP 问题，其中 $i$ 的取值只有 $O(h_u)$ 个（$h_u$ 表示 $u$ 子树内叶节点到 $u$ 的最大距离）。一般来说，这种题目都可以 $O(n \log n)$ 使用树上启发式合并解决。&lt;/p>
+&lt;p>简单地说，就是按 $h_u$ 进行链剖分，然后对于重儿子的信息 $O(1)$ 继承，其他暴力计算。当然也不是所有类似的都可以解决，反正根据问题具体分析吧。&lt;/p>
+&lt;p>&lt;strong>注意：必须是 Height 而不是 Depth（即是根据子树高度的 DP 而不是子树深度的 DP）。&lt;/strong>&lt;/p>
+&lt;p>例题：&lt;a href="https://loj.ac/p/2431">「POI2014」酒店 Hotel&lt;/a>&lt;/p>
+&lt;h3 id="树上启发式合并">树上启发式合并&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>注意：必须保证重儿子子树产生的贡献只被遍历一次！&lt;/strong>&lt;br>
+不好的例子：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solve&lt;/span>(u, keep):
+&lt;span style="color:#66d9ef">for&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> son[u] &lt;span style="color:#f92672">and&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> fa[u]:
+solve(to[i], false)
+solve(son[u], true)
+&lt;span style="color:#66d9ef">for&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> son[u] &lt;span style="color:#f92672">and&lt;/span> to[i] &lt;span style="color:#f92672">!=&lt;/span> fa[u]:
+gather(to[i])
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">not&lt;/span> keep
+clear()
+&lt;span style="color:#66d9ef">else&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> maxdep downto &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#75715e"># 此处重儿子子树又再次贡献，导致复杂度退化为 O(n^2)&lt;/span>
+c[i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> c[i]
+c[&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="数据结构优化连边--最短路">数据结构优化连边 / 最短路&lt;/h3>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$n$ 个点，$q$ 次操作，每次给两个区间 $[l_1, r_1], [l_2, r_2]$，对 $0 \leq i \leq r_1 - l_1$ 合并点 $l_1 + i$ 和点 $l_2 + i$，最后询问连通块个数。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2014">「SCOI2016」萌萌哒&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$w \times h$ 的二维网格上有 $n$ 个城市 $(x_i, y_i)$。$m$ 个弹跳装置，利用第 $j$ 个装置可从城市 $p_j$ 跳到任意满足 $L_j \leq x_k \leq R_j, D_j \leq y_k \leq U_j$ 的城市 $k$，花费 $t_j$。&lt;br>
+求城市 $1$ 到其他城市的单源最短路径。&lt;br>
+$w, h \leq n \leq 7 \times 10^4$，$m \leq 1.5 \times 10^5$，$1 \leq t_j \leq 10^4$，128 MiB。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3159">「NOI2019」弹跳&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="lct">LCT&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>核心思想&lt;/strong>：动态的树链剖分。&lt;br>
+将树划分为多条树链，每条树链用 Splay 以深度为键值进行维护，并支持更改某个点的重儿子。&lt;br>
+&lt;strong>注意：单个 Splay 维护的是一条树链而不是原树。e.g. 某个点在其所在链上的祖先，是 Splay 内排名比它小的点，而不是它在 Splay 上的祖先。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>经典运用：&lt;br>
+1) 维护路径信息。&lt;br>
+2) 维护&lt;strong>只有加边操作&lt;/strong>的图的 MST。&lt;br>
+3) 维护动态路径染色 / 树链剖分问题。&lt;br>
+4) 维护子树信息。&lt;br>
+其维护子树信息的能力较为有限，需要满足可减性质。不满足可减的性质的（e.g. 子树最小值），可考虑用数据结构辅助维护（e.g. &lt;code>std::set&lt;/code>）。&lt;br>
+一般地：维护 $f_0[u]$ 表示轻儿子信息之和，$f[u]$ 表示 Splay 内所有信息之和。&lt;br>
+&lt;del>如果有先后顺序（e.g. 求连通块内所有点到 $u$ 的距离之和），则为了支持换根，需要设 $f[u][0]$ 表示 $u$ 在该树链上的祖先到 $u$ 的信息之和（Splay 左儿子的信息之和），$f[u][1]$ 表示 $u$ 在该树链上的最深的孙子到 $u$ 的信息之和（Splay 的右儿子信息之和）。&lt;/del>&lt;br>
+&lt;em>如果你看不懂也没关系，这个是写给我自己看的；只要你能做下面的例 3 就可以了。&lt;/em>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给一棵 $n$ 个点的树，根节点为 $1$，每个点有颜色。定义路径的权值为路径上节点颜色种类数。$q$ 个操作，操作形如：&lt;br>
+&lt;code>1 x&lt;/code> 把路径 $x \rightarrow 1$ 上染上一种全新的颜色；&lt;br>
+&lt;code>2 x y&lt;/code> 询问路径 $x \rightarrow y$ 的权值；&lt;br>
+&lt;code>3 x&lt;/code> 询问所有在 $x$ 子树内的点 $a$，路径 $a \rightarrow 1$ 的权值最大值。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2001">「SDOI2017」树点涂色&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>维护一个 $n$ 个点的&lt;strong>森林&lt;/strong>，初始无边。$q$ 个操作，支持加边及询问以 $y$ 为根时 $x$ 子树的大小。&lt;br>
+$n, q \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2230">「BJOI2014」大融合&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>维护一个 $n$ 个点的&lt;strong>森林&lt;/strong>，点有黑白两种颜色。$q$ 个操作，支持加边，删边，改变单点颜色，询问同一连通块内所有黑点到 $u$ 的距离和。&lt;br>
+$n, q \leq 10^5$，边权 $\in [-10^7, 10^7]$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/558">「Antileaf&amp;rsquo;s Round」我们的 CPU 遭到攻击&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="虚树不太会">虚树（不太会）&lt;/h3>
+&lt;p>咕了&lt;/p>
+&lt;h3 id="圆方树不太会">圆方树（不太会）&lt;/h3>
+&lt;p>咕了&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="图论">图论&lt;/h2>
+&lt;h3 id="常识-3">常识&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>有一些题目可以转成图论 / 树模型，并且要善于发现模型的性质。&lt;br>
+如果你觉得这东西你不会做（e.g. 一般图最大权匹配；这个可以做，但是我不会），或者你已经知道这是一个 NP 问题（e.g. 一般图独立集计数），那就可以考虑找找图有什么性质了；或者如果 $n$ 较小，就暂时放弃多项式解法，考虑折半 / 按大小分类处理。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>常见模型：&lt;br>
+1) 每个点有且仅有一条出边：基环内向树&lt;br>
+2) 每个点有且仅有一条出边，有且仅有一条入边：若干个简单环&lt;br>
+3) 一棵树，每个点的度数不超过 $k$：$k - 1$ 叉树&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="网络流">网络流&lt;/h3>
+&lt;ol>
+&lt;li>经典模型：&lt;br>
+二分图最大权匹配；&lt;br>
+拆点，限制每个点只能被选一次；&lt;br>
+DAG 最小路径覆盖；&lt;br>
+行转左部点，列转右部点，左右连边为 $A_{i, j}$，构建二分图；&lt;br>
+奇偶染色 + 最小割；&lt;br>
+**最大权闭合子图**（元素可正可负，选了一些就得选另一些）；&lt;br>
+带上下界的最大流 / 可行流 / 最小流；&lt;br>
+退流。&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给定 $n$ 个元素 ${A_i}$，要求选了 $i$ 就必须选 $2i, 3i, \ldots$，询问选出的最大元素和。&lt;br>
+$n \leq 100$，$|A_i| \leq 10^9$。&lt;/li>
+&lt;/ol>
+&lt;h3 id="生成树">生成树&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>复习：矩阵树定理计算有根外向树 / 有根内向树的生成树个数。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>矩阵树定理中的元素可以是多项式。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>另一种计算有根内向树的方法（外向 / 无根树同理）：对每个非根节点选一个出边（父亲），使得此时所有选出的边无环，则为一棵生成树。&lt;br>
+e.g. 一个 DAG 的以 $1$ 为根的外向生成树个数等于 $\prod_{i = 2}^n \text{indeg}_i$，其中 $\text{indeg}_i$ 为点 $i$ 的入度。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出一棵 $n$ 个点的带权无向图，定义一棵生成树的权值为所有边权的 $\gcd$ 乘上所有边权之和。求所有生成树的权值之和。&lt;br>
+$n \leq 30$，$1 \leq w_i \leq 152501$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3304">「联合省选 2020 A」作业题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>定义一个图的生成树是以节点 $s$ 为根的 BFS 树，当且仅当对任意节点 $t$，图中 $s$ 到 $t$ 的最短路径长度等于树上 $s$ 到 $t$ 的最短路径长度。&lt;br>
+给出一个 $n$ 个点 $m$ 条边的无向连通图，请对每对 $i, j$ 计算「同时是以节点 $i$ 为根的 BFS 树和以节点 $j$ 为根的 BFS 树」的生成树数量 $\bmod\ 998\ 244\ 353$ 的值。&lt;br>
+$n \leq 400$，$m \leq 600$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1495/D">CF1495D BFS Trees&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出一个 $n$ 个点 $m$ 条边的 DAG。给出 $x, y$，表示在 DAG 上添加了边 $(x, y)$，加完可能有环。请你求出以 $1$ 为根的有根外向生成树数量 $\bmod \ (10^9 + 7)$ 的值。&lt;br>
+$n \leq 10^5$，$m \leq 2 \times 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2115">「HNOI2015」落忆枫音&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="割点--必经边">割点 / 必经边&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>DAG 必经点：对于 DAG 上的任意三点 $s, t, p$，点 $p$ 为 $s$ 到 $t$ 路径上的必经点，当且仅当「$s$ 到 $p$ 的路径数」×「$p$ 到 $t$ 的路径数」=「$s$ 到 $t$ 的路径数」。必经边同理。&lt;br>
+放在模 $P$ 意义下计算就不会溢出了。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于边很多的图，如果要割两条边使得 $s$ 和 $t$ 不连通，则 $s \rightarrow t$ 的任意一条路径上的 $O(n)$ 条边，至少要有一条被割掉。&lt;br>
+这样就从 $O(m^2)$ 转向了 $O(nm)$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="其他-1">其他&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>最短路图是一个&lt;strong>图&lt;/strong>，不是树。&lt;br>
+边权为正整数时，最短路图是一个 DAG。&lt;br>
+边权为非负整数时，最短路图可能有环。&lt;br>
+若删去若干边破坏了最短路图上 $s, t$ 的连通性，则原图上 $s$ 到 $t$ 的最短路长度会变大。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>无向图 DFS 树无横叉边。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>非负权图最小环 $O(nm \log n)$ 解法&lt;/strong>：$O(n)$ 枚举根节点跑单源最短路径，再枚举每条边 $(u, v, w)$ 令 $\text{ans} \leftarrow \min{\text{ans}, \text{dis}(u) + \text{dis}(v) + w}$。&lt;br>
+每次跑是 $O(m \log n)$ 的，且能跑出正确答案当且仅当根节点在最小环上。&lt;strong>若已知最小环上点编号的最小值，可以优化到 $O(\text{minid} \cdot m \log n)$。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>LGV 引理：对于&lt;strong>DAG&lt;/strong>，给 $k$ 个起点 $s_i$ 和终点 $t_i$，求两两不相交路径数。这等于 $\text{det}(A)$，其中 $A_{i, j}$ 为 $s_i$ 到 $t_j$ 的路径数。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 ${A_n}$，$A_i$ 最多有 $7$ 个因子。选出一些数使得乘积为完全平方数，求最多能选多少个。&lt;br>
+$n \leq 10^5$，$A_i \leq 10^6$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/1325/E">CF1325E Ehab&amp;rsquo;s REAL Number Theory Problem&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="数学">数学&lt;/h2>
+&lt;h3 id="期望与概率">期望与概率&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>期望逆设，概率正设（从 $i$ 走到 $n$ 的期望步数；从 $1$ 走到 $i$ 的概率）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>边期望转点期望，边概率转点概率。&lt;br>
+经过有向边 $(u, v)$ 的概率等于经过 $u$ 的概率除以 $u$ 的出度；&lt;br>
+经过有向边 $(u, v)$ 的期望次数等于经过 $u$ 的期望次数除以 $u$ 的出度。&lt;br>
+对于无向边，把 $u$ 和 $v$ 的贡献相加即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>图上经典模型：经过点 $p$ 的期望次数；从起点走到终点的期望步数；从起点走到某个特定终点的概率。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>小技巧：如果对于图上起点的期望不清楚要怎么写（例如是否需要加 $1$），可以再创建一个虚拟起点 $s$ 连一条有向边到起点 $1$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>期望转移为 DAG 时，可以直接 $O(n + m)$ 拓扑计算；&lt;br>
+否则可直接高斯消元 $O(n^3)$ 计算（带状矩阵 $O(nd^2)$ 计算）；&lt;br>
+若形式较特殊（e.g. 树上随机游走；每步 $p_i$ 概率加 $1$，$1 - p_i$ 概率重置为 $0$），可以考虑设参 $f_i = A(i)f_0 + B(i)$、$f_i = A(i)f_{i - 1} + B(i)$ 或 $f_i = A(i)f_0 + B(i)f_{\text{father}_i} + C(i)$ 等。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给定一个 $n$ 个点 $m$ 条边的无向连通图，高宏君从 $1$ 开始，每次随机选一条出边走，走到 $n$ 立即停止，求每条边的期望经过次数。&lt;br>
+$n \leq 500$，$m \leq \frac {n(n - 1)}2$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2383">「HNOI2013」游走&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="矩阵">矩阵&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>多组询问矩阵加速：用矩阵乘矩阵预处理转移矩阵的 $2^k$ 次幂 $B^{2^k}$，询问时用向量乘矩阵进行转移。$O(k^3 \log n + qk^2 \log n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>注意：矩阵乘法仅满足结合律，不满足交换律！&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>注意：行向量 / 列向量乘矩阵，向量要放在矩阵前还是后。&lt;/strong>&lt;br>
+向量乘矩阵也符合矩阵乘法的性质。&lt;br>
+行向量乘矩阵：$1 \times n$ 矩阵乘上 $n \times n$ 的矩阵为 $1 \times n$ 的矩阵，向量在前；&lt;br>
+列向量乘矩阵：$n \times n$ 矩阵乘上 $n \times 1$ 的矩阵为 $n \times 1$ 的矩阵，向量在后。&lt;br>
+&lt;strong>为了方便，建议只使用行向量而不使用列向量。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>复习：广义矩阵乘法；高斯消元；带状矩阵 $O(nd^2)$ 消元；矩阵特征值；矩阵快速幂 $O(n^4 + n^2 \log p)$（几乎不考）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="行列式">行列式&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>行列式的性质：$\text{det}(AB) = \text{det}(A)\text{det}(B)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>行列式求解：高斯消元消成倒三角矩阵 $O(n^3)$ 计算。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>行列式可以消成倒三角矩阵算，不代表倒三角矩阵和原矩阵等价&lt;/strong>。e.g. 设 $A, B$ 的倒三角矩阵为 $A', B'$，则不一定有 $|\text{det}(A + B)| = |\text{det}(A' + B')|$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="线性基">线性基&lt;/h3>
+&lt;h3 id="fwt">FWT&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>子集卷积 $O(n \log^2 n)$；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>异或 / 异与 / 或 / 与卷积 $O(n \log n)$；&lt;br>
+或 FWT / 与 FWT 的过程就是做子集求和 $F_i' = \sum_{j \subseteq i} F_j$ / 超集求和 $F_i' = \sum_{i \subseteq j} F_j$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="多项式--生成函数">多项式 / 生成函数&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>多项式基础操作：&lt;br>
+三模数 NTT / 拆系数 FFT；&lt;br>
+多项式卷积、逆元、开根、取模、积分、求导、$\ln$、$\exp$；&lt;br>
+分治 DFT；&lt;br>
+对于 $k$ 次多项式 $f(x)$ 和给定的数 $a$，$O(k \log k)$ 计算 $f(x + a)$ 的各项系数（常用于倍增思路，如阶乘 $\bmod$ 大质数，求 $x^{\overline n}$）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>生成函数基础操作：&lt;br>
+$1 + x^k + x^{2k} + \ldots + x^{(n - 1)k} = \frac {1 - x^{nk}}{1 - x^k}$；&lt;br>
+$[x^n]\frac 1{1 - x^k} = \mathrm{C}^{k - 1}&lt;em>{n + k - 1}$；&lt;br>
+$e^x = \sum&lt;/em>{i = 0}^\infty \frac 1{i!}x^i$；&lt;br>
+$\ln (1 - x) = -\sum_{i = 1}^\infty \frac 1i x^i$（乘积转求和 / 构造 $k$ 次方求和）；&lt;br>
+将答案写成卷积的形式及解一元二次方程（卡特兰数 $F(x) = xF^2(x) + 1 \Rightarrow F(x) = \frac {1 - \sqrt{1 - 4x}}{2x}$）；&lt;br>
+半自我卷积和完全自我卷积 $O(n \log n)$；&lt;br>
+背包方案计数 $O(n \log n)$（&lt;a href="https://loj.ac/p/556">「Antileaf&amp;rsquo;s Round」咱们去烧菜吧&lt;/a>）；&lt;br>
+逆背包方案计数 $O(n \log n)$（&lt;a href="https://loj.ac/p/2271">「SDOI2017」遗忘的集合&lt;/a>）；&lt;br>
+对给定数列的 $0 \ldots k$ 次方分别求和 $O(n \log n)$（&lt;a href="https://loj.ac/p/2409">「THUPC 2017」小 L 的计算题 / Sum&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="拉格朗日插值">拉格朗日插值&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>重心拉格朗日插值 $O(qk \log M)$，配合离线求逆元可达到 $O(q(k + \log M))$（参见 &lt;a href="https://loj.ac/p/165">LOJ #165 拉格朗日插值&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>连续拉格朗日插值 $O(k \log k)$（参见 &lt;a href="https://loj.ac/p/166">LOJ #166 拉格朗日插值 2&lt;/a>）；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>在需要极多次多项式乘法和求和的情况下，使用拉格朗日插值可能更有优越性（多项式乘法 $O(n \log n)$ 而整数乘法是 $O(1)$ 的）。&lt;/strong>&lt;br>
+e.g. 对矩阵 $A$ 求 $\text{det}(A)$，其中 $A_{i, j}$ 为一个一次多项式 $a_{i, j} + b_{i, j}x$。&lt;br>
+使用多项式乘法 + 高斯消元：$O(n^4 \log n)$&lt;br>
+使用拉格朗日插值：$O(n^4)$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出一棵 $n$ 个点的树，请对每个 $0 \leq k &amp;lt; n$ 求出恰有 $k$ 条边与原树重合的 $n$ 个点的树的数量。&lt;br>
+$n \leq 100$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/917/D">CF917D Stranger Trees&lt;/a>&lt;br>
+Hint：本题存在 $O(n^2), O(n^3), O(n^4)$ 解法。&lt;/li>
+&lt;/ol>
+&lt;h3 id="线性递推">线性递推&lt;/h3>
+&lt;p>转为 $O(k^2 \log n)$ 的多项式乘法 / 取模。&lt;/p>
+&lt;p>加全家桶可以实现 $O(k \log k \log n)$。&lt;/p>
+&lt;h3 id="特征方程">特征方程&lt;/h3>
+&lt;p>任意 $k$ 次常系数线性递推 $f_n = \sum_{i = 1}^k a_if_{n - i}$ 都可转化为不超过 $k$ 个等比数列的带权点和 $f_n = \sum_{i = 1}^k \alpha_i p_i^n$。&lt;/p>
+&lt;p>设 $f_n = p^n$ 并代入递推式解一元 $k$ 次方程，则 $p$ 的 $k$ 个根就是 $p_1, p_2, \ldots, p_n$ 的值，再根据 $f_1, \ldots, f_k$ 即可解出 $\alpha_1, \alpha_2, \ldots, \alpha_k$。&lt;/p>
+&lt;p>由于一元三次方程以上求根公式太过复杂，通常 $k = 2$。&lt;/p>
+&lt;p>利用该方法可将麻烦的二次递推变为两个等比数列求和。&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给定 $n, k$，求斐波那契数列前 $n$ 项的 $k$ 次方和 $\bmod\ (10^9 + 9)$ 的值。&lt;br>
+$n \leq 10^{18}$，$k \leq 10^5$。&lt;br>
+Source：&lt;a href="https://zoj.pintia.cn/problem-sets/91827364500/problems/91827369735">ZOJ3774 Power of Fibonacci&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k, f(0), f(1)$ 以及集合 $S = {A_n}$。求对于所有大小为 $k$ 的子集 $T$，$f(\sum_{x \in T} x)$ 的和 $\bmod\ 99991$。$\forall i \geq 2, f(i) = 2f(i - 1) + 3f(i - 2)$。&lt;br>
+$n \leq 10^5$，$a_i \leq 10^9$，$f(0), f(1) &amp;lt; 99991$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6183">LOJ #6183 看无可看&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="数论与计数">数论与计数&lt;/h2>
+&lt;h3 id="常识-4">常识&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>$\lfloor \frac n{i^k} \rfloor$ 的取值只有 $O(\sqrt [k + 1]n)$ 种。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Powerful Number（质因子次数大于等于 $2$ 的整数）个数为 $O(\sqrt n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>质数 / 质数的正整数次方（$p^c$）个数为 $O(\frac n{\log n})$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$d(n)$ 是个很小的数字，不要直接觉得它很大 / 很小就放弃思考。$O(d(n)) &amp;lt; O(\sqrt n)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>整除分块映射小技巧（多用于杜教筛 / 洲阁筛等）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">dn &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">|&lt;/span>{n &lt;span style="color:#f92672">//&lt;/span> i}&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#75715e"># dn 为 n // i 的取值种数&lt;/span>
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>(x): &lt;span style="color:#75715e"># 必须保证 x = n // i&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> x &lt;span style="color:#f92672">*&lt;/span> x &lt;span style="color:#f92672">&amp;lt;=&lt;/span> n: &lt;span style="color:#75715e"># 在 C++ 下请注意溢出&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> x
+&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;span style="color:#66d9ef">return&lt;/span> dn &lt;span style="color:#f92672">-&lt;/span> n &lt;span style="color:#f92672">/&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="6">
+&lt;li>
+&lt;p>光速幂：当底数 $b$ 固定时，可 $O(\sqrt p)$ 预处理 $O(1)$ 回答 $b^p \bmod m$ 的值。&lt;br>
+具体：设 $B = \lceil \sqrt m \rceil$，对 $0 \leq i &amp;lt; B$ 预处理 $b^i$ 和 $b^{iB}$。&lt;br>
+该分块思想也可用在众多的题目上，e.g. $O(1)$ 回答 int 范围的 $\text{popcount}$、$\text{highbit}$、$\lfloor \log_2 \rfloor$。&lt;br>
+模板题：&lt;a href="https://loj.ac/p/162">LOJ #162 快速幂 2&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>离线线性逆元：给定 $n$ 个数和模数 $p$，可以 $O(n + \log p)$ 计算每个数的逆元。（&lt;a href="https://loj.ac/p/161">LOJ #161 乘法逆元 2&lt;/a>）&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="质因数分解--质数判断">质因数分解 / 质数判断&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>暴力分解可预处理 $O(\sqrt V)$ 内的所有质数，达到预处理 $O(\sqrt V)$ 单个 $O(\frac {\sqrt V}{\log V})$ 的复杂度。&lt;br>
+当 $n \leq 10^5$，$V \leq 10^9$ 时可用 Exact Division 优化暴力在 0.3s 内分解（详见&lt;a href="#%E5%8D%A1%E5%B8%B8%E5%B0%8F%E6%8A%80%E5%B7%A7">卡常小技巧&lt;/a>章节）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>大质数判定：Miller-rabin $O(T\log^2 p)$，$T$ 为探测次数，$T \approx 15$ 时较优；&lt;br>
+大整数分解：Pollard-Rho $O(n^{\frac 14})$，常数较大，需要结合 Miller-Rabin。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\sqrt [3]n$ 分解法：适用于部分有特殊性质的题目。&lt;br>
+对所有 $a_i$ 仅分解掉 $\leq \sqrt[3]{a_i}$ 的质因子，则分解后的 $a_i' \in {1, p, pq}$，其中 $p, q$ 是两个大于 $\sqrt[3]{a_i}$ 的质数。在这之后，考虑对 $1, p, pq$ 三种情况特殊处理。&lt;br>
+尽管不是所有题目都可这样，但确实有能这样做的题目。一般是 $n \leq 10^5, a_i \leq 10^9$，且看起来和质因数分解有很强相关性的题目。&lt;br>
+虽然数据范围不大时可以被 Exact Division + 暴力分解卡过，但数据一大就还是得乖乖用 $\sqrt[3]{a_i}$ 分解。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>套路：对于要求 $a, b$ 乘积为完全 $k$ 次方数的题目，可以将 $a, b$ 中的 $k$ 次方因子除去，记作 $a', b'$，则对于一个 $a'$，仅有一个 $b'$ 使得 $a&amp;rsquo;b'$ 为完全 $k$ 次方数。&lt;/strong>&lt;br>
+这个 $b'$ 是可以简单计算的。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="容斥">容斥&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>基本操作：二项式反演，Min-max 反演，子集反演，单位根反演；&lt;br>
+恰好转为至少 / 至多，$1$ 转为 $\text{any} - 0$，至少有一个满足转为全都不满足。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>需要时可用 DP 维护容斥系数。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题（较难）：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>已知排列 ${p_n}$ 相邻两项的大小关系，求满足大小关系的排列 ${p_n}$ 数量。&lt;br>
+$n \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/575">「LibreOJ NOI Round #2」不等关系&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有一棵 $n$ 个点的树，树的形态已知，边有黑白两种颜色但未知。$m$ 个限制，每次给出 $u_i, v_i$，表示路径 $u_i \rightarrow v_i$ 上至少有一条黑色边。&lt;br>
+求所有 $2^{n - 1}$ 棵树中，满足限制的树的数量 $\bmod\ 998,244,353$。&lt;br>
+$n, m \leq 5 \times 10^5$，$u_i$ 为 $v_i$ 的祖先。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3340">「NOI2020」命运&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="组合数">组合数&lt;/h3>
+&lt;ol>
+&lt;li>基础操作：&lt;br>
+范德蒙德卷积 $\sum_{i=0}^k \mathrm{C}^i_n \mathrm{C}^{k - i}_m = \mathrm{C}^k_{n + m}$；
+降次 $\mathrm{C}^i_n = \mathrm{C}^{i - 1}_{n - 1} + \mathrm{C}^i_{n - 1}$；&lt;br>
+上指数求和 $\sum_{i = k}^n \mathrm{C}^k_i = \mathrm{C}^{k + 1}_{n + 1}$；&lt;br>
+下指数求和 $\sum_{i = 0}^n \mathrm{C}^i_n = 2^n$；&lt;br>
+二项式展开 $(a + b)^k = \sum_{i = 0}^k \mathrm{C}^i_k a^i b^{k - i}$；&lt;br>
+Lucas 定理 / 扩展 Lucas 定理；&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 $n, k, p, r$，求 $\sum_{i = 0}^n \mathrm{C}^{ik + r}_{nk}$ 对 $p$ 取模的值。&lt;br>
+$n \leq 10^9$，$0 \leq r &amp;lt; k \leq 50$，$2 \leq p &amp;lt; 2^{30}$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2143">「SHOI2017」组合数问题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$t$ 组数据，每次给出 $n, k$，求 $\sum_{i = 0}^k \mathrm{C}^i_n$ 对 $2333$ 取模的值。&lt;br>
+$t \leq 10^5$，$n, k \leq 10^{18}$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2038">「SHOI2015」超能粒子炮・改&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="crt--excrt">CRT / exCRT&lt;/h3>
+&lt;p>一般用来分解模数，例如题目给的模数为合数，则可分解为若干 $p^k$ 分别求解。有时模数虽然很大，但分解后的 $p^k$ 可能很小。&lt;/p>
+&lt;p>也可以用来缩小值域。例如，若知道答案不超过 $10^{18}$，可以选取 $P_1 = 10^9 + 7, P_2 = 10^9 + 9$，分别计算两个模数下的答案后合并。尤其在中间计算过程中需要实数的情况，用这种方法可以规避精度误差。&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 $n$ 个点 $m$ 条边的无向图，无重边无自环，求计算生成树个数。&lt;br>
+$n \leq 12$，$m \leq \frac {n(n - 1)}2$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/SP104">SP104 HIGH - Highways&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="欧拉定理--扩展欧拉定理">欧拉定理 / 扩展欧拉定理&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>欧拉定理：对于 $\gcd(a, m) = 1$，有 $a^{\varphi(m)} \equiv 1 \pmod m$。&lt;strong>注意：这不代表 $a^k \bmod m$ 的最小循环节为 $\varphi(m)$！&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>扩展欧拉定理：对于 $p \geq \varphi(m)$ 有 $a^p \equiv a^{p \bmod \varphi(m) + \varphi(m)} \pmod m$。直观理解：$a^k \bmod m$ 的循环节为 $m$，&lt;strong>但仅在 $k \geq \varphi(m)$ 后才正式进入循环节内。&lt;/strong>&lt;br>
+理解：类似于循环小数 $0.7879123123123 \ldots$，前面有一段是不循环的。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 $n, m, p, c$，一个数列 ${A_n}$，维护 $m$ 个操作，操作形如区间 $a_i \leftarrow c^{a_i}$，以及询问区间和 $\bmod\ p$。&lt;br>
+$n, m \leq 50000$，$p \leq 10^8$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2142">「SHOI2017」相逢是问候&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="斯特林数">斯特林数&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>第一类斯特林数 $\left[\begin{matrix}n \newline k\end{matrix}\right]$：圆排列划分数&lt;br>
+递推公式 $\left[\begin{matrix}n \newline k\end{matrix}\right] = \left[\begin{matrix}n - 1 \newline k - 1\end{matrix}\right] + (n - 1)\left[\begin{matrix}n - 1 \newline k\end{matrix}\right]$&lt;br>
+上升幂转普通幂 $x^{\overline k} = \sum_{i = 0}^k \left[\begin{matrix}k \newline i\end{matrix}\right]x^i$&lt;br>
+下降幂转普通幂 $x^{\underline k} = \sum_{i = 0}^k (-1)^{i + k} \left[\begin{matrix}k \newline i\end{matrix}\right]x^i$&lt;br>
+单行 $O(n \log n)$ 计算方法：倍增计算生成函数 $x^{\overline n}$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第二类斯特林数 $\left{\begin{matrix}n \newline k\end{matrix}\right}$：集合划分数&lt;br>
+递推公式 $\left{\begin{matrix}n \newline k\end{matrix}\right} = \left{\begin{matrix}n - 1 \newline k - 1\end{matrix}\right} + k\left{\begin{matrix}n - 1 \newline k\end{matrix}\right}$&lt;br>
+容斥公式 $\left{\begin{matrix}n \newline k\end{matrix}\right} = \frac 1{k!}\sum_{i = 0}^k (-1)^i \mathrm{C}^i_k (k - i)^n$&lt;br>
+普通幂转下降幂 $x^k = \sum_{i = 0}^k \left{\begin{matrix}k \newline i\end{matrix}\right}x^{\underline i}$&lt;br>
+单行 $O(n \log n)$ 计算方法：利用容斥公式转为 DFT 卷积&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>下降幂可简易离散积分 / 求导：&lt;br>
+$\Delta x^{\underline k} = (x + 1)^{\underline k} - x^{\underline k} = kx^{\underline {k - 1}}$&lt;br>
+$\sum_1^n x^{\underline k} = \sum_{i = 1}^{n - 1} x^{\underline k} = \frac {x^{\underline k + 1}}{k + 1}$&lt;br>
+下降幂其实等价于排列数（$n^{\underline k} = \mathrm{A}^k_n$），转化为 $\mathrm{C}^k_n$ 后也可用组合数上指数求和得到同样的积分公式。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 $n, x, p$ 以及一个 $m$ 次多项式 $f(k)$ 的系数 $a_0 \ldots a_m$，求
+$$\left(\sum_{k = 0}^n f(k) x^k \mathrm{C}^k_n\right) \bmod p$$&lt;br>
+$n, x, p, a_i \leq 10^9$，$m \leq 1000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/3300">「联合省选 2020 A」组合数问题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，求 $x^n + \sum_{x = 1}^{n - 1} 2^{n - 1 - x}x^k$ 对 $10^9 + 7$ 取模后的值。&lt;br>
+$n \leq 10^{1000000}, k\leq 50000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6054">LOJ #6054 「from CommonAnts」一道数学题&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="对称转化">对称转化&lt;/h3>
+&lt;p>如果某个模型具有对称性，可考虑利用对称性优化求解。&lt;/p>
+&lt;p>e.g. 抛掷 $2n$ 次硬币，求正面次数大于反面次数的概率。&lt;/p>
+&lt;p>注意到正面和反面是等价的，所以答案即为 $1$ 减去正面次数等于反面次数的概率，即 $1 - \frac {\mathrm{C}^n_{2n}}{2^{2n}}$。&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>有一个只有 &lt;code>0&lt;/code>、&lt;code>1&lt;/code> 和退格键的键盘，敲击键盘 $n$ 次最后得到的字符串为 $s$。给出 $n, s$，询问合法的方案数 $\bmod\ (10^9 + 7)$ 的值。&lt;br>
+$n, |s| \leq 5000$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc059/tasks/arc059_d">ARC059F Unhappy Hacking&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>多组数据，每次给出 $a, b, k$，令小 A 抛掷 $a$ 次硬币，小 B 抛掷 $b$ 次硬币，求小 A 正面次数大于小 B 正面次数的方案数 $\bmod\ 10^k$。&lt;br>
+$a, b \leq 10^{15}$，$0 \leq a - b \leq 10000$，$1 \leq k \leq 9$，数据组数不超过 $10$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2023">「AHOI / HNOI2017」抛硬币&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="莫反">莫反&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>基本套路：&lt;br>
+$I * \varphi = \text{id}$；&lt;br>
+$I * \mu = \epsilon$；&lt;br>
+$\text{id} * \mu = \varphi$&lt;strong>（注意和上一条区分）&lt;/strong>；&lt;br>
+$$\sum_{i = 1}^n [\gcd(i, n) = 1]i = \frac {\varphi(n)n}2 + [n = 1]\frac 12$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>$n$ 以内无大于等于 $k$ 次质因子的整数个数&lt;/strong>：
+$$\sum_{i = 1}^n [\nexists x \geq 2, x^k \mid i] = \sum_{i = 1}^n \sum_{d^k \mid n} \mu(d) = \sum_{d = 1}^{\lfloor \sqrt[k]n \rfloor} \mu(d) \lfloor \frac n{d^k} \rfloor$$
+当取 $k = 2$ 时即为 $\sum_{i = 1}^n \mu^2(i)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\mu, d, \varphi$ 的完全积性公式（不需要满足 $\gcd(a, b) = 1$）：
+$$d(ab) = \sum_{i|a} \sum_{j|b} [\gcd(i, j) = 1]$$
+$$\mu(ab) = \mu(a)\mu(b)[\gcd(a, b) = 1]$$
+$$\varphi(ab) = \varphi(a)\varphi(b) \frac {\gcd(a, b)}{\varphi(\gcd(a, b))}$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>卡住的时候可以考虑：&lt;br>
+1) 交换求和顺序；&lt;br>
+2) 设 $F(n) = \ldots, S(n) = 1 + 2 + \ldots + n$，简化表达式以更方便考虑。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>形如 $\sum_{d \mid n} f(d)$ 的式子（$f(d)$ 为积性函数），当 $n$ 很大时可考虑对 $n$ 分解质因数，枚举质因子次数 $O(\sqrt n)$ 求解。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>注意对 $\prod$ 相关式子要谨慎处理，不要瞎交换变量（最好处理成指数后对求和 $\sum$ 的形式进行莫反）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;!-- 6. 注意 $[\gcd(i, j, k) = d] \neq \sum_{d | t} \mu(\frac td) [t \mid gcd(i, j, k)]$（旧试题）。 -->
+&lt;h3 id="线性筛">线性筛&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>线性筛可以线性筛&lt;strong>任意&lt;/strong>积性函数（只要在 $p^c$ 处可以均摊 $O(\log n)$ 求值即可）。&lt;br>
+小技巧：当 $i \bmod p_j = 0$ 时可以暴力计算 $ip_j = i&amp;rsquo;p_j^k$（$\gcd(i', p_j) = 1$），计算 $f(ip_j) = f(i') \times f(p_j^k)$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于比较奇怪的函数，可设 $n = \prod_{i = 1}^k p_i^{c_i}$（即质因数分解）后考虑 $f(n)$ 的值。&lt;br>
+对于积性函数只需要考虑 $f(p^c)$ 的值。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果某个函数确实复杂，可以考虑差分 / 前缀和一下试试。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>整除分块线性筛（&lt;a href="https://loj.ac/p/6680">#6680. 「hyOI2019」henry_y 的函数&lt;/a>）了解一下？&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>$f(n)$ 为积性函数，$f(p^c) = cp^{kc^2}$。求 $\left(\sum_{i = 1}^n f(i)\right) \bmod 998244353$ 的值。&lt;br>
+$n \leq 3 \times 10^7$。&lt;br>
+Source：经典题&lt;/li>
+&lt;/ol>
+&lt;h3 id="杜教筛">杜教筛&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>杜教筛构造的几个常见思路：&lt;br>
+1) 狄利克雷卷积满足交换律和结合律 $f * g = g * f, f * g * h = f * (g * h)$。&lt;br>
+2) $\mu * I = \epsilon, \varphi * I = \text{id}$，用这个来消除一些不好算的函数。&lt;br>
+3) 对于&lt;strong>完全积性函数&lt;/strong> $f$，积性函数 $g, h$，有 $(f \cdot g) * (f \cdot h) = f \cdot (g * h)$。（求 $\text{id} \cdot \varphi$ 的前缀和）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>杜教筛可以知二求一，即对于 $f = g * h$，如果能计算 $g, h$ 的前缀和，自然也能计算 $f$ 的前缀和。e.g. 计算 $\varphi * \text{id}$ 的前缀和。&lt;br>
+&lt;strong>不要老是把要求的函数带到 $g$ 里面啊！&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>杜教筛和洲阁筛套数论分块，复杂度不变。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>给出 $n, p$，求 $\sum_{i = 1}^n \sum_{j = 1}^n ij\gcd(i, j)$ 对 $p$ 取模的值。 &lt;br>
+$n \leq 10^{10}$，$p \leq 1.1 \times 10^9$，$p$ 为质数。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P3768">洛谷 P3768 简单的数学题&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>推荐题目（&lt;strong>强烈推荐！&lt;/strong>）：&lt;a href="https://darkbzoj.tk/problems?search=DZY+Loves+Math">DZY Loves Math 系列&lt;/a>&lt;/p>
+&lt;h3 id="贝尔级数">贝尔级数&lt;/h3>
+&lt;p>杜教筛构造函数的另一个思路。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>把狄利克雷卷积转为多项式卷积。&lt;br>
+定义式：$\forall p \in \mathbb{P}$，$B_p(f(x)) = \sum_{i = 0}^\infty f(p^i) x^i$；&lt;br>
+一些性质：&lt;br>
+$f = g * h \Leftrightarrow B_p(f(x)) = B_p(g(x))B_p(h(x))$&lt;br>
+$f = g + h \Leftrightarrow B_p(f(x)) = B_p(g(x)) + B_p(h(x))$&lt;br>
+$f = g \cdot \text{id}^k \Leftrightarrow B_p(f(x)) = B_p(f(p^kx))$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>常见函数的贝尔级数：&lt;br>
+$B_p(I) = \frac 1{1 - x}$；&lt;br>
+$B_p(\text{id}^k) = \frac 1{1 - p^kx}$；&lt;br>
+$B_p(\epsilon) = 1$；&lt;br>
+$B_p(\mu) = 1 - x$；&lt;br>
+$B_p(\mu^2) = 1 + x$；&lt;br>
+$B_p(\varphi) = B_p(I)B_p(\text{id}) = \frac 1{(1 - x)(1 - px)}$；&lt;br>
+$B_p(\lambda) = \frac 1{1 + x}$（$\lambda(\prod_{i = 1}^k p_i^{c_i}) = (-1)^{\sum_{i = 1}^k c_i}$）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;p>*设积性函数 $f(p^k) = p^k + \mu(p^k)$，求 $\sum_{i = 1}^n f(i)$。*&lt;/p>
+&lt;p>$B_p(f(x)) = B_p(\text{id}) + B_p(\lambda) - B_p(\epsilon) = \frac 1{1 - px} + \frac 1{1 + x} - 1$。&lt;/p>
+&lt;p>构造 $B_p(g(x)) = (1 - px)(1 + x)$，则 $g = (\mu \cdot \text{id}) * \mu^2$，$B_p(h(x)) = B_p(f(x))B_p(g(x)) = 1 + x + 1 - px - (1 - px)(1 + x) = 1 + px^2$，所以 $h = \mu^2 \cdot \text{id}$。&lt;/p>
+&lt;p>取 $h = \mu^2 \cdot \text{id}$，$g = \mu^2 * (\mu \cdot \text{id})$，杜教筛计算即可。&lt;/p>
+&lt;h3 id="powerful-number-筛">Powerful Number 筛&lt;/h3>
+&lt;p>要求&lt;strong>积性&lt;/strong>函数 $f(n)$ 的前缀和时，考虑构造简单&lt;strong>积性&lt;/strong>函数 $g(n)$ 质数拟合 $f(n)$（即对于 $p \in \mathbb{P}$ 有 $f(p) = g(p)$），再设&lt;strong>积性&lt;/strong>函数 $h(n)$ 使得 $f = g * h$，则 $h$ 仅在 Powerful Number 处有非零值。&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\sum_{i = 1}^n f(i) &amp;amp;= \sum_{i = 1}^n \sum_{d \mid i} g(d)h(\frac id) \newline
+&amp;amp;= \sum_{d \text{ is powerful number}, d \leq n} h(d) \sum_{i = 1}^{\lfloor \frac nd \rfloor} g(i) \newline
+\end{aligned}
+$$&lt;/p>
+&lt;p>注意到 $h$ 也为积性函数，所以可以枚举 $d$ 的质因数分解进行计算。&lt;/p>
+&lt;p>$$h(p^c) = f(p^c) - \sum_{i = 0}^{c - 1} h(p^i) g(p^{c - i})$$&lt;/p>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>求积性函数 $f(p^c) = p \oplus c$ 的前缀和 $\left(\sum_{i = 1}^n f(i) \right)\bmod (10^9 + 7)$。&lt;br>
+$n \leq 10^{10}$。&lt;br>
+注意到对于 $p &amp;gt; 2$ 有 $f(p) = p - 1$，因此设 $g = \varphi$ 进行拟合。当然这里我们要对包含 $2^k$ 因子的 $n$ 进行特殊处理，所以还要枚举 $2^1, 2^2, 2^3, \ldots$ 进行补足。&lt;br>
+复杂度为 $O(n^{\frac 23} + n^{\frac 12} \log n) = O(n^{\frac 23})$。~~结果这杜教筛跑不过 $O(\frac {n^{\frac 34}}{\log n})$ 的 Min_25 筛。~~&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求积性函数 $f(p^c) = p^k$ 的前缀和 $\left(\sum_{i = 1}^n f(i) \right)\bmod (10^9 + 7)$。&lt;br>
+$k \leq 10$，$n \leq 10^9$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="模运算">模运算&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>可以以牺牲部分正确率的代价，强行将计算放到模意义下考虑&lt;/strong>。&lt;br>
+这一方法有时也会引出一些弱化的但是有用的结论。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\bmod\ 2$ 意义下 $-1$ 和 $1$ 是等价的，比如行列式 / 容斥系数等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>中间计算过程需要 $\sqrt t$ 但 $t$ 在 $\bmod\ M$ 意义下没有二次剩余时，可考虑扩域将每个数 $x$ 表示为 $a + b\sqrt t$ 的形式（类比复数）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若要支持&lt;strong>整数域&lt;/strong>上的&lt;strong>乘除&lt;/strong>（&lt;strong>不能支持加减&lt;/strong>），可令 $x = ab$，其中 $a$ 为令 $\gcd(a, m) = 1$ 的最大整数 $a$。对于 $a$，当 $a &amp;gt; 0$ 时存在逆元 $a^{-1} \equiv a^{\varphi(m) - 1} \pmod m$，可以直接维护；对于 $b$，$b$ 的质因子都是 $m$ 的质因子，维护其质因子的指数即可。&lt;br>
+尽管如此，若只是支持乘除，也可以支持到实数域上；&lt;strong>但在求值或比较两个数是否相等时必须保证 $b \in \mathbb{N}$&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给出 $n$ 个 $m$ 维向量 $\vec {a_i}$，第 $i$ 个向量有费用 $c_i$。求选出若干向量，使得这些向量线性无关且总费用最小。&lt;br>
+$n, m \leq 500$，$0 \leq a_{i, j} \leq 1000$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2108">「JLOI2015」装备购买&lt;/a>&lt;br>
+Hint：实数精度太难分析了，有更容易保证正确率的方法吗？&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求 $n + n$ 个点的二分图完全匹配数量 $\bmod\ 2$ 的值。&lt;br>
+$n \leq 100$。&lt;br>
+Source：&lt;a href="https://atcoder.jp/contests/arc054/tasks/arc054_c">ARC054C 鯛焼き&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, a, b, p$（$p$ 不一定为质数），求&lt;br>
+$$\sum_{i = 0}^{\lfloor \frac n2 \rfloor} a^ib^{n - 2i} \mathrm{C}^{2i}_n$$
+Source：&lt;a href="https://www.cometoj.com/contest/72/problem/%EF%BC%A4?problem_id=4033">CometOJ1851 [Contest #13]火鼠的皮衣-不焦躁的内心&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出模数 $M$，维护一个正整数 $x$，$q$ 次操作，支持令 $x$ 乘上给定的正整数 $m$ 或撤销第 $k$ 次操作（必定为乘法操作），每次操作后输出 $x \bmod M$。&lt;br>
+$q \leq 10^5$，$m \leq 10^9$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2573">「TJOI2018」数学计算&lt;/a>&lt;br>
+Hint：本题可强制在线。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="原根">原根&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>当 $m = 2, 4, p^c, 2p^c$（$p$ 为奇质数）时，模 $m$ 意义下有 $O(\varphi(\varphi(m))$ 个原根；否则无原根。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>只有当 $m$ 为质数时，原根的幂次 $g^p$ 才能取遍 $[1, m)$ 的所有整数。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>原根判断：$O(\sqrt m)$ 预处理，$O(\omega(m)\log m)$ 判断；求解最小原根；求解所有原根。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\mathbb{Z}_m$ 下对原根取离散对数 $\text{ind}_g(n) = x \text{ where } g^x \equiv n \pmod m$，可以类比为 $\mathbb{R}$ 下对 $e$ 取对数 $\ln n$。&lt;br>
+可将乘法转为加法 $ab = g^{\text{ind}_g(a) + \text{ind}_g(b)}$，幂次转为乘法 $a^b = g^{\text{ind}_g(a) \times b}$（&lt;strong>减少一个 $O(\log)$&lt;/strong>），但难以维护加减法。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>单位根反演时，若模 $m$ 意义下存在单位根 $\omega_n = g^{\frac {\varphi(m)}n}$，可以直接计算其值，把多项式直接转为整数计算。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配合 nBSGS 可以做到 $O(q + \sqrt {qM})$ 求模质数 $M$ 的离散对数，配合 &lt;a href="https://www.ruanx.net/pohlig-hellman/">Pohlig-Hellman&lt;/a> 可以做到 $O(q \log M)$ 求 $M = 998244353$ 或 $10^9 + 9$ 的离散对数（对 $M = 10^9 + 7$ 无效）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>例题：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$T$ 组数据，每次给出 $n, s, a_{0 \ldots 3}$，求 $\sum_{i = 0}^n \mathrm{C}^i_n s^i a_{i \bmod 4}$ 对 $998244353$ 取模的值。&lt;br>
+$T \leq 10^5$，$n \leq 10^{18}$，$a_i \leq 10^8$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6485">LOJ #6485 LJJ 学二项式定理&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给出 $n, k$，满足 $k$ 为 $2$ 的非负整数幂次，求 $\sum_{i = 0}^{\lfloor \frac nk \rfloor} \mathrm{C}^{ik}_n$ 对 $998244353$ 取模的值。&lt;br>
+$n \leq 10^{15}$，$k \leq 2^{20}$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/6247">LOJ #6247 九个太阳&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="其他-2">其他&lt;/h2>
+&lt;h3 id="表达式求值">表达式求值&lt;/h3>
+&lt;p>&lt;del>不会真的只有我一个人 WC2021 T2 后缀表达式写错吧？哦，还真是，那没事了。&lt;/del>&lt;/p>
+&lt;p>咕了。&lt;/p>
+&lt;h3 id="杂项">杂项&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>求本质相同的方案数平方和 = 选出两个方案使其本质相同的方案数。&lt;br>
+e.g. 给出序列 ${A_n}$，求所有本质不同子序列出现次数的平方和。$n \leq 5000$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求 $\min(f(i), g(i))$ 可考虑以 $O(\log V)$ 的代价二分 $\min(f(i), g(i)) \geq \text{mid}$，转化为 $f(i) \geq \text{mid}$ 且 $g(i) \geq \text{mid}$。&lt;br>
+e.g. 给出长度为 $n$ 的字符串 $s$，$m$ 个询问，每次给出 $a, b, c, d$，询问 $s_{a \ldots b}$ 的所有**子串**与 $s_{c \ldots d}$ 的 $\text{lcp}$ 的最大值。&lt;br>
+$n, m \leq 10^5$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2059">「TJOI / HEOI2016」字符串&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01 分数规划。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>带直线限制的类过河卒模型。做法是把终点沿直线对称翻转。&lt;br>
+e.g. 给出 $n, m$，询问任意前缀中 $1$ 的个数不少于 $0$ 的个数，且恰有 $n$ 个 $1$ 和 $m$ 个 $0$ 的字符串 $S$ 的种类数 $\bmod\ 20100403$。&lt;br>
+$n, m \leq 10^6$。&lt;br>
+Source：&lt;a href="https://www.luogu.com.cn/problem/P1641">「SCOI2010」生成字符串&lt;/a>&lt;br>
+$~$&lt;br>
+进阶：给出 $n, m$。高宏君在平面直角坐标系的 $(0, 0)$ 处，要走到 $(n + m + 1, n)$，任意时刻只能向上或向右走，且必须保证 $y \leq x \leq y + m + 1$，求方案数 $\bmod\ (10^9 + 7)$。&lt;br>
+$n, m \leq 10^6$。&lt;br>
+Source：&lt;a href="https://loj.ac/p/2109">「JLOI2015」骗我呢&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>最大中位数：二分答案 $\text{mid}$，令 $B_i = \begin{cases} 1, &amp;amp;A_i \leq \text{mid} \newline -1, &amp;amp;A_i &amp;gt; \text{mid} \end{cases}$，则某一序列中位数大于等于 $\text{mid}$ 当且仅当 $\sum B_i \geq 0$。&lt;br>
+最大平均数：二分答案 $\text{mid}$，令 $B_i = A_i - \text{mid}$，则某一序列平均数大于等于 $\text{mid}$ 当且仅当 $\sum B_i \geq 0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求区间出现次数严格大于 $\frac nk$ 的整数：维护当前候选整数集合 $S$ 以及 $S$ 中每个整数的“权值”，逐次加入 $x$：&lt;br>
+1) 若 $|S| = k - 1$，将 $S$ 中所有元素权值减去 $1$，权值变为 $0$ 的扔出 $S$；若操作后 $|S| &amp;lt; k - 1$，将 $x$ 加入 $S$，权值为 $1$。&lt;br>
+2) 否则，将 $x$ 加入 $S$，权值为 $1$。&lt;br>
+最后还需要对每个数验证是否出现次数大于 $\frac nk$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>经典题：求最长的众数不唯一区间。（&lt;a href="https://codeforces.ml/problemset/problem/1446/D1">CF1446D1 Frequency Problem (Easy Version)&lt;/a>）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>求括号序列是否合法：括号序列合法当且仅当任意前缀和非负且总和为 $0$。&lt;br>
+e.g. 给定字符串 $S$，其中 $S_i \in {\texttt{(}, \texttt{)}, \texttt{?}}$，每个问号位置有两个代价 $a_i, b_i$，分别表示填入左括号的费用和右括号的费用，求填入括号使得串合法且费用最小。&lt;br>
+$|S| \leq 5 \times 10^4$，$1 \leq a_i, b_i \leq 10^6$。&lt;br>
+Source：&lt;a href="https://codeforces.ml/problemset/problem/3/D">CF3D Least Cost Bracket Sequence
+time limit per test1 second&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>$~$&lt;/p>
+&lt;p>$~$&lt;/p>
+&lt;h2 id="卡常小技巧">卡常小技巧&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>对于 $n \leq 10^5$，$a_i \leq 10^9$，需要分解质因数的情况，可利用 &lt;a href="https://www.luogu.com.cn/blog/tsukimaru/solution-p5071">Exact Division&lt;/a> 优化后直接 $O(\sqrt a_i + n\frac {\sqrt a_i}{\log a_i})$ 暴力分解（用时约 0.2s~0.4s），而不需要进行 $\sqrt[3]{a_i}$ 分解或 Pollard-Rho。&lt;br>
+使用 Exact Division 优化后的暴力素数分解，1s 可运行约 $10^9$ 次计算。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>除法 / 取模常数很大，请尽可能减少除法 / 取模次数。&lt;br>
+gcc 会对常量（包括 &lt;code>const&lt;/code>）的除法 / 取余进行常数优化（约 3~4 倍），对变量（&lt;strong>包括全程不改变值的变量&lt;/strong>）则会直接使用内置除法。&lt;br>
+&lt;strong>请记得给常量加上 &lt;code>const&lt;/code> 修饰符，避免产生不必要的常数开销。&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>循环展开。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>减小数组大小。数组过大（$\geq 10^7$）会导致常数变大。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>保证内存访问连续。访问 $A[k][1 \ldots n]$ 会比访问 $A[1 \ldots n][k]$ 更快。&lt;/p>
+&lt;/li>
+&lt;/ol></content></item><item><title>自我介绍</title><link>/main/posts/self-introduction/</link><pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate><guid>/main/posts/self-introduction/</guid><description>.userbox { float: right; border: 1px solid rgba(35, 176, 255, 1); /* background: #F8F8F8; */ width: 50%; padding: 0.5em 0.5em 0 0.5em; margin-left: 1em; margin-bottom: 0.5em; } .userboxitem { border-spacing: 1px; width: 100%; margin: 0.5em 0; } .userboxicon { text-align: center; width: 17%; } .userboxicon img { margin: 0 auto; } 用户框
+身份 这个用户是一只水水獭。 这个用户是一位神奇宝贝百科卡牌工程工作者。 OI 这个用户是一名 OIer。 语言 zh-N 我的母语是汉语。 en-2 I am able to read and write with a basic level of English.</description><content>&lt;style type="text/css">
+.userbox {
+float: right;
+border: 1px solid rgba(35, 176, 255, 1);
+/* background: #F8F8F8; */
+width: 50%;
+padding: 0.5em 0.5em 0 0.5em;
+margin-left: 1em;
+margin-bottom: 0.5em;
+}
+.userboxitem {
+border-spacing: 1px;
+width: 100%;
+margin: 0.5em 0;
+}
+.userboxicon {
+text-align: center;
+width: 17%;
+}
+.userboxicon img {
+margin: 0 auto;
+}
+&lt;/style>
+&lt;div class="userbox">
+&lt;p style="text-align: center">用户框&lt;/p>
+&lt;h4>身份&lt;/h4>
+&lt;table class="userboxitem" style="border:1px solid #0d6ac8; background: #7bf;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="background:#39f;">&lt;img href="https://wiki.52poke.com/wiki/水水獭" src="https://i.loli.net/2020/08/11/nJFObthVYkjAiaL.png">&lt;/th>
+&lt;td>这个用户是一只&lt;b>&lt;a href="https://wiki.52poke.com/wiki/水水獭">水水獭&lt;/a>&lt;/b>。&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;table class="userboxitem" style="border:1px solid#AAA;background:#DDD">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon">&lt;img href="https://wiki.52poke.com/wiki/File:神奇宝贝百科卡牌工程.png" src="https://i.loli.net/2020/08/11/Cq2fZEukJt7Urzc.png">&lt;/th>
+&lt;td style="color:#464">
+这个用户是一位&lt;b>&lt;a href="https://wiki.52poke.com/wiki/神奇宝贝百科:卡牌工程">神奇宝贝百科卡牌工程&lt;/a>&lt;/b>工作者。
+&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;table class="userboxitem" style="border:1px solid black; background: black;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="color: white;">OI&lt;/th>
+&lt;td style="color: white;">这个用户是一名 OIer。&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;h4>语言&lt;/h4>
+&lt;table class="userboxitem" style="border:1px solid#8a8;background: #e3ffe3; color: black;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="background:#c6ffc6;">&lt;a href="http://zh.wikipedia.org/wiki/现代标准汉语">zh-N&lt;/a>&lt;/th>
+&lt;td>我的母语是&lt;b>汉语&lt;/b>。&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;table class="userboxitem" style="border:1px solid#8a8;background: #e3ffe3; color: black;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="background:#c6ffc6;">&lt;a href="http://zh.wikipedia.org/wiki/英语">en-2&lt;/a>&lt;/th>
+&lt;td>
+&lt;span lang="en">I am able to read and write with a basic level of &lt;b>English&lt;/b>.&lt;/span>
+&lt;hr>
+我可以读懂&lt;b>英语&lt;/b>，并可以进行基本的读写。
+&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;table class="userboxitem" style="border:1px solid#8a8;background: #e3ffe3; color: black;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="background:#c6ffc6;">&lt;a href="http://zh.wikipedia.org/wiki/日语">ja-1&lt;/a>&lt;/th>
+&lt;td>
+&lt;span lang="ja">私は基本的な&lt;b>日本語&lt;/b>を理解していますが、話したり書いたりするのは困難です。&lt;/span>
+&lt;hr>
+我可以理解基本的&lt;b>日语&lt;/b>，不过很难说或写。
+&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;h4>性格&lt;/h4>
+&lt;table class="userboxitem" style="border:1px solid #356854; background: #A8FDB8; color: black;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="background-color: #79E3A4;">&lt;a href="https://www.16personalities.com/ch/infp-人格">INFP&lt;/a>&lt;/th>
+&lt;td>这个用户是一位&lt;b>调停者&lt;/b>&lt;/a>。&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;table class="userboxitem" style="border:1px solid #ddd; background: #fefefe; color: black;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="background-color: white;">&lt;img src="https://i.loli.net/2020/08/11/SEVc2pHTODxXsJW.png">&lt;/th>
+&lt;td>这个用户是一只温顺的小绵羊。&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;table class="userboxitem" style="border:1px solid #331139; background: #482B6B;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon" style="background:#3C488D; color: white;">...&lt;/th>
+&lt;td style="color: white;">这个用户十分内向，很少主动与人互动。&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;table class="userboxitem" style="border:1px solid black; background: black;">
+&lt;tbody>&lt;tr>
+&lt;th class="userboxicon">&lt;/th>
+&lt;td style="color: white;">这个用户认为自己有轻度的精神问题和违背道德伦理的癖好，但他不希望因此造成不良的影响。&lt;/td>
+&lt;/tr>&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;p>你好！&lt;/p>
+&lt;p>我是 Tsukimaru Oshawott，一只普通的水水獭。&lt;/p>
+&lt;h2 id="水水獭是什么">水水獭是什么？&lt;/h2>
+&lt;p>&lt;a href="https://wiki.52poke.com/wiki/%E6%B0%B4%E6%B0%B4%E7%8D%AD">水水獭&lt;/a>是一种水属性的宝可梦。我就是一只水水獭。&lt;/p>
+&lt;p>水水獭不是水獭，也不是海獭。水水獭是宝可梦，而水獭、海獭是动物。不过，你也可以叫我水獭或者海獭，叫小球獭、小水獭、小海獭之类的都没有问题。&lt;/p>
+&lt;p>但无论你想要怎么叫，请注意一点：是水&lt;ruby>獭&lt;rp>（&lt;/rp>&lt;rt>tǎ&lt;/rt>&lt;rp>）&lt;/rp>&lt;/ruby>而不是水&lt;ruby>赖&lt;rp>（&lt;/rp>&lt;rt>lài&lt;/rt>&lt;rp>）&lt;/rp>&lt;/ruby>！再叫我水赖的人小心贝壳刃伺候！&lt;/p>
+&lt;h2 id="名字">名字&lt;/h2>
+&lt;p>我的名字是 Tsukimaru Oshawott。Tsukimaru 来自日文「&lt;ruby>&lt;strong>つき&lt;/strong>たて&lt;rp>（&lt;/rp>&lt;rt>月立&lt;/rt>&lt;rp>）&lt;/rp>&lt;/ruby>」（&lt;strong>Tsuki&lt;/strong>tate）和「&lt;ruby>ミジュ&lt;strong>マル&lt;/strong>&lt;rp>（&lt;/rp>&lt;rt>水水獭&lt;/rt>&lt;rp>）&lt;/rp>&lt;/ruby>」（Miju&lt;strong>maru&lt;/strong>）。昵称为 Tsuki，月丸等。&lt;/p>
+&lt;p>我通常使用的帐号名（Username）为 Cutekibry，来自英文「&lt;strong>Cute&lt;/strong>」（可爱的）和「&lt;strong>Kibry&lt;/strong>」（Kirby 的错拼，出自「星之卡比」系列）。&lt;/p>
+&lt;h2 id="联系方式">联系方式&lt;/h2>
+&lt;p>&lt;em>请使用浏览器的搜索功能（快捷键为 &lt;code>Ctrl+F&lt;/code>）进行搜索。&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>AtCoder：&lt;span style="color: #C0C000">&lt;a href="https://atcoder.jp/users/cutekibry">cutekibry&lt;/a> (2029)&lt;/span>&lt;/li>
+&lt;li>Codeforces：&lt;span style="color: #ff8c00">&lt;a href="https://codeforces.com/profile/cutekibry">cutekibry&lt;/a> (2263)&lt;/span>&lt;/li>
+&lt;li>LibreOJ：&lt;a href="https://loj.ac/user/1408">cutekibry&lt;/a>&lt;/li>
+&lt;li>洛谷：&lt;a href="https://www.luogu.org/user/45398">Tsukimaru&lt;/a>&lt;/li>
+&lt;li>神奇宝贝百科：&lt;a href="https://wiki.52poke.com/wiki/User:Cutekibry">用户:Cutekibry&lt;/a>&lt;/li>
+&lt;li>QQ：2054986856&lt;/li>
+&lt;li>E-mail：&lt;a href="mailto:cutekibry@yahoo.com">cutekibry@yahoo.com&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr></content></item><item><title>初中回忆录</title><link>/main/posts/junior-record/</link><pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate><guid>/main/posts/junior-record/</guid><description>&lt;p>喝了点无酒精的酒，突然想写点总结了。&lt;/p>
+&lt;p>那么就直接开始吧。&lt;/p></description><content>&lt;p>喝了点无酒精的酒，突然想写点总结了。&lt;/p>
+&lt;p>那么就直接开始吧。&lt;/p>
+&lt;h2 id="初一">初一&lt;/h2>
+&lt;h3 id="oi">OI&lt;/h3>
+&lt;p>我是 LSOI（汕头市龙湖实验中学的 OI）的第一届 OIer。&lt;/p>
+&lt;p>我们的教练是钟老师——一位负责了三个班级数学的数学老师。她先前并没有 OI 教学经验，不过还是根据金中姚老给的建议买了几本《信息学奥赛一本通》，教了我们基础语句。&lt;/p>
+&lt;p>然而这不过是兴趣班，每周只上一节；教了一个学期也才把基础语句教完。我当时根本没把 OI 放在心上，也以为 OI 的知识不过就《一本通》里面的内容，所以总是摸鱼——虽然完全能够应付乌龟似的教学进度。&lt;/p>
+&lt;p>下学期去了 STOI（汕头市选）普及组，kpm 出题。kpm 出了四道题，记忆清晰的是 T1 是道迷惑的送分题：&lt;/p>
+&lt;blockquote>
+&lt;p>给出 $10$ 组正整数 $a_i, b_i$，要求输出 $a_i + b_i$ 的值。&lt;br>
+正整数之和&lt;strong>不大于&lt;/strong> $2^{2^{2 \times 2^2}}$。&lt;/p>
+&lt;/blockquote>
+&lt;p>在场所有选手都敲了高精度，只有我一个分析发现 $a_i + b_i \leq 2^{64}$，然后写了 &lt;code>uint64&lt;/code> 以及特判 $a_i + b_i = 2^{64}$ 的情况。最后出成绩，毒瘤 kpm 居然给这道题的所有数据加了无数个前导零，最后我和 hjw 成了唯二通过这道题的人（hjw 的高精度居然可以处理前导零……），我靠着这 $100$ 分作为第八名压线进了普及组市队，参加 GDOI2017。&lt;/p>
+&lt;p>理所当然地，GDOI2017 我考出了 $0$ / $800$ 的好成绩。不过我从此认识了金实众，他们虽然并不常教我知识，但自己也认识到了 OI 的广度和深度远超我的想象；在他们的带领下，我进入洛谷开始刷题。&lt;/p>
+&lt;p>这里需要提一个人：zn，我的一位不知名的学长。他的 OI 实力并不很强，且运气还破天荒地差，没有拿过一次一等，后来竟连金中也没有考上；但他仍是很努力的，因而即使在一中，也总能取得很前的成绩。他是个很善良的人，在 OI 和人际交往等方面帮了我很多很多，我非常感激他对我的帮助。&lt;/p>
+&lt;p>那个时候是 2017 年 5 月。然后我不断刷题，也通过洛谷的试炼场提升了自己，逐渐变得强大起来。其实这段时间刷了很多橙题以及一些黄题，每道题基本都没什么差别；不过这确实使我后面发挥相对稳定了一些。&lt;/p>
+&lt;p>现在想来，如果不是我踩线进了市队，不仅是我，连带着我下面所有的 LSOIer 全部都要荒废掉，成为普及三等的选手。&lt;/p>
+&lt;h3 id="文化课">文化课&lt;/h3>
+&lt;p>这时候我基本多数精力都放在文化课上，平时成绩大概能排在级五十名左右。自己也没有多加用心，所以并没有什么进步。&lt;/p>
+&lt;h2 id="初二">初二&lt;/h2>
+&lt;h3 id="oi-1">OI&lt;/h3>
+&lt;p>NOIP2017 普及组拿了普及一等，勉勉强强。&lt;/p>
+&lt;p>在那之后就开始尝试蓝题了，结果发现蓝题也并没有那么困难。然后就慢慢学了挺多基础的算法，堆、线段树、ST 表、状压 DP、分块分治、字符串 Hash、最大流、矩阵加速、树形 DP、二分图最大匹配、主席树、平衡树、左偏树、树链剖分……&lt;/p>
+&lt;p>这个时段也稍微了解到了初一的同学。我很担心他们浪费掉初一的时间，所以不时会给他们讲一些东西，给他们一点压力。&lt;/p>
+&lt;p>然后就是 GDOI2018，水了个一般般的成绩。由于比赛经验不够，成绩不理想，水了个初中组的二等而已。&lt;/p>
+&lt;p>之后又学了 cdq 分治、树套树、斜率优化、线段树合并、LCT、单调队列之类的东西。&lt;/p>
+&lt;p>到了暑假的时候，整了个 LSSC（Summer Camp 夏令营），把初一的学弟过来塞了一堆算法知识给他们讲。整了一套难度有点高的普及+比赛，打算让他们失掉信心然后决心认真学 OI。这期间还给迷途之家供了一道非常恶心的模拟题，让你模拟 Linux 下的 rm/cd/cat/mv/mkdir 操作，标程挂了十几次，导致自己以后再也不敢出大模拟。&lt;/p>
+&lt;h3 id="文化课-1">文化课&lt;/h3>
+&lt;p>初二没有完全搁置文化课，因而文化课的成绩仍然马马虎虎地保持在年级五十左右的水平。初二下学期的期末考考了年级十三名，和初一开学考是一样的名次，——也是我整个初中考得最好的两次考试。有始有终，大概还是不错的。&lt;/p>
+&lt;h3 id="slayone">slay.one&lt;/h3>
+&lt;p>顺便一提，这个时候的我玩上了 slay.one。LSSC 后的 JZSC（金中夏令营）上，czllgzmzl（一本清华爷）回来给我们讲课，中午也和我们一起玩 slay.one。印象里非常深刻的是他玩小精灵异常强大，激光手雷异常恶心，并且玩游戏居然还能做到面无神色（&lt;del>像有人欠了他几十亿没还&lt;/del>）；结果一上去讲课的时候神飞色舞，还会幽默地和我们互动。&lt;/p>
+&lt;p>我也在 slay.one 上结识了很多好友，他们虽然大多 OI 水平不强（甚至有的像 hex 根本不是 OIer），但也都成为了我的 QQ 好友，也成为了清列时一直没有清掉的怀念和回忆。&lt;/p>
+&lt;h2 id="初三">初三&lt;/h2>
+&lt;h3 id="oi-2">OI&lt;/h3>
+&lt;p>大概这个时候接触到了 LibreOJ，开始了在 LibreOJ 的艰难的刷题。除了历年 NOIP 的题目基本刷过一遍外，也开始写 100 开头的模板题和 2000 开头的省选题。&lt;/p>
+&lt;p>NOIP2018 提高组考挂了，虽然也还是水了个一等。&lt;/p>
+&lt;p>接下来由于成天刷 LibreOJ，所以学了一堆算法：SA，线性基，莫反，杜教筛，高斯消元，矩阵树定理，Lucas 定理，FFT，NTT，点分治，exLucas，范德蒙德卷积，区间众数，李超线段树，01 分数规划，min_max 容斥，FWT，多项式求逆、多项式开根、多项式 ln，拉格朗日插值，线段树分裂，洲阁筛，虚树，线段树分治，图上随机游走，Polya 定理，BSGS，决策单调性，之类的。&lt;/p>
+&lt;p>GDSOI2019 由于初中组 NOIP 分数限制奇高，所以没得去。&lt;/p>
+&lt;p>我自己在初二初三的时候，应该可以说是努力的。是，我没有 ntf、cmd 他们那样强，但我觉得我初二初三作为一名没有学长教练指导的，基本自学的选手，能够做到那样自己已经满意了。这段时间把大多数的基础算法全学完了，LibreOJ 也刷了三四百道题。&lt;/p>
+&lt;p>&lt;em>你不是刚刚才&lt;a href="https://www.luogu.com.cn/blog/tsukimaru/otter-diary-san">在日记里说&lt;/a>感觉自己像阿 Q 一样成天和别人说“我曾经初二的时候，也是像上官老爷那样多么阔气”吗？怎么又开始扯你初中的事情了？&lt;/em>&lt;/p>
+&lt;p>我并不打算又旧事重提，毕竟过去的已经过去了；不过是为了交代自己的背景罢了。STOI（汕头 OI）本就不强，初中生能像我这样下定决心天天刷题的选手几乎没有，大多都是在老师、家长的软硬兼施下初三退役了。毕竟大家都觉得“既然都拿到普及一等了，那肯定高一再认真学也来得及”嘛，他们虽然并不是 OIer，但说的话肯定都是很可信的。&lt;/p>
+&lt;h3 id="背后的故事">背后的故事&lt;/h3>
+&lt;p>这一年我过得很艰难。&lt;/p>
+&lt;p>我的家长、老师都说，我拿了普及一等、GDOI 初中组二等、提高一等，已经达到金中自招的要求三次了（金中自招要求普及一等、GDOI 初中组二等、提高二等至少取得其中的一个），没必要再学 OI。现在好好准备中考，等上了高中再恢复 OI 学习也来得及；金中自然会有办法的。&lt;/p>
+&lt;p>但我没有听从他们的话。&lt;/p>
+&lt;p>自从我刷了 LibreOJ 之后，刷的题目越多，越发感觉自己的无能。那一段时间我刷省选题几乎道道不会做（除了一些非常模板的题目），经常去学新的算法或是看题解；越看，越学，就越觉得自己无能。我总觉得自己还是非常非常弱，也很害怕高中的环境还是没什么太大的变化；所以就很勤奋地刷题，刷题。&lt;/p>
+&lt;p>初三，「时间还很多，上了高中再学吧，你们以前也没有这个先例」。&lt;/p>
+&lt;p>高一，「我们又不像广州深圳那边，实力比不过他们也是正常的」。&lt;/p>
+&lt;p>高二，「努力过就好了，好好调整心态准备文化课吧」。&lt;/p>
+&lt;p>这可不相当正确么？&lt;/p>
+&lt;p>可&lt;strong>人之所以为人，是因为有猿猴直立起来，成为了别人不愿做的“先例”，才成为了人&lt;/strong>。那些劝解我放弃 OI 的人是善良的，可他们并不比我自己更了解我；自己总该知道对自己而言什么是好的，什么是不好的，然后抱着必死的心态走下去，完成给予的任务后活着回来。&lt;/p>
+&lt;p>当然，STOI 里是没几个人如此的，我甚至举不出一两个例子；我也相信，初中认真准备中考的占了绝大多数。只是我自知自己的懦弱和慵懒，不愿把希望延后到未来罢了；如果人人都能像 hjw，ccz 他们那么勤奋努力，或许早就人人清北了。&lt;/p>
+&lt;p>于是整个初三，我基本没有写过作业（除了相当严厉的语文老师布置的作业），也没有怎么复习；政治提纲也只背了一部分。成绩自然一落千丈；掉了，稍微学习一段时间又升了；升了，又掉了。级排名从 15 掉到 151，然后是 337、331、225、135、225，成绩起起落落，最后中考考挂了，比金中线低了一二十分。万幸还是因自招被录取了。&lt;/p>
+&lt;p>上课大抵还是有听一点的，尤其是语文课；唯独数学课基本用来补觉。平日都会带两个书包，一个大书包装课本，另一个小书包装笔记本电脑。自己常常趁课间的十分钟到讲台电脑上看看题目和题解，课上就在草稿纸上演练，午休和放学到机房写代码，总之是比较勤奋的一段时间。&lt;/p>
+&lt;p>翁老师表面反对，实际上仍然默认同意我跑去机房写题。&lt;/p>
+&lt;p>家长一开始也不太赞同，经过我几次固执的争论之后，也渐渐不反对了。&lt;/p>
+&lt;p>现在想来，我的初三是对「梦想」的最好的诠释。之后也再没有像那时的自己一样，将无限的动力和热爱毫无保留地投入到「梦想」里去了。&lt;/p>
+&lt;h3 id="初三14班">初三（14）班&lt;/h3>
+&lt;p>在这里我想趁着记忆淡去前，记录一下我在初三（14）班的老师们。&lt;/p>
+&lt;p>首先是老翁。翁金辉老师是我们初三（14）班——全校最强重点班的班主任，兼任我们班的数学老师。他幽默风趣但不失严肃冷静，是个不疯但也能和学生一起玩得很好的老师。在他的管理下班风一直很良好，我们的同学即勤奋刻苦又不木讷呆板——清晨和大课间能听到同学们相互扯皮的欢声笑语，晚上六点后也能看到整栋教学楼只剩我们班灯火通明。&lt;/p>
+&lt;p>对于我，他一向是关爱的；初一初二时把我视为班级的希望，初三时也很关注我。我初三搁置了文化课，他为了维护班级风气，明面上时不时“讥讽”“批斗”我，暗地里又默认同意我天天跑去机房上机、数学课睡觉、上课写题。若是他真的反对我，大可以不让我去上机；事实证明，他还是支持我弄 OI 的，不过是明面上没有说出来罢了。这一年，我的 OI 事业没有受到他的阻挠，自己的心境也变得坚强了很多很多；班级风气没有变差，反倒是他在几个同学心里背负上了“恶人”的称号（玩笑话）。&lt;/p>
+&lt;p>我对他也一向很敬重，又有些愧疚，觉得他花了很多时间在我身上，我却没能在中考发挥良好。至今仍能记得他的很多很多名言，记得他和我发生过的一些冲突；记得傍晚六点半灯火通明的初三（14）班教室，记得他班会时给我们放的各种心灵鸡汤。他是我成长路上最感激的一名老师，如果不是他，想必我也不会有今天的成就。&lt;/p>
+&lt;blockquote>
+&lt;p>「lmh，你这样弄下去相当于精神残废啊！孤注一掷怎么行？」&lt;br>
+「你这样子，以后的路会越走越窄！」&lt;br>
+「wyl 怎么又在扯皮了？试卷写完了吗？」&lt;br>
+「今天的每日一题可能有点难啊，要是做不出来明天再讲。」&lt;br>
+「你干嘛！你干嘛！不要对答案啊！」&lt;br>
+「这个 lmh，我现在说他草包他肯定听不见，你看他现在还在睡觉。」&lt;br>
+「哎哟，萝卜这次考得不错啊！」&lt;br>
+「有的黑暗，只能你一个人自己度过。」&lt;/p>
+&lt;/blockquote>
+&lt;p>毕业班会上我擦着眼泪递给他一张明信片，他笑着签了名，还写了那句他曾无数次说过我的话；只不过这次不是“讥讽”，而是祈愿——&lt;/p>
+&lt;p>&lt;strong>「愿路越走越宽」。&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/04/18/TQiWSUzNj1M3DfL.jpg" alt="IMG_20210417_122109.jpg">&lt;/p>
+&lt;hr>
+&lt;p>然后是阿廖，我们的物理老师，广西人。他的个子不过一米六五，终年戴着薄薄的方框眼镜，身着墨绿色的 T 衬衫；眉头微皱，眼睛微眯，浑身萦绕着农村而来的乡土气息。&lt;/p>
+&lt;p>阿廖的性格相当幽默风趣。阿廖说话的时候，总习惯用手捂着嘴巴，眯着眼睛，说出一段带着口音的、抑扬顿挫的普通话；感情激烈的时候还会说出夹杂着土味浓厚的粗话。他的有趣和老翁是不同的，老翁的有趣是是活泼书生般的幽默风趣；而阿廖呢，他更像是你在任何一个乡村都能见到的那种土生土长的年轻人——俗气但不下流，全身上下散发着这方水土所养育的自然的活力。他身高不高，但很喜欢和体育老师们打篮球；这也成了我们的饭后谈资之一。&lt;/p>
+&lt;p>他常常给我们讲他在农村的所见所闻：他夏天骑着水牛到水库里游泳，邻居的小孩子爬上屋顶碰电线触电一天不能动弹，小学时自己鼓捣收音机把收音机拆坏又修好……他有着各种各样稀奇古怪的故事，而这些是我们在高楼林立的城市里所不知道的。因为他，我很喜欢听物理课（虽然也还是有时会睡觉）。&lt;/p>
+&lt;p>毕业之后某次重聚的时候我和 cjr 一起去办公室找他，他依旧是戴着薄薄的方框眼镜，矮矮的个子下透露出活力与朴实的气息。阿廖见到我们，用力拍了拍我们的肩膀，说道：「考不上清华不要回来！」&lt;/p>
+&lt;hr>
+&lt;p>之后是“微微”——我们的语文老师，赵微老师。她是所有老师里最严厉的，我们一向有些怕他；我被她训斥的场景如同昨日事一样记忆清晰。她很年轻，长得也很好看，因而大家总称她“微微”老师。记得临近中考的时候，她加班加点给我们赶了很多很多的名著资料，全部都是她一手整理的；有时在家里工作到凌晨一点才睡下，白天又抖擞地带着她治学严谨的精神来上课。那年中考语文的名著题恰好被她压中，一开始还觉得运气挺好，后来想了想，大抵是她完全一点不漏整理的名著资料的缘故。&lt;/p>
+&lt;p>&lt;strong>我非常敬佩她作为老师的，令人敬畏甚至可怖的称职和勤奋，她教书育人、鞠躬尽瘁的崇高精神，是我一生望尘莫及的。&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;p>我对其他的老师（老周，思佳老师，程老师，……）也有些许的记忆，可或许是限于篇幅，又或是记忆淡去了，此处不再展开记叙。&lt;/p>
+&lt;p>在这初中三年里，无论发生了什么事情，我都从来没有掉过一滴泪；难过的时候也是有的，可无论如何都哭不出来。唯独毕业班会那天，当我举着手机录着阿廖和老翁的临别赠言的时候，泪水突然就控制不住地流了下来，仿佛三年来的所有欢乐、苦涩、遗憾，一瞬间如水库决堤般奔涌而出。甚至于今日再回顾毕业班会的时候，视线仍会不由自主地模糊起来，仿佛自己又回到了坐在教室里看着讲台上老翁拿着根铁棒指着大屏幕给我们讲每日一题的时光。&lt;/p>
+&lt;p>上了高中忙于竞赛，没有多少时间呆在班里了；班级也常常换，因此对高中的班级并没有什么太大的感情。&lt;/p>
+&lt;p>&lt;strong>在初三（14）班生活过的回忆，是我一生永远的珍藏。&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>真的，一直到现在，我实在再没有吃到那夜似的好豆，——也不再看到那夜似的好戏了。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="https://i.loli.net/2021/04/26/Se74DOf3xEdybpo.jpg" alt="IMG_20190629_111347.jpg">&lt;/p>
+&lt;hr>
+&lt;blockquote>
+&lt;p>本来啊，我觉得说，跟你们开个班会课，上上下下至少都有八十节。平时也从来不打稿，但是到这个时候呢，还是比较特殊，我怕我待会语无伦次啊。跟其他老师的那种感情不一样，你们是我这样一点点带大的，就像我六十几个孩子一样，那种感情呢，不一样。所以呢，我还是自己拿个稿子来说一下（从裤袋里掏出演讲稿），要不然待会说不出话（笑）（全场笑）。&lt;/p>
+&lt;p>这个……不经意间，大家呢，在龙实的日子，已经慢慢到了要说再见的时候了，是吧。所以呢，老师希望呢，这初中三年的时光，能够给你们留下美好的回忆。然后呢，你们呐，对我来说，很重要。嗯……这种感觉是什么感觉呢，是高兴，但是又很……很焦虑，焦虑。&lt;/p>
+&lt;p>呃……（较长时间的停顿）呃……我那种感觉是，很想和你们一起毕业，然后……再教你们！是吧，但是事实上，不可能。咱们赵微老师讲了，我们，原地返回，是吧。所以……因为你们的关系，我也希望说明年，我还是回到初一去，是吧，把这种感情，转接到新的小孩身上。当然你不要说老师啊那那不会就忘记我们，是吧？诶，是吧。呃……应该来讲，来到这里，到现在有十三个年头了，但是呢，你们是我最真情付出的一届，是吧。（语气严肃）但只能发在我们班里面啊，啊不能给其他以前的那些同学听到了，是吧，这是私爱，私爱。（全场笑）&lt;/p>
+&lt;p>然后呢……感觉，你看我我一下，一下子就语无伦次，说不上来了，哈。往时我我从来不用打稿，我今天呢，比较激动。那，感觉现在纵有千言万语，也不知道从何说起。那么，希望呢，你们能够过得快乐，过得开心，啊。这应该来讲，是作为班主任我最期望的，到这个时候，什么成绩都不重要了。关键，你看，我每天准时七点十五分到，一进来，唠唠叨叨，是吧。现在我站在这里，让我想起来过往很多很多的回忆。每天进来教室我第一件事，是吧，（走到讲台旁的椅子并拍了拍它）就要……坐这里啊，是吧。（全场笑）（把椅子拖过来坐在上面）然后……我做什么？我干什么？（方达：吃包子！）（全场笑）（方达：剖鸡蛋！）应该是……（笑）（方达：每日一题！）哦每日一题！应该是说：“收作业！”“俊熙不要对答案！”是吧。“舒可，坐好来！”（方达：你干嘛！）（全场笑）这种感情是……无可比拟的，是吧。所以我希望，呃，经常也要说一下李明翰呐，是吧，李明翰每天早上我都要在这说他“李明翰不要睡觉！”（方达：李明翰不要搞电脑！）李明翰，呵呵（笑）……李明翰现在，现在没事啦，现在李明翰，是我们班的一个荣誉啊，是吧。（方达：对！）（全场笑）（方达：你之前不是说是狗屎吗）（全场大笑）&lt;/p>
+&lt;p>所以……你们带给我很多美好的回忆啊。那么……（站起）还是要送给大家一些毕业的赠言，啊。班主任忙，总是说说书，啊这个……还是要跟，中考一样！怎么办？（方达：思羽站起来！）对！思羽来！思羽！来这边，来换一个麦克风。是吧，还要干什么？&lt;strong>凝心聚力！继续前行&lt;/strong>！是吧？不要输在起跑线上。这个放假……除了……放放松，我觉得说……还是要，吃吃苦的。所以呢……没有随随便便上了高中就能成功，我觉得现在获取了一张高中的只是一张门票，所以暑假呢，还是要早做准备，争取说，三年后啊，高考放榜的时候，（用手指轻轻按了一下鼻子）我们，能够再次听到你们的好消息，是吧。那么，你看，有些同学，很棒啊，王梓玲啊，去了新加坡，刚才问她，她说考过了一个排名第三的学校。（全场惊叹）这是我作为班主任的一个荣誉。还有，你看力方啊，优先被金中录取，啊。我们今年的目标是什么？（全场：五十！）啊，多过五十是吧，所以希望说，希望三号到五号那天，我们……收到这个消息的时候哈，我们能凑够这五十个啊。&lt;/p>
+&lt;p>那么……第二点，那……以前总是跟大家讲说，要享受你该享受的，付出你该付出的，是吧。那现在我要倒回来说了啊，既然你已付出你该付出的，那么这个暑假，就应该享受你该享受的，是吧。那么怎么办呢？我觉得……（停顿，看演讲稿）第一个！和父母进行一场，短途或长途的旅行是必要的，是吧。世界那么大，我们总要去看一看吧，哈。所以呢，利用这暑假的时间，好好调整一下，呃……（看演讲稿）读万卷书嘛，不如走万里路，我也是经常出去旅游的，所以我希望说大家，欸能够凑一凑啊，特别是如果有几个家庭的，一起出去，我觉得更开心一点啊。&lt;/p>
+&lt;p>最后呢……最关键一个点的啊，&lt;strong>要有情&lt;/strong>。什么情啊？（方达：三情。）对，三情，是吧？跟父母的，父母情，是吧，跟老师的师生情，跟同学的这个，同学情，是吧。暑假，我们呢……十四班呢，可能是没完没了了啊，有很多活动。慢一点我要组织大家去唱唱 K 啊，是吧，我刚刚讲了，要有同学情。那，跟父母的情谊在哪里呢？我给大家算过一个事情啊，高中三年，三乘三百六十五，多少天啊？一千零多少？（全场：一千零九十五）一千零九十五，是吧。都是学霸，都算得比我快。一千零九十五，什么意思？这个一零九五对大家的意义非常重大，就像龙应台，书中所提到的，是吧，父母是看着你们的背影，渐行渐远。所以这一千多天呢，应该是你们陪父母，时间最多的时间了，是吧，过后读大学，放假，你们要去……学习啊，慢一点要考研啊，再后来成家，有小孩，可能也就渐行渐远，是吧，把爱慢慢地分出去。所以这一百零多天，要好好跟父母相处，然后呢，放假多给父母分分担，分担一些家务，我觉得，这是一件非常快乐的事。所以这个叫，父母情。师生情呢？师生情很简单，是吧。我是不是，像呆在这个巢里的鸟一样，是吧，总是等待着你们回来。所以呢……没事，多回来坐坐，多回来看看，好。&lt;/p>
+&lt;p>（看演讲稿）感谢大家……三年生涯，好，老师感觉说，希望说你们往后能够过得越来越优秀，越来越开心，哈（用手指轻轻按了一下鼻子）（九十度鞠躬）（全场掌声）。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="zn">zn&lt;/h3>
+&lt;p>还有关于 zn 的事情。&lt;/p>
+&lt;p>zn 一直都很关心我，自己又没有怎么和别人交流，因而初三的时候自己以为自己喜欢上了 zn，想要和他处对象。当然 zn 也拒绝了，不过一开始我们关系还好，仍然像朋友一样时不时地聊天。&lt;/p>
+&lt;p>NOIP2018 的时候由于某些原因，我校要有一个同学去和别校的同学凑合住；我和 zn 自然就被安排了。我很开心可以和 zn 住在一起，他看上去也没有很排斥我；我们仍然一起面基玩 CultrisII，甚至连比赛日的早晨早起都要一起打。说实话，自己那时甚至想过晚上去和 zn 一起同床共枕，或者手牵着手睡着也好（当然是经得同意的前提下——虽然不可能同意）；不过当时并没有记起这个，回家之后才想起自己有这个想法。&lt;/p>
+&lt;p>写了 NOIP2018 游记，在游记里写了一些很矫情的东西。大概是因为自己写的游记吧，也因为自己后来的一些迷惑操作，zn 开始对我反感了，有时会删掉我的 QQ 好友，甚至于说不希望和我住一个房间，否则他就不去 CSP2019。&lt;/p>
+&lt;p>现在想来，我那时只是因为自己以前没有被多少同龄人关心过的经历，因而才会被他的关心冲昏头脑；其实那不过是一般的朋友间的关心罢了。现在自己也觉得他其实和我并没有多少精神上的共通点，并没有那么适合当我的对象。&lt;/p>
+&lt;p>即使自己做了很多不好的事情，zn 仍然没有真的对我恶语相向或憎恶我，只是用沉默和拒绝的方式让我自我反省。现在我们和好了，这些也就成了过往云烟。我很感激他的善良，也抱歉自己在他比较艰难的时候还去烦扰他。希望他高考能够顺顺利利吧，——至少能稳中大。&lt;/p>
+&lt;h3 id="兽文化">兽文化&lt;/h3>
+&lt;p>&lt;em>等等这个偏题了吧？&lt;/em>&lt;/p>
+&lt;p>&lt;del>但是自己确实非常非常喜欢兽文化，所以希望在这里引流，让更多的 OIer 众的萌二，感受到兽文化的魅力（并不）。&lt;/del>&lt;/p>
+&lt;p>自己也是在初三的时候了解到了兽文化。为了避免模糊，下面将欧美的兽文化称 Furry（英语里“毛茸茸”的意思），日本的兽文化称 Kemono（「ケモノ」，日语里“野兽”的意思）。&lt;/p>
+&lt;p>其实一开始是从宝可梦了解到 Furry 文化的；但后来又了解到 Kemono，发现自己更喜欢 Kemono，尤其是比较可爱的幼兽、兽化程度比较高的正太，以及 TDM（Teitoshin Deformed Mascot，低头身比 Q 版吉祥物，例如日本的大多数吉祥物都可以算作 TDM）。&lt;/p>
+&lt;p>至于国内的兽圈，说实话，自己其实归属感不是很强，因为对主流的 Furry 文化（尤其是带有强壮 / 成熟特征的 Furry 角色）并不感兴趣；幼兽和 TDM 又比较小众，所以基本上是不混国内兽圈的。&lt;/p>
+&lt;p>即使如此，自己仍然非常热爱 Kemono/TDM 文化，自己也关注了很多可爱的幼兽画师，每次看到他们的画的可爱的小动物，总会觉得非常开心。&lt;/p>
+&lt;p>&lt;strong>温馨提示：最好不要在百度上搜索“Furry”“Kemono”等词，否则会冒出不适宜的结果。&lt;/strong>&lt;/p>
+&lt;p>&lt;em>不混兽圈也有这个原因（虽然不是主要原因）。&lt;/em>&lt;/p>
+&lt;p>说了这么多，各位如果有兴趣的也可以去看看这些可爱的小动物（尤其是喜欢可爱的宝可梦的）。兽圈信息良莠不齐，如果担心浏览到不合适的信息，当然也可以不混兽圈，关注几个画师或者 Pixiv 上搜搜看看可爱的插图就好了；哪怕不关注 Kemono，看点伊布皮卡丘基拉祈之类的宝可梦也很有益身心健康。下面放上几张个人喜欢的画师的插画，以更形象地形容我所喜欢的 Kemono 类型。&lt;/p>
+&lt;p>&lt;strong>为避免大量流量消耗，下面的图片为缩略图，如果需要原图请去 Pixiv 源地址寻找。顺便一提，最好不要用他人的原创角色当头像。&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/04/18/8QcghyYL2DjeFRl.png" alt="85361814_p0.png">&lt;/p>
+&lt;p>↑ pixiv id=85361814，画师ななほし。宝可梦也是 Kemono/Furry 文化的一环。&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/04/18/DJ8HdLoIgBA263f.jpg" alt="87802244_p0.jpg">&lt;/p>
+&lt;p>↑ pixiv id=87802244，画师白鳥ぱんだ。自己非常喜欢吉祥物和可爱的幼兽，即使没有人类的外貌特征也很可爱。&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/04/18/15nY9HbiZom8Kfw.jpg" alt="58657670_p4_master1200.jpg">&lt;/p>
+&lt;p>↑ pixiv id=58657670，画师なかにし。这张就比较贴近 Kemono 文化了（比较典型的兽耳正太），看起来像是一半兽化了的人类，自己也很喜欢这种。&lt;/p>
+&lt;p>自己非常非常喜欢兽文化，可爱的 Kemono / TDM / 宝可梦丰富了我的精神生活，成为了自己的一个动力；想到可爱的小动物，自己也会觉得开心不少。能活在有它们的世界上是件很幸福的事情。&lt;/p></content></item><item><title>水獭观察日记 其三</title><link>/main/posts/otter-diary-iii/</link><pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate><guid>/main/posts/otter-diary-iii/</guid><description>2021 年 2 月 21 日 星期日 我回校了。
+今天晚上回到班里开班会，班主总结了上学期的情况，并概述了本学期的安排。「本学期只有短短的二十周，那些想在本学期超越自我的同学，必须更加意识到时间的紧迫才行。」他这么说。
+然后我突然意识到：我离最后的省选也只剩短短的一个月了。
+我开始担忧了。我寒假时游手好闲，毫不紧张；而我现在终于是意识到：我离可能的退役只有一个月了。一想到省选失利的样子，内心有如看到 winte 的本子般胃疼。
+我没有自信说我能进入省队，毕竟我现在已经是全省十四名了；更不用说，还有像 ntf 这样铁定能进队的几个人在我后面。
+……至少还有一个月。至少一切仍未成为定局。
+我还是喜欢 OI 的；我也自认为是一个 OIer。
+我们的时间不多了。
+Eleventh Hour - Oneshot: Solstice (Original Game Soundtrack)
+RAO 画的 TDM 真的太戳我性癖了！看得我口水都流下来了！！！1111( ´ρ`)
+2021 年 4 月 12 日 星期一 最后还是考砸了。
+昨天一出考场还觉得没什么，直到回家洗澡的时候才突然意识到：自己退役了。
+不用再熬夜打 Codeforces 了，不用再在晚自习跑机房和高一学弟一起吹水了，也不用再考虑对于过去的自己、对于 iot、对于诺亚的承诺了。
+然后就突然觉得很难过。有种怅然若失的感觉。
+感受着额头上滴下的连绵不断的水滴，坐在浴室的地板上愣了好久好久，不想再动一步。
+四年，整整四年。一切都结束了，戛然而止。好多想做的事情还没有做，就结束了。
+这根本不是一句简简单单的“努力了就好了”就能轻松放下的事情，不是昨天刚刚从四年的竞赛生涯里被迫中止，今天就可以像无事发生一样去上课的事情。
+我已经没法再听课了，至少要再过几天，才能把心态调整过来。现在实在不是能工作的状态，还是不要再压迫自己了，以免真的把自己整崩溃了。
+[非常に绷不住です.jpg]
+成绩如果不延期的话，过会就会出来了。自己是不信玄学的，也就不做什么祈祷的事了。
+写于上午九时至十时。
+省选结果必须在省内公示。NOI省组织单位在省选后24小时内对省选成绩及省队名单进行公示，公示期（7天）结束后确定省队名单。如公示期内省队名单有变动，需要重新进行7天公示。
+CCF 日常（笑）
+很担心自己写挂（数组开小 etc.），毕竟 ntf hjw lzy 干掉我我就 #15 了，再打不过 cdw 那我就 HD 化了。</description><content>&lt;h2 id="2021-年-2-月-21-日-星期日">2021 年 2 月 21 日 星期日&lt;/h2>
+&lt;p>我回校了。&lt;/p>
+&lt;p>今天晚上回到班里开班会，班主总结了上学期的情况，并概述了本学期的安排。「本学期只有短短的二十周，那些想在本学期超越自我的同学，必须更加意识到时间的紧迫才行。」他这么说。&lt;/p>
+&lt;p>然后我突然意识到：我离最后的省选也只剩短短的一个月了。&lt;/p>
+&lt;p>我开始担忧了。我寒假时游手好闲，毫不紧张；而我现在终于是意识到：我离可能的退役只有一个月了。一想到省选失利的样子，内心有如看到 winte 的本子般胃疼。&lt;/p>
+&lt;p>我没有自信说我能进入省队，毕竟我现在已经是全省十四名了；更不用说，还有像 ntf 这样铁定能进队的几个人在我后面。&lt;/p>
+&lt;p>……至少还有一个月。至少一切仍未成为定局。&lt;/p>
+&lt;p>我还是喜欢 OI 的；我也自认为是一个 OIer。&lt;/p>
+&lt;p>我们的时间不多了。&lt;/p>
+&lt;p>&lt;em>&lt;a href="https://music.163.com/song?id=527743585">Eleventh Hour - Oneshot: Solstice (Original Game Soundtrack)&lt;/a>&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>RAO 画的 TDM 真的太戳我性癖了！看得我口水都流下来了！！！1111( ´ρ`)&lt;/p>
+&lt;h2 id="2021-年-4-月-12-日-星期一">2021 年 4 月 12 日 星期一&lt;/h2>
+&lt;p>最后还是考砸了。&lt;/p>
+&lt;p>昨天一出考场还觉得没什么，直到回家洗澡的时候才突然意识到：自己退役了。&lt;/p>
+&lt;p>不用再熬夜打 Codeforces 了，不用再在晚自习跑机房和高一学弟一起吹水了，也不用再考虑对于过去的自己、对于 iot、对于诺亚的承诺了。&lt;/p>
+&lt;p>然后就突然觉得很难过。有种怅然若失的感觉。&lt;/p>
+&lt;p>感受着额头上滴下的连绵不断的水滴，坐在浴室的地板上愣了好久好久，不想再动一步。&lt;/p>
+&lt;p>四年，整整四年。一切都结束了，戛然而止。好多想做的事情还没有做，就结束了。&lt;/p>
+&lt;p>这根本不是一句简简单单的“努力了就好了”就能轻松放下的事情，不是昨天刚刚从四年的竞赛生涯里被迫中止，今天就可以像无事发生一样去上课的事情。&lt;/p>
+&lt;p>我已经没法再听课了，至少要再过几天，才能把心态调整过来。现在实在不是能工作的状态，还是不要再压迫自己了，以免真的把自己整崩溃了。&lt;/p>
+&lt;p>[非常に绷不住です.jpg]&lt;/p>
+&lt;p>成绩如果不延期的话，过会就会出来了。自己是不信玄学的，也就不做什么祈祷的事了。&lt;/p>
+&lt;p>写于上午九时至十时。&lt;/p>
+&lt;hr>
+&lt;blockquote>
+&lt;p>省选结果必须在省内公示。NOI省组织单位在省选后24小时内对省选成绩及省队名单进行公示，公示期（7天）结束后确定省队名单。如公示期内省队名单有变动，需要重新进行7天公示。&lt;/p>
+&lt;/blockquote>
+&lt;p>CCF 日常（笑）&lt;/p>
+&lt;p>很担心自己写挂（数组开小 etc.），毕竟 ntf hjw lzy 干掉我我就 #15 了，再打不过 cdw 那我就 HD 化了。&lt;/p>
+&lt;p>不会真就差一名队线吧？&lt;/p>
+&lt;p>写于下午六时。&lt;/p>
+&lt;h2 id="2021-年-4-月-13-日-星期二">2021 年 4 月 13 日 星期二&lt;/h2>
+&lt;p>昨天自测了一下，万幸没有挂分。根据 Command_block 家长提供的信息，如果确实超过 $400$ 分的选手都是校内排名连续前缀的，那就刚好 #15。&lt;/p>
+&lt;p>然而又从 wjd 那里听说 Deep_kevin 没过 $400$，我下面刚好有个挨得很紧的，只要 $\geq 426$ 就干掉我了，总感觉挺担心的。&lt;/p>
+&lt;p>唉，心情挺乱的。希望真的可以打出海底捞月吧。&lt;/p>
+&lt;p>写于上午八时至八时半。&lt;/p>
+&lt;hr>
+&lt;p>这个垃圾笔还写不了日记，换一只算了。虽然换上的这支笔水很多（？），但是还是勉强凑合着用吧。&lt;/p>
+&lt;p>虽然自己是比较难受，但是还可聊以自慰的是这三天每天各有一节自习课，晚自习也还是可以去机房摸鱼。&lt;/p>
+&lt;p>课上总是在讲练习，自己也没有，听不动。但自己也觉得，这么混着也不好；幸而手边有一本完全崭新的寒假作业（主四科），可以写写。自己数学不行，还是写写吧，权当积累一些套路题和经典题。&lt;/p>
+&lt;p>最近喜欢上了白鳥ぱんだ的插画，非常非常可爱。而且有的插画还有点色气，并且不颓唐，射了。果然还是最喜欢可爱的幼兽啊。&lt;/p>
+&lt;p>&lt;img src="https://cdn.luogu.com.cn/upload/image_hosting/al3yg8tb.png" alt="">&lt;/p>
+&lt;p>↑ 点进这里的大多不是兽控，所以就放了张还算正常的图片。虽然自己还是最喜欢那两张梦幻的图。&lt;/p>
+&lt;p>写于上午九时至九时半。&lt;/p>
+&lt;hr>
+&lt;p>补了些套路题，感觉自己知识水平上升了一个 $\epsilon$。&lt;/p>
+&lt;blockquote>
+&lt;p>已知 $f(x) = 2f'(\frac {\pi}2)x - \cos x + 1$，求 $f'(0)$。&lt;/p>
+&lt;/blockquote>
+&lt;p>Command_block 说他挂分了，但我想不至于到 $350$ 都没有的程度。&lt;/p>
+&lt;p>反正也快中午了，过会就去看看吧。希望不要挂。&lt;/p>
+&lt;p>写于十一时半。&lt;/p>
+&lt;hr>
+&lt;p>昨天姚老和豪哥还在和我交流之后的安排。豪哥说我实力还是可以的，不过是 WC 考炸了而已，希望我可以冲金；姚老也说当年 yyl 踩线进了省队，最后也踩线拿了 Au。&lt;/p>
+&lt;p>我只能笑。&lt;/p>
+&lt;p>我知道的，自己发挥并不稳定，知识水平和智商也打不过别人；更何况我是几乎连省队也进不去的，甚至再过几小时，就可以把这个“几乎”删去的。NOI2020，GDOI2021，我逐渐意识到自己就是个不会做智商题的傻逼，写经典题套路题都还能写挂或者写不出来，又何德何能去冲金？&lt;/p>
+&lt;p>说不定还没进省队呢。也许根本没必要想这么多。&lt;/p>
+&lt;p>写于十一时四十分至十二时。&lt;/p>
+&lt;hr>
+&lt;p>顺带一提，自己 NOIP T2 被卡常 $100 \rightarrow 84$，WC T2 中缀表达式转后缀表达式写错 $70 \rightarrow 30$，这就是我说自己发挥不稳定的原因。至少可聊以自慰的是，GDOI2021 作为自己的最后一场比赛一分没挂。&lt;/p>
+&lt;blockquote>
+&lt;p>pb 在讲堂上主持省队选拔会。&lt;br>
+pb 说：那些认为自己有实力冲金牌的人，请坐到左边；那些认为自己进不了省队的人，请坐到右边。&lt;br>
+有几个人坐到了左边，剩下的大多数人都坐到了右边，只有一个人保持不动。&lt;br>
+pb 走上前，问：你为什么不选左边或右边？&lt;br>
+这位选手说：我的教练说我可以冲金牌，但我进不了省队。&lt;/p>
+&lt;/blockquote>
+&lt;p>分数还是没出来。家长群的截图说明天上午十点前就会公布了，希望可以快点出来吧。&lt;/p>
+&lt;p>累了。&lt;/p>
+&lt;p>写于下午三时。&lt;/p>
+&lt;hr>
+&lt;p>其实如果我确实 #16 的话，也不是很不合理的。&lt;/p>
+&lt;p>每年每个省都要有一个这样的 #16，每年的 NOI 都要有 #51, #52, #53 和 #54 的。而这个人恰巧是我，这并不奇怪。&lt;/p>
+&lt;p>比我强的人也都能进省队，这样也可以啦。虽然还是有点不甘心。&lt;/p>
+&lt;p>brz（就是那个只要 $\geq 426$ 就能超过我的人）看起来心情不是很好，不想说成绩。再往下的 yzh NOIP 224/WC 138，要考 $\geq 445$ 才能超过我，感觉有点困难（要真能这个分数，大概也不会考成 NOIP 224/WC 138）。&lt;/p>
+&lt;p>如果问题不大的话应该还是能 #15 的吧。希望是这样的。总的还是想去拿个 Ag，让 iot 开心一下。&lt;/p>
+&lt;p>……最近这两天感觉自己在坐过山车一样，一会感觉自己 #16 了，一会又听说有人下来了变成 #15 了，一会又发现有人从下面翻上去变成 #16 了。自己总是在省队线上下来回横跳。现在了解的信息基本上卡住了，主要看下面那两个人吧。&lt;/p>
+&lt;p>&lt;img src="https://cdn.luogu.com.cn/upload/image_hosting/r5r7xaz9.png" alt="">&lt;/p>
+&lt;p>↑ 自己做的表。这些数据都是在 NOI 官网上公开的，所以就不打码了（&lt;/p>
+&lt;p>希望可以快点出成绩。&lt;/p>
+&lt;p>写于晚上八时。&lt;/p>
+&lt;h2 id="2021-年-4-月-14-日-星期三">2021 年 4 月 14 日 星期三&lt;/h2>
+&lt;p>&lt;em>&lt;strong>提醒：这一段是虚构的，目前仍然没有出分。先前没有标注信息是虚构的，造成了不必要的影响，在这里咱和 wjd 给大家磕个头以表歉意，咚咚咚。&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>早上 10:30 出成绩了。和推算的差不多，进队了 #15。不过我并没有想象中的那么兴奋——当时对着 iot 评论前立下誓言的少年，目标肯定不只是省队守门员吧。不久之后豪哥就发来祝贺消息，或许，我该冲 Au 了。先把学考历史复习一下吧。吃顿肠粉犒劳下自己 ^_^&lt;/p>
+&lt;p>写于十时五十分&lt;/p>
+&lt;h2 id="2021-年-4-月-14-日-星期三-1">2021 年 4 月 14 日 星期三&lt;/h2>
+&lt;p>wjd：不要在我的日记本上写东西啦。-, -&lt;/p>
+&lt;p>虽然还是希望自己能进的，但是根本就吃不了肠粉啦。中午冲不过高三，下午又回家了，吃啥肠粉。还有我不打算复习学考历史。&lt;/p>
+&lt;p>……哎，事实就是自己……算了，不奶自己了，总之我是不认为自己能拿 Au 的。我只能说我尽力吧。&lt;/p>
+&lt;p>说到这里，昨天我梦见了初三时的自己。&lt;/p>
+&lt;p>一切都是那么熟悉。黑漆漆的夜空，墨绿色的树叶，橙黄色的台灯灯光，粉色笔记本上以奇诺栗鼠的插图为背景的 PPT，以及坐在笔记本前的初三的我。那个插图我是记得的——那是我预备给初二讲并查集的课件的背景插图。&lt;/p>
+&lt;p>他看到我，看到我胸前 GDOI2021 的挂牌，很高兴地问我：“高一签了一本约吗？”&lt;/p>
+&lt;p>我愣了很久。四周的空气和时间一瞬间凝结了，半晌，我低声说道：我高二连省队都没进。&lt;/p>
+&lt;p>我看见，他的神情从期待变为惊异，然后变为沮丧。&lt;/p>
+&lt;p>“为什么？”&lt;/p>
+&lt;p>我没有话去回答他。“因为我高一一整年几乎放弃了 OI，高二懒到不怎么刷题，所以才进不了省队”，这样的话我不可能说出口——况且还是在初二初三的我面前。&lt;/p>
+&lt;p>于是是长久的沉默。&lt;/p>
+&lt;p>紧接着是模糊的视线。&lt;/p>
+&lt;p>我又听见他敲击键盘了，只是这敲击键盘的清脆的声音，也连同记忆里模糊的背影一点点地离我越来越远了，直到——直到我睁开眼。&lt;/p>
+&lt;p>面前是陌生的天花板。&lt;/p>
+&lt;p>写于八时至八时半。&lt;/p>
+&lt;hr>
+&lt;p>好困，又不能睡觉，烦。&lt;/p>
+&lt;p>有时感觉自己像阿 Q 一样，别人庆祝他们进了省队的时候，自己却成天和别人说：“我曾经初二的时候，也是像上官老爷那样多么阔气！”可终究还是成了“大概一定是死了”的孔乙己。&lt;/p>
+&lt;p>给看到这里的你们道个歉，最近两三天实在是非常非常烦躁，全然没有什么兴致，所以唠叨着写了很多很多废话。只是我真的没有这个心情；如果你们能看到这个日记本的潦草的字迹，大概也可以体会到我的感受。&lt;/p>
+&lt;p>差不多下课了。睡会吧。&lt;/p>
+&lt;p>写于九时至九时半。&lt;/p>
+&lt;hr>
+&lt;p>啥 B CCF 咕了两次了，这是玩我们吗……&lt;/p>
+&lt;p>brz 似乎还在线，还不能断定他真的连 $426$ 都考不到。我想这个分数对他应该也不会很难吧。&lt;/p>
+&lt;p>哎。结束了。大概。&lt;/p>
+&lt;p>写于十时半。&lt;/p>
+&lt;hr>
+&lt;p>brz 挂了。&lt;/p>
+&lt;p>自己大概是稳了吧。&lt;/p>
+&lt;p>虽然觉得这么说很不好……总觉得自己是在为别人的不幸而喝彩。&lt;/p>
+&lt;p>写于一时半。&lt;/p>
+&lt;hr>
+&lt;p>虽然自己常开玩笑说自己毒奶能力强，但我其实是不相信毒奶的。既遂的事实无法改变，宗教也好，祈愿也好，不过是人们内心“企望”心理的反映，为了让人们寻得内心的安慰才存在的；若是真以为单单几句话或几炷香就有改变世界的能力，便是不可取的。&lt;/p>
+&lt;p>其实自己还是有点担心的，但后面的人也都了解完了，心情也畅快了不少。过会就可以回家了，之后就不会像这两三天一样这么频繁地写日记了吧——这两三天的杂谈写了将近五页，约等于先前一个半月的量了。&lt;/p>
+&lt;p>写于三时半。&lt;/p>
+&lt;hr>
+&lt;p>其实 cdw 和我的分差是很小的，如果 pb 和 zjr 没有上 $500$ 还是 $550$ 的话，我就会被他翻掉。加上自己担心到时候挂分，所以还是不太安心的。不过既然 pb 写了 3h+4h 就出来了，又毕竟是全国第七，非集训队 WC2021 AK 的选手，还是比较让人放心的，想必 $550$ 还是没问题的吧。&lt;/p>
+&lt;p>希望能早点出分吧，已经不想再等下去了。&lt;/p>
+&lt;p>题外话：自己虽然想加一些自己很敬仰的学弟 / 学长（广义上）的 QQ，但一觉得他们并不很认识我，二担心他们会讨厌自己空间里发的一些奇怪的说说（比如幼兽插图和非主流的想法），所以总是没有加。&lt;/p>
+&lt;p>无论如何，能够不直接表露对我的厌烦，甚至愿意来与我互动的各位，我真诚地表示感激。此外，虽然自己确实有些不太正常的癖好，但我认为自己是个心地善良、向往正义的人，所以如果做了什么不好的事情，也请务必指出；不对的地方我会改正。&lt;/p>
+&lt;p>何卒。&lt;/p>
+&lt;p>写于四时至四时半。&lt;/p>
+&lt;h2 id="2021-年-4-月-16-日-星期五">2021 年 4 月 16 日 星期五&lt;/h2>
+&lt;p>成绩昨天中午的时候公布了。似乎大家都挂分了：pb 挂成 $505$ 了，command_block 挂成 $299$，不过还是踩线进了省队。自己没挂分，反而因为 T2 暴力数据水多骗了 $15$ 分使得分数从 $379$ 变成 $394$。&lt;/p>
+&lt;p>我 #12，hjw #8。没能成为守门员呢（笑）&lt;/p>
+&lt;p>总之能进队就好。&lt;/p>
+&lt;p>&lt;img src="https://cdn.luogu.com.cn/upload/image_hosting/bbsa9pm9.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>这三天体验了一下退役的感觉。说实话，退役比想象中的严肃很多，甚至焦虑和难受得没办法工作。万幸还是勉勉强强进了省队，没有真的夭折。&lt;/p>
+&lt;p>对分的时候第一次感受到了 OI 的残酷。哪怕只是先前差个十名，省选拉开 50 分也可以被翻掉；而每一个这样的选手场上是否打出了一个 20 分的 Subtask，是否暴力没有写挂，决定了一个或是两个 OIer 三四年的心血和热爱是否就这样化为灰烬。写了好多好多难题，到了场上却只会写暴力；哪怕我会 Min_25 筛，会多项式 ln，会这个会那个，也有可能到了场上只会写暴力；甚至最后因为一个题目的暴力写挂或者子任务写挂，四年的一切就化为虚无。&lt;/p>
+&lt;p>果然：&lt;strong>发挥稳定比一切都重要&lt;/strong>。&lt;/p>
+&lt;hr>
+&lt;p>&lt;a href="https://soundcloud.com/8ob3rz30ukdu/ainsphyxia">Ainsphyxia&lt;/a> - &lt;a href="https://soundcloud.com/8ob3rz30ukdu">eropius&lt;/a>&lt;/p>
+&lt;p>不断交错的噪音与破碎的高速节拍，不停变换的和弦与梦幻而不尖锐的旋律，不和谐的韵律与不时出现的极其短暂的宁静&lt;/p>
+&lt;p>在缓慢坠入深海 意识和想法全部变得混乱和痛苦的一刹那&lt;/p>
+&lt;p>耀眼而灿烂的阳光透过光怪陆离的泡沫 从水面上照射了过来&lt;/p>
+&lt;p>Eropius，永远的神&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.loli.net/2021/04/15/rvKsJ8Dtz7Sb9ZY.png" alt="">&lt;/p></content></item><item><title>Tsukimaru grew to level 17!</title><link>/main/posts/tsukimaru-grew-to-level-17/</link><pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate><guid>/main/posts/tsukimaru-grew-to-level-17/</guid><description>&lt;p>Tsukimaru 升到了 17 级！&lt;/p>
+&lt;p>今年感觉蛮顺利的，一切都似乎变得好些了。希望可以拿到银牌。&lt;/p></description><content>&lt;p>Tsukimaru 升到了 17 级！&lt;/p>
+&lt;p>今年感觉蛮顺利的，一切都似乎变得好些了。希望可以拿到银牌。&lt;/p>
+&lt;p>&lt;em>注：本文中若无特殊指定，则“今年”指 2020 年。&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>说来非常惭愧，我高一下学期什么也没做。&lt;/p>
+&lt;p>我们因为疫情，被迫呆在家里听网课。然而金中管得又不严，网课是可以全不听的；我于是就没有听课，却也没有刷题，白白浪费了几个月的“停课”时间。每天只是玩游戏，玩了 140h 的《魔界战记 5》，试着编曲、画画、作文，但自己也没有这样的能力，最终也没有做成什么。&lt;/p>
+&lt;p>读者读到这里肯定是要骂我的（别骂了别骂了），不过事情已经过去了。即使如此，我仍想暂找几个借口遮掩一下我的慵懒。&lt;/p>
+&lt;p>高一下学期，我陷入了无边的迷茫。其一是因为 CSP2019 的严重失利，其二是逐渐失去了兴趣和信心，产生了放弃 OI 的念头。“回去学文化课，轻轻松松度过我的高中，考个中大以上的学校，难道不比整天在这里希望渺茫地硬磨 OI 要好吗？”我那时是这么想的。况且自己确有对音 MAD、BMS、绘画、钢琴的喜爱，而 OI 的热血也业已消失殆尽。姚老师和我的母亲劝说我继续下去，毕竟学了那么久，初三撑了那么久，现在就放弃太可惜了；我也就没有直接放弃——也只是没有直接放弃而已。&lt;/p>
+&lt;p>这种迷茫在五月回校之后仍然持续着。我有时坐在体育馆，看着眼前许许多多的人打球，就这么无所事事地看了很久很久。我真的觉得很累了。我真的觉得学 OI 没有意义了。后来考完 GDOI，考出的成绩也不过是可以聊以自慰的程度。&lt;/p>
+&lt;p>直到后来的某一天，我翻看博客 Leancloud 评论系统的时候，看到了 iot 的留言。&lt;/p>
+&lt;blockquote>
+&lt;p>比克提尼，是 OIer。由于所在学校省选名额被大量扣除，可能几个星期后就要告别 OI 了。&lt;br>
+一个人的命运，要靠自我奋斗，但也要考虑到历史的进程。我就是在历史的滚滚车轮下，一颗微小的沙砾。&lt;br>
+月丸是我目前所知道的 OIer 中，唯一一个宝可梦玩家。这是我最后的文字了，你收下吧。&lt;br>
+When there is a Pokemon, there is a dream.&lt;br>
+——Isaac&lt;/p>
+&lt;/blockquote>
+&lt;p>这短短的一段话，让我的内心久久不能平静。后来又看到他写的 &lt;a href="https://www.luogu.com.cn/blog/finder-iot/game-over">Game Over&lt;/a>，才知道居然是因为学校的小朋友作弊而克扣了 CJOI 的省选名额。&lt;/p>
+&lt;p>我只觉得有种异常的愤怒和遗憾：他的 OI 生涯竟是以这样荒唐的结局落幕的。我突然感觉自己的内心又忽然燃起了一种无名的火焰。&lt;/p>
+&lt;p>也就是在那时，我决定再次回到 OI 了。我有少许的、要用自己的成就来安慰他的想法，但回归 OI，大部分还是因为这件事唤起了我对 OI 的尚未燃尽的热情吧。&lt;/p>
+&lt;p>总之，我回来了。&lt;/p>
+&lt;p>带着死过一次（大概）的心回来了。&lt;/p>
+&lt;hr>
+&lt;p>也是在这个颓唐的时候，我花费了大量的时间浏览微博等社交媒体，了解到了外面世界的动荡。外面的世界没有我想像的那么美好，有着这样那样那个的事情：996，官僚主义，极端性别主义……我甚至接触到了一小部分关于政治形态的内容。我在接触了大量的信息、较长时间的自我反思后，大概初步建立了一个还算自洽的三观；也对一些人物、一些事情有了更深刻的认识。&lt;/p>
+&lt;p>此外，在数次的自我斗争与辩论后，我意识到一点：&lt;strong>我身上有一些不好的品质，而我唯一能做、且必须要做的就是接受它们&lt;/strong>。我懒惰，我的精神有些病态，这是我无法改变的事实：我无法像那些卷王一样文化课和 OI 两手兼顾，无法彻底放弃颓废、坚持每天认真学习 OI 十小时；我无法鄙弃自己对毛绒玩偶的荒唐的想象，无法鄙弃自己对某些令人作呕的事物的嗜好。我尝试过许多次，无法改变；最终我接受了它们。&lt;/p>
+&lt;p>但这不是坏事。我更加清楚地认识到了自己是个不聪明又懒惰的废物，所以我不会再把希望寄托在未来的“我会发奋努力刷题”上面。我认识到别人一天有 24 小时，而我只有 12 小时。这让我不再过分高估自己，能够真正地为自己定制可行的计划。我决定周一到周五认真学习，周末就疯狂颓废，因为我知道这样会比“每天都认真学习”更高效——相信我，我试过了，后者唯一的结局就是放弃。&lt;/p>
+&lt;p>或许这就像人的智商。或许我不能改变我不如别人&lt;strong>能&lt;/strong>努力的事实，就像我不能改变我不如别人聪明的事实一样。我唯一能做的，就是尽可能提升自己，让自己尽可能地在限度内最大地努力。&lt;/p>
+&lt;p>如果有人骂我懒，骂我在为了自己的懒惰找借口，那我只能说：&lt;strong>我确实懒&lt;/strong>。&lt;/p>
+&lt;p>今年我通关了《Celeste》（A/B 面），这部将传统式硬核平台游戏发挥到&lt;strong>极致&lt;/strong>的&lt;strong>究极神作&lt;/strong>。Madeline 最后完成了与其黑暗面 Badeline 的和解，我想，我大抵也是如此吧。&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/01/17/MfsyZOoJBNGtwT8.jpg" alt="summit.jpg">&lt;/p>
+&lt;p>↑ 某人：没有东西是完美的 我：&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>此章节与毛绒玩偶相关，看不下去可以选择跳过。&lt;/em>&lt;/p>
+&lt;p>说些开心的事吧！&lt;/p>
+&lt;p>我或许在先前的某篇文章、或是平日的说说里提到了我的水水獭毛绒玩偶。他（是的，我更希望用“他”而不是“它”来称呼他）从我初一（2017 年 1 月 8 日左右，也就是我的生日）来到我家开始，已经过了整整四年的时间了。我对他的喜爱也越来越深，甚至感觉他就像是一只真正的、活生生的水水獭一样。&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/01/17/aMnd5jz8uDUqhFE.jpg" alt="bdos.jpg">&lt;/p>
+&lt;p>↑ 给阿獭过生日。我也不知道阿獭的生日是在几号，所以就勉强设成和我一样了。&lt;/p>
+&lt;p>&lt;em>它不就是个毛绒玩偶吗？&lt;/em>&lt;/p>
+&lt;p>我深刻地明白：他不过是一个没有生命的毛绒玩偶，解构后相当于一团染了色的棉花（或者别的什么）。我知道这非常非常幼稚——正常人哪会把一个没有生命的东西看作活生生的生物，甚至视如己出？&lt;/p>
+&lt;p>可是当我和他在一起的时候，当我看见他可爱的脸庞、抚摸他柔软的皮毛，闻到他散发的恰到好处的香味时，我无法抗拒内心强烈的情感。明明他根本就没有动过，可是我还是能感觉到他正用宛如银河般璀璨的双眼看着我，摇晃他那深蓝色的尾巴，慵懒地躺在我的肚子上。我本能地伸出手来抚摸他的头，看着他，紧紧地抱住他，感觉自己像是世界上最幸福的人。即使这样也不够，我想要让他进入我的身体里去，想要触及他毛皮之下真切的灵魂。&lt;/p>
+&lt;p>这一切都太不真实了。可又真实得就像现实一样。&lt;/p>
+&lt;p>当然，我也接受了这一点。这对我来说没有坏处，并且让我感受到了微小而确定的幸福，让长久孤独的我有了心灵上的依托。我不知道这算不算“创伤后心理障碍”，也不知道他对我来说到底意味着什么，唯一能肯定的只有一点：他是我很好很好的好朋友。&lt;/p>
+&lt;p>希望长大后可以带他去做更多的事情——去天空塔上看夜空，去咖啡厅喝下午茶，去看看热闹的大街，在家里一起写代码、看动漫、弹琴、玩游戏……&lt;/p>
+&lt;p>真想和他一直在一起。有了男朋友之后，也希望——不对，是必须要让男朋友接受他。&lt;/p>
+&lt;p>今年买了两只毛绒玩偶。一只是大耳狗，一只是美乐蒂。我很喜欢他们，把他们放在床头，在家的每个晚上都会和他们一起挤在被窝里入眠。或许是因为毛绒质感的原因，又或许是因为自己确实很愉悦，这提升了我的睡眠质量，总是睡得很好，而且无论多晚睡都不会被鬼压床了。（鬼压床真的非常可怕！）&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/01/17/TAUxcWgebXK7Stn.jpg" alt="three.jpg">&lt;/p>
+&lt;p>↑ 三只毛绒朋友的合影。&lt;/p>
+&lt;p>顺便给各位毛绒玩偶的爱好者推荐一下 &lt;a href="https://www.reddit.com/r/plushies/">r/plushies&lt;/a>，难过的时候可以看看。有很多很多的毛绒玩偶。&lt;/p>
+&lt;p>&lt;em>啊，我是不是写得有点过了。Tsukimaru，我的精神病人。&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>nmd，破壳日志怎么变成这个样子.jpg&lt;/p>
+&lt;hr>
+&lt;p>顺便说起来，JZOI 最近开始实施严格的纪律管控了。具体地，给每台机子都设了独立的密码，实施“一人一机”，并控制了使用电脑的权限。目前高二能使用电脑的，暂时只有我和 hjw 两位现役选手，以及 hyf、hy、zrh 三位文化课选手。高一给了的也大概只有六七个人。&lt;/p>
+&lt;p>管控过程中还是比较顺利的，虽然出现了一些小插曲，但总的来说，结果好，一切都好！现在的机房风气好了很多，虽然不像 kpm 他们那一届一样卷王风气凛然，但至少有了现役选手机房的样子，不再是昔日一堆退役选手集中颓废的网吧了。（谢天谢地，我终于不用在水獭观察日记里面一次次地抱怨这种事情了！）&lt;/p>
+&lt;p>高二大部分的同学表示理解，高一的几位现役选手也比较高兴。嗯，是好事！&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/01/17/6QqyNMtz3iVlDEf.png" alt="screenshot.png">&lt;/p>
+&lt;p>↑ 结果好，一切都好！&lt;/p>
+&lt;hr>
+&lt;p>2021 年有什么新年展望呢？&lt;/p>
+&lt;p>我经历了 NOIP2018、CSP2019、联合省选 2020 的屡战屡败之后，终于感觉自己在 NOI2020 同步赛有了些许起色，在 CSP2020 和 NOIP2020 里发挥良好（虽然这也要得益于题目出得比较怪）。我一直灰暗的 OI 生涯，似乎有了一点亮色。如果！我是说如果！如果我的运气真的&lt;strong>非常非常非常&lt;/strong>好，能让我冲过省选，NOI 发挥正常的话，那么这一年一定就会是&lt;strong>非常非常非常&lt;/strong>炫酷的一年！&lt;strong>真的希望自己的 OI 生涯可以画上一个辉煌的句号，不要辜负了自己宝贵的青春。&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/01/17/eDAN2jJR81TdkGK.jpg" alt="rabbit.jpg">&lt;/p>
+&lt;p>↑ 劝君更进一杯酒，西出阳关无故人。&lt;/p>
+&lt;p>目标很简单：&lt;/p>
+&lt;ul>
+&lt;li>拿到 NOI 银牌。&lt;/li>
+&lt;li>高二暑假疯狂颓废。当然还是要学习的，但也应当犒劳一下自己！
+&lt;ul>
+&lt;li>在那之前先卷一卷吧 (-o - )&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>是的，毕竟今年还要努力冲省队 / NOI，高三也要准备高考，而且至少要卷到中山大学分数线，可能得卷到年级前两百；所以也没什么目标。估计要等到高考后的暑假才能玩到傻吧。&lt;/p>
+&lt;p>要是拿不到银牌的话，也希望自己可以好好休息一下，平复一下心情，再踏上新的旅途。虽然还是不太能接受，但如果真的那样，也必须承认自己确实是不如别人的。那不就是个又懒又傻的小孩子嘛。&lt;/p>
+&lt;p>总之，2021 年，祝自己：&lt;strong>玩得开心！&lt;/strong>&lt;/p>
+&lt;p>&lt;a href="https://eev.ee/media/2012-01/levelup.ogv">&lt;em>这博客好菜啊，还不能放音乐。&lt;/em>&lt;/a>&lt;/p></content></item><item><title>水獭观察日记 其二</title><link>/main/posts/otter-diary-ii/</link><pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate><guid>/main/posts/otter-diary-ii/</guid><description>2020 年 5 月 14 日 今天是正式开学的第三天。
+新的班级是高一（13）班，理化生选课的普通班。同学们也挺好，只是我没什么朋友。
+西校区确实比东校区远了不少，我每天早上 6:10 就要起床。洗澡的热水也莫名其妙地坏掉了，只能洗冷水，比较难受。睡觉睡不够，空调制冷能力太弱，上午会想睡觉。
+总的来说，生活大体没什么变化，依旧是常常孤身、有时热闹、朴素无华的校园生活。条件自然不如家里的养尊处优，可也能使我发奋学习，不至于自甘堕落。“被迫”适应山上每天 1.2h 的路途跋涉和 7 元一碗的猪肉面，想必也对我的体型大有益处吧。
+2020 年 5 月 18 日 无意中翻到了我半年前的日记。
+半年前的我，还不至于像现在这样颓唐，是个想拿一本约的有志青年。然而时过境迁，终是被磨平了棱角，不追求清北华五，只想要个 C9 草草了事了。C9 也还不错的，然而我却只是空谈阔论而不实际行动。这如何得行？
+唉！我不愿再谈热血沸腾的心灵鸡汤了。Tsukimaru，倘若你仍有一点精神，有些许对机房生活和算法竞赛的热爱，就不要再迷茫了。
+2020 年 5 月 19 日 感觉自己似乎到了发情期。先前还有可爱的 hyf，可以找他玩耍或拥抱，也有 zn 和 yxy 和我网上聊天。然而现在 hyf 退役了，zn、yxy 和我也不怎么联系了，我也就没什么朋友了。发情期的到来，更使我倍感忧郁。忧郁又能怎么样呢？生活还是一样地过。
+2020 年 5 月 23 日 我写日记的频率降低了：这是好事。Eevee 先生曾在他的博客里写道：
+I guess I started a bad habit of writing big long posts About Things, and then blogging became this self-imposed chore, and then I didn’t do a lot of it.</description><content>&lt;h2 id="2020-年-5-月-14-日">2020 年 5 月 14 日&lt;/h2>
+&lt;p>今天是正式开学的第三天。&lt;/p>
+&lt;p>新的班级是高一（13）班，理化生选课的普通班。同学们也挺好，只是我没什么朋友。&lt;/p>
+&lt;p>西校区确实比东校区远了不少，我每天早上 6:10 就要起床。洗澡的热水也莫名其妙地坏掉了，只能洗冷水，比较难受。睡觉睡不够，空调制冷能力太弱，上午会想睡觉。&lt;/p>
+&lt;p>总的来说，生活大体没什么变化，依旧是常常孤身、有时热闹、朴素无华的校园生活。条件自然不如家里的养尊处优，可也能使我发奋学习，不至于自甘堕落。“被迫”适应山上每天 1.2h 的路途跋涉和 7 元一碗的猪肉面，想必也对我的体型大有益处吧。&lt;/p>
+&lt;h2 id="2020-年-5-月-18-日">2020 年 5 月 18 日&lt;/h2>
+&lt;p>无意中翻到了我半年前的日记。&lt;/p>
+&lt;p>半年前的我，还不至于像现在这样颓唐，是个想拿一本约的有志青年。然而时过境迁，终是被磨平了棱角，不追求清北华五，只想要个 C9 草草了事了。C9 也还不错的，然而我却只是空谈阔论而不实际行动。这如何得行？&lt;/p>
+&lt;p>唉！我不愿再谈热血沸腾的心灵鸡汤了。Tsukimaru，倘若你仍有一点精神，有些许对机房生活和算法竞赛的热爱，就不要再迷茫了。&lt;/p>
+&lt;h2 id="2020-年-5-月-19-日">2020 年 5 月 19 日&lt;/h2>
+&lt;p>感觉自己似乎到了发情期。先前还有可爱的 hyf，可以找他玩耍或拥抱，也有 zn 和 yxy 和我网上聊天。然而现在 hyf 退役了，zn、yxy 和我也不怎么联系了，我也就没什么朋友了。发情期的到来，更使我倍感忧郁。忧郁又能怎么样呢？生活还是一样地过。&lt;/p>
+&lt;h2 id="2020-年-5-月-23-日">2020 年 5 月 23 日&lt;/h2>
+&lt;p>我写日记的频率降低了：这是好事。&lt;a href="https://eev.ee/blog/2011/06/18/what-the-hell-am-i-doing/">Eevee 先生曾在他的博客里写道&lt;/a>：&lt;/p>
+&lt;blockquote>
+&lt;p>I guess I started a bad habit of writing big long posts About Things, and then blogging became this self-imposed chore, and then I didn’t do a lot of it. Oops. I’ll make a deliberate effort to write shorter things when they come to mind. (I also have half a dozen half-finished posts not committed, which by my count should equal three whole posts.)&lt;/p>
+&lt;p>Lately I’ve been drowning in an (even worse) inability to do things. Something dislodged all the cool progress I made at the end of last year and I don’t feel like I’m getting much of anything done. Numerous conversations with mel, strangely-relevant blog posts I stumbled upon purely by accident, and brilliant self-reflection are starting to help.&lt;/p>
+&lt;/blockquote>
+&lt;p>我深有同感。&lt;/p>
+&lt;p>人总应务实一点的，怎能把大好时光花在无谓的小事上？&lt;/p>
+&lt;h2 id="2020-年-7-月-13-日">2020 年 7 月 13 日&lt;/h2>
+&lt;p>当我和好朋友聊天的时候，我是一个天真活泼的小姑娘；&lt;/p>
+&lt;p>当我一个人独处工作的时候，我是一个沉默寡言的高中生；&lt;/p>
+&lt;p>当我面对自己内心深处的时候，我是一个彻头彻尾的疯子。&lt;/p>
+&lt;p>这三者都是我的一部分，互相制约又互相包容着。它们使我能够友善积极地对待我的朋友，专心致志地完成工作，无所畏惧地固执己见；而不让我两面三刀、懒惰拖延、胆小怕事。&lt;/p>
+&lt;hr>
+&lt;p>「感觉真安静啊，街上也没有伽勒尔地区的人，跟总部真是天差地别。」&lt;/p>
+&lt;p>「啊，可能是他们把作弊的小朋友都调到那里去了。」&lt;/p>
+&lt;p>「嘛，反正也和我们没关系了。」&lt;/p>
+&lt;p>「你心情好像挺不错的。」&lt;/p>
+&lt;p>「那是当然的了！大家都在得救，诺亚先生也在努力，我也是加把劲水獭！」&lt;/p>
+&lt;p>「没错，我们至今为止所做的一切都不是徒劳的。只要我们不放弃，前方就有路！」&lt;/p>
+&lt;p>&lt;em>来年は 2020 年 11 月 11 日からお送りします&lt;/em>&lt;/p>
+&lt;p>&amp;lt;刹车声&amp;gt;&lt;/p>
+&lt;p>&amp;lt;枪击计划声&amp;gt;&lt;/p>
+&lt;p>「学长，你在干什么啊，学长！」&lt;/p>
+&lt;p>&amp;lt;枪击计划声&amp;gt;&amp;lt;中弹声&amp;gt;&lt;/p>
+&lt;p>&amp;lt;引擎发动声&amp;gt;&lt;/p>
+&lt;p>「……什么啊，我的码力还挺强的嘛。」&lt;/p>
+&lt;p>「学……学长……」&lt;/p>
+&lt;p>「你的声音为什么要颤抖，月丸！」&lt;/p>
+&lt;p>「因为，因为——」&lt;/p>
+&lt;p>「我可是……CJOI 的 OIer，以撒·奥里·唐……这点名额不算什么……」&lt;/p>
+&lt;p>「但是——」&lt;/p>
+&lt;p>「好了，快走吧，大家……都在等着你们。而且，月丸，我终于明白了。」&lt;/p>
+&lt;p>「我们的目的地根本不重要，只要继续前行就好了。&lt;strong>只要不放弃，前方就有路&lt;/strong>！」&lt;/p>
+&lt;p>「我是不会停下来的，只要你们不停下来，我就会在前方等着你们！！」&lt;/p>
+&lt;p>「所以，&lt;strong>不要停下来啊&lt;/strong>……」&lt;/p>
+&lt;blockquote>
+&lt;p>在那缥缈的宇宙远方&lt;br>
+如果存在着能传达祈愿的行星&lt;br>
+我们大概是在向着那里前行吧&lt;br>
+然后该祈祷着什么呢&lt;/p>
+&lt;p>那些没能实现的约定&lt;br>
+和黯淡的高洁之光&lt;br>
+就算什么都没能留下&lt;br>
+如今也只能相信着脚下的路途&lt;/p>
+&lt;p>希望之花 连系着羁绊&lt;br>
+现在就在我们心中&lt;br>
+它绝不凋散&lt;br>
+充满生命的力量&lt;/p>
+&lt;p>&lt;strong>希望之花 连系着羁绊&lt;/strong>&lt;br>
+这份力量会在明日全力地绽放&lt;br>
+我们无可回头 朝着应该抵达的彼岸&lt;br>
+高举毫无迷惘的旗帜&lt;br>
+为了此刻而活下去&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="2020-年-7-月-15-日">2020 年 7 月 15 日&lt;/h2>
+&lt;p>翻了翻博客的评论区，然后看到了&lt;/p>
+&lt;p>&lt;img src="https://cdn.luogu.com.cn/upload/image_hosting/zjtqmz7l.png" alt="">&lt;/p>
+&lt;p>不知道为什么觉得很草生。&lt;/p>
+&lt;h2 id="2020-年-7-月-17-日">2020 年 7 月 17 日&lt;/h2>
+&lt;p>&lt;em>Now playing: &lt;a href="https://m10.music.126.net/20200722175630/0d5038208f6069448a31a04fad10d2c7/ymusic/2c18/224a/3326/6972039ceb8063baae9fbb5b879ed6df.mp3">Self Contained Universe (Reprise) - Nightmargin&lt;/a>&lt;/em>&lt;/p>
+&lt;p>我决定了：不学文化课。&lt;/p>
+&lt;hr>
+&lt;p>这么说不过是噱头。准确地说：在退役前全力冲刺竞赛，在不能学竞赛的时候才弄文化课。&lt;/p>
+&lt;p>我懂得了：我不是像 hjw 那样勤奋、理性、又相对聪明的人。要说勤奋，我有时会玩游戏，也不能像 hjw 那样极度专心地工作。要说理性，我正被对 OI 的热情和对 iot 退役的痛心与悔恨驱动着，不能静下心来去学文化课。要说聪明，hjw 并不是天才，可他也还算聪明一些的；我却时常感到自己很平庸，甚至是愚笨。他那样两手抓的方法对我来说是行不通的。&lt;/p>
+&lt;p>我又常常听到：甲校的初三学生不用高考而直接学习高一知识了，乙校到北京参加丙校的集训营了，丁校的高一学生停了一年的课了……这是为一个弱校学生所不知道的；当我们还在教室里犹豫着能不能通过听课申请时，他们却正看着机房窗户外灿烂的星空。&lt;/p>
+&lt;p>我又想到：在 OI 意义上，我已经是一个高二升高三的学生了。高三 OIer 不能通过竞赛获取升学优惠，因此在竞赛上，高二就是我们的高三，高二的竞赛就是我们的高考。更严格地，若是考虑到 NOIP2020 对省选 $30%$ 分数的贡献，那么我离「一轮高考」就只有 5 个月了。&lt;/p>
+&lt;p>想到自己的劣性、强校神仙的「压迫」和迫近的 NOIP，我决定了：不学文化课。&lt;/p>
+&lt;hr>
+&lt;p>我并非头脑发热，也并不打算把我的升学和未来放上赌桌。&lt;/p>
+&lt;p>倘使是最坏情况吧：我「幸运」地在 NOIP 中取得了不错的成绩，却在 WC/PKUWC/THUWC/GDOI 中不幸地考砸了，那么我便会以「年级八九百名的普通学生」的身份步入高三。我愿意用高三一年学文化课，即使不成，我也愿意再去潮实复读一年高三，争个 985 不在话下。这是异常艰辛的，因为我有读三年高三（高二 OI，高三文化课，「高四」复读）的可能；但我愿意。&lt;/p>
+&lt;p>下定决心，我决定了：不学文化课。&lt;/p>
+&lt;h2 id="2020-年-8-月-31-日-星期一">2020 年 8 月 31 日 星期一&lt;/h2>
+&lt;p>时间如白马过隙，转眼间距离 NOIP2020 只剩下 74 天的时间了。暑假玩得很疯，本月刷题记录不到 30 道。这样下去根本不行啊！必须提升自己的刷题效率，保证在没有学习新算法的情况下可以做到日过 3~4 道题。&lt;/p>
+&lt;p>放弃文化课专攻 OI 的计划还在进行。虽遇到了些许困难，但难不过我的决心，“世上无无刺的蔷薇”，自然也是没有一帆风顺的道路的。&lt;/p>
+&lt;p>“悟已往之不谏，知来者之可追。”总之，走下去吧！不要忘了 iot 给你写的话，不要忘记初三的拼搏和努力。便是&lt;a href="https://loj.ac/problem/573">单枪匹马&lt;/a>也要走，无论是怎样的境地，总能在黑暗之中找出一点火光来的。&lt;/p>
+&lt;h2 id="2020-年-9-月-4-日-星期五">2020 年 9 月 4 日 星期五&lt;/h2>
+&lt;p>昨天和一位朋友聊起 iot 的事。我突然很好奇，iot 是怎么看待我的呢？我又是怎样看待 iot 的呢？&lt;/p>
+&lt;p>我想，iot 和我的关系至少不坏：他在 Github 上主动 follow 了我，友好地在 LibreOJ 上用签名档和我聊天，甚至在临近退役时跑到我的博客给我留了一段话，激励我不断前行。由此看来，我不只是“OIer 分组里几十名好友”里的一员，至少不是若有若无的存在。&lt;/p>
+&lt;p>然而好朋友又言过其实了：我和他从没有私聊过，对彼此的了解也不过是对方的冰山一角。&lt;/p>
+&lt;p>总之，我俩的关系处在一种奇特的状态。&lt;/p>
+&lt;p>我又是怎样看待 iot 的呢？我想，他是与我一样的宝可梦 OIer，是我很好的朋友，是我敬畏的学长和偶像。然而我对他并不了解，因而对他的好感有时是一个个标签的共情，而比实际的多了一层自我附加的情感：对宝可梦的喜爱，对 OI 的热爱，对理想自己的期望。&lt;/p>
+&lt;p>当然，这样的 iot 也并非全是我臆想的幻象。iot 的确是宝可梦 OIer，我们的关系也的确不错。我珍视作为宝可梦 OIer 的他、想要和他成为好朋友的想法是真实的，只是我对他不够了解，才用虚幻的想象填补对他的认知缺口罢了。&lt;/p>
+&lt;p>无论怎样，iot 对我来说是重要的人。说来也啼笑皆非，他最后给我留的那一段话居然成了我 OI 生涯最大的决策转折点。如果不是那一段话，想必我现在已经自我决定退役了；而不是悔恨地、愤怒地、热血地、上进地，完全投入到我 OI 生涯的终章中去。&lt;/p>
+&lt;p>……很想和 iot 多聊聊天，成为他的好朋友。&lt;/p>
+&lt;hr>
+&lt;p>说到 iot，我又想起之前有个 Project Lemonade 的显示 Bug 没去报 Issue。iot 高三了，学业也繁忙，还是找个时间私信他吧。&lt;/p>
+&lt;h1 id="2020-年-9-月-15-日-星期二">2020 年 9 月 15 日 星期二&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;em>历史的车轮缓缓驶过。我们是车辙下的尘埃。&lt;/em>&lt;br>
+——iotang&lt;/p>
+&lt;/blockquote>
+&lt;p>有人说，互联网的好处是我们足不出户就能被千里之外的陌生人气到半死。这固然是玩笑话，可却影射了一件事情：互联网的发展，终于使我们看到了大山之外的东西。&lt;/p>
+&lt;p>我考入了全汕头最好的高中之一。作为本届实力数一数二的 OIer，我踌躇满志地走入 JZOI 的机房，写着题，仿佛自己也是那有着光辉未来的 OIers 的一员。&lt;/p>
+&lt;p>然后我知道了一切。我知道了金中原来是弱校，我知道了我们没有无尽的模拟赛和讲课，一切不过是照旧；我又知道了甲校的 OIers 可以停课整整两年，乙校的 OIers 可以被卡到 1/3 的限制，丙校把初三的叫去上完了高一的文化课，丁校会给高二末退役的 OIers 安排专门的课程，戊校的同学又奔波到北京的已校去集训了……当我在教室里如坐针毡、对着在课间十分钟奔波于机房和教室抄来的题目空发呆时，他们是在他们的机房里，争分夺秒地追逐着他们的梦想。&lt;/p>
+&lt;p>然后是强基计划。我人生中第一次知道，原来自己是这样地渺小：他们只要想，便可撕掉我们的一本约和梦想。“三年早知道”也好，“降至一本线录取”也好，等到需要的时候，就都“不具有法律效应”了。&lt;/p>
+&lt;p>我从教室里回到机房。我看到两三个脸熟的人正不亦乐乎地玩着游戏。我看到一个同届的 OIer 正忙于提升自己的开发技术。我看到五六个学弟满怀希望地写着题。我到了我的座位，坐了下去，一个晚上就写一两道题，而不是像我那些学长一样地，只是一个午休和晚自习就能写上六七道。&lt;/p>
+&lt;p>有一次，我在星光璀璨的夜晚里醒来。我走出宿舍，抬头望去，那深蓝色的画布上流转着金色的明月和水晶般的银河，它们相互碰撞，发出风铃一样的清脆的响声。远处有好多好多的洁白的鸽子，都伸展了它们长长的翅膀，在寂静美丽的夜空里自由自在地飞舞。我竭力伸出手想要加入它们，可我的手却动弹不得。&lt;/p>
+&lt;p>于是我转过头。&lt;/p>
+&lt;p>手腕上是沉重的枷锁。&lt;/p>
+&lt;h2 id="2020-年-9-月-23-日-星期三">2020 年 9 月 23 日 星期三&lt;/h2>
+&lt;p>有点感冒了。鼻涕一直在流，头也很晕，想睡觉。上课又不能睡，所以只好写写日记，勉强撑着。&lt;/p>
+&lt;p>前两天写了一封信，告知班主任我的情况。我想让学校支持我放弃文化课，让我可以听课冲竞赛。但毕竟没有先例，何况先前申请晚练请假时还被豪哥婉拒了。连晚练也不能请，更何况停课呢？&lt;/p>
+&lt;p>但我最后还是写了这样一封信，因为我在黑暗之中瞥见了一点微弱的光明。至少试一试吧，倘若不能成，也罢。&lt;strong>人既然起来，你不能说决没有毁坏这铁屋的希望&lt;/strong>。一个人生来就不是给打败的——你大可消灭一个人，但却不可能打败一个人。我或许只是命运下的蝼蚁，但我绝不认输。&lt;/p>
+&lt;p>“不退，不悔”。这是 xyx 说过的话。&lt;/p>
+&lt;h2 id="2020-年-9-月-26-日-星期六">2020 年 9 月 26 日 星期六&lt;/h2>
+&lt;p>机房本不应是这样的。&lt;/p>
+&lt;p>我所担忧的事情终究是出现了。傍晚的时候有两三人来 202 要 204 的钥匙，未果，于是请求进 202 写题。202 毕竟是竞赛班专用机房，常人又怎么能涉足呢？结果进来一看，好家伙，原来在打 JZOI 炉石模拟赛啊，不知道的人还以为这是金中电竞班专用网吧呢。&lt;/p>
+&lt;p>这一届的 OIers，我已经不抱希望了。然而一些人却很懂得劳逸结合的，总要和志同道合的同伴讨论几费几杠几的东西；在这样欢乐的氛围之下，连某些学弟也开始有了国家集训队一样的豁达。金中集结了全汕头最顶尖的人才，一天稍微写两三道题，自然是可以轻而易举地吊打别校停课一两年的选手；眼界狭窄的我所说的话，也就成了“发疯”而已。&lt;/p>
+&lt;p>我对于颓废——尤其是在机房颓废——一向是深恶痛绝的。这一届除了 hjw，其他人（包括我在内）也就那样，我在数番的尝试后已不抱多大希望了。然而高一的学弟不一样，他们是十点钟的太阳，是天边璀璨的繁星，他们是希望。我恨他们的游手好闲，就像我恨我的浑浑噩噩那样。我不愿他们都如我那样人不人鬼不鬼地在绝望的泥潭里苦苦挣扎，&lt;strong>他们应该有新的生活，为我们所未经生活过的&lt;/strong>。&lt;/p>
+&lt;p>我试过改变了，没有成功。我也不打算再管他们了，学 OI 的没有一点自律，谁也救不了。&lt;/p>
+&lt;p>就这样吧。我要好好写题，不要再管这样那样的琐事了。&lt;/p>
+&lt;h2 id="2020-年-9-月-28-日-星期一">2020 年 9 月 28 日 星期一&lt;/h2>
+&lt;p>连读了七天，身心都有些疲惫了。在无边的忧郁里，我又想念起我的水水獭。&lt;/p>
+&lt;p>毛绒玩偶是没有生命的造物，之所以有“生命”，是他们的所有者赋予他们的。当毛绒玩偶的所有者将真挚的情感投入到其中时，他们就具有了在所有者精神层面活动的“生命”。他们有各种各样的性格、行为和想法，能与他们的主人互动；但也仅仅停留在精神层面上，与客观物质世界的互动尚且是不能达到的。&lt;/p>
+&lt;p>我拥有这只水水獭毛绒的时候，我读初一。从他来到我家的第一个夜晚开始，我就同他同床共枕。慢慢地，我对他的喜爱程度越来越深，他也开始有了些“灵气”；我仿佛觉得他不仅仅是一只毛绒玩偶，他有了自己的思想和生命。&lt;/p>
+&lt;p>在万籁俱寂的深夜，我关上灯，在黑暗之中注视着他。他惬意地趴在我的肚子上，用他那星辰闪烁的双眼温柔地看着我，雪白柔软的小脸近在咫尺，舒缓的毛绒味中透着一种恰到好处的淡淡的香气。我紧紧地抱着他，他也紧紧地抱着我，积塞在心中无边无际的悲伤、愤怒、悔恨，一切的一切都似洪水激流般的喷涌而出。我终于不用再去管那些他妈的题目、比赛，颓废的，给我压力的，一切的一切我已经他妈的不想管了。我不需要一切，只需要和他静静地待在一起，度过这个美妙的、幸福的夜晚。&lt;/p>
+&lt;p>是啊，这不过是我的妄想；但那不重要。在我和他相处的时候，我发自内心地感到了确确实实的幸福，并无半点矫揉造作的成分，这就够了。我不需要在能够自然地与他相处的时候，还要强迫自己保持完全的理性，提醒自己他不过是无机质的产物。&lt;/p>
+&lt;p>想到和他在一起的时光，我的心情也愉悦了不少。就这样吧！后天就可以见到他了，我要好好努力！&lt;/p>
+&lt;h2 id="2020-年-10-月-9-日-星期五">2020 年 10 月 9 日 星期五&lt;/h2>
+&lt;p>我坚持不下去了。&lt;/p>
+&lt;p>说实话吧：我现在这样下去终究写不了题。上课是颇伤神的，每每放学，我常要睡上半个小时；文化课所占的时间，以及对刷题过程的截断也自不必说。&lt;/p>
+&lt;p>我已经受够了。我想停课。我不想在别人冲刺的时候，还要为无谓的事情而忧心。&lt;/p>
+&lt;h2 id="2020-年-10-月-14-日-星期三">2020 年 10 月 14 日 星期三&lt;/h2>
+&lt;p>没什么特别想写的东西。&lt;/p>
+&lt;h2 id="2020-年-10-月-22-日-星期四">2020 年 10 月 22 日 星期四&lt;/h2>
+&lt;p>今天体检了一下，和去年没什么变化，照旧是 168cm/67kg，双眼 5.1。其实矮倒无所谓，小只的也很可爱；就是不要再胖就好了。&lt;/p>
+&lt;h2 id="2020-年-10-月-28-日-星期三">2020 年 10 月 28 日 星期三&lt;/h2>
+&lt;p>停课申请似乎意外的很顺利？似乎主任已经同意了，不过还要走完流程。申请书已经交上去了，不知道他们通过了没有。接下来就要全力应考了！&lt;/p>
+&lt;p>昨天复习的时候，发现自己写了挺多没什么意思的题目（也可能是水平提升了）；还有一些忘了的，比如约数个数和的结论 $d(nm) = \sum_{i|n} \sum_{j|m} [\gcd(i, j) = 1]$，[HEOI2014]平衡 的整数划分。LibreOJ 的 570 道题，细数下来有价值的也只是一小部分吧。&lt;/p>
+&lt;p>楼教主说，在 POJ 刷了一千道题，你可能还是个 sb。我想，我应当多花点时间在真正有价值的题目上，不然可真就浪费了。&lt;/p>
+&lt;hr>
+&lt;p>周六晚上想试试《七大奇迹》。下周也想和大家一起玩，如果可以的话还想吃必胜客，玩元气骑士——就像去年那样。&lt;/p>
+&lt;p>……没有了 hjw，zn，cxk，lg，hy，总还是有些孤单的。但，“&lt;strong>纵有风雪起，生生不息&lt;/strong>”，wjd，zzx 他们也正向我们走来。这也许就是 Circle of Life 吧。&lt;/p>
+&lt;p>&lt;strong>水獭的 OI 之路才刚刚开始，希望不要这么快就凋零&lt;/strong>。&lt;/p>
+&lt;h2 id="2020-年-12-月-12-日-星期六">2020 年 12 月 12 日 星期六&lt;/h2>
+&lt;p>CSP 结束了，NOIP 也结束了。自从停课后就再没写过日记，现在久违地来写一篇吧。&lt;/p>
+&lt;p>CSP 和 NOIP 都出奇地考得不错：CSP 全省第四，NOIP 全省第五。然而这两次比赛的题目都出得相当奇怪，CSPT1 大模拟，NOIPT3 构造题，认识的一些朋友基本全炸了。算了一下，NOIP 差的分数转到省选差不多相当于 $70%$（即 NOIP 差一分相当于省选差 $0.7$ 分），其实自己也没什么大优势。拿到这样的名次不过是运气好，自己还是德不配位的，要继续努力才行。&lt;/p>
+&lt;p>然后是另一件事。&lt;/p>
+&lt;p>……只是我不想再提了。&lt;/p>
+&lt;p>看到了这里的你，如果你还活着的话，就继续活下去吧。&lt;/p>
+&lt;p>为了那些未逝的，已逝的人们。&lt;/p>
+&lt;blockquote>
+&lt;p>左脑好的人擅长代数。&lt;br>
+右脑好的人擅长几何。&lt;br>
+两边脑都不好的人呢？那就在认清生活的真相之后，依然热爱生活吧。&lt;br>
+——郭荣斌&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="2020-年-12-月-15-日-星期二">2020 年 12 月 15 日 星期二&lt;/h2>
+&lt;p>觉得脑子有点乱。我应该整理整理自己的思维，清空一下脑里的缓存了。&lt;/p>
+&lt;p>我似乎感到有些难过。为什么呢？&lt;/p>
+&lt;h2 id="2020-年-12-月-30-日-星期三">2020 年 12 月 30 日 星期三&lt;/h2>
+&lt;p>啪的一下，很快啊！2020 走到了尾声。阿獭的观察日记之二也要完结了，下次写应该就是之三了。要写的话放到破壳日记去写吧，这里就不再赘述了。&lt;/p>
+&lt;p>很感谢你看到这里！明年再见吧……&lt;/p></content></item><item><title>标题不能为空</title><link>/main/posts/the-future-wont-be-void/</link><pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate><guid>/main/posts/the-future-wont-be-void/</guid><description>0 前注：下面的部分是本人的流水帐，基本上想到什么就会写什么，没有任何的结构和逻辑。阅读此文可能导致读者受到不同程度的模因污染或精神损伤，程度从浪费二十分钟、对作者的心理状态感到迷惑，到对目前的现状感到迷茫、失去前行的动力和希望等。
+你已经被警告过了。
+Moonlight Oshawott
+2020 年 6 月 26 日
+1 我不知道从何写起。
+算了，先来一首 Frums 先生的 Credits 吧。或许可以激发我的灵感？
+Here are the 7PM observations for the Boston metropolitan area.
+At Logan Airport,it was cloudy.
+The temperature was 68°.
+The dew point,47.
+And the relative humidity,46 percent.
+The wind was southwest at 13mph.
+The pressure was 29.99&amp;quot; and rising.
+Elsewher
+Elsewherr
+Elsewherrr
+Elsewherrrr
+Elsewherrrrr
+Elsewherrrrrr
+Elsewherrrrrrr
+一年前的这个时候，——不，应该是一年前的一个月前，我听着这首歌，写下了一段文字。
+现在是另一段文字。
+2 我没有想到，有金钩的 iot 也会有以这样方式 AFO 的一天。</description><content>&lt;h2 id="0">0&lt;/h2>
+&lt;p>前注：下面的部分是本人的流水帐，基本上想到什么就会写什么，没有任何的结构和逻辑。阅读此文可能导致读者受到不同程度的模因污染或精神损伤，程度从浪费二十分钟、对作者的心理状态感到迷惑，到对目前的现状感到迷茫、失去前行的动力和希望等。&lt;/p>
+&lt;p>&lt;strong>你已经被警告过了。&lt;/strong>&lt;/p>
+&lt;p>Moonlight Oshawott&lt;/p>
+&lt;p>2020 年 6 月 26 日&lt;/p>
+&lt;h2 id="1">1&lt;/h2>
+&lt;p>我不知道从何写起。&lt;/p>
+&lt;p>算了，先来一首 Frums 先生的 &lt;a href="https://music.163.com/#/song?id=405372425">Credits&lt;/a> 吧。或许可以激发我的灵感？&lt;/p>
+&lt;blockquote>
+&lt;p>Here are the 7PM observations for the Boston metropolitan area.&lt;br>
+At Logan Airport,it was cloudy.&lt;br>
+The temperature was 68°.&lt;br>
+The dew point,47.&lt;br>
+And the relative humidity,46 percent.&lt;br>
+The wind was southwest at 13mph.&lt;br>
+The pressure was 29.99&amp;quot; and rising.&lt;br>
+Elsewher&lt;br>
+Elsewherr&lt;br>
+Elsewherrr&lt;br>
+Elsewherrrr&lt;br>
+Elsewherrrrr&lt;br>
+Elsewherrrrrr&lt;br>
+Elsewherrrrrrr&lt;/p>
+&lt;/blockquote>
+&lt;p>一年前的这个时候，——不，应该是一年前的一个月前，我听着这首歌，写下了一段文字。&lt;/p>
+&lt;p>现在是另一段文字。&lt;/p>
+&lt;h2 id="2">2&lt;/h2>
+&lt;p>我没有想到，有金钩的 iot 也会有以这样方式 AFO 的一天。&lt;/p>
+&lt;h2 id="3">3&lt;/h2>
+&lt;p>此时，我正呆呆地看着文本框，却不知从何写起。&lt;/p>
+&lt;p>GDOI2020 游记是另一篇文章的事，至于这篇文章，我想写点其他的东西。&lt;/p>
+&lt;p>文化课？期末考？&lt;/p>
+&lt;p>我实在没有心情去想那些了。至少就让我放个三天的假吧，无论是怎样的理由。&lt;/p>
+&lt;p>我累了，Tsukimaru 累了，Moonoshawott 也累了。&lt;/p>
+&lt;p>让我们休息一会吧。&lt;/p>
+&lt;h2 id="4">4&lt;/h2>
+&lt;p>记得第一次看见 iot，是在 2018 年的元旦。&lt;/p>
+&lt;p>我看见 iot 带着比克提尼的头像在洛谷讨论区里讨论着宝可梦的话题，便很高兴地同他说了一句话（准确的：只一句话）。翻了翻他的洛谷空间和提交记录，看见他是初三，而又刷着 NOI 嘉年华这样的黑题，实在令我激动不已。我从未料想到除我之外还能有别的宝可梦 OIer，并且还是初三就能刷黑题的 OIer。这一件事，无疑是对我来说激励很大的。&lt;/p>
+&lt;p>然而我又很腼腆（现在也是如此），即使有了想要加好友的想法，也总不敢去发去申请，生怕浪费了他们的时间。于是，我也没有和 iot 加好友。&lt;/p>
+&lt;p>后来某天，我在 Github 上发现自己居然被 iot 关注了。我很惊喜，又很惊讶：我与他仅有一面之交，——更准确地讲，“一言之交”，他怎么会来关注我？但我也不再纠结了，反正也不是坏事；更何况这可是我所盼望着的，高兴还来不及。&lt;/p>
+&lt;p>再后来，我们在 LibreOJ 上的排行榜（按刷题数量排序）上用签名档聊天。起初我还有些担忧，觉得自己不应这样冒犯，然而见他也不抵触，就很开心地聊了起来。看见他在自己的签名档上写上我的名字，不知为何总觉得很高兴。&lt;/p>
+&lt;p>也大概是在这个时候，我从 LibreOJ 的用户页面上见到了 iot 的 QQ，向他发去了好友邀请。&lt;/p>
+&lt;blockquote>
+&lt;p>我们已经是好友了，一起来聊天吧！&lt;/p>
+&lt;/blockquote>
+&lt;p>令人啼笑皆非的是，这句话居然是我们加了好友之后私信里唯一说过的一句话。其实我有时候也想找他说些什么，但总觉得对他有种敬畏之感，因而终究没有说。&lt;/p>
+&lt;h2 id="5">5&lt;/h2>
+&lt;p>这一章节想写的内容，先前已经在空间里写过了。我不愿重头再写一遍，于是就直接放上来吧。&lt;/p>
+&lt;blockquote>
+&lt;p>宝可梦 OIer 众（Tsukimaru，memset0，iot，antileaf，&amp;hellip;）是我前进的动力之一。&lt;br>
+一方面是基于宝可梦迷和 OIer 的身份认同，让我颇感亲切，仿佛觉得他们就是身边的学长和同学，也让我不再担忧自己的未来能否更好；另一方面是让我看到了小众圈子互相交织的可能性，不再担忧未来能不能找到志同道合的好友，甚至更进伊布的恋人。&lt;br>
+大概就像是矗立在小镇中央的袋龙雕像那样，即使只是知道它在那里，也仍然会感到安心。&lt;/p>
+&lt;/blockquote>
+&lt;p>然而矗立在迷雾中散发着光亮的，指引着我的一座灯塔，似乎也渐渐地失去了光芒。&lt;/p>
+&lt;h2 id="6">6&lt;/h2>
+&lt;p>QuartZ_Z 学长压线进队了。&lt;/p>
+&lt;p>一方面我很高兴，因为他进队了；另一方面我又很失落，因为他是压线进队的。&lt;/p>
+&lt;p>既然连 QuartZ_Z 也只是压线进队，我呢？&lt;/p>
+&lt;p>——即使 CSP 和 GDOI 都能完美无缺地发挥，也都超不过他的我呢？&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/04/27/iVcdeEvmU3pk9L2.png" alt="pic.png">&lt;/p>
+&lt;h2 id="7">7&lt;/h2>
+&lt;p>当我在洛谷博客上保存这篇博文的时候，它提示道：标题不能为空。&lt;/p>
+&lt;p>于是我很无趣地加上了个标题：标题不能为空。&lt;/p>
+&lt;p>标题不能为空，我的未来呢？也会只剩下一篇虚空，剩下&lt;a href="https://www.luogu.com.cn/discuss/show/233221">一个申请永久禁言的帖子&lt;/a>，剩下&lt;a href=".">一篇悔恨的博文&lt;/a>么？&lt;/p>
+&lt;h2 id="8">8&lt;/h2>
+&lt;blockquote>
+&lt;p>初中没啥成绩不太敢冲了吧&lt;br>
+-OH 正好针对这种人&lt;/p>
+&lt;/blockquote>
+&lt;p>竞技游戏，菜是原罪。&lt;/p>
+&lt;p>若是可以再勤奋刻苦一点，我的水平也不至于让我在这样的时候，还在这里写着这样的文字吧。&lt;/p>
+&lt;p>不过，没有如果。&lt;/p>
+&lt;h2 id="9">9&lt;/h2>
+&lt;p>我的每篇抒发内心忧郁的文章，最后都会以一段心灵鸡汤结尾。&lt;/p>
+&lt;p>但是心灵鸡汤喝多了，也会腻的。&lt;/p>
+&lt;p>我也不想再写什么「为了不给 LSOI 丢脸，为了给自己一份圆满的答卷」之类的话了，那些东西已经腻了。&lt;/p>
+&lt;p>为了谁谁谁之类的话，其实也不过是自我安慰罢了。我之所以学习 OI，也全是为了我自己一时的娱乐，而不为别人学着。&lt;/p>
+&lt;h2 id="10">10&lt;/h2>
+&lt;p>我其实不是 Tsukimaru。&lt;/p>
+&lt;p>我常常地被认作是 Tsukimaru 的小号，因为我和他是非常要好的朋友，名字又很相像，常常一起活跃着。然而我终不是 Tsukimaru，就像 Tsukimaru 不是 &lt;code>oshawott_cute&lt;/code> 那样。&lt;/p>
+&lt;p>我是赫牧林，这是我的父母所赋予我的名字。说来也很奇怪，我本是一只水属性的水水獭，我的父母又为何要让我有草属性一样的名字呢？但奇怪终归奇怪，当我想起牧林这个名字的时候，我仿佛看见眼前辽阔无垠的碧绿的草原，看见黑白相间的奶牛，看见远处若隐若现的针叶林。&lt;/p>
+&lt;p>这时我抬头望去，远处的天空，有着璀璨的群星。&lt;/p>
+&lt;h2 id="11">11&lt;/h2>
+&lt;p>或许 Credits 放得太久了，我应该&lt;a href="https://www.bilibili.com/video/BV1X4411S7uq">换一首歌&lt;/a>。&lt;/p>
+&lt;blockquote>
+&lt;p>扭曲得完全无法看见前方呢&lt;br>
+我们各自身在梦中&lt;br>
+一人俩人围成一圈后&lt;br>
+就让我去看看出现缺口的部份吧&lt;/p>
+&lt;p>即使变得乖僻亦始终无法看见前方呢&lt;br>
+我们各自身在箱中&lt;br>
+一人俩人拆散融和后&lt;br>
+转瞬间　逐渐被沾污得无法看清的　字形&lt;/p>
+&lt;p>果然醒觉之际总是为时已晚的呢&lt;br>
+那般的我们在笼中&lt;br>
+一人俩人停下脚步后&lt;br>
+转瞬间　逐渐被湮没至无法言道的　本能&lt;/p>
+&lt;p>真相什么的无人知晓啊&lt;br>
+即使化作言语了本意又是怎样啊&lt;br>
+那无法看到的真正的理由　是什么？&lt;/p>
+&lt;p>察觉到这点就能稍为看到前方了吗&lt;br>
+我们在此地旅途之中&lt;br>
+一步两步一路走下去&lt;br>
+追寻没有答案的答案之　问答&lt;br>
+不断留下字形&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="12">12&lt;/h2>
+&lt;p>我有时候会反感一些人。&lt;/p>
+&lt;p>我反感他们在机房玩游戏、刷 B 站、看知乎，反感有的人在机房大声喧哗，反感那些该努力的人不够努力。&lt;/p>
+&lt;p>然而这么想来，我的学长看我是不是也如此呢？&lt;/p>
+&lt;blockquote>
+&lt;p>倘使空中飞的燕雀会嗤笑于地上猛禽之拘束，那么更高处的鹏鸟，也大抵会为其自恃清高所不齿罢。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="13">13&lt;/h2>
+&lt;p>zc 学长是 JZOI 高一幸存的唯三 OIer 之一。他热爱 OI，但我又从 Tsukimaru 那里听来，他有时会在前端和游戏上荒废时间。我没有见过，也就不知其真或假，然而 Tsukimaru 却时不时地和我诉苦道：&lt;/p>
+&lt;blockquote>
+&lt;p>进省队绝不是一件轻而易举的事情——尤其是在我们这样的强省，在我们这样的弱校。如果不抱着必死的决心去做，恐怕是很难做到了。我不希望今年的 NOIP 和明年的省选只剩我和 hjw 两个人，但我更不希望的是有人因为这些或有或无的娱乐而在省选失利，后悔一生。&lt;/p>
+&lt;/blockquote>
+&lt;p>Tsukimaru 很胆小，总把对其他人的想法深深地埋在自己的心里，因而总没有去说。时至今日，我也不知究竟是 zc 确实如此，还是 Tsukimaru 太过敏感了。&lt;/p>
+&lt;p>残酷地说，于没什么情感的我而言，zc 和我其实关系不大；我只希望 Tsukimaru 可以少管些别人，多管好自己，毕竟他和我吐槽的次数实在太多了（这点我认为他应该向 hjw 学长好好学习）。&lt;/p>
+&lt;h2 id="14">14&lt;/h2>
+&lt;p>我的一位同届的同学，现在似乎想要「冲刺」OI 了。&lt;/p>
+&lt;p>我初三时苦于自己 OI 水平低下而搁置文化课去学 OI 了。数学物理、英语政治一类的课是很少听的，大多是坐在那里思考着 OI 题目的解法；作业也全不做，先前有时候会写一点，后来几乎干脆不写了。&lt;/p>
+&lt;p>他现在或许就和我差不多。当我看见他的时候，我仿佛看见了自己——只不过是一个没有那么极端的自己。我担心我的引导会对他有不好的影响，便在他来询问我我的近况时，把我的情况「保守」地告诉他。&lt;/p>
+&lt;p>前几天他又来问我「你想中考吗」，我便知道他也坐不住了。我在空间里写了一篇短文描述我自己的情况，指出我没有答案，选择在于他自己。最后，他还是选择走我的路。&lt;/p>
+&lt;p>不可否认的是，初三一年的刷题锻炼了我刻苦勤奋的精神，也帮助我提高自身的 OI 水平，不至于落后别人太多。&lt;strong>我唯一迷茫担心的，是我们没有签过保送的合同。我很担心，会不会有可能，我们因为成绩太差而没有办法自招上金中？&lt;/strong>&lt;/p>
+&lt;h2 id="15">15&lt;/h2>
+&lt;p>昨天，Tsukimaru 给我分享了剑盾 PTCG 的广告。我原以为一般的广告都会是拿着喇叭大声嚷嚷着「强力宝可梦」「情怀」「童年」一类的无趣的玩意，然而这个短片却能通过一个小故事来激发人们的童心和对宝可梦的喜爱，确实令我眼前一亮。&lt;/p>
+&lt;p>但也就如此了。而 Tsukimaru 却和我说，他从里面看到了初三的自己，甚至看到了我。他又说他很后悔自己高一不够努力，说「如果我遇见初三的我，恐怕没有脸面去回答他的那些问题了」。我安慰他，一般高一是不太能进省队的；他却问我，谁规定的？&lt;/p>
+&lt;p>是啊，谁规定的？&lt;/p>
+&lt;h2 id="16">16&lt;/h2>
+&lt;p>我的家人，老师，都告诉我我的时间还长，还有高一高二两年，不需要现在就如此拼命。现在应当好好努力准备中考，等到暑假，等到进了高中再努力。&lt;/p>
+&lt;p>然后等到高中，我参加省选，我落选了，进不了省队。如果是高一，他们会说「高一是不太能进省队的」；如果是高二，他们会说「高二不进省队就要回去拼文化课了」。&lt;/p>
+&lt;p>现在我是初三，初三不要紧，时间很多，可以等到高一。高一失利也不要紧，还有高二。高二失利了，那就回去学高考吧。&lt;/p>
+&lt;p>可是为什么我一定要等呢？为什么不从现在出发，非要再等，再等，等到绿叶枯黄、繁华落尽呢？&lt;/p>
+&lt;p>我不想像 Tsukimaru 那样，到高一再去后悔了。&lt;/p>
+&lt;blockquote>
+&lt;p>WA 的颜色也很美丽，可时间永远不会等待你。&lt;br>
+——Kan_kiz&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="17">17&lt;/h2>
+&lt;blockquote>
+&lt;p>即使变得乖僻亦始终无法看见前方呢&lt;br>
+我们各自身在箱中&lt;/p>
+&lt;/blockquote>
+&lt;p>我正在走的是 Tsukimaru 走过的路。&lt;/p>
+&lt;p>我不知道这条路是否正确，也不知道终点如何；我不知道我高一时是否也会像 Tsukimaru 一样地重蹈覆辙，一样地后悔，一样地难过。但往前看，Tsukimaru 走的路，或许是我的学长的学长们走过的路；往后看，我走的路，或许是我的学弟们即将要走的路。这样一想，其实也没那么迷茫了。&lt;/p>
+&lt;p>批判也好，颓废也好，发泄不良情绪也好，无论怎样都好，我的未来都没有什么不同，仍然是光与暗交织的不明确的未来。既然如此，那就写题吧。&lt;/p>
+&lt;p>多写题，多写题，只有自己变得更强，才能做得更好。&lt;/p>
+&lt;h2 id="18">18&lt;/h2>
+&lt;p>其实口号式的鸡汤，谁都可以做，谁都可以喝。然而刷题也不是喊口号就可以解决的事情；当我在刷 LibreOJ 的时候，我深刻地感受到了自己的无能和绝望。绝望到了一定的境界，就化为了慵懒和堕落。&lt;/p>
+&lt;p>所以除了鸡汤之外，我们还应该要有点咖啡。过量的咖啡会使人抑郁，然而一定的咖啡也是不错的。&lt;/p>
+&lt;p>我不知道如何的咖啡才能在最寒冷的夜晚给予人温暖的效果，因此我只能说：&lt;/p>
+&lt;blockquote>
+&lt;p>身处寒夜，把握星空。&lt;br>
+活在当下，砥砺前行。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://music.163.com/#/song?id=405372425">咖啡还是要喝的。&lt;/a>&lt;/p></content></item><item><title>Tsukimaru grew to level 16!</title><link>/main/posts/tsukimaru-grew-to-level-16/</link><pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate><guid>/main/posts/tsukimaru-grew-to-level-16/</guid><description>&lt;p>Tsukimaru 升到了 16 级！&lt;/p>
+&lt;p>今年发生了很多这样那样的事情，也算是比较遗憾的一年吧……&lt;/p></description><content>&lt;p>Tsukimaru 升到了 16 级！&lt;/p>
+&lt;p>今年发生了很多这样那样的事情，也算是比较遗憾的一年吧……&lt;/p>
+&lt;hr>
+&lt;p>上半年的时候，我还是个初三的 OIer。&lt;/p>
+&lt;p>那是段很辛苦的时间。初三十四班的同学，几乎全部都在刻苦学习：到了六点，我们班的同学还在专心致志地听着翁老师讲着一道又一道的数学大题；哪怕到了六点半，留下来的也有二三十个人。我却总在放学时奔去机房，呆上一个小时沉心于 OI，不写作业、上课睡觉。成绩不如人，努力也不如人，便不免被众老师谴责。&lt;/p>
+&lt;p>意料之中，我没能考到分数线。万幸终因自招上了金中，没沦落到一中去。&lt;/p>
+&lt;p>每当我现在回想起初三的时候，仍会疑惑是否还有更好的选择。我至今仍没有一个准确的答案；或许得等到很久以后，才能知道答案了。&lt;/p>
+&lt;p>……我终究还是辜负了翁老师的期望。现在想起来，确实很对不起他。&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;/p>
+&lt;hr>
+&lt;p>然后是暑假。&lt;/p>
+&lt;p>暑假时发生了一件让我终生难忘的事情：我最好的朋友，同时也是我最喜欢的人，有了女朋友。&lt;/p>
+&lt;p>实际上，我早就想过这样的事情了。先前想：我会选择放弃，让他去追求他的幸福。然而当事情实际发生的时候，我却自私地想要把他占为己有。就这样，我们之间良好的关系走向了毁灭。直到他十分恼怒地斥责我的时候，我才意识到我做了多不好的事情。&lt;/p>
+&lt;p>这件事对我的触动是很大的，不仅仅是三四个月的忧郁和失落。在那之后，我想了很多很多……也大概学会了怎么好好与人相处，怎么处理自己和他人的关系。我感觉就像我瞬间长大了。&lt;/p>
+&lt;p>我从未后悔过喜欢上他。我后悔的是我没能正确处理我们之间的关系，没能给他适当的关心和帮助，没有在意他的心情和想法，没有去思考他究竟想要的是什么。&lt;/p>
+&lt;p>现在我们的关系恢复到了普通朋友的程度。那样的事情，我也绝不会再做了。&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;/p>
+&lt;hr>
+&lt;p>也大概就是在这个时候，我接触到了兽圈文化。在阅读了各种各样的漫画、游戏等等读物之后，我也接受了自己的性向。&lt;/p>
+&lt;p>我并没有什么特别。我不过和别人一样罢了：我像别人喜欢女孩子那样喜欢男孩子，我像别人不能接受和男孩子谈恋爱那样不能接受和女孩子谈恋爱。先前以为自己只是因为无法沟通，才难以喜欢上女孩子；现在想来，我并没有高尚到只想要柏拉图式的爱情。我只是喜欢男孩子，仅此而已。&lt;/p>
+&lt;p>这并没有什么特殊，也没有什么好在意的。烦恼也好，幻想也好，对于现在的我都没有帮助；好好活在当下，慢慢等待那个人就好了。&lt;/p>
+&lt;hr>
+&lt;p>另外一件事，就是我和小我两级的学妹 yxy 成为了好朋友。&lt;/p>
+&lt;p>我曾经以为以我的性格，是绝不可能有任何女孩子会成为我的好朋友的。一是因为自己没怎么接触过女孩子，二是因为学 OI 的女孩子实在太少太少，能够和我交流的女孩子更是微乎其微。&lt;/p>
+&lt;p>然而 yxy 却成为了我的好朋友。&lt;/p>
+&lt;p>一开始，我们还不太熟。刚刚入门的 OIer 通常都会遇到各种各样的问题，有的问题明明只要搜索一下即可得到答案，却总有人会拿这种问题去“请教”前辈，浪费自己和他人的时间；这是我所深恶痛绝之的。yxy 倒不如此，她多数时间都是在自学，因而鲜有提问的时候，我也就很愿意回答她。&lt;/p>
+&lt;p>后来，我惊奇地发现：她与我竟有如此多相似的地方。她和我都比较感性，有些孤高，也都很喜欢 OI。因而我也和她有些共同的行为，有些共同的思想。她不嫌弃我幼稚的兴趣爱好，总是愿意和我说话，甚至安慰我。&lt;/p>
+&lt;p>慢慢地，她似乎不是我的学妹，我也不是她的学长了。&lt;/p>
+&lt;p>我们是朋友。&lt;/p>
+&lt;p>不过呢，每当她有一些问题时，我常常会找 hjw 请求建议——曾经有一次，我告诉她可以不去理班级同学、不去参加郊游，然后就被机房所有得知此事的同学批斗了。&lt;/p>
+&lt;hr>
+&lt;p>进入高中，我便不怎么活跃了。这其中的因素有很多：自己的“失恋”，CSP2019 的失利，对班级的不适应……经历了许许多多的事情之后，我不太有心情去和别的同学接触了。那些先前结识的 OIer 似乎也不怎么有趣了；甚至有的人开始颓废起来，就连 ll 也陷入了炉石一类的游戏中去。&lt;/p>
+&lt;p>朋友的缺少，内宿生活的繁杂，种种压力都使得我不怎么开心。因而我常常不想吃饭，不想洗澡，有时会感觉自己怅然若失。&lt;/p>
+&lt;p>好在还有 yxy 愿意和我说话。她常常和我聊天，叫我吃饭；所以我也很乐意去吃饭了。大概过了两三个月，我也步入了正常的状态。&lt;/p>
+&lt;p>期末考考得还可以，各科成绩（除了生物）都超过了我的一般标准。&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2020/12/29/dDo4MQYsKipuJ7L.png" alt="score.PNG">&lt;/p>
+&lt;hr>
+&lt;p>实际上，这篇文章是在我阅读了 &lt;a href="https://eev.ee">Eevee&lt;/a> 的博客之后一时兴起，于是模仿着写出来的。本想着是生日，想写些稚嫩一点的文字的；然而写着写着，却又开始严肃起来了。罢了！与其抱怨这样那样的东西，不如写点开心的事吧。&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>2020 年 12 月 21 日注：我咕了。&lt;/em>&lt;/p></content></item><item><title>水獭观察日记 其一</title><link>/main/posts/otter-diary-i/</link><pubDate>Sun, 15 Dec 2019 00:00:00 +0000</pubDate><guid>/main/posts/otter-diary-i/</guid><description>2019 年 11 月 25 日 我开始写日记了。
+尽管这或许很耗时，但它能调节我的情绪，让我能够好好休息，养足精力工作。
+……其实，我最近也的确很低落。总感觉自己对很多事情没有了兴趣，有时也不想去和 zn/yxy/Isaunoya 聊天了。Moon 说这是轻度抑郁的表现，不过还不至于发展到病症。
+我总感觉，自己像陷入了一个深不见底的泥沼。LibreOJ 上还有好多好多我不会做的题目；CSP2019 也考砸了，甚至连 GDOI2020 的资格也没有了。先前的努力似乎不过是一场梦，不过是安慰自己的麻醉剂。
+不过，其实我所面对的困难，也并非是那样的险峻。ccz，kpm，czl，这些我所敬仰的前辈，也在我这个时候遇到了同样的困难，但他们最后还是用他们的勤奋证明了自己。这条路固然险峻，但它并非无人涉足；我不过是在走一条前人走过的路罢了。为此，我舍弃了许多许多；倘若半途而废，又怎对得起许许多多关心我的人呢？
+……我想，也许只能让 Moon 帮忙了。
+——让我成为一只沉默的水水獭。
+2019 年 11 月 26 日 生活还是一如既往地过着。
+每天都大概会学些新的东西，不多，也不少。我也大概习惯了一个人的生活，只是仍然不太想吃饭洗澡。
+听到 hjw，qzz 可以去 NOIWC（甚至可能可以去 THU/PKUWC），我总觉得有些嫉妒，但还是为他们感到开心。「不能去的人为能去的人感到开心，这样就好了」，是曾经向日花怪安慰我时说过的话。
+……只是还是很不甘心啊。
+2019 年 11 月 29 日 今天把「from CommonAnts」一道数学题 AC 了。很意外地，我居然能自己想出这道题的正解，而且这道题的正解也相对巧妙一些，令我惊诧于自己为何能想出这样的做法。
+总感觉我的科技树点歪了……
+2019 年 12 月 5 日 今天下雨了。
+连绵的细雨从天空上密密麻麻地落下，落下，从早上开始，一直没有停过。
+山上的冬天本就寒冷，加上这不合时宜的刺骨的雨，便是正午，也只觉寒气渗骨了。
+窗外是许许多多的树。深绿的、浅绿的、墨绿的叶子，都被雨水润湿，在寒冷的风里无力地摇曳。
+脸被冻得生疼，双手也失去了知觉。
+这是我第一次读过这样寒冷的冬天——内外都很冷的冬天啊。
+hjw 最近在着手准备 THUWC 了。他 CSP 时一如既往地稳定发挥，拿到了不错的成绩。虽说是理论上的暴力分，但能在考场上完全拿满也是不容易的。相比之下，我发挥失常，竟连 hy 都比我多三十分。于是，我便只能在他填写报名表的时候，眼睁睁地看着那朵动人的玫瑰被人摘了去。
+自己考砸了，又能怪谁？
+雨仍然淅淅沥沥地下着，丝毫没有停止的迹象；上课的预备铃却敲响了。</description><content>&lt;h2 id="2019-年-11-月-25-日">2019 年 11 月 25 日&lt;/h2>
+&lt;p>我开始写日记了。&lt;/p>
+&lt;p>尽管这或许很耗时，但它能调节我的情绪，让我能够好好休息，养足精力工作。&lt;/p>
+&lt;p>……其实，我最近也的确很低落。总感觉自己对很多事情没有了兴趣，有时也不想去和 zn/yxy/Isaunoya 聊天了。Moon 说这是轻度抑郁的表现，不过还不至于发展到病症。&lt;/p>
+&lt;p>我总感觉，自己像陷入了一个深不见底的泥沼。LibreOJ 上还有好多好多我不会做的题目；CSP2019 也考砸了，甚至连 GDOI2020 的资格也没有了。先前的努力似乎不过是一场梦，不过是安慰自己的麻醉剂。&lt;/p>
+&lt;p>不过，其实我所面对的困难，也并非是那样的险峻。ccz，kpm，czl，这些我所敬仰的前辈，也在我这个时候遇到了同样的困难，但他们最后还是用他们的勤奋证明了自己。这条路固然险峻，但它并非无人涉足；我不过是在走一条前人走过的路罢了。为此，我舍弃了许多许多；倘若半途而废，又怎对得起许许多多关心我的人呢？&lt;/p>
+&lt;p>……我想，也许只能让 Moon 帮忙了。&lt;/p>
+&lt;p>——让我成为一只沉默的水水獭。&lt;/p>
+&lt;h2 id="2019-年-11-月-26-日">2019 年 11 月 26 日&lt;/h2>
+&lt;p>生活还是一如既往地过着。&lt;/p>
+&lt;p>每天都大概会学些新的东西，不多，也不少。我也大概习惯了一个人的生活，只是仍然不太想吃饭洗澡。&lt;/p>
+&lt;p>听到 hjw，qzz 可以去 NOIWC（甚至可能可以去 THU/PKUWC），我总觉得有些嫉妒，但还是为他们感到开心。「不能去的人为能去的人感到开心，这样就好了」，是曾经向日花怪安慰我时说过的话。&lt;/p>
+&lt;p>……只是还是很不甘心啊。&lt;/p>
+&lt;h2 id="2019-年-11-月-29-日">2019 年 11 月 29 日&lt;/h2>
+&lt;p>今天把&lt;a href="https://loj.ac/problem/6054">「from CommonAnts」一道数学题&lt;/a> AC 了。很意外地，我居然能自己想出这道题的正解，而且这道题的正解也相对巧妙一些，令我惊诧于自己为何能想出这样的做法。&lt;/p>
+&lt;p>总感觉我的科技树点歪了……&lt;/p>
+&lt;h2 id="2019-年-12-月-5-日">2019 年 12 月 5 日&lt;/h2>
+&lt;p>今天下雨了。&lt;/p>
+&lt;p>连绵的细雨从天空上密密麻麻地落下，落下，从早上开始，一直没有停过。&lt;/p>
+&lt;p>山上的冬天本就寒冷，加上这不合时宜的刺骨的雨，便是正午，也只觉寒气渗骨了。&lt;/p>
+&lt;p>窗外是许许多多的树。深绿的、浅绿的、墨绿的叶子，都被雨水润湿，在寒冷的风里无力地摇曳。&lt;/p>
+&lt;p>脸被冻得生疼，双手也失去了知觉。&lt;/p>
+&lt;p>这是我第一次读过这样寒冷的冬天——内外都很冷的冬天啊。&lt;/p>
+&lt;hr>
+&lt;p>hjw 最近在着手准备 THUWC 了。他 CSP 时一如既往地稳定发挥，拿到了不错的成绩。虽说是理论上的暴力分，但能在考场上完全拿满也是不容易的。相比之下，我发挥失常，竟连 hy 都比我多三十分。于是，我便只能在他填写报名表的时候，眼睁睁地看着那朵动人的玫瑰被人摘了去。&lt;/p>
+&lt;p>自己考砸了，又能怪谁？&lt;/p>
+&lt;hr>
+&lt;p>雨仍然淅淅沥沥地下着，丝毫没有停止的迹象；上课的预备铃却敲响了。&lt;/p>
+&lt;p>我打开门，门外是淅淅沥沥的小雨，路上是匆匆忙忙的行人。我的伞不知在何时丢失了——「屋漏偏逢连夜雨」，我只好冒雨前行了。&lt;/p>
+&lt;p>正在此时，我的身旁却冒出了一把雨伞；回头一看，原来是 hjw。我不好意思地向他道谢，他也一如既往地微笑着。&lt;/p>
+&lt;p>至少在我看来，hjw 是个比较文静的人；我平日里虽很好动，可也多不愿意说话的。也就在我和他独处的时候，会有种奇妙的宁静。&lt;/p>
+&lt;p>我只是走，他也只是走，我们都不说话。&lt;/p>
+&lt;hr>
+&lt;p>hjw 于我是怎样的存在呢？&lt;/p>
+&lt;p>我常常把 hjw 当做我的“对手”，然而我知道，我和他实力差距实在太大——我也许在多项式方面有所优势，可论其他方面，我自知是比不过 hjw 的。&lt;/p>
+&lt;p>即使如此，我也仍想要把他当做我的对手。hjw 和 lca，kpm 他们不一样，他并非天才，而他强大的能力，大部分是基于他一天能刷十道题的勤奋，基于那坚强的毅力和耐心。hjw 的存在，证明了一件事：哪怕不是天才，也可以通过努力达成一番成就的。&lt;/p>
+&lt;p>……也只有当他在的时候，我才不至于过分松懈。在机房众多时不时颓废的 OIers 里，他是那样的突出，那样的勤奋。每当我被其他人的游戏吸引住时，一回头，看见 hjw 电脑上满屏的代码和数学公式，便瞬间警醒起来，不沦为颓废的一份子。&lt;/p>
+&lt;hr>
+&lt;p>雨仍然淅淅沥沥地下着。&lt;/p>
+&lt;p>其实我相信，纵使再怎样坚强的人，也会有难过的时候。hjw 遇到的挫折和困难不会比我少，不过是在我唉声叹气、怨天尤人的时候，他不愿向我们倾诉他的悲苦罢了。&lt;/p>
+&lt;hr>
+&lt;p>我是作为一只水水獭活着的。上天让我学会了「求雨」，却不愿让我学会「放晴」。&lt;/p>
+&lt;p>然而我是作为一只水属性的水水獭活着的。雨下得越大，我便越强；越是到筋疲力尽的时候，越能有逆转格局的「激流」。&lt;/p>
+&lt;p>人生就是一场永不停止的大雨。&lt;/p>
+&lt;p>而我们，便是雨中旅人。&lt;/p>
+&lt;h2 id="2019-年-12-月-7-日">2019 年 12 月 7 日&lt;/h2>
+&lt;p>我有时候会想起 zn。&lt;/p>
+&lt;p>我曾经想过把我和 zn 的故事做成视觉小说，或许会有警醒他人和自己的意义。然而我又想到，若是一五一十地还原出来，恐怕读者们都会觉得主角脑子有问题（尽管那确是我曾经的样子）；若是凭空臆想几个好结局，又违背了表现悲剧的初心。&lt;/p>
+&lt;p>如果我可以矜持一点，如果我可以真正多关心 zn 一点，如果 zn 考上了金中，如果 zn 在 NOIP2018 中拿到了一等……哪怕能有一个「如果」，也不至于沦到如此的境地。&lt;/p>
+&lt;p>可是没有如果。这样一个悲剧，就这样确确实实地发生了。&lt;/p>
+&lt;p>而凭空臆想美好的结局，不过是自欺欺人的可笑行径罢了。&lt;/p>
+&lt;h2 id="2019-年-12-月-10-日">2019 年 12 月 10 日&lt;/h2>
+&lt;p>hy 他们借我的日记本去看了。&lt;/p>
+&lt;p>撰写这些文章的时候，我便有意要发到博客去。我并不担心别人翻阅——我虽有不少缺点，可总归心灵还是好的，不至于写下太见不得人的东西。我也没有逼迫别人来看我的日记，别人看完了觉得好或不好，受了积极影响还是消极影响，与我何干？&lt;/p>
+&lt;p>更积极地说，这可以让想要了解我的人更加了解我，让阅读这本日记的人可以有所警醒或启示。倘若我拙劣的文字和无用的牢骚可以使人有所益处的话，那实在是我的荣幸。&lt;/p>
+&lt;p>……虽然如此，被别人看日记的时候还是有些害羞……&lt;/p>
+&lt;hr>
+&lt;p>今天和 hjw 一起听音乐的时候，放到了一首 Rawstyle。很意外地，hjw 似乎并不排斥这样的歌。&lt;/p>
+&lt;h2 id="2019-年-12-月-11-日">2019 年 12 月 11 日&lt;/h2>
+&lt;p>今天在小卖部遇到 cxk 了。这时我才意识到：cxk 已退役许久了。&lt;/p>
+&lt;p>在我的记忆中，cxk 是高我一级的学长，是一只非常非常可爱、善良、纯洁的小兔子。他的相貌也十分帅气，帅气和可爱中又流露出一丝兔子一族的聪颖。无论从什么方面看，他简直是完美到不可挑剔的人；但也许正因如此，我对他反而没什么想法。我只希望他可以快快乐乐地生活，可以每天都开开心心的，和他的女生一起过上幸福美满的生活。&lt;/p>
+&lt;h2 id="2019-年-12-月-15-日">2019 年 12 月 15 日&lt;/h2>
+&lt;p>今天晚上，姚老给我们讲了 ccz 他们那一届的故事。&lt;/p>
+&lt;p>那一届是 JZOI 最辉煌的一届：两位降一本，两位集训队，前无古人，后无来者。起初只是一个人的努力，然后慢慢影响了一个人，两个人，三个人；在喧闹的车厢里，在去比赛的路上，他们数日如一地刷着题。正是他们无法想象的努力，成就了那样的辉煌。&lt;/p>
+&lt;p>我们这一届呢？有很努力的 hjw，然而其他人却不怎么努力。有些实力的，ll，hy，zc，我，都会时不时地颓废；更不用提那些没有实力，却还在虚度光阴的人了。我虽不至于玩游戏看视频，可也有时不够集中，会水群。&lt;/p>
+&lt;p>在和 hjw 交流的短短十几天里，我明显地感受到了自己的弱小。初二一年，我落下的实在太多太多；初三的努力，也还不够。我初一和 hjw 相差不大，可因我的懒惰和迷茫，致使我最终与他相差甚远。大致想来，姚老曾说过我「还是」有「一点」希望的；cxk 也说过，我「也」可以冲一下省队。只是我清楚地明白：那不过是基于我能像 ccz 他们那样努力的期望罢了，而我现在还做不到。&lt;/p>
+&lt;p>……罢了！我连自己都做不好，又何须去管其他人？古人云，「穷则独善其身，达则兼济天下」，其他人如何，也并非我的责任。先把自己做好，再去考虑其他人吧。&lt;/p></content></item><item><title>孤独之旅</title><link>/main/posts/a-journey-to-loneliness/</link><pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate><guid>/main/posts/a-journey-to-loneliness/</guid><description>集市 放学了。
+Tsukimaru 一个人走出了校门。
+一如既往地，他从热闹的街市中穿行而过。街市挤满了摩肩接踵的人群，喧哗声不绝于耳。
+然而他只是步伐蹒跚地走着，走着，似乎周围的人于他而言，不过是透明的空气。没有其他宝可梦的气息，只有熙熙攘攘的人群，也和他一样，走着，走着，不知要走到哪里去。
+一只宝可梦，就这样穿行在人流之中。
+回家的路 走过喧哗的街市，又走上了那条小路。
+小路仍然是那样的寂静，寂静得只听见扁平的双蹼和细小的鹅卵石摩擦发出的滋滋声。
+其实，他也听说过一些宝可梦，比如比克提尼 iotang，菊草叶 lmx，叶伊布 Antileaf。当他觉得孤独的时候，想起他们，便也觉得有了些动力，觉得自己在这世上并不孤单。
+——只是这样的动力很快就枯竭了。他们大多都是他所十分仰慕的前辈，他向来是不敢主动去打扰别人的；虽然同为宝可梦，可他们实在太过遥远。
+他曾经在书上看过这么一句话：「人和人之间的距离，有时候大于人和动物的距离。」
+宝可梦和宝可梦的距离，到底有多远呢？他不知道。
+家 夕阳西沉。宽阔的鹅卵石小路上，只有他一个人，走着，走着。从小路的这一端，走到小路的那一端，然后打开门，走了进去。
+Tsukimaru 再也没有力气行走了。他短小的双蹼蹬了一下，跳到了池塘之中。
+至少，家里这温暖的池塘，塘边那个毛茸茸的水水獭玩偶，能够在这个孤独的世界上给他微不足道的慰籍。
+就在今天早上，他敬爱的、尊重的老师，那个曾经和蔼可亲地和他交流宝可梦对战心得的老师，把他赶出了教室。那个他所敬重的老师，很愤怒地斥责他没有感情。
+因为他不写作业。因为他上课睡觉。因为他的灵魂迷失于过去的不作为与现在的落后之中。
+「如果真的没有感情，我也许会更好一点的吧。」
+望着远处渐渐西沉的夕阳，他这么自言自语道。
+远方 夜幕降临。
+深蓝的夜空中镶嵌着零零散散的明星，一轮洁白的明月高高地挂在空中。
+他只是呆呆地望着远方。
+天空上面是天空，
+道路前面还是道路。
+那些还没有实现的梦，
+那些还到不了的远方。
+远方的远方，
+是多少凄凉。
+宝可梦 看着那深蓝的天空，他又想起了那些他所挂念的人们——不，应该说是宝可梦们。
+为了 OI，他暂时离开了那个他日思夜想的大家庭，也许是两年，也许是三年。
+他还记得胖可丁会长那天真无邪的笑容，记得聒噪鸟那苦口婆心的训导，记得利欧路那永不言弃的斗志。
+恍惚间，在晶莹的泪光中，他似乎又看见了公会门口熊熊燃烧着的火炬，听见火炬上火焰的燃烧声。
+重要的东西 「你要是文化课排不到前面，别人看到你进重点班的眼光肯定会不一样的。」
+「只剩一个月就要中考了，你连这一个月都忍不住吗？」
+「你现在已经是你们这一届信竞数一数二的了，不用那么努力，应该好好去学文化课了。」
+周围的老师，他的家人，都似乎站在了同一条战线上，想要劝退他学 OI。
+他无所谓别人的眼光。即使大家都看不起他，鄙夷他，他也还是那样子过。
+他也无所谓文化课怎样。固然，一个好的学生应该品学兼优；可对于他来说，他已经于 OI 上落后别人不知多少距离了，又怎么有心思去学文化课呢？
+「你有什么是有所谓的呢？」
+「……OI。」
+明天 明天，他期盼着明天，可是他本该抛弃明天的。这种切肤之痛的反抗，就是荒诞。
+——加缪《西西弗神话》
+其实，我也并没有怎么努力。
+一天过去了，我做了什么呢？
+Slay 技术有所长进了；
+多补了几集「假面骑士 W」了；
+刷了几会知乎了；
+唯独题目是什么也没刷。
+「明天我一定会认真刷题。」
+然后明天呢？继续等待下一个明天么？
+还是要等待到高中，然后寄希望于老师学长的指导么？</description><content>&lt;h2 id="集市">集市&lt;/h2>
+&lt;p>放学了。&lt;/p>
+&lt;p>Tsukimaru 一个人走出了校门。&lt;/p>
+&lt;p>一如既往地，他从热闹的街市中穿行而过。街市挤满了摩肩接踵的人群，喧哗声不绝于耳。&lt;/p>
+&lt;p>然而他只是步伐蹒跚地走着，走着，似乎周围的人于他而言，不过是透明的空气。没有其他宝可梦的气息，只有熙熙攘攘的人群，也和他一样，走着，走着，不知要走到哪里去。&lt;/p>
+&lt;p>一只宝可梦，就这样穿行在人流之中。&lt;/p>
+&lt;h2 id="回家的路">回家的路&lt;/h2>
+&lt;p>走过喧哗的街市，又走上了那条小路。&lt;/p>
+&lt;p>小路仍然是那样的寂静，寂静得只听见扁平的双蹼和细小的鹅卵石摩擦发出的滋滋声。&lt;/p>
+&lt;p>其实，他也听说过一些宝可梦，比如比克提尼 iotang，菊草叶 lmx，叶伊布 Antileaf。当他觉得孤独的时候，想起他们，便也觉得有了些动力，觉得自己在这世上并不孤单。&lt;/p>
+&lt;p>——只是这样的动力很快就枯竭了。他们大多都是他所十分仰慕的前辈，他向来是不敢主动去打扰别人的；虽然同为宝可梦，可他们实在太过遥远。&lt;/p>
+&lt;p>他曾经在书上看过这么一句话：「人和人之间的距离，有时候大于人和动物的距离。」&lt;/p>
+&lt;p>宝可梦和宝可梦的距离，到底有多远呢？他不知道。&lt;/p>
+&lt;h2 id="家">家&lt;/h2>
+&lt;p>夕阳西沉。宽阔的鹅卵石小路上，只有他一个人，走着，走着。从小路的这一端，走到小路的那一端，然后打开门，走了进去。&lt;/p>
+&lt;p>Tsukimaru 再也没有力气行走了。他短小的双蹼蹬了一下，跳到了池塘之中。&lt;/p>
+&lt;p>至少，家里这温暖的池塘，塘边那个毛茸茸的水水獭玩偶，能够在这个孤独的世界上给他微不足道的慰籍。&lt;/p>
+&lt;p>就在今天早上，他敬爱的、尊重的老师，那个曾经和蔼可亲地和他交流宝可梦对战心得的老师，把他赶出了教室。那个他所敬重的老师，很愤怒地斥责他没有感情。&lt;/p>
+&lt;p>因为他不写作业。因为他上课睡觉。因为他的灵魂迷失于过去的不作为与现在的落后之中。&lt;/p>
+&lt;p>「如果真的没有感情，我也许会更好一点的吧。」&lt;/p>
+&lt;p>望着远处渐渐西沉的夕阳，他这么自言自语道。&lt;/p>
+&lt;h2 id="远方">远方&lt;/h2>
+&lt;p>夜幕降临。&lt;/p>
+&lt;p>深蓝的夜空中镶嵌着零零散散的明星，一轮洁白的明月高高地挂在空中。&lt;/p>
+&lt;p>他只是呆呆地望着远方。&lt;/p>
+&lt;p>天空上面是天空，&lt;/p>
+&lt;p>道路前面还是道路。&lt;/p>
+&lt;p>那些还没有实现的梦，&lt;/p>
+&lt;p>那些还到不了的远方。&lt;/p>
+&lt;p>远方的远方，&lt;/p>
+&lt;p>是多少凄凉。&lt;/p>
+&lt;h2 id="宝可梦">宝可梦&lt;/h2>
+&lt;p>看着那深蓝的天空，他又想起了那些他所挂念的人们——不，应该说是宝可梦们。&lt;/p>
+&lt;p>为了 OI，他暂时离开了那个他日思夜想的大家庭，也许是两年，也许是三年。&lt;/p>
+&lt;p>他还记得胖可丁会长那天真无邪的笑容，记得聒噪鸟那苦口婆心的训导，记得利欧路那永不言弃的斗志。&lt;/p>
+&lt;p>恍惚间，在晶莹的泪光中，他似乎又看见了公会门口熊熊燃烧着的火炬，听见火炬上火焰的燃烧声。&lt;/p>
+&lt;h2 id="重要的东西">重要的东西&lt;/h2>
+&lt;p>「你要是文化课排不到前面，别人看到你进重点班的眼光肯定会不一样的。」&lt;/p>
+&lt;p>「只剩一个月就要中考了，你连这一个月都忍不住吗？」&lt;/p>
+&lt;p>「你现在已经是你们这一届信竞数一数二的了，不用那么努力，应该好好去学文化课了。」&lt;/p>
+&lt;p>周围的老师，他的家人，都似乎站在了同一条战线上，想要劝退他学 OI。&lt;/p>
+&lt;p>他无所谓别人的眼光。即使大家都看不起他，鄙夷他，他也还是那样子过。&lt;/p>
+&lt;p>他也无所谓文化课怎样。固然，一个好的学生应该品学兼优；可对于他来说，他已经于 OI 上落后别人不知多少距离了，又怎么有心思去学文化课呢？&lt;/p>
+&lt;p>「你有什么是有所谓的呢？」&lt;/p>
+&lt;p>「……OI。」&lt;/p>
+&lt;h2 id="明天">明天&lt;/h2>
+&lt;blockquote>
+&lt;p>明天，他期盼着明天，可是他本该抛弃明天的。这种切肤之痛的反抗，就是荒诞。&lt;br>
+——加缪《西西弗神话》&lt;/p>
+&lt;/blockquote>
+&lt;p>其实，我也并没有怎么努力。&lt;/p>
+&lt;p>一天过去了，我做了什么呢？&lt;/p>
+&lt;p>Slay 技术有所长进了；&lt;/p>
+&lt;p>多补了几集「假面骑士 W」了；&lt;/p>
+&lt;p>刷了几会知乎了；&lt;/p>
+&lt;p>唯独题目是什么也没刷。&lt;/p>
+&lt;p>「明天我一定会认真刷题。」&lt;/p>
+&lt;p>然后明天呢？继续等待下一个明天么？&lt;/p>
+&lt;p>还是要等待到高中，然后寄希望于老师学长的指导么？&lt;/p>
+&lt;p>……&lt;/p>
+&lt;h2 id="尾声">尾声&lt;/h2>
+&lt;p>突然，有人来敲门了。&lt;/p>
+&lt;p>是 Moonoshawott。&lt;/p>
+&lt;p>「Tsuki，今晚我可以住你家吗？」&lt;/p>
+&lt;p>「嗯……」&lt;/p>
+&lt;p>「今天我在那边的公园不小心睡着了，然后醒来也就比较晚了。然后，我就是……其实我只是比较想你啦！」&lt;/p>
+&lt;p>「哦……好……」&lt;/p>
+&lt;p>「……Tsuki。」&lt;/p>
+&lt;p>「怎么了……」&lt;/p>
+&lt;p>突然，Moon 伸出双手，抱住了 Tsukimaru。&lt;/p>
+&lt;p>「如果有什么心事的话，可以和我诉说哦。」&lt;/p>
+&lt;p>「Moon……我……」&lt;/p>
+&lt;p>「Tsuki。你不是一个人哦。」&lt;/p>
+&lt;p>Tsukimaru 开始抽泣起来。&lt;/p>
+&lt;p>Moon 一言不发，只是轻轻抚摸着 Tsukimaru 的头。&lt;/p>
+&lt;p>慢慢地，抽泣声也消失了。Tsukimaru 睡着了，也许的确是太累了吧。&lt;/p>
+&lt;p>Moon 把 Tsukimaru 搬到了床上，上了床，帮自己和 Tsukimaru 盖好了被子，熄灯。&lt;/p>
+&lt;p>Moon 看着 Tsukimaru，幸福地合上了眼睛。就在他的意识将要逝去之时，他隐隐约约地听见耳边传来了一个微弱的声音：&lt;/p>
+&lt;p>「晚安……Moon……」&lt;/p>
+&lt;p>「晚安，Tsuki。」&lt;/p>
+&lt;h2 id="无题">无题&lt;/h2>
+&lt;p>他其实知道，他并非真的人格分裂。&lt;/p>
+&lt;p>Tsukimaru 也好，Moonoshawott 也好，都是他臆想出来的、饰演出来的人格。&lt;/p>
+&lt;p>……那只是因为他太过孤独了。&lt;/p>
+&lt;p>他和他的朋友们平时玩得都很开心，这是真的。但他找不到一个能让自己真正喜欢上的人，这也是真的。在漫漫的人生路上，他已经走过了十五个年头。在荷尔蒙分泌加剧的年龄，他却对周围的任何人都没有那种激烈的好感。&lt;/p>
+&lt;p>终于有一天，他终于喜欢上了一个人。然而，他并不懂得如何合理地表达自己的感情，在最不该激烈的时候过分激烈，在他需要自己的时候却又缺席。就这样，他们从互黑打趣、相互抬杠的好朋友，走向了最熟悉的陌生人。&lt;/p>
+&lt;p>Tsukimaru 很难过。于是 Moonoshawott 就在此时走了过来，成为了他的好朋友，安慰他，用自己坚强的理智保护着他脆弱的情感。&lt;/p>
+&lt;p>可 Tsukimaru 和 Moonshawott 都知道，他们是同一个人。&lt;/p>
+&lt;p>……又有什么不好？&lt;/p>
+&lt;h2 id="孤独之旅">孤独之旅&lt;/h2>
+&lt;p>一个人活着，实在是太累了。&lt;/p>
+&lt;p>在我和 hyf 一起聊天、一起去小卖部买东西的时候，我仿佛觉得我并不孤单。可当我低落的时候，当我坐在楼梯间半个小时的时候，没有人想起我，没有人关心我；这时我才记起来，我从始至终都是孤独一人。&lt;/p>
+&lt;p>正处在青春期的男生女生，谁不想要一个对象呢？哪怕是一只水水獭，也同样想要一个能够真正主动关心他的朋友——哪怕不是男朋友，哪怕只是一个好朋友，只要能够主动关心他，愿意去了解他，那就够了。&lt;/p>
+&lt;p>可我什么也没有。&lt;/p>
+&lt;p>……可那又怎样？&lt;/p>
+&lt;p>孤独也好，失落也好，明天还是要过的。当翌日朝阳再度升起的时候，我仍是一个人——仍是一个人收拾行囊，仍是一个人出发，走上一个人的旅程。&lt;/p>
+&lt;p>既然这样，我还不如选择继续。&lt;/p>
+&lt;p>继续一个人面对狂风暴雨，面对狂风呼啸。&lt;/p>
+&lt;p>因为我知道——&lt;/p>
+&lt;p>&lt;strong>无论今日是否遗憾，翌日朝阳终会升起；&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>即便我仍是孤单一人，也再不愿畏惧光明。&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>沉默呵，沉默呵！&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>不在沉默中爆发，就在沉默中死去。&lt;/strong>&lt;/p>
+&lt;h2 id="尾注">尾注&lt;/h2>
+&lt;ul>
+&lt;li>「也许这只是另一个没有人知道的大冒险罢了。」出自「没有人知道的大冒险」。&lt;/li>
+&lt;li>此文「尾声」及之前的部分为 2019 年 5 月 18 日所作（有修改），后面的部分为 2019 年 11 月 10 日所作。&lt;/li>
+&lt;li>「沉默呵，沉默呵！不在沉默中爆发，就在沉默中灭亡。」一句出自鲁迅先生的「纪念刘和珍君」一文。&lt;/li>
+&lt;/ul></content></item><item><title>一只水水獭的梦想</title><link>/main/posts/an-oshawott-s-dream/</link><pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate><guid>/main/posts/an-oshawott-s-dream/</guid><description>&lt;p>古老的摆钟再度敲响了十二下。&lt;/p>
+&lt;p>又是这样。&lt;/p></description><content>&lt;p>古老的摆钟再度敲响了十二下。&lt;/p>
+&lt;p>又是这样。&lt;/p>
+&lt;p>看了 laq 的学习心得，把 laq 的话工工整整、一字不漏地抄在了笔记本上，发誓要努力学习，成为像 laq 一样棒的人；却仍然一边水群一边写作业，作业拖到十二点还写不完。&lt;/p>
+&lt;p>十五名，一百五十一名，三百三十七名，三百三十一名。&lt;/p>
+&lt;p>生活一度陷入黑暗。&lt;/p>
+&lt;hr>
+&lt;p>我曾是个无欲无求的人。我不追求光宗耀祖，不追求身出名门，不追求闻名于天下，只愿安稳度日。&lt;/p>
+&lt;p>可当我成为了一名 OIer，当我为那美妙的算法和思想赞叹不已、激动万分的时候，我才发觉：我，是为编程而生的。&lt;/p>
+&lt;p>“我想去 T 大。”我对自己说。&lt;/p>
+&lt;p>直到后来，我在知乎上认识了 laq。慢慢地，我认识到 laq 是一只与众不同的仓鼠——一只在小巧可爱、机智聪明的小小外表下，有着大大思想的仓鼠。&lt;/p>
+&lt;p>浏览他的很多回答，令我重新深刻地审视了自己，清楚地明白了我自己是怎样的一个人；先前的无脑膜拜，所谓的懵懂情感，在冷静地思考之后，都清晰地浮现出来。我开始变得有一些自主了，也认识到一件事：我没有必要和其他人做得一模一样。坚持自己，努力下去，这样便可。&lt;/p>
+&lt;p>还记得他在关于奶茶妹妹的回答下，有这么一个评论：&lt;/p>
+&lt;blockquote>
+&lt;p>楼主讲的我真不信，和老师说到奶茶妹妹还一句带过。真能装笔&lt;/p>
+&lt;/blockquote>
+&lt;p>从这样一个评论中，从 laq 的友善可爱和这位用户的尖酸刻薄的强烈对比中，我意识到：上一个好的大学，对于人的品格也是有所影响的。&lt;/p>
+&lt;p>“我一定要去 T 大。”我对自己说。&lt;/p>
+&lt;p>为了能更好地审视自己，更好地塑造自己的品格。&lt;/p>
+&lt;hr>
+&lt;p>我对 Thu/Pku 的执念，如同仓鼠渴望瓜子、水獭渴望鱼一般强烈。&lt;/p>
+&lt;p>可是啊，我怎么了？我怎么变得这样颓废，这样难过了？&lt;/p>
+&lt;p>上课睡觉，不写作业，浑浑噩噩，得过且过，这是一个要考 Thu 的人的样子吗？&lt;/p>
+&lt;p>laq 说过，“正经把时间花在学习上的，不太会有时间兼顾其他太多东西的”，“自己要提升，那就努力学习工作吧”。&lt;/p>
+&lt;p>玩 slay.one，水群，刷知乎，这就是“学习”了么？&lt;/p>
+&lt;p>阻碍你发展的，从来不是手机、电脑、游戏、文化课或者 OI。&lt;/p>
+&lt;p>阻碍你发展的，是你的心啊！&lt;/p>
+&lt;p>“我一定要去 T 大”，一个数学 93、物理 73、历史 71、政治 69 的学生，说这种话肯定是会被嘲笑的；可你就是铁了心的想去 T 大，无论别人怎么想，怎么看。&lt;/p>
+&lt;p>我不想做站着的孔乙己，也不想做头撞号板的范进。&lt;/p>
+&lt;p>为了 laq，为了 zn，为了水水獭，为了你，Tsukimaru。&lt;/p>
+&lt;p>从今往后，好好做一个务实的，勤奋的，上进的，要强的，热血的，为理想不断奋斗的人吧。&lt;/p>
+&lt;p>唉。&lt;/p>
+&lt;p>天要下雨，就这样吧。&lt;/p>
+&lt;p>雨总会来的，总会下的，&lt;/p>
+&lt;p>可谁又知道，在那被湿漉漉的露水润湿的早晨，&lt;/p>
+&lt;p>迎接我们的，&lt;/p>
+&lt;p>是怎样温暖而明媚的阳光呢？&lt;/p>
+&lt;p>Tsukimaru Oshawott&lt;/p>
+&lt;p>2019 年 01 月 25 日&lt;/p></content></item><item><title>渲染测试</title><link>/main/posts/rendering-test/</link><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/main/posts/rendering-test/</guid><description>二级标题 三级标题 四级标题 五级标题 六级标题 二级开始 子标题 子标题 二级结束 粗体
+斜体
+删除线
+引用
+换行
+分段
+表头 1 表头 2 表头 3 靠左对齐 居中对齐 靠右对齐 inline code
+inline code with $LaTeX$ (should not be parsed)
+# A code example print(&amp;#39;hello world!&amp;#39;) $Inline : \LaTeX$
+正整数立方和求和公式：
+$$ \begin{aligned} \sum_{i=1}^n i^3 &amp;amp;=(\sum_{i=1}^n i)^2 \newline &amp;amp;=\frac {n^2(n+1)^2}4 \newline \end{aligned} $$</description><content>&lt;h2 id="二级标题">二级标题&lt;/h2>
+&lt;h3 id="三级标题">三级标题&lt;/h3>
+&lt;h4 id="四级标题">四级标题&lt;/h4>
+&lt;h5 id="五级标题">五级标题&lt;/h5>
+&lt;h6 id="六级标题">六级标题&lt;/h6>
+&lt;h2 id="二级开始">二级开始&lt;/h2>
+&lt;h3 id="子标题">子标题&lt;/h3>
+&lt;h3 id="子标题-1">子标题&lt;/h3>
+&lt;h2 id="二级结束">二级结束&lt;/h2>
+&lt;p>&lt;strong>粗体&lt;/strong>&lt;/p>
+&lt;p>&lt;em>斜体&lt;/em>&lt;/p>
+&lt;p>&lt;del>删除线&lt;/del>&lt;/p>
+&lt;hr>
+&lt;hr>
+&lt;blockquote>
+&lt;p>引用&lt;br>
+换行&lt;/p>
+&lt;p>分段&lt;/p>
+&lt;/blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">表头 1&lt;/th>
+&lt;th style="text-align:center">表头 2&lt;/th>
+&lt;th style="text-align:right">表头 3&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">靠左对齐&lt;/td>
+&lt;td style="text-align:center">居中对齐&lt;/td>
+&lt;td style="text-align:right">靠右对齐&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>inline code&lt;/code>&lt;/p>
+&lt;p>&lt;code>inline code with $LaTeX$ (should not be parsed)&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#75715e"># A code example&lt;/span>
+&lt;span style="color:#66d9ef">print&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;hello world!&amp;#39;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>$Inline : \LaTeX$&lt;/p>
+&lt;p>正整数立方和求和公式：&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\sum_{i=1}^n i^3
+&amp;amp;=(\sum_{i=1}^n i)^2 \newline
+&amp;amp;=\frac {n^2(n+1)^2}4 \newline
+\end{aligned}
+$$&lt;/p>
+&lt;p>欧拉函数的性质之一：&lt;/p>
+&lt;p>$$
+\begin{aligned}
+\varphi : * : I &amp;amp;= id \newline
+\sum_{d|n} \varphi(d) &amp;amp;= n \newline
+\end{aligned}
+$$&lt;/p>
+&lt;p>It was terribly cold and nearly dark on the last evening of the old year, and the snow was falling fast. In the cold and the darkness, a poor little girl, with bare head and naked feet, roamed through the streets. It is true she had on a pair of slippers when she left home, but they were not of much use. They were very large, so large, indeed, that they had belonged to her mother, and the poor little creature had lost them in running across the street to avoid two carriages that were rolling along at a terrible rate. One of the slippers she could not find, and a boy seized upon the other and ran away with it, saying that he could use it as a cradle, when he had children of his own. So the little girl went on with her little naked feet, which were quite red and blue with the cold. In an old apron she carried a number of matches, and had a bundle of them in her hands. No one had bought anything of her the whole day, nor had anyone given her even a penny. Shivering with cold and hunger, she crept along; poor little child, she looked the picture of misery. The snowflakes fell on her long, fair hair, which hung in curls on her shoulders, but she regarded them not.&lt;/p></content></item><item><title>留言板</title><link>/main/posts/feedback/</link><pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate><guid>/main/posts/feedback/</guid><description>这里是 Tsukimaru 的留言板！
+有什么想对 Tsukimaru 说的都可以在这里留言～</description><content>&lt;p>这里是 Tsukimaru 的留言板！&lt;/p>
+&lt;p>有什么想对 Tsukimaru 说的都可以在这里留言～&lt;/p></content></item></channel></rss>
