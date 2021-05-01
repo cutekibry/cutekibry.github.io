@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-defaultContentLanguage = "zh-cn"
+defaultContentLanguage = "main"
 defaultContentLanguageInSubdir = true
 theme = "terminal"
 paginate = 5
@@ -51,36 +51,11 @@ unsafe = true
   site = ""
 
 [languages]
-  [languages.en-us]
-    contentDir = "content/en-us"
-    languageName = "English"
-    title = "Beyond Moonlight"
-    subtitle = ""
-    owner = "Tsukimaru Oshawott"
-    keywords = ""
-    copyright = ""
-    menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    missingContentMessage = "Page not found..."
-    missingBackButtonLabel = "Back to home page"
-
-    [languages.en-us.params.logo]
-      logoText = "cutekibry@Tsukimaru"
-      logoHomeLink = "/"
-
-    [languages.en-us.menu]
-      [[languages.en-us.menu.main]]
-        # identifier = "about"
-        # name = "About"
-        # url = "/about"
-
-  [languages.zh-cn]
-    contentDir = "content/zh-cn"
+  [languages.main]
+    themeColor = "blue"
+    contentDir = "content/main"
     languageName = "Chinese"
-    title = "飞跃月光"
+    title = "Beyond Moonlight"
     subtitle = ""
     owner = "Tsukimaru Oshawott"
     keywords = ""
@@ -93,12 +68,48 @@ unsafe = true
     missingContentMessage = "Page not found..."
     missingBackButtonLabel = "返回主页"
 
-    [languages.zh-cn.params.logo]
+    [languages.main.params.logo]
       logoText = "cutekibry@Tsukimaru"
       logoHomeLink = "/"
 
-    [languages.zh-cn.menu]
-      [[languages.zh-cn.menu.main]]
+    [languages.main.menu]
+      [[languages.main.menu.main]]
         identifier = "tags"
         name = "标签列表"
-        url = "/zh-cn/tags/"
+        url = "/main/tags/"
+
+      [[languages.main.menu.main]]
+        identifier = "feedback"
+        name = "留言板"
+        url = "/main/posts/feedback/"
+        
+  [languages.inner]
+    themeColor = "red"
+    contentDir = "content/inner"
+    languageName = "Chinese"
+    title = "The Dark Side of The Moon"
+    subtitle = ""
+    owner = "Tsukimaru Oshawott"
+    keywords = ""
+    copyright = ""
+    menuMore = "显示更多"
+    readMore = "阅读全文"
+    readOtherPosts = "阅读其他文章"
+    newerPosts = "上一页"
+    olderPosts = "下一页"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "返回主页"
+
+    [languages.inner.params.logo]
+      logoText = "root@Tsukimaru"
+      logoHomeLink = "/inner"
+
+    [languages.inner.menu]
+      [[languages.inner.menu.main]]
+        identifier = "main"
+        name = "返回表博客"
+        url = "/main/"
+      [[languages.inner.menu.main]]
+        identifier = "tags"
+        name = "标签列表"
+        url = "/inner/tags/"
