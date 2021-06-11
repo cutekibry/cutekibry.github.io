@@ -43,6 +43,7 @@ showFullContent = false
 
 `inline code`
 
+![image](https://i.loli.net/2020/12/22/9ey72UEQAwcPONF.png)
 
 `inline code with $LaTeX$ (should not be parsed)`
 

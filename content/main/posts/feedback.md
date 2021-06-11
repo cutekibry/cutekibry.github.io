@@ -7,8 +7,7 @@ cover = ""
 tags = ["杂项"]
 keywords = []
 description = ""
-showFullContent = false
-display = false
+showFullContent = true
 +++
 
 这里是 Tsukimaru 的留言板！

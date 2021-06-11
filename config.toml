@@ -19,7 +19,7 @@ unsafe = true
   themeColor = "blue"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 5
 
   # show selector to switch language
   showLanguageSelector = false
@@ -113,3 +113,7 @@ unsafe = true
         identifier = "tags"
         name = "标签列表"
         url = "/inner/tags/"
+      [[languages.inner.menu.main]]
+        identifier = "feedback"
+        name = "留言板（里）"
+        url = "/inner/posts/feedback/"
