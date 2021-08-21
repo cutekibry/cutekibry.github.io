@@ -2,128 +2,13 @@
 title: 自我介绍
 date: 2019-11-23
 category: 生活
-excerpt: 我是 Tsukimaru Oshawott，一只普通的水水獭。
 ---
-
-<style type="text/css">
-.userbox {
-    float: right;
-    border: 1px solid #999;
-    background: #F8F8F8;
-    width: 50%;
-    padding: 0.5em 0.5em 0 0.5em;
-    margin-left: 1em;
-    margin-bottom: 0.5em;
-}
-
-.userboxitem {
-    border-spacing: 1px;
-    width: 100%;
-    margin: 0.5em 0;
-}
-
-.userboxicon {
-    text-align: center;
-    width: 15%;
-}
-
-.userboxicon img {
-    padding: 1em;
-}
-</style>
-
-<div class="userbox">
-
-<h4>身份</h4>
-
-<table class="userboxitem" style="border:1px solid #0d6ac8; background: #7bf;">
-<tbody><tr>
-<th class="userboxicon" style="background:#39f;"><img href="https://wiki.52poke.com/wiki/水水獭" src="https://i.loli.net/2020/08/11/nJFObthVYkjAiaL.png"></th>
-<td>这个用户是一只<b><a href="https://wiki.52poke.com/wiki/水水獭">水水獭</a></b>。</td>
-</tr></tbody>
-</table>
-
-<table class="userboxitem" style="border:1px solid#AAA;background:#DDD">
-<tbody><tr>
-<th class="userboxicon"><img href="https://wiki.52poke.com/wiki/File:神奇宝贝百科卡牌工程.png" src="https://i.loli.net/2020/08/11/Cq2fZEukJt7Urzc.png"></th>
-<td style="color:#464">
-这个用户是一位<b><a href="https://wiki.52poke.com/wiki/神奇宝贝百科:卡牌工程">神奇宝贝百科卡牌工程</a></b>工作者。
-</td>
-</tr></tbody>
-</table>
-
-<table class="userboxitem" style="border:1px solid black; background: black;">
-<tbody><tr>
-<th class="userboxicon" style="color: white;">&gt; OI</th>
-<td style="color: white;">这个用户是一名 OIer。</td>
-</tr></tbody>
-</table>
-
-<h4>语言</h4>
-
-<table class="userboxitem" style="border:1px solid#8a8;background: #e3ffe3;">
-<tbody><tr>
-<th class="userboxicon" style="background:#c6ffc6;"><a href="http://zh.wikipedia.org/wiki/现代标准汉语">zh-N</a></th>
-<td>我的母语是<b>汉语</b>。</td>
-</tr></tbody>
-</table>
-
-<table class="userboxitem" style="border:1px solid#8a8;background: #e3ffe3;">
-<tbody><tr>
-<th class="userboxicon" style="background:#c6ffc6;"><a href="http://zh.wikipedia.org/wiki/英语">en-2</a></th>
-<td>
-<span lang="en">I am able to read and write with a basic level of <b>English</b>.</span>
-<hr>
-我可以读懂<b>英语</b>，并可以进行基本的读写。
-</td>
-</tr></tbody>
-</table>
-
-<table class="userboxitem" style="border:1px solid#8a8;background: #e3ffe3;">
-<tbody><tr>
-<th class="userboxicon" style="background:#c6ffc6;"><a href="http://zh.wikipedia.org/wiki/日语">ja-1</a></th>
-<td>
-<span lang="ja">私は基本的な<b>日本語</b>を理解していますが、話したり書いたりするのは困難です。</span>
-<hr>
-我可以理解基本的<b>日语</b>，不过很难说或写。
-</td>
-</tr></tbody>
-</table>
-
-<h4>性格</h4>
-
-<table class="userboxitem" style="border:1px solid #356854; background: #A8FDB8;">
-<tbody><tr>
-<th class="userboxicon" style="background-color: #79E3A4;"><a href="https://www.16personalities.com/ch/infp-人格">INFP</a></th>
-<td>这个用户是一位<b>调停者</b></a>。</td>
-</tr></tbody>
-</table>
-
-<table class="userboxitem" style="border:1px solid #ddd; background: #fefefe;">
-<tbody><tr>
-<th class="userboxicon" style="background-color: white;"><img src="https://i.loli.net/2020/08/11/SEVc2pHTODxXsJW.png"></th>
-<td>这个用户是一只温顺的小绵羊。</td>
-</tr></tbody>
-</table>
-
-<table class="userboxitem" style="border:1px solid #331139; background: #482B6B;">
-<tbody><tr>
-<th class="userboxicon" style="background:#3C488D; color: white;">...</th>
-<td style="color: white;">这个用户十分内向，很少主动与人互动。</td>
-</tr></tbody>
-</table>
-
-<table class="userboxitem" style="border:1px solid black; background: black;">
-<tbody><tr>
-<th class="userboxicon"></th>
-<td style="color: white;">这个用户认为自己有轻度的精神问题和违背道德伦理的癖好，但他会尽可能地不影响到不必要的人。</td>
-</tr></tbody>
-</table>
-</div>
 
 你好！
 
 我是 Tsukimaru Oshawott，一只普通的水水獭。
+
+<!-- more -->
 
 ## 水水獭是什么？
 [水水獭](https://wiki.52poke.com/wiki/水水獭)是一种水属性的宝可梦。我就是一只水水獭。
@@ -137,9 +22,35 @@ excerpt: 我是 Tsukimaru Oshawott，一只普通的水水獭。
 
 我通常使用的帐号名（Username）为 Cutekibry，来自英文「**Cute**」（可爱的）和「**Kibry**」（Kirby 的错拼，出自「星之卡比」系列）。
 
-## 联系方式
-*请使用浏览器的搜索功能（快捷键为 `Ctrl+F`）进行搜索。*
+## 身份
+* 一只水水獭
+* 原 OIer，有一点算法能力，曾获 NOI2021 银牌（彼时正值高二升高三的暑假）
 
+## 一些爱好
+* 玩游戏
+  * 偏好且相当欣赏的一些游戏：
+    * 《Celeste》：当之无愧的神作，目前总游玩时间超 100 小时，官方 100% 成就收集，Spring Collaboration 2020 一二章通关
+    * 《Ori and the Blind Forest》：虽然是独立工作室却能作出这样质量上乘得可怕的配乐和画面，实在让人不得不惊叹
+  * 偏好的一些游戏：
+    * 星之卡比系列：自幼（小学一二年级）就开始玩的游戏，至 3DS 时代前的正作作品基本都有玩过，所有正作作品基本都有了解过
+    * 《宝可梦不可思议的迷宫 时之探险队》：（可能是在粉丝滤镜下）剧情能打动我的一款宝可梦游戏，~~也是很多宝可梦控（ポケモナー）的初恋作~~
+    * 《精灵宝可梦 黑 2 / 白 2》：个人认为的精灵宝可梦系列正作质量巅峰之一
+* 音游
+  * 太鼓之达人：自认新框鬼十星中下位
+  * BMS：GENOCIDE2018 通常五段 Clear
+* 浏览兽文化创作
+  * 与主流的兽文化可能不同，个人偏向于较幼的、兽化浓度高的可爱的小动物（ケモノ），吉祥物等
+  * 包括精灵宝可梦系列
+  * ~~包括 R18 / 少量 R18G 创作~~
+* 作曲
+  * 约等于不会
+  * 倾向于音游核 / 类音游核
+  * 最喜欢的曲风：DnB（Breakcore / Neurofunk / Drumstep），Speedcore（Mashcore），Dubstep（Chillstep）
+* 钢琴：业余十级及格，目前只为了愉悦放松身心弹琴，不太会弹
+* 写 OI 题：偶尔心血来潮会想看看
+* ~~发表关于自己性癖的暴论~~
+
+## 联系方式
 * AtCoder：[<span style="color: #0000FF; font-weight: bold;">cutekibry</span>](https://atcoder.jp/users/cutekibry)（2 Kyu）
 * Codeforces：![](https://cfrating.ihcr.top/?user=cutekibry)
 * LibreOJ：[cutekibry](https://loj.ac/user/1408)

@@ -1,5 +1,5 @@
 ---
-title: CSP2020 游记
+title: Still alive——CSP2020 游记
 date: 2020-11-09
 updated: 2020-11-09
 tags:
