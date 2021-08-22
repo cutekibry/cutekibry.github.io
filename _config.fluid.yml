@@ -128,7 +128,7 @@ dark_mode:
 color:
   # body 背景色
   # Color of body background
-  body_bg_color: "#BBDDFF"
+  body_bg_color: "#DDEEFF"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
   body_bg_color_dark: "#181c27"
@@ -508,7 +508,7 @@ post:
       # 格式参照 ISO-8601 日期格式化
       # ISO-8601 date format
       # See: http://momentjs.cn/docs/#/parsing/string-format/
-      format: "LL a"
+      format: "YYYY 年 M 月 D 日"
 
     # 字数统计
     # Word count
@@ -565,7 +565,7 @@ post:
   # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
-    content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh" rel="nofollow noopener">CC BY-SA 3.0 协议</a> ，转载请注明出处！'
+    content: '所有内容除特别声明外均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" rel="nofollow noopener">CC BY-NC-SA 3.0 协议</a>，在遵守协议的前提下可随意使用。若要商用请联系 Tsukimaru。'
 
   # 文章底部上一篇下一篇功能
 # Link to previous/next post
@@ -625,11 +625,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
-    type: disqus
+    type: valine
 
 
 #---------------------------
@@ -691,9 +691,9 @@ gitalk:
 # Based on LeanCloud
 # See: https://valine.js.org/
 valine:
-  appId:
-  appKey:
-  placeholder: 说点什么
+  appId: PsTgbYLdA4rR6SuoyxqKnU1z-gzGzoHsz
+  appKey: vbRcM2xMiAOplTmjV1vzSToj
+  placeholder: 说点什么吧～
   path: window.location.pathname
   avatar: retro
   meta: ['nick', 'mail', 'link']
@@ -704,8 +704,8 @@ valine:
   serverURLs: ''
   emojiCDN:
   emojiMaps:
-  enableQQ: false
-  requiredFields: []
+  enableQQ: true
+  requiredFields: ['nick']
 
 # Waline
 # 从 Valine 衍生而来，额外增加了服务端和多种功能

@@ -2,6 +2,7 @@
 title: 自我介绍
 date: 2019-11-23
 category: 生活
+sticky: 3
 ---
 
 你好！
