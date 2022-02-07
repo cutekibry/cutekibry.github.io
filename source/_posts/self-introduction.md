@@ -37,18 +37,15 @@ sticky: 3
     * 《宝可梦不可思议的迷宫 时之探险队》：（可能是在粉丝滤镜下）剧情能打动我的一款宝可梦游戏，~~也是很多宝可梦控（ポケモナー）的初恋作~~
     * 《精灵宝可梦 黑 2 / 白 2》：个人认为的精灵宝可梦系列正作质量巅峰之一
 * 音游
-  * 太鼓之达人：自认新框鬼十星中下位
+  * 太鼓之达人：自认家用机新框十星下位
   * BMS：GENOCIDE2018 通常五段 Clear
+  * 舞萌 DX：Lv.10 AAA~S，DXRating 3000 左右
 * 浏览兽文化创作
   * 与主流的兽文化可能不同，个人偏向于较幼的、兽化浓度高的可爱的小动物（ケモノ），吉祥物等
   * 包括精灵宝可梦系列
   * ~~包括 R18 / 少量 R18G 创作~~
-* 作曲
-  * 约等于不会
-  * 倾向于音游核 / 类音游核
-  * 最喜欢的曲风：DnB（Breakcore / Neurofunk / Drumstep），Speedcore（Mashcore），Dubstep（Chillstep）
 * 钢琴：业余十级及格，目前只为了愉悦放松身心弹琴，不太会弹
-* 写 OI 题：偶尔心血来潮会想看看
+* 写 OI 题：偶尔心血来潮会看看
 * ~~发表关于自己性癖的暴论~~
 
 ## 联系方式
@@ -61,4 +58,4 @@ sticky: 3
 ---
 
 * QQ：2054986856
-* E-mail：[cutekibry@yahoo.com](mailto:cutekibry@yahoo.com)
+* E-mail：~~[cutekibry@yahoo.com](mailto:cutekibry@yahoo.com)~~ 已停用，更换为 [cutekibry@gmail.com](mailto:cutekibry@gmail.com)
