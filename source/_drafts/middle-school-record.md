@@ -1,9 +1,10 @@
 ---
 title: 中学回忆录
-date: 2022-08-15
-category: 
-- 文章
-draft: true
+date: 2019-02-14
+updated: 2020-02-20
+category:
+- 生活
+- 随想
 ---
 
 喝了点无酒精的酒，突然想写点总结了。
