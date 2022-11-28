@@ -106,7 +106,8 @@ void initsa() {
         Ro(i, n) if (sa[i] - k >= 1) sb[sum[rnk[sa[i] - k]]--] = sa[i] - k;
         For(i, n - k + 1, n) sb[sum[rnk[i]]--] = i;
         m = 0;
-        Fo(i, n) brnk[sb[i]] = (rnk[sb[i]] ^ rnk[sb[i - 1]] or rnk[sb[i] + k] ^ rnk[sb[i - 1] + k]) ? ++m : m;
+        Fo(i, n) brnk[sb[i]] = (rnk[sb[i]] ^ rnk[sb[i - 1]] or 
+                                rnk[sb[i] + k] ^ rnk[sb[i - 1] + k]) ? ++m : m;
         cpy(rnk, brnk);
         cpy(sa, sb);
     }
@@ -155,6 +156,15 @@ link[0] = 1;
 ```
 
 ## 数学
+### 第二类斯特林数
+$\begin{Bmatrix} n \\m \end{Bmatrix}$ 表示 $n$ 个不同元素划分为 $m$ 个相同集合的方案数。
+
+$$\begin{Bmatrix} n \\m \end{Bmatrix} = \begin{Bmatrix} n - 1 \\m - 1 \end{Bmatrix} + m\begin{Bmatrix} n - 1 \\m \end{Bmatrix}$$ 
+
+$$\begin{Bmatrix} n \\m \end{Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k C(m,k)(m-k)^n$$
+
+$$n^m=\sum_{k=0}^m \begin{Bmatrix} m \\k \end{Bmatrix} n^{\underline k}$$
+
 #### DFT
 ```cpp
 inline void initwn() {
@@ -170,8 +180,7 @@ inline void initrev(int len) {
     int i, k;
 
     k = 1;
-    while (len >> k >> 1)
-        k++;
+    while (len >> k >> 1) k++;
     Fo(i, len - 1) rev[i] = (rev[i >> 1] >> 1) | ((i & 1) << (k - 1));
 }
 
@@ -194,6 +203,134 @@ inline void idft(Expr a, int len) {
     dft(a, len);
     std::reverse(a + 1, a + len);
     For(i, 0, len - 1) a[i] = 1LL * a[i] * inv % MOD;
+}
+```
+
+###  全家桶
+```cpp
+void exprinv(Expr res, Expr a, int lim) {
+    static Expr b, a0;
+    int n, len, i;
+
+    assert(a[0]);
+    b[0] = qpow(a[0], MOD - 2);
+    n = 1;
+    while (n < lim) {
+        len = n << 2;
+        copy(a0, a, n << 1);
+
+        initrev(len);
+
+        dft(b, len);
+        dft(a0, len);
+        for (i = 0; i < len; i++)
+            b[i] = b[i] * (2 - 1ll * a0[i] * b[i] % MOD + MOD) % MOD;
+        idft(b, len);
+
+        for (i = n << 1; i < len; i++)
+            b[i] = 0;
+
+        memset(a0, 0, len << 2);
+
+        n <<= 1;
+    }
+    memcpy(res, b, lim << 2);
+    memset(b, 0, len << 2);
+}
+void exprsqrt(Expr res, Expr a, int lim) {
+    static Expr b, a0, invb;
+    int n, len, i;
+
+    b[0] = modsqrt(a[0]);
+    n = 1;
+    while (n < lim) {
+        len = n << 2;
+        copy(a0, a, n << 1);
+        exprinv(invb, b, n << 1);
+
+        initrev(len);
+
+        dft(b, len);
+        dft(invb, len);
+        dft(a0, len);
+        for (i = 0; i < len; i++)
+            b[i] = (b[i] + 1ll * a0[i] * invb[i]) % MOD;
+        idft(b, len);
+
+        for (i = 0; i < len; i++)
+            b[i] = 1ll * b[i] * INV2 % MOD;
+        for (i = n << 1; i < len; i++)
+            b[i] = 0;
+
+        n <<= 1;
+    }
+    memcpy(res, b, lim << 2);
+    memset(b, 0, len << 2);
+    memset(a0, 0, len << 2);
+    memset(invb, 0, len << 2);
+}
+void exprdet(Expr res, Expr a, int lim) {
+    int i;
+
+    for (i = 1; i < lim; i++)
+        res[i - 1] = 1ll * a[i] * i % MOD;
+    res[lim - 1] = 0;
+}
+void exprint(Expr res, Expr a, int lim) {
+    int i;
+
+    for (i = lim - 1; ~i; i--)
+        res[i] = 1ll * a[i - 1] * qpow(i, MOD - 2) % MOD;
+    res[0] = 0;
+}
+void exprln(Expr res, Expr a, int lim) {
+    static Expr inva;
+    int i, len = lim << 1;
+
+    exprinv(inva, a, lim);
+    exprdet(res, a, lim);
+    initrev(len);
+    dft(res, len);
+    dft(inva, len);
+    for (i = 0; i < len; i++)
+        res[i] = 1ll * res[i] * inva[i] % MOD;
+    idft(res, len);
+    exprint(res, res, len);
+    for (i = lim; i < len; i++)
+        res[i] = 0;
+
+    memset(inva, 0, len << 2);
+}
+void exprexp(Expr res, Expr a, int lim) {
+    static Expr b, lnb;
+    int n, len, i;
+
+    assert(a[0] == 0);
+    b[0] = 1;
+    n = 1;
+    while (n < lim) {
+        len = n << 2;
+        exprln(lnb, b, n << 1);
+        for(i=0; i<n<<1; i++)
+            qmod(lnb[i] = MOD + a[i] - lnb[i]);
+        qmod(lnb[0] = lnb[0] + 1);
+
+        initrev(len);
+
+        dft(b, len);
+        dft(lnb, len);
+        for (i = 0; i < len; i++)
+            b[i] = 1ll * b[i] * lnb[i] % MOD;
+        idft(b, len);
+
+        for (i = n << 1; i < len; i++)
+            b[i] = 0;
+
+        n <<= 1;
+    }
+    memcpy(res, b, lim << 2);
+    memset(b, 0, len << 2);
+    memset(lnb, 0, len << 2);
 }
 ```
 
