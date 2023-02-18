@@ -1,11 +1,12 @@
 ---
-title: Panda 学习笔记
+title: Kaggle Pandas 学习笔记
 date: 2023-02-15
+updated: 2023-02-16
 category: 
 - 学习
 ---
 
-Kaggle 的 [Panda 微课](https://www.kaggle.com/learn/pandas)的笔记。
+Kaggle 的 [Pandas](https://www.kaggle.com/learn/pandas) 课程的笔记。
 
 <!-- more -->
 
@@ -140,3 +141,97 @@ reviews.apply(remean_points, axis='index') # 对每一列处理
 注意：这两个函数都不会修改原表的内容。
 
 ## 4. Grouping and Sorting
+### 分组
+```python
+reviews.groupby('points').points.count() # 等价于 reviews.points.value_counts()
+reviews.groupby('points').price.min() # 获取每个分数对应的最低商品价格
+reviews.groupby('winery').apply(lambda df: df.title.iloc[0]) 
+reviews.groupby(['country', 'province']).apply(lambda df: df.loc[df.points.idxmax()])
+reviews.groupby(['country']).price.agg([len, min, max])
+
+countries_reviewed = reviews.groupby(['country', 'province']).description.agg([len])
+countries_reviewed.reset_index() # 重置索引，即将 country province 放回列中，index 改为 0, 1, ...
+```
+
+### 排序
+```python
+dataframe.sort_values(by='len')
+dataframe.sort_values(by='len', ascending=False)
+dataframe.sort_values(by=['country', 'len'])
+dataframe.sort_index()
+
+series.sort_values()
+dataframe.sort_index()
+```
+
+同样地，排序不会修改原表的内容。
+
+## 5. Data Types and Missing Values
+### Dtypes
+```python
+reviews.price.dtype # dtype('float64')
+reviews.dtypes # 返回一个 object 类型的 Series，内容为每列的数据类型
+reviews.points.astype('float64')
+reviews.index.dtype
+```
+
+### 丢失数据（NaN）
+```python
+reviews.region_2.fillna("Unknown")
+reviews.taster_twitter_handle.replace("@kerinokeefe", "@kerino")
+```
+
+## 6. Renaming and Combining
+### 重命名
+```python
+reviews.rename(columns={'points': 'score'}) # 把 points 改为 score
+reviews.rename(index={0: 'firstEntry', 1: 'secondEntry'}) # 很少用到，一般 set_index
+reviews.rename_axis("wines", axis='rows').rename_axis("fields", axis='columns') # 把列头称为 wines，行头称为 fields
+```
+
+### 结合
+三种方式（从简单到复杂）：`concat(), join(), merge()`
+
+```python
+canadian_youtube = pd.read_csv("../input/youtube-new/CAvideos.csv")
+british_youtube = pd.read_csv("../input/youtube-new/GBvideos.csv")
+
+# concat: 直接把两个表前后拼接
+# 一般当两个表的对象不相同时使用
+pd.concat([canadian_youtube, british_youtube])
+
+# join: 合并两个有相同类型 index 的表，同类型会自动合并
+# 一般当两个表的对象相同，要合并同样 index 的项时使用
+left = canadian_youtube.set_index(['title', 'trending_date'])
+right = british_youtube.set_index(['title', 'trending_date'])
+left.join(right, lsuffix='_CAN', rsuffix='_UK')
+```
+
+## Extra
+### 删除
+```python
+df.drop('age', axis='columns')
+df.drop(2, axis='index')
+df.age.dropna()
+```
+
+### One-hot 编码
+```python
+df
+```
+
+|      | color | class |
+| :--- | :---- | :---- |
+| 0    | green | A     |
+| 1    | red   | B     |
+| 2    | blue  | C     |
+
+```python
+pd.get_dummies(df.color, prefix='hot')
+```
+
+|      | hot_blue | hot_green | hot_red |
+| :--- | :------- | :-------- | :------ |
+| 0    | 0        | 1         | 0       |
+| 1    | 0        | 0         | 1       |
+| 2    | 1        | 0         | 0       |

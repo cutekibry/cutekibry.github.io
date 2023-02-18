@@ -374,7 +374,7 @@ footer:
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     <i class="iconfont icon-love"></i>
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
-    <p><a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png" /></a></p>
+    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a></p>
   '
 
   # 展示网站的 PV、UV 统计数
@@ -540,7 +540,7 @@ post:
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
   updated:
-    enable: false
+    enable: true
 
     # 描述文字
     # Descriptive text before date
@@ -565,7 +565,7 @@ post:
   # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
-    content: '所有内容除特别声明外均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" rel="nofollow noopener">CC BY-NC-SA 3.0 协议</a>，在遵守协议的前提下可随意使用。若要商用请联系 Tsukimaru。'
+    content: '所有内容除特别声明外均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a>，在遵守协议的前提下可随意使用。若要商用请联系 Tsukimaru。'
 
   # 文章底部上一篇下一篇功能
 # Link to previous/next post
