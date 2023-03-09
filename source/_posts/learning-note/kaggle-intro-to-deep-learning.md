@@ -6,7 +6,7 @@ category:
 - 学习
 ---
 
-Kaggle 的 [Intro to Deep Learning](https://www.kaggle.com/learn/intro-to-deep-learning)的笔记。
+Kaggle 的 [Intro to Deep Learning](https://www.kaggle.com/learn/intro-to-deep-learning) 的笔记。
 
 <!-- more -->
 
