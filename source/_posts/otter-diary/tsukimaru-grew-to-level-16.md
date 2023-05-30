@@ -3,7 +3,6 @@ title: Tsukimaru Grew to Level 16!
 date: 2020-01-16
 updated: 2020-01-16
 category:
-- 生活
 - 破壳日记
 ---
 

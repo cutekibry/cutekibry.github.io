@@ -69,9 +69,9 @@ $$r(A + B) \leq r(A) + r(B)$$
 ## 向量组
 若向量组 $T_1$ 中的每个向量都可被 $T_2$ 线性表示，称 **$T_1$ 可被 $T_2$ 线性表示**。若可互相线性表示，称为**向量组等价**。
 
-也可以认为存在矩阵 $\bold K$ 使得
+也可以认为存在矩阵 $\boldsymbol K$ 使得
 
-$$T_1 = T_2\bold K$$
+$$T_1 = T_2\boldsymbol K$$
 
 ## 向量空间
 若向量集合 $V$ 中 $\vec a + \vec b$ 和 $k\vec a$ 封闭，则 $V$ 是**向量空间**。
@@ -92,15 +92,15 @@ $$\vec \beta = \sum_{i = 1}^r x_i\vec a_i$$
 
 则 $\vec x$ 称为 **$\beta$ 关于基 $\{a_1, \ldots, a_r\}$ 的坐标向量**，简称**坐标**。
 
-对于同一向量空间 $V$ 的两个基 $\{\vec a_1, \ldots, \vec a_r\}$ 和 $\{\vec b_1, \ldots, \vec b_r\}$，若存在矩阵 $\bold C_{r \times r}$ 使得
+对于同一向量空间 $V$ 的两个基 $\{\vec a_1, \ldots, \vec a_r\}$ 和 $\{\vec b_1, \ldots, \vec b_r\}$，若存在矩阵 $\boldsymbol C_{r \times r}$ 使得
 
-$$[\vec a_1 \ \ldots \ \vec a_r] = [\vec b_1 \ \ldots \ \vec b_r] \bold C$$
+$$[\vec a_1 \ \ldots \ \vec a_r] = [\vec b_1 \ \ldots \ \vec b_r] \boldsymbol C$$
 
-则 $\bold C$ 为**从基 $\{\vec a_1, \ldots, \vec a_r\}$ 到 $\{\vec b_1, \ldots, \vec b_r\}$ 的过渡矩阵（基变换矩阵）**。
+则 $\boldsymbol C$ 为**从基 $\{\vec a_1, \ldots, \vec a_r\}$ 到 $\{\vec b_1, \ldots, \vec b_r\}$ 的过渡矩阵（基变换矩阵）**。
 
 对向量 $\vec a \in V$，设在两组基下的坐标分别为 $\vec x, \vec x$，则
 
-$$\vec x = \bold C\vec y$$
+$$\vec x = \boldsymbol C\vec y$$
 
 注意这里的乘积顺序。
  

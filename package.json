@@ -9,34 +9,20 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "5.4.2"
+    "version": "6.3.0"
   },
   "dependencies": {
-    "@upupming/hexo-renderer-markdown-it-plus": "^2.0.2",
-    "hexo": "^5.4.2",
-    "hexo-deployer-git": "^3.0.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-index": "^2.0.0",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-stylus": "^2.1.0",
+    "hexo": "^6.3.0",
+    "hexo-all-minifier": "^0.5.7",
+    "hexo-filter-mathjax": "^0.9.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^3.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-pandoc": "^0.4.0",
+    "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
-    "hexo-sliding-spoiler": "^1.2.1",
-    "hexo-tag-mmedia": "^1.1.7",
-    "hexo-theme-fluid": "^1.9.3",
-    "hexo-theme-landscape": "^0.0.3"
-  },
-  "description": "An Oshawott's personal blog.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cutekibry/cutekibry.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cutekibry/cutekibry.github.io/issues"
-  },
-  "homepage": "https://github.com/cutekibry/cutekibry.github.io#readme"
+    "hexo-theme-landscape": "^1.0.0"
+  }
 }

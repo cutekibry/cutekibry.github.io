@@ -3,9 +3,8 @@ title: NOIP2018 游记
 date: 2018-11-14
 updated: 2019-02-23
 tags:
-- NOIP
-category:
 - OI
+category:
 - 游记
 excerpt: 或许这就是青春感伤文学吧。
 ---

@@ -2,9 +2,8 @@
 title: 云烟成雨——NOI2021 游记
 date: 2022-02-06
 tags:
-- NOI
-category:
 - OI
+category:
 - 游记
 excerpt: 我还想打一局 // 赛前的狂话还能说起 // 数理初次闪耀的光辉 // 渐行渐远去的我们
 ---
