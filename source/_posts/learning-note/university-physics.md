@@ -75,3 +75,92 @@ $$u_y' = \frac {u_y}{\gamma(1 \mp \frac {u_xv}{c^2})}$$
 * 总能量 $E$，静止能量 $E_0$ 和动能 $E_k$：$E = E_0 + E_k$，可知 $E_k = (m - m_0)c^2$
 * 动量 $p = mv = m_0 \gamma v$
 * $E^2 = p^2c^2 + E_0^2$
+
+## 第 6 章 分子动理论
+### 第 1 节 热力学系统与平衡态
+概念：
+
+* **孤立系**：无能量和物质交换
+* **封闭系**：有能量，无物质交换
+* **开放系**：有能量和物质交换
+* **平衡态**：处于动态平衡的**孤立系**
+  * 对两端分别放在热水和冰中的铁棒，即使达到动态平衡也不是平衡态，因为铁棒不是孤立系
+* **物态方程**：$T= T(p, V)$ 等
+* **状态参量空间**：以独立的状态参量为坐标可构成空间
+* **准静态过程和非静态过程**：前者无限缓慢，任意时刻都在平衡态；后者不一定在平衡态
+* **热接触**：两个系统通过导热板接触
+* **复合系统**：热接触的两个系统
+
+**热力学第零定律**：若 A=C，B=C，则 A=B。
+
+理想气体方程：
+
+$$pV = vRT$$
+
+其中 $v$ 是**总物质的量**，$R = 8.31 \text{J} / (\text{mol} \cdot \text{K})$ 为**摩尔气体常量**。
+
+根据**阿伏伽德罗常量** $N_A = 6.022 \times 10^{23} \text{mol}^{-1}$ 可以引入**玻尔兹曼常量**
+
+$$k = \frac R{N_A} = 1.38 \times 10^{-23} \text{J} / \text{K}$$
+
+则有
+
+$$p = nkT$$
+
+其中 $n = \frac NV$ 是**单位体积的分子数**，也叫**分子数密度**。据此可得标态下分子数密度 $n_0 = \frac p{kT} = 2.69 \times 10^{25} \text{m}^{-3}$，称为**洛施密特常量**。
+
+**混合气体平均摩尔质量**：混合气体平均摩尔质量 $\overline M$ 满足
+
+$$\frac 1{\overline M} = \sum_i \frac {m_i}m \frac 1{M_i}$$
+
+#### 理想气体微观模型
+结论：
+
+$$p = \frac 13nm_f \overline {v^2}$$
+
+其中 $m_f$ 为单个分子质量。
+
+记单个分子平均**平动**动能 $\overline \epsilon_t = \frac 12 m_f \overline {v^2}$，上式写作
+
+$$p = \frac 23n\overline \epsilon_t$$
+
+可推得
+
+$$\overline \epsilon_t = \frac 32 kT$$
+
+### 第 3 节 能量均分定理
+自由度：
+
+| 分子种类 | $t$ | $r$ | $s$ | $i = t + r + s$ |
+| :-: | :-: | :-: | :-: | :-: |
+| 单原子 | $3$ | $0$ | $0$ | $3$ |
+| 刚性双原子 | $3$ | $2$ | $0$ | $5$ |
+| 非刚性双原子 | $3$ | $2$ | $1$ | $6$ |
+| 刚性多原子 | $3$ | $3$ | $0$ | $6$ |
+| 非刚性多原子 | $3$ | $3$ | $3n - 6$ | $3n$ |
+
+**能量均分定理**：**每个自由度的平均动能都等于 $\frac {kT}2$**，即可知理想气体的分子平均**总**动能 $\overline \epsilon_k$ 为
+
+$$\overline \epsilon_k = \frac i2kT$$
+
+其中 $\overline \epsilon_k = \overline \epsilon_t + \overline \epsilon_r + \overline \epsilon_s$。
+
+分子平均总**能量**为
+
+$$\overline \epsilon = \overline \epsilon_k + \overline \epsilon_p$$
+
+其中 $\overline \epsilon_p$ 为平均势能。根据振动理论知 $\overline \epsilon_p = \overline \epsilon_s$，因此
+
+$$\overline \epsilon = \frac 12 (t + r + 2s)kT$$
+
+气体内能为
+
+$$
+\begin{aligned}
+    E = N\overline \epsilon &= \frac 12 (t + r + 2s)NkT \\
+    &= \frac 12 (t + r + 2s)vRT \\
+\end{aligned}
+$$
+
+### 麦克斯韦速率分布
+$$f(v) = \frac {\text d N}{N \text{d} v}$$
