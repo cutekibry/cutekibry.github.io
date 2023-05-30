@@ -107,7 +107,7 @@ deploy:
   branch: public
 
 
-all_minifier: false
+all_minifier: true
 
 mathjax:
   tags: none # or 'ams' or 'all'
