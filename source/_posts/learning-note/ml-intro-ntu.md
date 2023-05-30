@@ -5,9 +5,9 @@ category:
 - 学习
 ---
 
-[BV1aR4y1m7xU](//www.bilibili.com/video/BV1aR4y1m7xU)。
+[BV1wU4y1v7Eh](//www.bilibili.com/video/BV1wU4y1v7Eh)。
 
-全是理论，要头秃了……
+看了很久才发现看错老师了，应该是看李老师而不是林老师的课……
 
 <!-- more -->
 
@@ -459,3 +459,28 @@ RNN 也有其他改版：
 
 以及除了等长输出（输入向量和输出向量一样多），也可以调整为只输出一个向量，或不固定输出数量个数。调整方法是比较简单的，这里不赘述。
 
+## GAN
+### 最基础的模型
+记生成网络为 $G$，判别网络为 $D$，生成的数据分布为 $p_G$，原始数据分布为 $p_{data}$。
+
+再记 $D : \R^n \rightarrow [0, 1]$，$D(\bold x)$ 表示判别网络认为 $\bold x$ 为原始数据的概率。$E_{\bold x \sim p_G}[F(\bold x)]$ 表示随机从 $p_G$ 取样一个 $\bold x$，$F(\bold x)$ 的期望值。
+
+训练过程如下：
+
+1. 随机初始化 $G, D$。
+2. 固定 $G$ 不变，训练 $D$，使 $E_{\bold x \sim p_{data}}[\log D(\bold x)] + E_{\bold \sim p_G}[\log(1 - D(\bold x))]$ 最大。
+3. 固定 $D$ 不变，训练 $G$，使 $E_{\bold x \sim p_G}[\log(1 - D(\bold x))]$ 最小。
+
+用数学语言来说，设 $V(D, G) = E_{\bold x \sim p_{data}}[\log D(\bold x)] + E_{\bold \sim p_G}[\log(1 - D(\bold x))]$，则这是一个 minimax 博弈问题，需要求解的是
+
+$$\min_G \max_D V(D, G)$$
+
+### JS divergence 并不合适
+基础模型中使用的 $V(D, G)$ 其实就是 $p_G$ 和 $p_{data}$ 的 JS divergence（关于信息熵相关可以查阅相关资料或《[杂文：什么是信息熵](/learning-note/misc-entropy)》）。也可以使用别的 Divergence，可参考 [arXiv:1606.00709](https://arxiv.org/abs/1606.00709)。
+
+实际上，即使将 JS divergence 求解出来，GAN 的表现仍然不优（GAN 的特点：难以训练）。接下来解释原因。
+
+1. 分布本身的特性：$p_{data}$ 是高维空间里极其狭小的一块区域（low-dim manifold in high-dim space），导致二者空间难以重合，容易区分。
+2. 取样过程导致的损失：如果取样不足够多，即使二者空间有一定重合，也容易导致判别器可以求出足够好（甚至 overfitting）的判别平面，使得二者被区分。
+
+最关键的，若 $p_{data}$ 和 $p_G$ 严格不重合，则

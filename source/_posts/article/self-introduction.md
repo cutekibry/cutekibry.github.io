@@ -25,36 +25,47 @@ sticky: 3
 
 ## 身份
 * 一只水水獭
-* 原 OIer / 现 ACMer，曾获 NOI2021 银牌
+* 前 OIer / ACMer，曾获 NOI2021 银牌、XCPC 区域赛 1 金 3 银、EC Final 2023 银牌
+* HUST CS 大一学生，目前计划加入何琨老师的 AI 组，最近在考虑学 GAN（生成型对抗网络）
 
 ## 一些爱好
 * 玩游戏
-  * 偏好且相当欣赏的一些游戏：
+  <!-- * 偏好且相当欣赏的一些游戏：
     * 《Celeste》：当之无愧的神作，目前总游玩时间超 100 小时，官方 100% 成就收集，Spring Collaboration 2020 一二章通关
     * 《Ori and the Blind Forest》：虽然是独立工作室却能作出这样质量上乘得可怕的配乐和画面，实在让人不得不惊叹
   * 偏好的一些游戏：
     * 星之卡比系列：自幼（小学一二年级）就开始玩的游戏，至 3DS 时代前的正作作品基本都有玩过，所有正作作品基本都了解过
     * 《宝可梦不可思议的迷宫 时之探险队》：（可能是在粉丝滤镜下）剧情能打动我的一款宝可梦游戏，~~也是很多宝可梦控（ポケモナー）的初恋作~~
-    * 《精灵宝可梦 黑 2 / 白 2》：个人认为的精灵宝可梦系列正作质量巅峰之一
-* 音游
+    * 《精灵宝可梦 黑 2 / 白 2》：个人认为的精灵宝可梦系列正作质量巅峰之一 -->
+* 打音游
   * 太鼓之达人：自认新框十星下位
-  * BMS：GENOCIDE2018 通常五段 Clear
-  * Arcaea：PTT 8.5
-  * 舞萌 DX：底分 6945
+  * Muse Dash：7~9 级曲 AP
+  * BMS：第 2 通常段位認定 2018 八段 Clear
+  * 舞萌 DX：底分 7600
+  * 手机音游延迟 100~500ms，因此基本不打手机音游
+* 编曲 / 作曲：偶尔写写音游风电音，曲风非常杂，刚刚入门
 * 浏览兽文化创作
   * 与主流的兽文化可能不同，个人偏向于较幼的、兽化程度高的可爱的小动物（ケモノ）、吉祥物、宝可梦等
 * 钢琴：业余十级及格，目前只为了愉悦放松身心弹琴，不太会弹
-* 写 OI 题：偶尔心血来潮会看看
+* 看 OI 题：最近基本不看，偶尔心血来潮会看看（或者好友提问也会看看）
+* 编程
 * ABDL 相关（纸尿裤、奶瓶、奶嘴等）
 
-## 联系方式
-* AtCoder：[<span style="color: #0000FF; font-weight: bold;">cutekibry</span>](https://atcoder.jp/users/cutekibry)（2 Kyu）
-* Codeforces：![](https://cfrating.ihcr.top/?user=cutekibry)
+## 我的账号
+### 程序设计竞赛
+* AtCoder：[<span style="color: #C0C000; font-weight: bold;">cutekibry (1 Dan, 2029)</span>](https://atcoder.jp/users/cutekibry) 
+* Codeforces：[<span style="color: #ff8c00; font-weight: bold;">cutekibry (master, 2136)</span>](https://cfrating.ihcr.top/?user=cutekibry) 
 * LibreOJ：[cutekibry](https://loj.ac/user/1408)
 * 洛谷：[Tsukimaru](https://www.luogu.org/user/45398)
+
+### 编程相关
+* Github：[cutekibry](https://github.com/cutekibry)
+* Kaggle：[cutekibry](https://www.kaggle.com/cutekibry)
+
+### 其他
+* E-mail：~~[cutekibry@yahoo.com](mailto:cutekibry@yahoo.com)~~ 已停用，更换为 [cutekibry@gmail.com](mailto:cutekibry@gmail.com)
 * 神奇宝贝百科：[用户:Cutekibry](https://wiki.52poke.com/wiki/User:Cutekibry)
 
----
-
+### SNS
 * QQ：2054986856
-* E-mail：~~[cutekibry@yahoo.com](mailto:cutekibry@yahoo.com)~~ 已停用，更换为 [cutekibry@gmail.com](mailto:cutekibry@gmail.com)
+* Twitter：@[cutekibry3](https://twitter.com/cutekibry3)
