@@ -1,3 +1,13 @@
+---
+title: 《概率论》笔记
+date: 2023-06-10
+category: 
+- 学习
+tags:
+- 文化课
+excerpt: 怎么这么多课……
+---
+
 $$\phi'(x) = \frac 1{\sqrt {2\pi}\sigma} e^{-\frac {(x - \mu)^2}{2\sigma^2}}$$
 
 ## 第四章 数字特征

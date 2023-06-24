@@ -1,3 +1,12 @@
+---
+title: 《微积分》（下）笔记
+date: 2023-06-02
+category: 
+- 学习
+tags:
+- 文化课
+---
+
 多元函数连续：
 
 $$\lim_{P \rightarrow P_0} f(P) = f(P_0)$$

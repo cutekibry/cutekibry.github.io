@@ -3,6 +3,8 @@ title: 《大学物理》笔记
 date: 2023-04-17
 category: 
 - 学习
+tags:
+- 文化课
 excerpt: 讨厌物理。
 ---
 
@@ -26,30 +28,30 @@ $$v = \sqrt {k(x^2 - x_0^2) + v_0^2}$$
 
 ## 第 2 章 牛顿运动定律
 ### 角动量的变化和守恒
-**角动量 / 动量矩** $\vec L$：
+**角动量 / 动量矩** $\boldsymbol L$：
 
-$$\vec L = \vec r \times \vec p = \vec r \times m\vec v$$
+$$\boldsymbol L = \boldsymbol r \times \boldsymbol p = \boldsymbol r \times m\boldsymbol v$$
 
-**力矩** $\vec M$：
+**力矩** $\boldsymbol M$：
 
-$$\vec M = \vec r \times \vec F = \frac {\text d\vec L}{\text dt}$$
+$$\boldsymbol M = \boldsymbol r \times \boldsymbol F = \frac {\text d\boldsymbol L}{\text dt}$$
 
-角动量定理和动量定理其实是类似的，只是在前面乘了一个 $\vec r$ 而已。
+角动量定理和动量定理其实是类似的，只是在前面乘了一个 $\boldsymbol r$ 而已。
 
 角动量定理可以用来描述较有规律的圆周运动。
 
 ## 第 3 章 刚体的定轴转动
-**相对力矩**：$\vec M_z = \vec r \times \vec F_\perp$ 称为 $\vec F$ 相对转轴的力矩。
+**相对力矩**：$\boldsymbol M_z = \boldsymbol r \times \boldsymbol F_\perp$ 称为 $\boldsymbol F$ 相对转轴的力矩。
 
-**转动惯量**：$J = mr^2$ 称为转动惯量。特别地，$\vec L = J\vec w$。
+**转动惯量**：$J = mr^2$ 称为转动惯量。特别地，$\boldsymbol L = J\boldsymbol w$。
 
 **刚体转动定理**：
 
-$$\vec M_z = J\vec \beta$$
+$$\boldsymbol M_z = J\boldsymbol \beta$$
 
 可以与
 
-$$\vec F = m\vec a$$
+$$\boldsymbol F = m\boldsymbol a$$
 
 比较。$m$ 代表平动惯性大小，$J$ 代表转动惯性大小。
 
@@ -294,7 +296,7 @@ $$\gamma = \frac {C_{p, m}}{C_{V, m}} = 1 + \frac R{C_{V, m}} > 1$$
 
 任意过程都满足的：
 
-$$\Delta E = vC_{V, m}T$$
+<!-- $$\Delta E = vC_{V, m}T$$ -->
 
 $$Q = v\int C_m \text d{T}$$
 
@@ -425,10 +427,6 @@ $$E = \frac {Qx}{4\pi \epsilon_0 (R^2 + x^2)^{3/2}}$$
 
 $$E = \frac {\sigma}{2\epsilon_0}\left(1 - \frac x{\sqrt {R^2 + x^2}} \right)$$
 
-当 $x >> R$ 有
-
-$$E = \frac {\sigma R^2}{4\epsilon_0 x^2}$$
-
 ---
 
 球壳：取任意带状圆环，其距离 $x = R\cos \theta$，半径 $r = R\sin \theta$，宽度 $\text dl = R\text d\theta$，计算电场影响。
@@ -528,15 +526,15 @@ $$\oint \boldsymbol{D} \cdot \text d\boldsymbol{S} = q_f$$
 
 ## 第 9 章 恒定磁场
 ### 磁性与磁场
-磁场力 $\vec F$ 满足：
+磁场力 $\boldsymbol F$ 满足：
 
-$$\vec F = q\vec v \times \vec B$$
+$$\boldsymbol F = q\boldsymbol v \times \boldsymbol B$$
 
-$$\vec F = I\int_L \text d\vec l \times \vec B$$
+$$\boldsymbol F = I\int_L \text d\boldsymbol l \times \boldsymbol B$$
 
 **毕奥-萨法尔定律**：
 
-$$\vec B = \frac {\mu_0}{4\pi} \int_L \frac {I\text d\vec l \times \vec e_r}{r^2}$$
+$$\boldsymbol B = \frac {\mu_0}{4\pi} \int_L \frac {I\text d\boldsymbol l \times \boldsymbol e_r}{r^2}$$
 
 $\mu_0 = 4\pi \times 10^{-7}\ \text T \cdot \text m/\text A$ 为真空磁导率。
 

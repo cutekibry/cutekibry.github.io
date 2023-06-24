@@ -76,7 +76,8 @@ a
     /*padding-bottom: 48px;
     margin-bottom: 48px;*/
     border-bottom: 1px solid var(--line-1);
-    display: flex;
+    /* display: flex; */
+    background-color: #fcfcfc;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
