@@ -235,3 +235,16 @@ pd.get_dummies(df.color, prefix='hot')
 | 0    | 0        | 1         | 0       |
 | 1    | 0        | 0         | 1       |
 | 2    | 1        | 0         | 0       |
+
+### 其他统计
+统计 `a`、`b` 两列中有多少个数大于 $0$：
+
+```python
+X['count'] = (X[['a', 'b']] > 0).sum(axis='columns')
+```
+
+将 `description` 列根据 `_` 进行 split，返回一个多列的 DataFrame： 
+
+```python
+X['description'].split('_', n=1, expand=True)
+```
