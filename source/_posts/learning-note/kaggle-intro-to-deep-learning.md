@@ -4,6 +4,8 @@ date: 2023-02-16
 updated: 2023-02-18
 category: 
 - 学习
+tag:
+- Kaggle
 ---
 
 Kaggle 的 [Intro to Deep Learning](https://www.kaggle.com/learn/intro-to-deep-learning) 的笔记。

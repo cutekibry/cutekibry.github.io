@@ -4,6 +4,8 @@ date: 2023-02-15
 updated: 2023-02-16
 category: 
 - 学习
+tag:
+- Kaggle
 ---
 
 Kaggle 的 [Pandas](https://www.kaggle.com/learn/pandas) 课程的笔记。

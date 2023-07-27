@@ -3,6 +3,8 @@ title: Kaggle Intermediate Machine Learning 学习笔记
 date: 2023-02-22
 category: 
 - 学习
+tag:
+- Kaggle
 ---
 
 Kaggle 的 [Intermediate Machine Learning](https://www.kaggle.com/learn/intermediate-machine-learning) 的笔记。

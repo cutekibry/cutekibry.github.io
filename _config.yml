@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: a4
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -120,3 +120,31 @@ mathjax:
   extension_options: {}
     # you can put your extension options here
     # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail
+
+menu:
+  home: /
+  archives: /archives
+  tags: /tags
+  categories: /categories
+
+scheme: Mist
+
+social:
+  GitHub: https://github.com/cutekibry
+
+# Favicon
+favicon: /img/favicon.ico
+
+# Avatar (put the image into next/source/images/)
+# can be any image format supported by web browsers (JPEG,PNG,GIF,SVG,..)
+avatar: /img/icon.png
+
+# Code highlight theme
+# available: normal | night | night eighties | night blue | night bright
+highlight_theme: normal
+
+# Fancybox for image gallery
+fancybox: true
+
+# Specify the date when the site was setup
+since: 2019

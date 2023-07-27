@@ -3,6 +3,8 @@ title: Kaggle Feature Engineering 学习笔记
 date: 2023-06-29
 category: 
 - 学习
+tag:
+- Kaggle
 ---
 
 Kaggle 的 [Feature Engineering](https://www.kaggle.com/learn/feature-engineering) 的笔记。
@@ -48,8 +50,6 @@ plt.figure(dpi=100, figsize=(8, 5))
 plot_mi_scores(mi_scores)
 ```
 
-![](https://www.kaggleusercontent.com/kf/126574300/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0.._hVu7tF1OT9Fo9fRJ5xxow.r70897WVQjxA1Ha0Gi-bQlUvsvSf4ZP__TtPQ7MS4fhDCgsREvNVdw1RkYfgbfevxYkFIO46m0feRK_A9yD4XDb9-m9tYRQsEWMPU1KQ2562EnVbJ6AgNfXRPG5IUkiY5dF8cNUF68x7hf3xwmzMfT-tncPeL4_u-pFnpNqUgSzZwUYs2P6vj83s-KoBf_bt02opxgRToFx2n2lXEvQIM6WlkP4FQGn3FNK4EVCWjB4MZxwHbmIoCTjG2uYm7uLwzQVWNyI8MexTDA4tHRWD_5AnmnJ4SD2mUuTnMu3kbC3nf0Kqa2d64s0VTxgOXr48-iU5gXsC41MAfTTf1RxQNnd_TP2-xb1LgQ5MMu91naL6RBRbAwgpmGIDWnr8pwUy9bslygzU-JUBwKBtG2PnRmLHpxShmHc9OjVEH7NOKKRfxbCKHaahGy26Bx0wc52_whhX4YrbvHpjJnsdbIDEc1pvJqYP1hNhEN3fLDxoxZSWiplJxUp-3eiXmpFt1l1RPcMLQ9oM9dH3T_m6TyCOadCTVYGnSesGcsosl20xz4O508UUnDUC_sB1Doq3KvL5qeds9GDTaxyCsLx15-O_OZrMqC0QMIEIZsWG5lil_AsqPMkR-31XwW69e29yyBpsz0Vokr914BMPm-TW-Ozjk8bmA5_mtOKmeUZIokBvtaw.4_d8A5stHNDE3Jrg5LdQOw/__results___files/__results___7_0.png)
-
 查看 `curb_weight` 和 `price` 的关联图：
 
 ```python
@@ -57,16 +57,12 @@ import seaborn as sns
 sns.relplot(x="curb_weight", y="price", data=df);
 ```
 
-![](https://www.kaggleusercontent.com/kf/126574300/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0.._hVu7tF1OT9Fo9fRJ5xxow.r70897WVQjxA1Ha0Gi-bQlUvsvSf4ZP__TtPQ7MS4fhDCgsREvNVdw1RkYfgbfevxYkFIO46m0feRK_A9yD4XDb9-m9tYRQsEWMPU1KQ2562EnVbJ6AgNfXRPG5IUkiY5dF8cNUF68x7hf3xwmzMfT-tncPeL4_u-pFnpNqUgSzZwUYs2P6vj83s-KoBf_bt02opxgRToFx2n2lXEvQIM6WlkP4FQGn3FNK4EVCWjB4MZxwHbmIoCTjG2uYm7uLwzQVWNyI8MexTDA4tHRWD_5AnmnJ4SD2mUuTnMu3kbC3nf0Kqa2d64s0VTxgOXr48-iU5gXsC41MAfTTf1RxQNnd_TP2-xb1LgQ5MMu91naL6RBRbAwgpmGIDWnr8pwUy9bslygzU-JUBwKBtG2PnRmLHpxShmHc9OjVEH7NOKKRfxbCKHaahGy26Bx0wc52_whhX4YrbvHpjJnsdbIDEc1pvJqYP1hNhEN3fLDxoxZSWiplJxUp-3eiXmpFt1l1RPcMLQ9oM9dH3T_m6TyCOadCTVYGnSesGcsosl20xz4O508UUnDUC_sB1Doq3KvL5qeds9GDTaxyCsLx15-O_OZrMqC0QMIEIZsWG5lil_AsqPMkR-31XwW69e29yyBpsz0Vokr914BMPm-TW-Ozjk8bmA5_mtOKmeUZIokBvtaw.4_d8A5stHNDE3Jrg5LdQOw/__results___files/__results___9_0.png)
-
 查看 `horsepower` 和 `price` 的关联图，同时根据 `fuel_type` 的分类来对点染色：
 
 ```python
 sns.lmplot(x="horsepower", y="price", hue="fuel_type", data=df);
 sns.lmplot(x="horsepower", y="price", hue="fuel_type", col="fuel_type", data=df); # 根据 fuel_type 划分成多个图
 ```
-
-![](https://www.kaggleusercontent.com/kf/126574300/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0.._hVu7tF1OT9Fo9fRJ5xxow.r70897WVQjxA1Ha0Gi-bQlUvsvSf4ZP__TtPQ7MS4fhDCgsREvNVdw1RkYfgbfevxYkFIO46m0feRK_A9yD4XDb9-m9tYRQsEWMPU1KQ2562EnVbJ6AgNfXRPG5IUkiY5dF8cNUF68x7hf3xwmzMfT-tncPeL4_u-pFnpNqUgSzZwUYs2P6vj83s-KoBf_bt02opxgRToFx2n2lXEvQIM6WlkP4FQGn3FNK4EVCWjB4MZxwHbmIoCTjG2uYm7uLwzQVWNyI8MexTDA4tHRWD_5AnmnJ4SD2mUuTnMu3kbC3nf0Kqa2d64s0VTxgOXr48-iU5gXsC41MAfTTf1RxQNnd_TP2-xb1LgQ5MMu91naL6RBRbAwgpmGIDWnr8pwUy9bslygzU-JUBwKBtG2PnRmLHpxShmHc9OjVEH7NOKKRfxbCKHaahGy26Bx0wc52_whhX4YrbvHpjJnsdbIDEc1pvJqYP1hNhEN3fLDxoxZSWiplJxUp-3eiXmpFt1l1RPcMLQ9oM9dH3T_m6TyCOadCTVYGnSesGcsosl20xz4O508UUnDUC_sB1Doq3KvL5qeds9GDTaxyCsLx15-O_OZrMqC0QMIEIZsWG5lil_AsqPMkR-31XwW69e29yyBpsz0Vokr914BMPm-TW-Ozjk8bmA5_mtOKmeUZIokBvtaw.4_d8A5stHNDE3Jrg5LdQOw/__results___files/__results___11_0.png)
 
 使用这样的方式，就可以检测特征之间的相关性。
 
