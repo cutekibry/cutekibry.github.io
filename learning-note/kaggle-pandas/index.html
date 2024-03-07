@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Kaggle 的 Pandas 课程的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaggle Pandas 学习笔记">
+<meta property="og:url" content="https://cutekibry.github.io/learning-note/kaggle-pandas/index.html">
+<meta property="og:site_name" content="Tsuki&#39;s Blog">
+<meta property="og:description" content="Kaggle 的 Pandas 课程的笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-15T16:00:00.000Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta property="article:tag" content="Kaggle">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Kaggle Pandas 学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/learning-note/kaggle-intro-to-deep-learning/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/otter-diary/tsukimaru-grew-to-level-19/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-pandas/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&text=Kaggle Pandas 学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&is_video=false&description=Kaggle Pandas 学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Pandas 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-pandas/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&name=Kaggle Pandas 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/pandas&#34;&gt;Pandas&lt;/a&gt; 课程的笔记。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-pandas/&t=Kaggle Pandas 学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Creating-Reading-and-Writing"><span class="toc-number">1.</span> <span class="toc-text">1. Creating, Reading and Writing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Panda-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">Panda 基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DataFrame"><span class="toc-number">1.1.1.</span> <span class="toc-text">DataFrame</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Series"><span class="toc-number">1.1.2.</span> <span class="toc-text">Series</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">基本操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Indexing-Selecting-Assigning"><span class="toc-number">2.</span> <span class="toc-text">2. Indexing, Selecting &amp; Assigning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E4%B8%8B%E6%A0%87%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">2.1.</span> <span class="toc-text">基于下标的选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%A0%87%E7%AD%BE%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">2.2.</span> <span class="toc-text">基于标签的选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E7%B4%A2%E5%BC%95"><span class="toc-number">2.3.</span> <span class="toc-text">更改索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-number">2.4.</span> <span class="toc-text">条件选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC"><span class="toc-number">2.5.</span> <span class="toc-text">赋值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Summary-Functions-and-Maps"><span class="toc-number">3.</span> <span class="toc-text">3. Summary Functions and Maps</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9F%90%E4%B8%80%E5%88%97%E7%9A%84%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF"><span class="toc-number">3.1.</span> <span class="toc-text">获取某一列的统计信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84"><span class="toc-number">3.2.</span> <span class="toc-text">映射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Grouping-and-Sorting"><span class="toc-number">4.</span> <span class="toc-text">4. Grouping and Sorting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84"><span class="toc-number">4.1.</span> <span class="toc-text">分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">4.2.</span> <span class="toc-text">排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Data-Types-and-Missing-Values"><span class="toc-number">5.</span> <span class="toc-text">5. Data Types and Missing Values</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dtypes"><span class="toc-number">5.1.</span> <span class="toc-text">Dtypes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A2%E5%A4%B1%E6%95%B0%E6%8D%AE%EF%BC%88NaN%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">丢失数据（NaN）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Renaming-and-Combining"><span class="toc-number">6.</span> <span class="toc-text">6. Renaming and Combining</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-number">6.1.</span> <span class="toc-text">重命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E5%90%88"><span class="toc-number">6.2.</span> <span class="toc-text">结合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extra"><span class="toc-number">7.</span> <span class="toc-text">Extra</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">7.1.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#One-hot-%E7%BC%96%E7%A0%81"><span class="toc-number">7.2.</span> <span class="toc-text">One-hot 编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%BB%9F%E8%AE%A1"><span class="toc-number">7.3.</span> <span class="toc-text">其他统计</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Kaggle Pandas 学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Tsukimaru Oshawott</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-02-14T16:00:00.000Z" class="dt-published" itemprop="datePublished">2023-02-15</time>
+        
+        (Updated: <time datetime="2023-02-15T16:00:00.000Z" class="dt-updated" itemprop="dateModified">2023-02-16</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Kaggle/" rel="tag">Kaggle</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>Kaggle 的 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/pandas">Pandas</a> 课程的笔记。</p>
+<span id="more"></span>
+
+<h2 id="1-Creating-Reading-and-Writing"><a href="#1-Creating-Reading-and-Writing" class="headerlink" title="1. Creating, Reading and Writing"></a>1. Creating, Reading and Writing</h2><h3 id="Panda-基本数据类型"><a href="#Panda-基本数据类型" class="headerlink" title="Panda 基本数据类型"></a>Panda 基本数据类型</h3><h4 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h4><p>DataFrame：表格。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(&#123;<span class="string">&#x27;Bob&#x27;</span>: [<span class="number">50</span>, <span class="number">131</span>], <span class="string">&#x27;Sue&#x27;</span>: [<span class="string">&#x27;Ok&#x27;</span>, <span class="string">&#x27;Next&#x27;</span>]&#125;)</span><br><span class="line">pd.DataFrame(&#123;<span class="string">&#x27;Bob&#x27;</span>: [<span class="number">50</span>, <span class="number">131</span>], <span class="string">&#x27;Sue&#x27;</span>: [<span class="string">&#x27;Ok&#x27;</span>, <span class="string">&#x27;Next&#x27;</span>]&#125;, index=[<span class="string">&#x27;PA&#x27;</span>, <span class="string">&#x27;PB&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Bob</th>
+<th align="left">Sue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">50</td>
+<td align="left">131</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">Ok</td>
+<td align="left">Next</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Bob</th>
+<th align="left">Sue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">PA</td>
+<td align="left">50</td>
+<td align="left">131</td>
+</tr>
+<tr>
+<td align="left">PB</td>
+<td align="left">Ok</td>
+<td align="left">Next</td>
+</tr>
+</tbody></table>
+<h4 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h4><p>Series：数据序列。Series 没有像上面“Bob”、“Sue”一样的列名，最多只有一个统称（<code>name</code>）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0    1</span><br><span class="line">1    2</span><br><span class="line">2    3</span><br><span class="line">3    4</span><br><span class="line">4    5</span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.Series([<span class="number">30</span>, <span class="number">35</span>, <span class="number">40</span>], index=[<span class="string">&#x27;2015 Sales&#x27;</span>, <span class="string">&#x27;2016 Sales&#x27;</span>, <span class="string">&#x27;2017 Sales&#x27;</span>], name=<span class="string">&#x27;Product A&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2015 Sales    30</span><br><span class="line">2016 Sales    35</span><br><span class="line">2017 Sales    40</span><br><span class="line">Name: Product A, dtype: int64</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wine_reviews = pd.read_csv(<span class="string">&quot;../input/wine-reviews/winemag-data-130k-v2.csv&quot;</span>) <span class="comment"># 读取 csv</span></span><br><span class="line">wine_reviews = pd.read_csv(<span class="string">&quot;../input/wine-reviews/winemag-data-130k-v2.csv&quot;</span>, index_col=<span class="number">0</span>) <span class="comment"># 忽略第一列</span></span><br><span class="line"></span><br><span class="line">wine_reviews.shape <span class="comment"># (129971, 14)</span></span><br><span class="line">wine_reviews.head() <span class="comment"># 显示表格前 5 行</span></span><br><span class="line"></span><br><span class="line">animals.to_csv(<span class="string">&#x27;cows_and_goats.csv&#x27;</span>) <span class="comment"># 写入 csv</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Indexing-Selecting-Assigning"><a href="#2-Indexing-Selecting-Assigning" class="headerlink" title="2. Indexing, Selecting &amp; Assigning"></a>2. Indexing, Selecting &amp; Assigning</h2><h3 id="基于下标的选择"><a href="#基于下标的选择" class="headerlink" title="基于下标的选择"></a>基于下标的选择</h3><p>用 <code>iloc</code> 来进行基于下标的选择。</p>
+<p>注意，<code>iloc</code> 和下文的 <code>loc</code> 第一个参数都是选择行（也就是选择<br>record），第二个参数才选择列（指定想要查询的具体数据类型），与原生 Python 的下表查询不一样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reviews.iloc[<span class="number">0</span>] <span class="comment"># 选择第一行</span></span><br><span class="line">reviews.iloc[:, <span class="number">0</span>] <span class="comment"># 选择第一列</span></span><br><span class="line">reviews.iloc[:<span class="number">3</span>, <span class="number">0</span>] <span class="comment"># 选择第一列的前三行</span></span><br><span class="line">reviews.iloc[[<span class="number">0</span>, <span class="number">2</span>], <span class="number">0</span>] <span class="comment"># 选择第一列的第一行和第三行</span></span><br><span class="line">df.iloc[<span class="number">0</span>:<span class="number">1000</span>] <span class="comment"># 选择前 1000 列</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="基于标签的选择"><a href="#基于标签的选择" class="headerlink" title="基于标签的选择"></a>基于标签的选择</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">reviews.loc[<span class="number">0</span>, <span class="string">&#x27;country&#x27;</span>] <span class="comment"># 选择 country 一列的第一行</span></span><br><span class="line">reviews.loc[:, [<span class="string">&#x27;taster_name&#x27;</span>, <span class="string">&#x27;taster_twitter_handle&#x27;</span>, <span class="string">&#x27;points&#x27;</span>]] <span class="comment"># 选择三列</span></span><br><span class="line">reviews.loc[:, <span class="string">&#x27;Apples&#x27;</span>:<span class="string">&#x27;Potatoes&#x27;</span>] <span class="comment"># 选择字典序在 [Apples, Potatoes] 之间</span></span><br><span class="line">df.loc[<span class="number">0</span>:<span class="number">1000</span>] <span class="comment"># 选择前 1001 列</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：<code>loc</code> 列参数选择的区间为闭区间，<code>iloc</code> 列参数选择的区间为左闭右开区间（与 Python 原生的 <code>range()</code> 相同）</strong>。</p>
+<h3 id="更改索引"><a href="#更改索引" class="headerlink" title="更改索引"></a>更改索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.set_index(<span class="string">&quot;title&quot;</span>) <span class="comment"># 将 title 列的内容作为索引（index）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="条件选择"><a href="#条件选择" class="headerlink" title="条件选择"></a>条件选择</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reviews.country == <span class="string">&#x27;Italy&#x27;</span> <span class="comment"># 返回一个 bool Series，内容为每行的 country 是否恰好为 Italy</span></span><br><span class="line">reviews.loc[reviews.country == <span class="string">&#x27;Italy&#x27;</span>] <span class="comment"># 选择 country 为 Italy 的行</span></span><br><span class="line">reviews.loc[(reviews.country == <span class="string">&#x27;Italy&#x27;</span>) &amp; (reviews.points &gt;= <span class="number">90</span>)]</span><br><span class="line">reviews.loc[reviews.country.isin([<span class="string">&#x27;Italy&#x27;</span>, <span class="string">&#x27;France&#x27;</span>])] <span class="comment"># 也可以用 notin</span></span><br><span class="line">reviews.loc[reviews.price.isnull()] <span class="comment"># 也可以用 notnull</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">reviews[<span class="string">&#x27;critic&#x27;</span>] = <span class="string">&#x27;everyone&#x27;</span> <span class="comment"># 将 critic 列所有数据赋值为 everyone</span></span><br><span class="line">reviews[<span class="string">&#x27;index_backwards&#x27;</span>] = <span class="built_in">range</span>(<span class="built_in">len</span>(reviews), <span class="number">0</span>, -<span class="number">1</span>) </span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Summary-Functions-and-Maps"><a href="#3-Summary-Functions-and-Maps" class="headerlink" title="3. Summary Functions and Maps"></a>3. Summary Functions and Maps</h2><h3 id="获取某一列的统计信息"><a href="#获取某一列的统计信息" class="headerlink" title="获取某一列的统计信息"></a>获取某一列的统计信息</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">reviews.points.describe() <span class="comment"># 显示该列的统计信息</span></span><br><span class="line">reviews.points.mean() <span class="comment"># 平均数</span></span><br><span class="line">reviews.taster_name.unique() <span class="comment"># 去重后的列表</span></span><br><span class="line">reviews.taster_name.value_counts() <span class="comment"># 计数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">reviews.points.<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x * <span class="number">100</span>) <span class="comment"># 返回一个处理后的 Series</span></span><br><span class="line">reviews.points * <span class="number">100</span> <span class="comment"># 与上面等价，但因为使用内建函数所以更快</span></span><br><span class="line">reviews.country + <span class="string">&quot; - &quot;</span> + reviews.region_1 <span class="comment"># 返回一个 Series，内容格式是 &quot;country - region_1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">remean_points</span>(<span class="params">row</span>):</span><br><span class="line">    row.points = row.points * <span class="number">100</span></span><br><span class="line">    <span class="keyword">return</span> row</span><br><span class="line"></span><br><span class="line">reviews.apply(remean_points, axis=<span class="string">&#x27;columns&#x27;</span>) <span class="comment"># 对每一行作如上处理，返回处理后的 DataFrame</span></span><br><span class="line">reviews.apply(remean_points, axis=<span class="string">&#x27;index&#x27;</span>) <span class="comment"># 对每一列处理</span></span><br></pre></td></tr></table></figure>
+
+<p>若 <code>apply()</code> 提供的函数返回为单值，则 <code>apply</code> 返回的将会是 Series 而非 DataFrame。</p>
+<p>注意：这两个函数都不会修改原表的内容。</p>
+<h2 id="4-Grouping-and-Sorting"><a href="#4-Grouping-and-Sorting" class="headerlink" title="4. Grouping and Sorting"></a>4. Grouping and Sorting</h2><h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">reviews.groupby(<span class="string">&#x27;points&#x27;</span>).points.count() <span class="comment"># 等价于 reviews.points.value_counts()</span></span><br><span class="line">reviews.groupby(<span class="string">&#x27;points&#x27;</span>).price.<span class="built_in">min</span>() <span class="comment"># 获取每个分数对应的最低商品价格</span></span><br><span class="line">reviews.groupby(<span class="string">&#x27;winery&#x27;</span>).apply(<span class="keyword">lambda</span> df: df.title.iloc[<span class="number">0</span>]) </span><br><span class="line">reviews.groupby([<span class="string">&#x27;country&#x27;</span>, <span class="string">&#x27;province&#x27;</span>]).apply(<span class="keyword">lambda</span> df: df.loc[df.points.idxmax()])</span><br><span class="line">reviews.groupby([<span class="string">&#x27;country&#x27;</span>]).price.agg([<span class="built_in">len</span>, <span class="built_in">min</span>, <span class="built_in">max</span>])</span><br><span class="line"></span><br><span class="line">countries_reviewed = reviews.groupby([<span class="string">&#x27;country&#x27;</span>, <span class="string">&#x27;province&#x27;</span>]).description.agg([<span class="built_in">len</span>])</span><br><span class="line">countries_reviewed.reset_index() <span class="comment"># 重置索引，即将 country province 放回列中，index 改为 0, 1, ...</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dataframe.sort_values(by=<span class="string">&#x27;len&#x27;</span>)</span><br><span class="line">dataframe.sort_values(by=<span class="string">&#x27;len&#x27;</span>, ascending=<span class="literal">False</span>)</span><br><span class="line">dataframe.sort_values(by=[<span class="string">&#x27;country&#x27;</span>, <span class="string">&#x27;len&#x27;</span>])</span><br><span class="line">dataframe.sort_index()</span><br><span class="line"></span><br><span class="line">series.sort_values()</span><br><span class="line">dataframe.sort_index()</span><br></pre></td></tr></table></figure>
+
+<p>同样地，排序不会修改原表的内容。</p>
+<h2 id="5-Data-Types-and-Missing-Values"><a href="#5-Data-Types-and-Missing-Values" class="headerlink" title="5. Data Types and Missing Values"></a>5. Data Types and Missing Values</h2><h3 id="Dtypes"><a href="#Dtypes" class="headerlink" title="Dtypes"></a>Dtypes</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">reviews.price.dtype <span class="comment"># dtype(&#x27;float64&#x27;)</span></span><br><span class="line">reviews.dtypes <span class="comment"># 返回一个 object 类型的 Series，内容为每列的数据类型</span></span><br><span class="line">reviews.points.astype(<span class="string">&#x27;float64&#x27;</span>)</span><br><span class="line">reviews.index.dtype</span><br></pre></td></tr></table></figure>
+
+<h3 id="丢失数据（NaN）"><a href="#丢失数据（NaN）" class="headerlink" title="丢失数据（NaN）"></a>丢失数据（NaN）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">reviews.region_2.fillna(<span class="string">&quot;Unknown&quot;</span>)</span><br><span class="line">reviews.taster_twitter_handle.replace(<span class="string">&quot;@kerinokeefe&quot;</span>, <span class="string">&quot;@kerino&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Renaming-and-Combining"><a href="#6-Renaming-and-Combining" class="headerlink" title="6. Renaming and Combining"></a>6. Renaming and Combining</h2><h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reviews.rename(columns=&#123;<span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;score&#x27;</span>&#125;) <span class="comment"># 把 points 改为 score</span></span><br><span class="line">reviews.rename(index=&#123;<span class="number">0</span>: <span class="string">&#x27;firstEntry&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;secondEntry&#x27;</span>&#125;) <span class="comment"># 很少用到，一般 set_index</span></span><br><span class="line">reviews.rename_axis(<span class="string">&quot;wines&quot;</span>, axis=<span class="string">&#x27;rows&#x27;</span>).rename_axis(<span class="string">&quot;fields&quot;</span>, axis=<span class="string">&#x27;columns&#x27;</span>) <span class="comment"># 把列头称为 wines，行头称为 fields</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="结合"><a href="#结合" class="headerlink" title="结合"></a>结合</h3><p>三种方式（从简单到复杂）：<code>concat(), join(), merge()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">canadian_youtube = pd.read_csv(<span class="string">&quot;../input/youtube-new/CAvideos.csv&quot;</span>)</span><br><span class="line">british_youtube = pd.read_csv(<span class="string">&quot;../input/youtube-new/GBvideos.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># concat: 直接把两个表前后拼接</span></span><br><span class="line"><span class="comment"># 一般当两个表的对象不相同时使用</span></span><br><span class="line">pd.concat([canadian_youtube, british_youtube])</span><br><span class="line"></span><br><span class="line"><span class="comment"># join: 合并两个有相同类型 index 的表，同类型会自动合并</span></span><br><span class="line"><span class="comment"># 一般当两个表的对象相同，要合并同样 index 的项时使用</span></span><br><span class="line">left = canadian_youtube.set_index([<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;trending_date&#x27;</span>])</span><br><span class="line">right = british_youtube.set_index([<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;trending_date&#x27;</span>])</span><br><span class="line">left.join(right, lsuffix=<span class="string">&#x27;_CAN&#x27;</span>, rsuffix=<span class="string">&#x27;_UK&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h2><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df.drop(<span class="string">&#x27;age&#x27;</span>, axis=<span class="string">&#x27;columns&#x27;</span>)</span><br><span class="line">df.drop(<span class="number">2</span>, axis=<span class="string">&#x27;index&#x27;</span>)</span><br><span class="line">df.age.dropna()</span><br></pre></td></tr></table></figure>
+
+<h3 id="One-hot-编码"><a href="#One-hot-编码" class="headerlink" title="One-hot 编码"></a>One-hot 编码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">color</th>
+<th align="left">class</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">green</td>
+<td align="left">A</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">red</td>
+<td align="left">B</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">blue</td>
+<td align="left">C</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.get_dummies(df.color, prefix=<span class="string">&#x27;hot&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">hot_blue</th>
+<th align="left">hot_green</th>
+<th align="left">hot_red</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+</tbody></table>
+<h3 id="其他统计"><a href="#其他统计" class="headerlink" title="其他统计"></a>其他统计</h3><p>统计 <code>a</code>、<code>b</code> 两列中有多少个数大于 $0$：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X[<span class="string">&#x27;count&#x27;</span>] = (X[[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>]] &gt; <span class="number">0</span>).<span class="built_in">sum</span>(axis=<span class="string">&#x27;columns&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>将 <code>description</code> 列根据 <code>_</code> 进行 split，返回一个多列的 DataFrame： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X[<span class="string">&#x27;description&#x27;</span>].split(<span class="string">&#x27;_&#x27;</span>, n=<span class="number">1</span>, expand=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">文章</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Creating-Reading-and-Writing"><span class="toc-number">1.</span> <span class="toc-text">1. Creating, Reading and Writing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Panda-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">Panda 基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DataFrame"><span class="toc-number">1.1.1.</span> <span class="toc-text">DataFrame</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Series"><span class="toc-number">1.1.2.</span> <span class="toc-text">Series</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">基本操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Indexing-Selecting-Assigning"><span class="toc-number">2.</span> <span class="toc-text">2. Indexing, Selecting &amp; Assigning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E4%B8%8B%E6%A0%87%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">2.1.</span> <span class="toc-text">基于下标的选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%A0%87%E7%AD%BE%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">2.2.</span> <span class="toc-text">基于标签的选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E7%B4%A2%E5%BC%95"><span class="toc-number">2.3.</span> <span class="toc-text">更改索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-number">2.4.</span> <span class="toc-text">条件选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC"><span class="toc-number">2.5.</span> <span class="toc-text">赋值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Summary-Functions-and-Maps"><span class="toc-number">3.</span> <span class="toc-text">3. Summary Functions and Maps</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9F%90%E4%B8%80%E5%88%97%E7%9A%84%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF"><span class="toc-number">3.1.</span> <span class="toc-text">获取某一列的统计信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84"><span class="toc-number">3.2.</span> <span class="toc-text">映射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Grouping-and-Sorting"><span class="toc-number">4.</span> <span class="toc-text">4. Grouping and Sorting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84"><span class="toc-number">4.1.</span> <span class="toc-text">分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">4.2.</span> <span class="toc-text">排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Data-Types-and-Missing-Values"><span class="toc-number">5.</span> <span class="toc-text">5. Data Types and Missing Values</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dtypes"><span class="toc-number">5.1.</span> <span class="toc-text">Dtypes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A2%E5%A4%B1%E6%95%B0%E6%8D%AE%EF%BC%88NaN%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">丢失数据（NaN）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Renaming-and-Combining"><span class="toc-number">6.</span> <span class="toc-text">6. Renaming and Combining</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-number">6.1.</span> <span class="toc-text">重命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E5%90%88"><span class="toc-number">6.2.</span> <span class="toc-text">结合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extra"><span class="toc-number">7.</span> <span class="toc-text">Extra</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">7.1.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#One-hot-%E7%BC%96%E7%A0%81"><span class="toc-number">7.2.</span> <span class="toc-text">One-hot 编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%BB%9F%E8%AE%A1"><span class="toc-number">7.3.</span> <span class="toc-text">其他统计</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-pandas/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&text=Kaggle Pandas 学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&is_video=false&description=Kaggle Pandas 学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Pandas 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-pandas/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&title=Kaggle Pandas 学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-pandas/&name=Kaggle Pandas 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/pandas&#34;&gt;Pandas&lt;/a&gt; 课程的笔记。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-pandas/&t=Kaggle Pandas 学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2024
+    Tsukimaru Oshawott
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

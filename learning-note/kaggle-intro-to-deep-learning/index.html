@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Kaggle 的 Intro to Deep Learning 的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaggle Intro to Deep Learning 学习笔记">
+<meta property="og:url" content="https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/index.html">
+<meta property="og:site_name" content="Tsuki&#39;s Blog">
+<meta property="og:description" content="Kaggle 的 Intro to Deep Learning 的笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.kaggleusercontent.com/kf/94853433/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..yQ6-AuSYkX5KS_f7osU1uA.claTNB4uwbDWq2zpl_AtHyPaKofrUEK1rrcsLlSC4ZGiBHpDDr_z91sTRQhPSFJ0dicLSP3_0A45nvsmoo3iZ1Nqzzwe2zhZ0QZIr8DOaeWJt89SHEkeI_jLPxdfX72QpZoOHxEULiViysAH1zOQJuxkfDeVznQkv_QFnSf1TYXPWo0y0-ZMMMKhev8ijSM2KI6TunfNkiyEszQ833yPhibR8NTLBTXgeB5EDU-tpcMkG6ki8Wlx41JlrhjzZfLTedE8DRU4W-BWvAnECSm7d6L16YpOkFJxpoXx3IN2Y8ku0-sjJajMLfzGEWVTfnlVanF1HK6pnrMnK2oYk1doENmboNZPxhrW3S5oHoTXVRVhUvYnKst6PvBa_GY34SiLCtdOR5QH7eenJM7o16UcZliSxjyFnl3hPPxrbW3SqEjY8AXs_27sFK03XgAaOZPttiQmG743__X_V4Msq809qmcI99SOILypY1_HS_2SaLrAXddu2-SIRLCzX3gocBczOrydi-xJ0N7e4FETqQu8j7jKZ1TfIsOxohE0DVN_gpdKjzlTsU_SgYRQwNtS6WEQgKtwjwN_0-AbZcoPin-QvI8fb6ZSEeCy__dlHf5o9jv43lAXumiVUz302YLH20qLFdfA5W4pL1TBlg28-NTyz0_HVs-VGO5x5SWgEobQkNE.7FccNx2hBZxUcfrBwbdMZw/__results___files/__results___12_0.png">
+<meta property="og:image" content="https://cutekibry.github.io/img/post/kaggle-intro-to-deep-learning/underfitting.png">
+<meta property="og:image" content="https://cutekibry.github.io/img/post/kaggle-intro-to-deep-learning/overfitting.png">
+<meta property="article:published_time" content="2023-02-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-17T16:00:00.000Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta property="article:tag" content="Kaggle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.kaggleusercontent.com/kf/94853433/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..yQ6-AuSYkX5KS_f7osU1uA.claTNB4uwbDWq2zpl_AtHyPaKofrUEK1rrcsLlSC4ZGiBHpDDr_z91sTRQhPSFJ0dicLSP3_0A45nvsmoo3iZ1Nqzzwe2zhZ0QZIr8DOaeWJt89SHEkeI_jLPxdfX72QpZoOHxEULiViysAH1zOQJuxkfDeVznQkv_QFnSf1TYXPWo0y0-ZMMMKhev8ijSM2KI6TunfNkiyEszQ833yPhibR8NTLBTXgeB5EDU-tpcMkG6ki8Wlx41JlrhjzZfLTedE8DRU4W-BWvAnECSm7d6L16YpOkFJxpoXx3IN2Y8ku0-sjJajMLfzGEWVTfnlVanF1HK6pnrMnK2oYk1doENmboNZPxhrW3S5oHoTXVRVhUvYnKst6PvBa_GY34SiLCtdOR5QH7eenJM7o16UcZliSxjyFnl3hPPxrbW3SqEjY8AXs_27sFK03XgAaOZPttiQmG743__X_V4Msq809qmcI99SOILypY1_HS_2SaLrAXddu2-SIRLCzX3gocBczOrydi-xJ0N7e4FETqQu8j7jKZ1TfIsOxohE0DVN_gpdKjzlTsU_SgYRQwNtS6WEQgKtwjwN_0-AbZcoPin-QvI8fb6ZSEeCy__dlHf5o9jv43lAXumiVUz302YLH20qLFdfA5W4pL1TBlg28-NTyz0_HVs-VGO5x5SWgEobQkNE.7FccNx2hBZxUcfrBwbdMZw/__results___files/__results___12_0.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Kaggle Intro to Deep Learning 学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/learning-note/kaggle-intermediate-machine-learning/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/learning-note/kaggle-pandas/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&text=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&is_video=false&description=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Intro to Deep Learning 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&name=Kaggle Intro to Deep Learning 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/intro-to-deep-learning&#34;&gt;Intro to Deep Learning&lt;/a&gt; 的笔记。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&t=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-A-Single-Neuron"><span class="toc-number">1.</span> <span class="toc-text">1. A Single Neuron</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%95%E4%B8%AA%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="toc-number">1.1.</span> <span class="toc-text">创建单个神经元</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Deep-Neural-Networks"><span class="toc-number">2.</span> <span class="toc-text">2. Deep Neural Networks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">2.1.</span> <span class="toc-text">创建网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">其他激活函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Stochastic-Gradient-Descent"><span class="toc-number">3.</span> <span class="toc-text">3. Stochastic Gradient Descent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Overfitting-and-Underfitting"><span class="toc-number">4.</span> <span class="toc-text">4. Overfitting and Underfitting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%89%8D%E5%81%9C%E6%AD%A2%EF%BC%88Early-stopping%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">提前停止（Early stopping）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Dropout-and-Batch-Normalization"><span class="toc-number">5.</span> <span class="toc-text">5. Dropout and Batch Normalization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dropout"><span class="toc-number">5.1.</span> <span class="toc-text">Dropout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Batch-Normalization%EF%BC%88BN%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">Batch Normalization（BN）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Binary-Classification"><span class="toc-number">6.</span> <span class="toc-text">6. Binary Classification</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-Entropy%EF%BC%88%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">Cross-Entropy（交叉熵）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">6.2.</span> <span class="toc-text">示例</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Kaggle Intro to Deep Learning 学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Tsukimaru Oshawott</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-02-15T16:00:00.000Z" class="dt-published" itemprop="datePublished">2023-02-16</time>
+        
+        (Updated: <time datetime="2023-02-17T16:00:00.000Z" class="dt-updated" itemprop="dateModified">2023-02-18</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Kaggle/" rel="tag">Kaggle</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>Kaggle 的 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/intro-to-deep-learning">Intro to Deep Learning</a> 的笔记。</p>
+<span id="more"></span>
+
+<h2 id="1-A-Single-Neuron"><a href="#1-A-Single-Neuron" class="headerlink" title="1. A Single Neuron"></a>1. A Single Neuron</h2><h3 id="创建单个神经元"><a href="#创建单个神经元" class="headerlink" title="创建单个神经元"></a>创建单个神经元</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> layers</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a network with 1 linear unit</span></span><br><span class="line">model = keras.Sequential([</span><br><span class="line">    layers.Dense(units=<span class="number">1</span>, input_shape=[<span class="number">3</span>])</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>layers.Dense()</code> 表示一个稠密层，<code>units</code> 表示该层输出元素个数，<code>input_shape=[height, width, channels]</code> 描述该层输入大小。</p>
+<p>用 <code>model.weights</code> 获取参数。</p>
+<h2 id="2-Deep-Neural-Networks"><a href="#2-Deep-Neural-Networks" class="headerlink" title="2. Deep Neural Networks"></a>2. Deep Neural Networks</h2><h3 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    <span class="comment"># the hidden ReLU layers</span></span><br><span class="line">    layers.Dense(units=<span class="number">4</span>, activation=<span class="string">&#x27;relu&#x27;</span>, input_shape=[<span class="number">2</span>]),</span><br><span class="line">    layers.Dense(units=<span class="number">3</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    <span class="comment"># the linear output layer </span></span><br><span class="line">    layers.Dense(units=<span class="number">1</span>),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用 <code>layers.Activation(&#39;relu&#39;)</code>。</p>
+<h3 id="其他激活函数"><a href="#其他激活函数" class="headerlink" title="其他激活函数"></a>其他激活函数</h3><p>ReLU：</p>
+<p>$$ReLU(x) &#x3D; \max{0, x}$$</p>
+<p>ELU：</p>
+<p>$$<br>ELU(x, \alpha) &#x3D;<br>\begin{cases}<br>    x, &amp;x \geq 0 \<br>    \alpha(e^x - 1), &amp;x &lt; 0<br>\end{cases}<br>$$</p>
+<p>SeLU：</p>
+<p>$$<br>SeLU(x) &#x3D;<br>\begin{cases}<br>    \lambda_{selu}x, &amp;x \geq 0 \<br>    \lambda_{selu}\alpha_{selu}(e^x - 1), &amp;x &lt; 0 \<br>\end{cases}<br>$$</p>
+<p>其中 $\alpha_{selu} \approx 1.6733, \lambda_{selu} \approx 1.0507$。</p>
+<h2 id="3-Stochastic-Gradient-Descent"><a href="#3-Stochastic-Gradient-Descent" class="headerlink" title="3. Stochastic Gradient Descent"></a>3. Stochastic Gradient Descent</h2><ul>
+<li>RMSE（Root Mean Square Error，均方根误差）</li>
+<li>MAE（Mean Absolute Error，平均绝对误差）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 钦定模型所用的 optimizer 和损失函数</span></span><br><span class="line">model.<span class="built_in">compile</span>(</span><br><span class="line">    optimizer=<span class="string">&quot;adam&quot;</span>,</span><br><span class="line">    loss=<span class="string">&quot;mae&quot;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">history = model.fit(</span><br><span class="line">    X_train, y_train,</span><br><span class="line">    validation_data=(X_valid, y_valid),</span><br><span class="line">    batch_size=<span class="number">256</span>,</span><br><span class="line">    epochs=<span class="number">10</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># convert the training history to a dataframe</span></span><br><span class="line">history_df = pd.DataFrame(history.history)</span><br><span class="line"><span class="comment"># use Pandas native plot method</span></span><br><span class="line">history_df[<span class="string">&#x27;loss&#x27;</span>].plot();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.kaggleusercontent.com/kf/94853433/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..yQ6-AuSYkX5KS_f7osU1uA.claTNB4uwbDWq2zpl_AtHyPaKofrUEK1rrcsLlSC4ZGiBHpDDr_z91sTRQhPSFJ0dicLSP3_0A45nvsmoo3iZ1Nqzzwe2zhZ0QZIr8DOaeWJt89SHEkeI_jLPxdfX72QpZoOHxEULiViysAH1zOQJuxkfDeVznQkv_QFnSf1TYXPWo0y0-ZMMMKhev8ijSM2KI6TunfNkiyEszQ833yPhibR8NTLBTXgeB5EDU-tpcMkG6ki8Wlx41JlrhjzZfLTedE8DRU4W-BWvAnECSm7d6L16YpOkFJxpoXx3IN2Y8ku0-sjJajMLfzGEWVTfnlVanF1HK6pnrMnK2oYk1doENmboNZPxhrW3S5oHoTXVRVhUvYnKst6PvBa_GY34SiLCtdOR5QH7eenJM7o16UcZliSxjyFnl3hPPxrbW3SqEjY8AXs_27sFK03XgAaOZPttiQmG743__X_V4Msq809qmcI99SOILypY1_HS_2SaLrAXddu2-SIRLCzX3gocBczOrydi-xJ0N7e4FETqQu8j7jKZ1TfIsOxohE0DVN_gpdKjzlTsU_SgYRQwNtS6WEQgKtwjwN_0-AbZcoPin-QvI8fb6ZSEeCy__dlHf5o9jv43lAXumiVUz302YLH20qLFdfA5W4pL1TBlg28-NTyz0_HVs-VGO5x5SWgEobQkNE.7FccNx2hBZxUcfrBwbdMZw/__results___files/__results___12_0.png"></p>
+<h2 id="4-Overfitting-and-Underfitting"><a href="#4-Overfitting-and-Underfitting" class="headerlink" title="4. Overfitting and Underfitting"></a>4. Overfitting and Underfitting</h2><p><img src="/img/post/kaggle-intro-to-deep-learning/underfitting.png" alt="Underfitting"></p>
+<p><img src="/img/post/kaggle-intro-to-deep-learning/overfitting.png" alt="Overfitting"></p>
+<h3 id="提前停止（Early-stopping）"><a href="#提前停止（Early-stopping）" class="headerlink" title="提前停止（Early stopping）"></a>提前停止（Early stopping）</h3><p>Keras 中，Early stopping 是一种回调（Callback）函数，每次迭代后都会执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.keras.callbacks <span class="keyword">import</span> EarlyStopping</span><br><span class="line"></span><br><span class="line">early_stopping = EarlyStopping(</span><br><span class="line">    min_delta=<span class="number">0.001</span>,</span><br><span class="line">    patience=<span class="number">20</span>,</span><br><span class="line">    restore_best_weights=<span class="literal">True</span>,</span><br><span class="line">)</span><br><span class="line"><span class="comment"># 当 20 次迭代内都没有使得验证集的损失函数值减小至少 0.001 时，停止训练</span></span><br><span class="line"></span><br><span class="line">history = model.fit(</span><br><span class="line">    X_train, y_train,</span><br><span class="line">    validation_data=(X_valid, y_valid),</span><br><span class="line">    batch_size=<span class="number">256</span>,</span><br><span class="line">    epochs=<span class="number">500</span>,</span><br><span class="line">    callbacks=[early_stopping], </span><br><span class="line">    verbose=<span class="number">0</span>,  <span class="comment"># 关闭日志输出</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">history_df = pd.DataFrame(history.history)</span><br><span class="line">history_df.loc[<span class="number">5</span>:, [<span class="string">&#x27;loss&#x27;</span>, <span class="string">&#x27;val_loss&#x27;</span>]].plot();</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Minimum validation loss: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(history_df[<span class="string">&#x27;val_loss&#x27;</span>].<span class="built_in">min</span>()))</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Dropout-and-Batch-Normalization"><a href="#5-Dropout-and-Batch-Normalization" class="headerlink" title="5. Dropout and Batch Normalization"></a>5. Dropout and Batch Normalization</h2><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p><code>layers.Dropout(rate=0.3)</code></p>
+<h3 id="Batch-Normalization（BN）"><a href="#Batch-Normalization（BN）" class="headerlink" title="Batch Normalization（BN）"></a>Batch Normalization（BN）</h3><p>BN 层拥有两个可训练的参数 $\mu, \beta$。首先，BN 会对输入参数进行正则化（$\mu &#x3D; 0, \sigma &#x3D; 1$），即 $x_i \leftarrow \frac {x_i - \mu}{\sqrt {\sigma^2 + \epsilon}}$；之后再让 $x_i \leftarrow \mu x_i + \beta$。这样可以在正则化数据的同时，又用 $\mu, \beta$ 作为还原参数，一定程度上保留原数据的分布。</p>
+<p>BN 层一般可以缓解梯度爆炸或梯度消失的问题，也能使训练变得更快。</p>
+<p><code>layers.BatchNormalization()</code></p>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    layers.Dense(<span class="number">1024</span>, activation=<span class="string">&#x27;relu&#x27;</span>, input_shape=[<span class="number">11</span>]),</span><br><span class="line">    layers.Dropout(<span class="number">0.3</span>),</span><br><span class="line">    layers.BatchNormalization(),</span><br><span class="line">    layers.Dense(<span class="number">1024</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    layers.Dropout(<span class="number">0.3</span>),</span><br><span class="line">    layers.BatchNormalization(),</span><br><span class="line">    layers.Dense(<span class="number">1024</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    layers.Dropout(<span class="number">0.3</span>),</span><br><span class="line">    layers.BatchNormalization(),</span><br><span class="line">    layers.Dense(<span class="number">1</span>),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Binary-Classification"><a href="#6-Binary-Classification" class="headerlink" title="6. Binary Classification"></a>6. Binary Classification</h2><h3 id="Cross-Entropy（交叉熵）"><a href="#Cross-Entropy（交叉熵）" class="headerlink" title="Cross-Entropy（交叉熵）"></a>Cross-Entropy（交叉熵）</h3><p>分类问题使用的损失函数，即 $-\ln p_x$。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    layers.Dense(<span class="number">4</span>, activation=<span class="string">&#x27;relu&#x27;</span>, input_shape=[<span class="number">33</span>]),</span><br><span class="line">    layers.Dense(<span class="number">4</span>, activation=<span class="string">&#x27;relu&#x27;</span>),    </span><br><span class="line">    layers.Dense(<span class="number">1</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>),</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.<span class="built_in">compile</span>(</span><br><span class="line">    optimizer=<span class="string">&#x27;adam&#x27;</span>,</span><br><span class="line">    loss=<span class="string">&#x27;binary_crossentropy&#x27;</span>,</span><br><span class="line">    metrics=[<span class="string">&#x27;binary_accuracy&#x27;</span>],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">文章</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-A-Single-Neuron"><span class="toc-number">1.</span> <span class="toc-text">1. A Single Neuron</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%95%E4%B8%AA%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="toc-number">1.1.</span> <span class="toc-text">创建单个神经元</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Deep-Neural-Networks"><span class="toc-number">2.</span> <span class="toc-text">2. Deep Neural Networks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">2.1.</span> <span class="toc-text">创建网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">其他激活函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Stochastic-Gradient-Descent"><span class="toc-number">3.</span> <span class="toc-text">3. Stochastic Gradient Descent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Overfitting-and-Underfitting"><span class="toc-number">4.</span> <span class="toc-text">4. Overfitting and Underfitting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%89%8D%E5%81%9C%E6%AD%A2%EF%BC%88Early-stopping%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">提前停止（Early stopping）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Dropout-and-Batch-Normalization"><span class="toc-number">5.</span> <span class="toc-text">5. Dropout and Batch Normalization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dropout"><span class="toc-number">5.1.</span> <span class="toc-text">Dropout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Batch-Normalization%EF%BC%88BN%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">Batch Normalization（BN）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Binary-Classification"><span class="toc-number">6.</span> <span class="toc-text">6. Binary Classification</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cross-Entropy%EF%BC%88%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">Cross-Entropy（交叉熵）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">6.2.</span> <span class="toc-text">示例</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&text=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&is_video=false&description=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Intro to Deep Learning 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&title=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&name=Kaggle Intro to Deep Learning 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/intro-to-deep-learning&#34;&gt;Intro to Deep Learning&lt;/a&gt; 的笔记。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-intro-to-deep-learning/&t=Kaggle Intro to Deep Learning 学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2024
+    Tsukimaru Oshawott
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

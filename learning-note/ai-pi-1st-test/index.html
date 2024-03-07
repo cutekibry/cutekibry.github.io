@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="理论题学习笔记。感觉考得很深……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 派 2023 年暑期招生第一次测试（理论题）">
+<meta property="og:url" content="https://cutekibry.github.io/learning-note/ai-pi-1st-test/index.html">
+<meta property="og:site_name" content="Tsuki&#39;s Blog">
+<meta property="og:description" content="理论题学习笔记。感觉考得很深……">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-28T06:43:59.834Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>AI 派 2023 年暑期招生第一次测试（理论题）</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/learning-note/misc-ensemble-learning/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/learning-note/kaggle-feature-engineering/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/ai-pi-1st-test/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&text=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&is_video=false&description=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AI 派 2023 年暑期招生第一次测试（理论题）&body=Check out this article: https://cutekibry.github.io/learning-note/ai-pi-1st-test/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&name=AI 派 2023 年暑期招生第一次测试（理论题）&description=理论题学习笔记。&lt;br /&gt;感觉考得很深……"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&t=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B9%8BLR"><span class="toc-number">1.</span> <span class="toc-text">2 数学原理之LR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">具体要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA"><span class="toc-number">1.2.</span> <span class="toc-text">提示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Solution"><span class="toc-number">2.</span> <span class="toc-text">2 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1"><span class="toc-number">2.1.</span> <span class="toc-text">2.1.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1. 前向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E5%90%8E%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2. 后向传播</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2"><span class="toc-number">2.2.</span> <span class="toc-text">2.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3"><span class="toc-number">2.3.</span> <span class="toc-text">2.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4"><span class="toc-number">2.4.</span> <span class="toc-text">2.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B9%8BSVM"><span class="toc-number">3.</span> <span class="toc-text">3 数学原理之SVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82-1"><span class="toc-number">3.1.</span> <span class="toc-text">具体要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA-1"><span class="toc-number">3.2.</span> <span class="toc-text">提示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Solution"><span class="toc-number">4.</span> <span class="toc-text">3 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1"><span class="toc-number">4.1.</span> <span class="toc-text">3.1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E9%97%AE%E9%A2%98%E6%8E%A8%E5%AF%BC"><span class="toc-number">4.1.1.</span> <span class="toc-text">原问题推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E8%B6%85%E5%B9%B3%E9%9D%A2%E5%92%8C%E6%94%AF%E6%8C%81%E8%B6%85%E5%B9%B3%E9%9D%A2"><span class="toc-number">4.1.2.</span> <span class="toc-text">分类超平面和支持超平面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2"><span class="toc-number">4.2.</span> <span class="toc-text">3.2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.2.1 对偶问题的推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E6%98%AF%E5%90%A6%E6%BB%A1%E8%B6%B3%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.2.2 是否满足强对偶性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3"><span class="toc-number">4.3.</span> <span class="toc-text">3.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4"><span class="toc-number">4.4.</span> <span class="toc-text">3.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5"><span class="toc-number">4.5.</span> <span class="toc-text">3.5</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        AI 派 2023 年暑期招生第一次测试（理论题）
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Tsukimaru Oshawott</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-07-26T16:00:00.000Z" class="dt-published" itemprop="datePublished">2023-07-27</time>
+        
+        (Updated: <time datetime="2023-08-28T06:43:59.834Z" class="dt-updated" itemprop="dateModified">2023-08-28</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="2-数学原理之LR"><a href="#2-数学原理之LR" class="headerlink" title="2 数学原理之LR"></a>2 数学原理之LR</h2><p><em>出题人：吴佳黎</em></p>
+<p>​	在后续的问题中，你可能需要使用逻辑回归解决问题。由于逻辑回归的原理十分经典，这部分内容将考察你对其中数学原理的理解程度，你需要使用简单的数学公式回答以下问题：</p>
+<h3 id="具体要求"><a href="#具体要求" class="headerlink" title="具体要求"></a>具体要求</h3><ol>
+<li>给出利用<strong>梯度下降法</strong>求解<strong>逻辑回归</strong>的<strong>前反向公式推导</strong>，在这一部分中，你只需要考虑<strong>最朴素的二分类逻辑回归模型</strong>。</li>
+<li>假设标签集不是 {0,1} 而是 **{1,-1}**，将会有什么变化，请给出推导。</li>
+<li>在问题2.1的基础上，即标签集为 {0,1} 的情况，分别增加<strong>L1正则化</strong>和<strong>L2正则化</strong>，公式和模型效果分别会有什么变化，请给出推导。</li>
+<li>给出<strong>核逻辑回归的对偶形式</strong>。</li>
+<li>（选做）如果你愿意，给出利用<strong>二阶优化算法</strong>如牛顿法求解逻辑回归的公式推导，只需要考虑最朴素的逻辑回归模型。</li>
+</ol>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li>除了问题2.4以外，请给出关键推导过程，仅仅给出结果是无效的。</li>
+<li>如果你愿意，问题2.4可以给出关键性的公式推导或解释。</li>
+<li>建议使用 LaTeX 语法书写数学公式，例如你可以很容易查询到，梯度公式如下（假设数据下标从1到m）:</li>
+</ul>
+<p>$$<br>g(\boldsymbol w)&#x3D;\frac{\partial J(\boldsymbol w)}{\partial \boldsymbol w}&#x3D;\sum_{i&#x3D;1}^m(\sigma(\boldsymbol w^\top\boldsymbol x_i)-y_i)\boldsymbol x_i<br>$$</p>
+<ul>
+<li>参考资料：李航.统计学习方法[M].北京:清华大学出版社,2019.5.1</li>
+</ul>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2 Solution"></a>2 Solution</h2><h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1."></a>2.1.</h3><p>Q：给出利用<strong>梯度下降法</strong>求解<strong>逻辑回归</strong>的<strong>前反向公式推导</strong>，在这一部分中，你只需要考虑<strong>最朴素的二分类逻辑回归模型</strong>。</p>
+<p>A：记模型参数为 $\boldsymbol w \in \R^m$，输入为 $\boldsymbol x_i \in \R^m$，正确输出为 $y_i \in {0, 1}$，模型输出为 $f(\boldsymbol x_i) &#x3D; \hat P(y_i &#x3D; 1) \in [0, 1]$。</p>
+<p>偏置 $b$ 可以在所有 $\boldsymbol x_i$ 后新加一维 $x_{i, m + 1} &#x3D; 1$，因此下面的推导不考虑偏置。</p>
+<h4 id="2-1-1-前向传播"><a href="#2-1-1-前向传播" class="headerlink" title="2.1.1. 前向传播"></a>2.1.1. 前向传播</h4><p>根据定义得：</p>
+<p>$$f(\boldsymbol x_i) &#x3D; \hat P(y_i &#x3D; 1) &#x3D; \frac 1{1 + \exp(-\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<p>$$\hat P(y_i &#x3D; 0) &#x3D; \frac 1{1 + \exp(\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<h4 id="2-1-2-后向传播"><a href="#2-1-2-后向传播" class="headerlink" title="2.1.2. 后向传播"></a>2.1.2. 后向传播</h4><p>极大似然估计法给出的似然函数为：</p>
+<p>$$<br>\begin{aligned}<br>    L(\boldsymbol w) &amp;&#x3D; \ln \prod_{i &#x3D; 1}^n f(\boldsymbol x_i)^{y_i} [1 - f(\boldsymbol x_i)]^{1 - y_i} \<br>    &amp;&#x3D; \sum_{i &#x3D; 1}^n y_i\ln f(\boldsymbol x_i) + (1 - y_i)\ln[1 - f(\boldsymbol x_i)] \<br>\end{aligned}<br>$$</p>
+<p>计算偏导数 $\frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}$：</p>
+<p>$$<br>\begin{aligned}<br>    \frac {\partial L(\boldsymbol w)}{\partial w_j} &amp;&#x3D; \sum_{i &#x3D; 1}^n y_i\frac {\partial \ln f(\boldsymbol x_i)}{\partial w_j} + (1 - y_i) \frac {\partial \ln [1 - f(\boldsymbol x_i)]}{\partial w_j} \<br>    &amp;&#x3D; -\sum_{i &#x3D; 1}^n y_i\frac {\partial [1 + \exp(-\boldsymbol w \cdot \boldsymbol x_i)]}{\partial w_j} + (1 - y_i) \frac {\partial [1 + \exp(\boldsymbol w \cdot \boldsymbol x_i)]}{\partial w_j} \<br>    &amp;&#x3D; \sum_{i &#x3D; 1}^n [y_i\exp(-\boldsymbol w \cdot \boldsymbol x_i) - (1 - y_i) \exp(\boldsymbol w \cdot \boldsymbol x_i)]x_{i, j} \<br>\end{aligned}<br>$$</p>
+<p>因此</p>
+<p>$$\frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; \sum_{i &#x3D; 1}^n [y_i\exp(-\boldsymbol w \cdot \boldsymbol x_i) - (1 - y_i) \exp(\boldsymbol w \cdot \boldsymbol x_i)] \boldsymbol x_i$$</p>
+<p>该模型的损失函数为</p>
+<p>$$l(\boldsymbol w) &#x3D; -\frac 1n L(\boldsymbol w)$$</p>
+<p>梯度下降给出的反向传播公式：</p>
+<p>$$\boldsymbol w’ &#x3D; \boldsymbol w - \eta \frac {\partial l(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; \boldsymbol w + \frac \eta n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}$$</p>
+<p>其中 $\eta &gt; 0$ 是学习率。</p>
+<h3 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h3><p><strong>Q</strong>：假设标签集不是 {0,1} 而是 **{1,-1}**，将会有什么变化，请给出推导。</p>
+<p><strong>A</strong>：</p>
+<p>类似地，前向传播公式：</p>
+<p>$$f(\boldsymbol x_i) &#x3D; \hat P(y_i &#x3D; 1) &#x3D; \frac 1{1 + \exp(-\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<p>$$\hat P(y_i &#x3D; -1) &#x3D; \frac 1{1 + \exp(\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<p>似然函数：</p>
+<p>$$<br>\begin{aligned}<br>    L(\boldsymbol w) &amp;&#x3D; \ln \prod_{i &#x3D; 1}^n f(\boldsymbol x_i)^{\frac {y_i + 1}2} [1 - f(\boldsymbol x_i)]^{\frac {1 - y_i}2} \<br>    &amp;&#x3D; \sum_{i &#x3D; 1}^n \frac {y_i + 1}2\ln f(\boldsymbol x_i) + \frac {1 - y_i}2 \ln[1 - f(\boldsymbol x_i)] \<br>\end{aligned}<br>$$</p>
+<p>同理可得：</p>
+<p>$$\frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; \sum_{i &#x3D; 1}^n [\frac {y_i + 1}2\exp(-\boldsymbol w \cdot \boldsymbol x_i) - \frac {1 - y_i}2 \exp(\boldsymbol w \cdot \boldsymbol x_i)] \boldsymbol x_i$$</p>
+<p>$$\boldsymbol w’ &#x3D; \boldsymbol w + \frac \eta n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}$$</p>
+<p>与 <strong>2.1</strong> 中的式子相比，只有常数 $y_i$ 的计算发生了变化。</p>
+<h3 id="2-3"><a href="#2-3" class="headerlink" title="2.3"></a>2.3</h3><p><strong>Q</strong>：在问题2.1的基础上，即标签集为 {0,1} 的情况，分别增加<strong>L1正则化</strong>和<strong>L2正则化</strong>，公式和模型效果分别会有什么变化，请给出推导。</p>
+<p><strong>A</strong>：增加 L1 和 L2 正则化后，前向传播公式不变。</p>
+<p>损失函数变为</p>
+<p>$$l(\boldsymbol w) &#x3D; -\frac 1n L(\boldsymbol w) + \alpha \lVert \boldsymbol w \rVert + \beta \lVert \boldsymbol w \rVert_2^2$$</p>
+<p>计算偏导：</p>
+<p>$$<br>\begin{aligned}<br>    \frac {\partial l(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; -\frac 1n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w} + \alpha \operatorname{sign} \boldsymbol w + 2\beta \boldsymbol w<br>\end{aligned}<br>$$</p>
+<p>反向传播公式：</p>
+<p>$$\boldsymbol w’ &#x3D; \boldsymbol w - \eta\left[\alpha \operatorname{sign} \boldsymbol w + 2\beta\boldsymbol w - \frac 1n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}\right]$$</p>
+<p>其中 $\operatorname{sign}(x)$ 是符号函数：</p>
+<p>$$<br>\operatorname{sign}(x) &#x3D;<br>\begin{cases}<br>    -1, &amp;x &lt; 0 \<br>    0,  &amp;x &#x3D; 0 \<br>    1,  &amp;x &gt; 0 \<br>\end{cases}<br>$$</p>
+<h3 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h3><p><strong>Q</strong>：给出<strong>核逻辑回归的对偶形式</strong>。</p>
+<p><strong>A</strong>：核逻辑回归原问题：</p>
+<p>$$<br>\begin{aligned}<br>    \min_{\boldsymbol w, b} \quad \sum_{i &#x3D; 1}^n y_i \ln {1 + \exp[-K(\boldsymbol w, \boldsymbol x_i) - b]} + (1 - y_i) \ln {1 + \exp[K(\boldsymbol w, \boldsymbol x_i) + b]} \<br>\end{aligned}<br>$$</p>
+<p>其中 $K(\boldsymbol x, \boldsymbol z), K: (\R^m, \R^m) \rightarrow \R$ 是核函数。</p>
+<p>因为没有条件约束，对偶问题即为原问题。</p>
+<h2 id="3-数学原理之SVM"><a href="#3-数学原理之SVM" class="headerlink" title="3 数学原理之SVM"></a>3 数学原理之SVM</h2><p><em>出题人：吴佳黎</em></p>
+<p>​	在后续的问题中，你可能需要使用支持向量机解决问题。SVM的部分原理如下。</p>
+<ul>
+<li>支持向量机原问题：</li>
+</ul>
+<p>$$<br>\min_{\boldsymbol{w},b}f(\boldsymbol{w})&#x3D;\frac{1}{2}|\boldsymbol{w}|_2^2,\quad\mathrm{ s.t. }\ y_i(\boldsymbol{w}^\top\boldsymbol{x}_i+b)\ge 1,\forall 1\le i\le m<br>$$</p>
+<ul>
+<li>支持向量机对偶问题：</li>
+</ul>
+<p>$$<br>\max_{\boldsymbol{\alpha}\ge 0}g(\boldsymbol{}\alpha) &#x3D;-\frac{1}{2}\sum_{i&#x3D;1}^m\sum_{j&#x3D;1}^m \alpha_i\alpha_j y_iy_j\boldsymbol x_i^\top\boldsymbol{x}<em>j+\sum</em>{i&#x3D;1}^m \alpha_i,\quad \mathrm{s.t.}\ \boldsymbol{y}^\top\boldsymbol\alpha&#x3D;0<br>$$</p>
+<p>你需要使用简单的数学公式回答以下问题：</p>
+<h3 id="具体要求-1"><a href="#具体要求-1" class="headerlink" title="具体要求"></a>具体要求</h3><ol>
+<li>给出支持向量机最大间隔准则原问题的推导，解释分类超平面和支持超平面的含义。</li>
+<li>给出对偶问题的推导，并回答问题：强对偶性在支持向量机中始终成立吗？</li>
+<li>根据前面的结果推导<strong>SVM的KKT条件</strong>。</li>
+<li>如果数据非线性可分怎么办？给出修改后的原问题和对偶问题。</li>
+<li>在问题3.4的基础上，若<strong>允许少量样本破坏约束</strong>，应增加怎样的损失函数，请给出修改后的原问题和对偶问题。</li>
+</ol>
+<h3 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a>提示</h3><ul>
+<li>可以直接使用点到超平面的距离公式。可以认为你已经掌握拉格朗日乘子法，无需对此再进行证明推导。</li>
+<li>问题3.2中回答问题只需要回答是否，如果你愿意，也可以给出简单的解释。</li>
+<li>除了问题3.4与问题3.5以外，请给出推导过程，仅仅给出结果是无效的。</li>
+<li>如果你愿意，问题3.4与问题3.5可以给出关键性的公式推导或解释。</li>
+<li>建议使用 LaTeX 语法书写数学公式。</li>
+<li>参考资料：李航.统计学习方法[M].北京:清华大学出版社,2019.5.1</li>
+</ul>
+<h2 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3 Solution"></a>3 Solution</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3><p><strong>Q</strong>：给出支持向量机最大间隔准则原问题的推导，解释分类超平面和支持超平面的含义。</p>
+<p><strong>A</strong>：</p>
+<h4 id="原问题推导"><a href="#原问题推导" class="headerlink" title="原问题推导"></a>原问题推导</h4><p>SVM 原问题：</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol w, b} \quad \gamma \<br>    &amp; \text{s.t.} \quad y_i\frac {\boldsymbol w \cdot \boldsymbol x_i + b}{\lVert \boldsymbol w \rVert} \geq \gamma, \quad \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>令 $\gamma’ &#x3D; \gamma \lVert \boldsymbol w \rVert$，转化为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol w, b} \quad \frac {\gamma’}{\lVert \boldsymbol w \rVert} \<br>    &amp; \text{s.t.} \quad y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq \gamma’, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>可以注意到，$\gamma’$ 的取值不影响问题的解：若 $\gamma_1’ &#x3D; \lambda \gamma_2’$，则若取 $\boldsymbol w_1^* &#x3D; \lambda \boldsymbol w_2^*, b_1^* &#x3D; \lambda b_2^*$，有</p>
+<p>$$\frac {\gamma_1’}{\lVert \boldsymbol w_1^* \rVert} &#x3D; \frac {\gamma_2’}{\lVert \boldsymbol w_2^* \rVert}$$</p>
+<p>$$y_i(\boldsymbol w_1^* \cdot \boldsymbol x_i + b_1^*) \geq \gamma’_1 \Leftrightarrow y_i(\boldsymbol w_2^* \cdot \boldsymbol x_i + b_2^*) \geq \gamma’_2$$</p>
+<p>因此不妨取 $\gamma’ &#x3D; 1$，问题转化为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol w, b} \quad \frac 1{\lVert \boldsymbol w \rVert} \<br>    &amp; \text{s.t.} \quad y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>即</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \min_{\boldsymbol w, b} \quad \frac 12\lVert \boldsymbol w \rVert^2 \<br>    &amp; \text{s.t.} \quad y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<h4 id="分类超平面和支持超平面"><a href="#分类超平面和支持超平面" class="headerlink" title="分类超平面和支持超平面"></a>分类超平面和支持超平面</h4><p><strong>分类超平面</strong>既是 SVM 参数对应的超平面 $\boldsymbol w \cdot \boldsymbol x + b &#x3D; 0$。SVM 根据点在分类超平面的哪一侧为其预测分类。</p>
+<p><strong>支持超平面</strong>既是支持向量所在的超平面，即 $y_i(\boldsymbol w \cdot \boldsymbol x_i + b) &#x3D; 1$。根据 $y_i \in {-1, 1}$ 取值不同，存在两个支持超平面 $H_1: \boldsymbol w \cdot \boldsymbol x_i + b &#x3D; 1$ 和 $H_2: \boldsymbol w \cdot \boldsymbol x_i + b &#x3D; -1$。求解分类超平面时，有且只有支持超平面上的点会起作用。</p>
+<h3 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h3><p><strong>Q</strong>：给出对偶问题的推导，并回答问题：强对偶性在支持向量机中始终成立吗？</p>
+<p><strong>A</strong>：</p>
+<h4 id="3-2-1-对偶问题的推导"><a href="#3-2-1-对偶问题的推导" class="headerlink" title="3.2.1 对偶问题的推导"></a>3.2.1 对偶问题的推导</h4><p>根据拉格朗日乘子法，定义拉格朗日函数</p>
+<p>$$L(\boldsymbol w, b, \boldsymbol a) &#x3D; \frac 12 \lVert \boldsymbol w \rVert^2 - \sum_{i &#x3D; 1}^n \alpha_i y_i (\boldsymbol w \cdot \boldsymbol x_i + b) + \sum_{i &#x3D; 1}^n \alpha_i$$</p>
+<p>可得原问题的对偶问题为</p>
+<p>$$\max_{\boldsymbol \alpha \geq \boldsymbol 0} \min_{\boldsymbol w, b} L(\boldsymbol w, b, \boldsymbol a)$$</p>
+<p>简单推导：</p>
+<p>$$<br>\begin{aligned}<br>    L(\boldsymbol w, b, \boldsymbol a) &amp;&#x3D; \frac 12 \lVert \boldsymbol w \rVert^2 - \sum_{i &#x3D; 1}^n \alpha_i [y_i (\boldsymbol w \cdot \boldsymbol x_i + b) - 1] \<br>    &amp;&#x3D; \frac 12 \lVert \boldsymbol w \rVert^2 - \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i\right) \cdot \boldsymbol w - \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \right) b + \sum_{i &#x3D; 1}^n \alpha_i \<br>\end{aligned}<br>$$</p>
+<p>当 $\boldsymbol a$ 确定时，$\left(\sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i\right), \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \right), \sum_{i &#x3D; 1}^n \alpha_i$ 都是常数。不妨记 $\boldsymbol C_1(\boldsymbol \alpha) &#x3D; \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i\right), C_2(\boldsymbol \alpha) &#x3D; \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \right)$，则对偶问题等价于</p>
+<p>$$\max_{\boldsymbol \alpha \geq \boldsymbol 0} \left[\left(\sum_{i &#x3D; 1}^n \alpha_i\right) + \min_{\boldsymbol w, b} \left(\frac 12 \lVert \boldsymbol w \rVert^2 - \boldsymbol C_1(\boldsymbol \alpha) \cdot \boldsymbol w - C_2(\boldsymbol \alpha) b\right)\right]$$</p>
+<p>记函数</p>
+<p>$$f(\boldsymbol w, b) &#x3D; \left(\frac 12 \lVert \boldsymbol w \rVert^2 - \boldsymbol C_1(\boldsymbol \alpha) \cdot \boldsymbol w - C_2(\boldsymbol \alpha) b\right)$$</p>
+<p>要求解 $\min_{\boldsymbol w, b} f(\boldsymbol w, b)$，考虑计算偏导为 $0$，有</p>
+<p>$$<br>\begin{cases}<br>    \frac {\partial f(\boldsymbol w, b)}{\partial \boldsymbol w} &#x3D; \boldsymbol w - \boldsymbol C_1(\boldsymbol \alpha) &#x3D; 0, \<br>    \frac {\partial f(\boldsymbol w, b)}{\partial b} &#x3D; - C_2(\boldsymbol \alpha) &#x3D; 0<br>\end{cases}<br>$$</p>
+<p>得</p>
+<p>$$<br>\begin{cases}<br>    \boldsymbol w &#x3D; \boldsymbol C_1(\boldsymbol \alpha), \<br>    C_2(\boldsymbol \alpha) &#x3D; 0<br>\end{cases}<br>$$</p>
+<p>代入得 $\min_{\boldsymbol w, b} f(\boldsymbol w, b) &#x3D; f(\boldsymbol C_1(\boldsymbol \alpha), 0) &#x3D; -\frac 12 \lVert \boldsymbol C_1(\boldsymbol \alpha) \rVert^2$。</p>
+<p>故对偶问题即为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha \geq \boldsymbol 0} \left[\left(\sum_{i &#x3D; 1}^n \alpha_i\right) - \frac 12 \lVert \boldsymbol C_1(\boldsymbol \alpha) \rVert^2\right] \<br>    &amp; \text{s.t. } C_2(\boldsymbol \alpha) &#x3D; 0<br>\end{aligned}<br>$$</p>
+<p>拆开式子得</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha \geq \boldsymbol 0} \left(\sum_{i &#x3D; 1}^n \alpha_i - \frac 12 \sum_{i &#x3D; 1}^n \sum_{j &#x3D; 1}^n \alpha_i \alpha_j y_i y_j \boldsymbol x_i \cdot \boldsymbol x_j \right) \<br>    &amp; \text{s.t. } \boldsymbol \alpha \cdot \boldsymbol y  &#x3D; 0<br>\end{aligned}<br>$$</p>
+<p>即为原问题的对偶形式。</p>
+<h4 id="3-2-2-是否满足强对偶性"><a href="#3-2-2-是否满足强对偶性" class="headerlink" title="3.2.2 是否满足强对偶性"></a>3.2.2 是否满足强对偶性</h4><p>满足。</p>
+<p>首先，显然地，$f(\boldsymbol w)$ 和 $[y_i(\boldsymbol{w}^\top\boldsymbol{x}_i+b) - 1]$ 是关于 $\boldsymbol w$ 的凸函数，且因为数据集线性可分，所以存在严格可行解。根据定理可知，原问题和对偶问题均存在最优解，且最优解对应函数的值相等。</p>
+<h3 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h3><p><strong>Q</strong>：根据前面的结果推导 <strong>SVM 的 KKT 条件</strong>。</p>
+<p><strong>A</strong>：因为问题满足了 <strong>3.2.2</strong> 的条件，所以可知 $\boldsymbol w^*, b^*, \boldsymbol a^*$ 是原问题和对偶问题的最优解，当且仅当满足 KKT 条件</p>
+<p>$$<br>\frac {\partial L(\boldsymbol w^*, b^*, \boldsymbol a^*)}{\partial \boldsymbol w} &#x3D; \boldsymbol w^* - \sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i &#x3D; \boldsymbol 0<br>$$</p>
+<p>$$<br>\frac {\partial L(\boldsymbol w^*, b^*, \boldsymbol a^*)}{\partial b} &#x3D; - \sum_{i &#x3D; 1}^n \alpha_i y_i &#x3D; 0<br>$$</p>
+<p>$$<br>\boldsymbol [y_i(\boldsymbol w^* \cdot \boldsymbol x_i + b^*) - 1]  a^*_i &#x3D; 0, \quad \forall 1 \leq i \leq n<br>$$</p>
+<p>$$<br>y_i(\boldsymbol{w}^* \cdot \boldsymbol{x}_i+b^*)\ge 1, \quad \forall 1 \leq i \leq n<br>$$</p>
+<p>$$\boldsymbol a^* \geq \boldsymbol 0$$</p>
+<h3 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h3><p><strong>Q</strong>：如果数据非线性可分怎么办？给出修改后的原问题和对偶问题。</p>
+<p><strong>A</strong>：若不允许样本破坏约束，则可以考虑将输入的维度进行变换。</p>
+<p>具体地，记 $\Chi$ 是输入空间，$\Eta$ 是特征空间。对函数 $K(\boldsymbol x, \boldsymbol z), K: \Chi^2 \rightarrow \R$，若存在映射 $\boldsymbol \phi: \Chi \rightarrow \Eta$ 使得</p>
+<p>$$K(\boldsymbol x, \boldsymbol z) &#x3D; \boldsymbol \phi(\boldsymbol x) \cdot \boldsymbol \phi(\boldsymbol y)$$</p>
+<p>则称 $K(\boldsymbol x, \boldsymbol z)$ 是<strong>核函数</strong>。</p>
+<p>在给定核函数的前提下，我们可以将 SVM 问题进行修改，对偶问题变为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha \geq \boldsymbol 0} \left(\sum_{i &#x3D; 1}^n \alpha_i - \frac 12 \sum_{i &#x3D; 1}^n \sum_{j &#x3D; 1}^n \alpha_i \alpha_j y_i y_j K(\boldsymbol x_i, \boldsymbol x_j) \right) \<br>    &amp; \text{s.t. } \boldsymbol \alpha \cdot \boldsymbol y  &#x3D; 0<br>\end{aligned}<br>$$</p>
+<p>相应地，原问题变为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \min_{\boldsymbol w, b} \quad \frac 12\lVert \boldsymbol w \rVert^2 \<br>    &amp; \text{s.t.} \quad y_i(K(\boldsymbol w, \boldsymbol x_i) + b) \geq 1, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>当 ${\boldsymbol x_i}$ 在核函数对应的特征空间 $\Eta$ 中线性可分时，就存在最优解。</p>
+<h3 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h3><p><strong>Q</strong>：在问题3.4的基础上，若<strong>允许少量样本破坏约束</strong>，应增加怎样的损失函数，请给出修改后的原问题和对偶问题。</p>
+<p><strong>A</strong>：</p>
+<p>由于非线性可分，所以部分点不能满足 $y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1$。引入松弛变量 $\xi_i \geq 0$，不等式变为 $y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1 - \xi_i$，同时给函数添加一项 $+C\sum_{i &#x3D; 1}^n \xi_i$ 作为修正，防止 $\xi_i$ 过大。修改后的原问题：</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \min_{\boldsymbol w, b, \boldsymbol \xi} \quad \frac 12\lVert \boldsymbol w \rVert^2 + C\sum_{i &#x3D; 1}^n \xi_i \<br>    &amp; \text{s.t.} \quad y_i(K(\boldsymbol w, \boldsymbol x_i) + b) \geq 1 - \xi_i, \quad  \forall 1 \leq i \leq n \<br>    &amp; \qquad\  \boldsymbol \xi \geq \boldsymbol 0 \<br>\end{aligned}<br>$$</p>
+<p>与 <strong>3.2.1</strong> 同理，可知对偶问题为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha} \quad \sum_{i &#x3D; 1}^n \alpha_i - \frac 12 \sum_{i &#x3D; 1}^n \sum_{j &#x3D; 1}^n \alpha_i \alpha_j y_i y_j K(\boldsymbol x_i, \boldsymbol x_j) \<br>    &amp; \text{s.t. } \quad \boldsymbol \alpha \cdot \boldsymbol y &#x3D; 0 \<br>    &amp; \qquad\ \ 0 \leq \alpha_i \leq C, \quad \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">文章</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B9%8BLR"><span class="toc-number">1.</span> <span class="toc-text">2 数学原理之LR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">具体要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA"><span class="toc-number">1.2.</span> <span class="toc-text">提示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Solution"><span class="toc-number">2.</span> <span class="toc-text">2 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1"><span class="toc-number">2.1.</span> <span class="toc-text">2.1.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1. 前向传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E5%90%8E%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2. 后向传播</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2"><span class="toc-number">2.2.</span> <span class="toc-text">2.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3"><span class="toc-number">2.3.</span> <span class="toc-text">2.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4"><span class="toc-number">2.4.</span> <span class="toc-text">2.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B9%8BSVM"><span class="toc-number">3.</span> <span class="toc-text">3 数学原理之SVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82-1"><span class="toc-number">3.1.</span> <span class="toc-text">具体要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA-1"><span class="toc-number">3.2.</span> <span class="toc-text">提示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Solution"><span class="toc-number">4.</span> <span class="toc-text">3 Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1"><span class="toc-number">4.1.</span> <span class="toc-text">3.1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E9%97%AE%E9%A2%98%E6%8E%A8%E5%AF%BC"><span class="toc-number">4.1.1.</span> <span class="toc-text">原问题推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E8%B6%85%E5%B9%B3%E9%9D%A2%E5%92%8C%E6%94%AF%E6%8C%81%E8%B6%85%E5%B9%B3%E9%9D%A2"><span class="toc-number">4.1.2.</span> <span class="toc-text">分类超平面和支持超平面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2"><span class="toc-number">4.2.</span> <span class="toc-text">3.2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.2.1 对偶问题的推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E6%98%AF%E5%90%A6%E6%BB%A1%E8%B6%B3%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.2.2 是否满足强对偶性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3"><span class="toc-number">4.3.</span> <span class="toc-text">3.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4"><span class="toc-number">4.4.</span> <span class="toc-text">3.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5"><span class="toc-number">4.5.</span> <span class="toc-text">3.5</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/ai-pi-1st-test/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&text=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&is_video=false&description=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AI 派 2023 年暑期招生第一次测试（理论题）&body=Check out this article: https://cutekibry.github.io/learning-note/ai-pi-1st-test/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&title=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&name=AI 派 2023 年暑期招生第一次测试（理论题）&description=理论题学习笔记。&lt;br /&gt;感觉考得很深……"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/ai-pi-1st-test/&t=AI 派 2023 年暑期招生第一次测试（理论题）"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2024
+    Tsukimaru Oshawott
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

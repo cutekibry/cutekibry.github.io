@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Kaggle 的 Feature Engineering 的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaggle Feature Engineering 学习笔记">
+<meta property="og:url" content="https://cutekibry.github.io/learning-note/kaggle-feature-engineering/index.html">
+<meta property="og:site_name" content="Tsuki&#39;s Blog">
+<meta property="og:description" content="Kaggle 的 Feature Engineering 的笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://storage.googleapis.com/kaggle-media/learn/images/rraXFed.png">
+<meta property="og:image" content="https://storage.googleapis.com/kaggle-media/learn/images/1uVtQEz.png">
+<meta property="article:published_time" content="2023-06-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-28T03:55:56.522Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta property="article:tag" content="Kaggle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://storage.googleapis.com/kaggle-media/learn/images/rraXFed.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Kaggle Feature Engineering 学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/learning-note/ai-pi-1st-test/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/learning-note/misc-entropy/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&text=Kaggle Feature Engineering 学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&is_video=false&description=Kaggle Feature Engineering 学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Feature Engineering 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-feature-engineering/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&name=Kaggle Feature Engineering 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/feature-engineering&#34;&gt;Feature Engineering&lt;/a&gt; 的笔记。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&t=Kaggle Feature Engineering 学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Mutual-Information"><span class="toc-number">1.</span> <span class="toc-text">2. Mutual Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Creating-Features"><span class="toc-number">2.</span> <span class="toc-text">3. Creating Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Clustering-With-K-Means"><span class="toc-number">3.</span> <span class="toc-text">4. Clustering With K-Means</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Principal-Component-Analysis"><span class="toc-number">4.</span> <span class="toc-text">5. Principal Component Analysis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Target-Encoding"><span class="toc-number">5.</span> <span class="toc-text">6. Target Encoding</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Kaggle Feature Engineering 学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Tsukimaru Oshawott</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-28T16:00:00.000Z" class="dt-published" itemprop="datePublished">2023-06-29</time>
+        
+        (Updated: <time datetime="2023-07-28T03:55:56.522Z" class="dt-updated" itemprop="dateModified">2023-07-28</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Kaggle/" rel="tag">Kaggle</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>Kaggle 的 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/feature-engineering">Feature Engineering</a> 的笔记。</p>
+<span id="more"></span>
+
+<h2 id="2-Mutual-Information"><a href="#2-Mutual-Information" class="headerlink" title="2. Mutual Information"></a>2. Mutual Information</h2><p>Mutual Information（互信息）是概率论里的一个名词，它可被用来衡量两个随机变量之间相关程度的大小；换句话说，就是衡量某个随机变量能减少另一个随机变量的不确定性多少。</p>
+<p>互信息的最小值为 $0$，代表两个变量互相独立。互信息没有最大值，但一般很少超过 $2$。</p>
+<p>互信息可以用来衡量特征和目标之间的关联性，但不能检测不同特征间的关联性。</p>
+<p>要计算 MI，需要把字符串变量转化为整数变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">X = df.copy()</span><br><span class="line">y = X.pop(<span class="string">&quot;price&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Label encoding for categoricals</span></span><br><span class="line"><span class="keyword">for</span> colname <span class="keyword">in</span> X.select_dtypes(<span class="string">&quot;object&quot;</span>):</span><br><span class="line">    X[colname], _ = X[colname].factorize()</span><br><span class="line"></span><br><span class="line"><span class="comment"># All discrete features should now have integer dtypes (double-check this before using MI!)</span></span><br><span class="line">discrete_features = X.dtypes == <span class="built_in">int</span></span><br><span class="line"></span><br><span class="line">mi_scores = mutual_info_regression(X, y, discrete_features=discrete_features)</span><br></pre></td></tr></table></figure>
+
+<p>为了方便，可以用图表显示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">plot_mi_scores</span>(<span class="params">scores</span>):</span><br><span class="line">    scores = scores.sort_values(ascending=<span class="literal">True</span>)</span><br><span class="line">    width = np.arange(<span class="built_in">len</span>(scores))</span><br><span class="line">    ticks = <span class="built_in">list</span>(scores.index)</span><br><span class="line">    plt.barh(width, scores)</span><br><span class="line">    plt.yticks(width, ticks)</span><br><span class="line">    plt.title(<span class="string">&quot;Mutual Information Scores&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.figure(dpi=<span class="number">100</span>, figsize=(<span class="number">8</span>, <span class="number">5</span>))</span><br><span class="line">plot_mi_scores(mi_scores)</span><br></pre></td></tr></table></figure>
+
+<p>查看 <code>curb_weight</code> 和 <code>price</code> 的关联图：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.relplot(x=<span class="string">&quot;curb_weight&quot;</span>, y=<span class="string">&quot;price&quot;</span>, data=df);</span><br></pre></td></tr></table></figure>
+
+<p>查看 <code>horsepower</code> 和 <code>price</code> 的关联图，同时根据 <code>fuel_type</code> 的分类来对点染色：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.lmplot(x=<span class="string">&quot;horsepower&quot;</span>, y=<span class="string">&quot;price&quot;</span>, hue=<span class="string">&quot;fuel_type&quot;</span>, data=df);</span><br><span class="line">sns.lmplot(x=<span class="string">&quot;horsepower&quot;</span>, y=<span class="string">&quot;price&quot;</span>, hue=<span class="string">&quot;fuel_type&quot;</span>, col=<span class="string">&quot;fuel_type&quot;</span>, data=df); <span class="comment"># 根据 fuel_type 划分成多个图</span></span><br></pre></td></tr></table></figure>
+
+<p>使用这样的方式，就可以检测特征之间的相关性。</p>
+<h2 id="3-Creating-Features"><a href="#3-Creating-Features" class="headerlink" title="3. Creating Features"></a>3. Creating Features</h2><p>关于创建新特征的小提示：</p>
+<ul>
+<li>尝试充分理解原有的特征。</li>
+<li>了解相关领域的研究。</li>
+<li>参考前人工作。</li>
+<li>善用数据可视化。</li>
+</ul>
+<p>对每个记录，计算并保存 <code>Neighborhood</code> 分类对应的 <code>GrLivArea</code> 中位数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X_5[<span class="string">&quot;MedNhbdArea&quot;</span>] = X.groupby(<span class="string">&#x27;Neighborhood&#x27;</span>).GrLivArea.transform(<span class="string">&#x27;median&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这里和直接使用 <code>.median()</code> 不同的是，<code>.median()</code> 会返回一个以 <code>Neighborhood</code> 为索引的统计信息，而 <code>.transform()</code> 则返回与原记录数长度相同的列表，更方便合并。</p>
+<h2 id="4-Clustering-With-K-Means"><a href="#4-Clustering-With-K-Means" class="headerlink" title="4. Clustering With K-Means"></a>4. Clustering With K-Means</h2><p>将聚类添加到特征中，可以“分而治之”地解决不同区域的拟合。</p>
+<p><img src="https://storage.googleapis.com/kaggle-media/learn/images/rraXFed.png"></p>
+<p><strong>K-均值聚类</strong>（K-means Clustering）的思想是，设置 $K$ 个中心点，让每个数据归属于离其最近的中心点；同时让距离尽可能近。</p>
+<p>算法是：每次迭代时，让中心点移动，使得归属其的点离它距离最小，全部移动完后重新计算归属。</p>
+<p>scikit-learn 提供的 K-均值聚类有三个参数：<code>n_clusters</code>（中心点个数）、<code>max_iter</code>（单次运行迭代次数）和 <code>n_init</code>（需要运行的种子个数）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kmeans = KMeans(n_clusters=<span class="number">6</span>)</span><br><span class="line">X[<span class="string">&quot;Cluster&quot;</span>] = kmeans.fit_predict(X)</span><br><span class="line">X[<span class="string">&quot;Cluster&quot;</span>] = X[<span class="string">&quot;Cluster&quot;</span>].astype(<span class="string">&quot;category&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：K-均值聚类对取值范围很敏感，因此在聚类前需要考虑是否需要进行放缩。</p>
+<p>也可以使用 <code>kmeans.fit_transform(X)</code> 获取点到各个中心点的距离。</p>
+<h2 id="5-Principal-Component-Analysis"><a href="#5-Principal-Component-Analysis" class="headerlink" title="5. Principal Component Analysis"></a>5. Principal Component Analysis</h2><p><strong>主成分分析</strong>（Principal Component Analysis，PCA）是另一种用来划分数据的方式。K-均值聚类是根据近似性划分的，而 PCA 是根据差异来划分的。</p>
+<p>若提供 $k$ 个特征，则 PCA 会在对应的 $k$ 维空间中进行正交变换，即转化为 $k$ 个线性无关变量的值，这些变量称为<strong>主成分</strong>（Principal Component），转化系数称为 <strong>Loadings</strong>。在此基础上，让每维的方差尽可能大。</p>
+<p>主成分可以：</p>
+<ul>
+<li>用作特征</li>
+<li>用于降维（删去一些方差接近于 $0$ 的主成分）</li>
+<li>用于异常检测、减少噪音和去相关性（即，合并一些高度相关的特征）</li>
+</ul>
+<p>此外，需要注意：</p>
+<ul>
+<li>PCA 只对有数值意义的特征（numberic features）起效</li>
+<li>PCA 对缩放很敏感，一般都要先标准化再 PCA</li>
+<li>视情况需要去除部分异常值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create principal components</span></span><br><span class="line">pca = PCA()</span><br><span class="line">X_pca = pca.fit_transform(X_scaled)</span><br><span class="line"></span><br><span class="line">loadings = pd.DataFrame(</span><br><span class="line">    pca.components_.T,  <span class="comment"># transpose the matrix of loadings</span></span><br><span class="line">    columns=component_names,  <span class="comment"># so the columns are the principal components</span></span><br><span class="line">    index=X.columns,  <span class="comment"># and the rows are the original features</span></span><br><span class="line">)</span><br><span class="line">loadings</span><br><span class="line"></span><br><span class="line"><span class="comment"># Look at explained variance</span></span><br><span class="line">plot_variance(pca);</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df[features].corrwith(df.SalePrice))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can change PC1 to PC2, PC3, or PC4</span></span><br><span class="line">component = <span class="string">&quot;PC1&quot;</span></span><br><span class="line"></span><br><span class="line">idx = X_pca[component].sort_values(ascending=<span class="literal">False</span>).index</span><br><span class="line">df.loc[idx, [<span class="string">&quot;SalePrice&quot;</span>, <span class="string">&quot;Neighborhood&quot;</span>, <span class="string">&quot;SaleCondition&quot;</span>] + features]</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Target-Encoding"><a href="#6-Target-Encoding" class="headerlink" title="6. Target Encoding"></a>6. Target Encoding</h2><p><strong>目标编码</strong>（Target Encoding）是一种将分类转化为数值的编码。</p>
+<p>一种简单的方法是，直接用分类下目标的某种统计数值（如同类的平均价格）来替代这个分类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autos[<span class="string">&quot;make_encoded&quot;</span>] = autos.groupby(<span class="string">&quot;make&quot;</span>)[<span class="string">&quot;price&quot;</span>].transform(<span class="string">&quot;mean&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果某类别数据不够多，甚至测试集出现了训练集没有的分类，都会出现问题。一种解决方式是<strong>平滑化</strong>（Smoothing），思路是将同类统计值和全体统计值做一个混合，即</p>
+<p>$$\text{encoding} &#x3D; w \times \text{category} + (1 - w) \times \text{overall}$$</p>
+<p>$w \in [0, 1]$ 是与类别出现频率相关的一个实数。一般地，可以使用 <strong>m-估计</strong>（m-estimate）计算 $w$：</p>
+<p>$$w &#x3D; \frac n{n + m}$$</p>
+<p>其中 $m$ 是一个常数，称为<strong>平滑因子</strong>（Smoothing factor）。</p>
+<p><img src="https://storage.googleapis.com/kaggle-media/learn/images/1uVtQEz.png"></p>
+<p>目标编码可以解决：</p>
+<ul>
+<li>分类种数很多的特征：One-hot 编码会导致产生非常多的特征，而目标编码可以解决这一问题。</li>
+<li>MI 较低的特征。</li>
+</ul>
+<p><strong>注意</strong>：为了避免 overfitting，我们需要再从训练集中分离一些数据出来，单独作为目标编码来使用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> category_encoders <span class="keyword">import</span> MEstimateEncoder</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the encoder instance. Choose m to control noise.</span></span><br><span class="line">encoder = MEstimateEncoder(cols=[<span class="string">&quot;Zipcode&quot;</span>], m=<span class="number">5.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fit the encoder on the encoding split.</span></span><br><span class="line">encoder.fit(X_encode, y_encode)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Encode the Zipcode column to create the final training data</span></span><br><span class="line">X_train = encoder.transform(X_pretrain)</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">文章</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Mutual-Information"><span class="toc-number">1.</span> <span class="toc-text">2. Mutual Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Creating-Features"><span class="toc-number">2.</span> <span class="toc-text">3. Creating Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Clustering-With-K-Means"><span class="toc-number">3.</span> <span class="toc-text">4. Clustering With K-Means</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Principal-Component-Analysis"><span class="toc-number">4.</span> <span class="toc-text">5. Principal Component Analysis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Target-Encoding"><span class="toc-number">5.</span> <span class="toc-text">6. Target Encoding</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&text=Kaggle Feature Engineering 学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&is_video=false&description=Kaggle Feature Engineering 学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Feature Engineering 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-feature-engineering/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&title=Kaggle Feature Engineering 学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&name=Kaggle Feature Engineering 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/feature-engineering&#34;&gt;Feature Engineering&lt;/a&gt; 的笔记。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-feature-engineering/&t=Kaggle Feature Engineering 学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2024
+    Tsukimaru Oshawott
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

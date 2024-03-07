@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Kaggle 的 Intermediate Machine Learning 的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaggle Intermediate Machine Learning 学习笔记">
+<meta property="og:url" content="https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/index.html">
+<meta property="og:site_name" content="Tsuki&#39;s Blog">
+<meta property="og:description" content="Kaggle 的 Intermediate Machine Learning 的笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-28T03:55:56.522Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta property="article:tag" content="Kaggle">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Kaggle Intermediate Machine Learning 学习笔记</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/gaming-life/toc-note/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/learning-note/kaggle-intro-to-deep-learning/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&text=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&is_video=false&description=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Intermediate Machine Learning 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&name=Kaggle Intermediate Machine Learning 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/intermediate-machine-learning&#34;&gt;Intermediate Machine Learning&lt;/a&gt; 的笔记。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&t=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Missing-Values"><span class="toc-number">1.</span> <span class="toc-text">2. Missing Values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Categorical-Variables"><span class="toc-number">2.</span> <span class="toc-text">3. Categorical Variables</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Kaggle Intermediate Machine Learning 学习笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Tsukimaru Oshawott</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-02-21T16:00:00.000Z" class="dt-published" itemprop="datePublished">2023-02-22</time>
+        
+        (Updated: <time datetime="2023-07-28T03:55:56.522Z" class="dt-updated" itemprop="dateModified">2023-07-28</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Kaggle/" rel="tag">Kaggle</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>Kaggle 的 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/intermediate-machine-learning">Intermediate Machine Learning</a> 的笔记。</p>
+<span id="more"></span>
+
+<h2 id="2-Missing-Values"><a href="#2-Missing-Values" class="headerlink" title="2. Missing Values"></a>2. Missing Values</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法 1：删去有 NA 的特征</span></span><br><span class="line">cols_with_missing = [col <span class="keyword">for</span> col <span class="keyword">in</span> X_train.columns</span><br><span class="line">                     <span class="keyword">if</span> X_train[col].isnull().<span class="built_in">any</span>()]</span><br><span class="line">reduced_X_train = X_train.drop(cols_with_missing, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法 2：SimpleImputer（使用平均值进行 impute，填充）</span></span><br><span class="line"><span class="comment"># 实践中不一定比方法 1 更好</span></span><br><span class="line"><span class="keyword">from</span> sklearn.impute <span class="keyword">import</span> SimpleImputer</span><br><span class="line"></span><br><span class="line">my_imputer = SimpleImputer()</span><br><span class="line">imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))</span><br><span class="line">imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))</span><br><span class="line">imputed_X_train.columns = X_train.columns</span><br><span class="line">imputed_X_valid.columns = X_valid.columns</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法 3：新增一列记录是否 NA，再填充</span></span><br><span class="line"><span class="comment"># 当丢失信息很少的时候可能劣于方法 2</span></span><br><span class="line"><span class="keyword">for</span> col <span class="keyword">in</span> cols_with_missing:</span><br><span class="line">    X_train_plus[col + <span class="string">&#x27;_was_missing&#x27;</span>] = X_train_plus[col].isnull()</span><br><span class="line">    X_valid_plus[col + <span class="string">&#x27;_was_missing&#x27;</span>] = X_valid_plus[col].isnull()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 之后再进行填充</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Categorical-Variables"><a href="#3-Categorical-Variables" class="headerlink" title="3. Categorical Variables"></a>3. Categorical Variables</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法 1：删去类别特征</span></span><br><span class="line">drop_X_train = X_train.select_dtypes(exclude=[<span class="string">&#x27;object&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法 2：序数编码（Ordinal Encoding）</span></span><br><span class="line"><span class="comment"># 一般在类别确实可以排名（如 Never &lt; Rarely &lt; Most days &lt; Every day），且 / 或使用的模型为树模型（决策树等）时比较有用</span></span><br><span class="line"><span class="comment"># 要特别小心验证集 / 测试集中有可能出现训练集没有的数据！</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> OrdinalEncoder</span><br><span class="line">ordinal_encoder = OrdinalEncoder()</span><br><span class="line">label_X_train[object_cols] = ordinal_encoder.fit_transform(X_train[object_cols])</span><br><span class="line">label_X_valid[object_cols] = ordinal_encoder.transform(X_valid[object_cols])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法 3：Onehot 编码（Onehot Encoding）</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> OneHotEncoder</span><br><span class="line"><span class="comment"># handle_unknown=&#x27;ignore&#x27; 会使得验证集中未出现的类别编码为全 0，而不会抛出错误</span></span><br><span class="line"><span class="comment"># sparse=False 会使返回的为 numpy array（而不是稀疏矩阵）</span></span><br><span class="line">OH_encoder = OneHotEncoder(handle_unknown=<span class="string">&#x27;ignore&#x27;</span>, sparse=<span class="literal">False</span>)</span><br><span class="line">OH_cols_train = pd.DataFrame(OH_encoder.fit_transform(X_train[object_cols]))</span><br><span class="line">OH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[object_cols]))</span><br><span class="line">OH_cols_train.index = X_train.index</span><br><span class="line">OH_cols_valid.index = X_valid.index</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">文章</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Missing-Values"><span class="toc-number">1.</span> <span class="toc-text">2. Missing Values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Categorical-Variables"><span class="toc-number">2.</span> <span class="toc-text">3. Categorical Variables</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&text=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&is_video=false&description=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Kaggle Intermediate Machine Learning 学习笔记&body=Check out this article: https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&title=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&name=Kaggle Intermediate Machine Learning 学习笔记&description=&lt;p&gt;Kaggle 的 &lt;a href=&#34;https://www.kaggle.com/learn/intermediate-machine-learning&#34;&gt;Intermediate Machine Learning&lt;/a&gt; 的笔记。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cutekibry.github.io/learning-note/kaggle-intermediate-machine-learning/&t=Kaggle Intermediate Machine Learning 学习笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2024
+    Tsukimaru Oshawott
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">文章</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
