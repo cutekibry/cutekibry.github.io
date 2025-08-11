@@ -1,5 +1,5 @@
 ---
-title: 孤独之旅
+title: 深渊浪漫主义
 date: 2024-09-07
 category: 
 - 生活
