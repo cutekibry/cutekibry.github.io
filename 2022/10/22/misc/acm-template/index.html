@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+  <link rel="mask-icon" href="/img/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cutekibry.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一些容易忘记的算法。会打的我就不记了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM 模板">
+<meta property="og:url" content="https://cutekibry.github.io/2022/10/22/misc/acm-template/index.html">
+<meta property="og:site_name" content="月见客栈">
+<meta property="og:description" content="一些容易忘记的算法。会打的我就不记了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-11T07:00:44.815Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://cutekibry.github.io/2022/10/22/misc/acm-template/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ACM 模板 | 月见客栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">月见客栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cutekibry.github.io/2022/10/22/misc/acm-template/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tsukimaru Oshawott">
+      <meta itemprop="description" content="Tsukimaru 的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="月见客栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ACM 模板
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-22 00:00:00" itemprop="dateCreated datePublished" datetime="2022-10-22T00:00:00+08:00">2022-10-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-08-11 15:00:44" itemprop="dateModified" datetime="2025-08-11T15:00:44+08:00">2025-08-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h4 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">j = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">For</span>(i, <span class="number">2</span>, m) &#123;</span><br><span class="line">    <span class="keyword">while</span> (pat[i] ^ pat[j + <span class="number">1</span>] <span class="keyword">and</span> j)</span><br><span class="line">        j = nxt[j];</span><br><span class="line">    <span class="keyword">if</span> (pat[i] == pat[j + <span class="number">1</span>]) j++;</span><br><span class="line">    nxt[i] = j;</span><br><span class="line">&#125;</span><br><span class="line">j = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">Fo</span>(i, n) &#123;</span><br><span class="line">    <span class="keyword">while</span> (s[i] ^ pat[j + <span class="number">1</span>] <span class="keyword">and</span> j)</span><br><span class="line">        j = nxt[j];</span><br><span class="line">    <span class="keyword">if</span> (s[i] == pat[j + <span class="number">1</span>]) j++;</span><br><span class="line">    <span class="keyword">if</span> (j == m) ans++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Z-算法"><a href="#Z-算法" class="headerlink" title="Z 算法"></a>Z 算法</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 求 z</span></span><br><span class="line"><span class="built_in">Fo</span>(i, n) z[i] = <span class="number">0</span>;</span><br><span class="line">z[<span class="number">1</span>] = n;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">2</span>, l = <span class="number">0</span>, r = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt;= r)</span><br><span class="line">        z[i] = <span class="built_in">min</span>(z[i - l + <span class="number">1</span>], r - i + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span> (i + z[i] &lt;= n &amp;&amp; pat[i + z[i]] == pat[z[i] + <span class="number">1</span>])</span><br><span class="line">        z[i]++;</span><br><span class="line">    <span class="keyword">if</span> (i + z[i] - <span class="number">1</span> &gt; r)</span><br><span class="line">        l = i, r = i + z[i] - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Fo</span>(i, n) p[i] = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>, l = <span class="number">0</span>, r = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt;= r)</span><br><span class="line">        lcp[i] = <span class="built_in">min</span>(z[i - l + <span class="number">1</span>], r - i + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span> (i + lcp[i] &lt;= n &amp;&amp; s[i + lcp[i]] == pat[lcp[i] + <span class="number">1</span>])</span><br><span class="line">        lcp[i]++;</span><br><span class="line">    <span class="keyword">if</span> (i + lcp[i] - <span class="number">1</span> &gt; r)</span><br><span class="line">        l = i, r = i + lcp[i] - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="SAM"><a href="#SAM" class="headerlink" title="SAM"></a>SAM</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">extend</span><span class="params">(<span class="type">char</span> c)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> cur, clone, p, q;</span><br><span class="line">	</span><br><span class="line">	cur = ++nodecnt;</span><br><span class="line">	len[cur] = len[last] + <span class="number">1</span>;</span><br><span class="line">	sum[cur] = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	p = last;</span><br><span class="line">	<span class="keyword">while</span>(~p <span class="keyword">and</span> !ch[p][c]) &#123;</span><br><span class="line">		ch[p][c] = cur;</span><br><span class="line">		p = link[p];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p == <span class="number">-1</span>)</span><br><span class="line">		last = cur;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		q = ch[p][c];</span><br><span class="line">		<span class="keyword">if</span>(len[p] + <span class="number">1</span> == len[q]) </span><br><span class="line">			link[cur] = q;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			clone = ++nodecnt;</span><br><span class="line">			len[clone] = len[p] + <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">cpy</span>(ch[clone], ch[q]);</span><br><span class="line">			link[clone] = link[q];</span><br><span class="line">			<span class="keyword">while</span>(~p <span class="keyword">and</span> ch[p][c] == q) &#123;</span><br><span class="line">				ch[p][c] = clone;</span><br><span class="line">				p = link[p];</span><br><span class="line">			&#125;</span><br><span class="line">			link[cur] = link[q] = clone;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	last = cur;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">link[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line"><span class="built_in">Fo</span>(i, n)</span><br><span class="line">    <span class="built_in">extend</span>(s[i] -<span class="string">&#x27;a&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="SA"><a href="#SA" class="headerlink" title="SA"></a>SA</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// h[i] = |lcp(suf[sa[i]], suf[sa[i - 1])|</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">initsa</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> sb[N], brnk[N &lt;&lt; <span class="number">1</span>], sum[N];</span><br><span class="line">    <span class="type">int</span> i, j, k, m;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Fo</span>(i, n) sum[s[i]]++;</span><br><span class="line">    <span class="built_in">Fo</span>(i, <span class="number">128</span>) sum[i] += sum[i - <span class="number">1</span>];</span><br><span class="line">    <span class="built_in">Fo</span>(i, n) sa[sum[s[i]]--] = i;</span><br><span class="line">    m = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">Fo</span>(i, n) rnk[sa[i]] = (s[sa[i]] ^ s[sa[i - <span class="number">1</span>]]) ? ++m : m;</span><br><span class="line">    <span class="keyword">for</span> (k = <span class="number">1</span>; m &lt; n; k &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">clr</span>(sum);</span><br><span class="line">        <span class="built_in">Fo</span>(i, n) sum[rnk[i]]++;</span><br><span class="line">        <span class="built_in">Fo</span>(i, m) sum[i] += sum[i - <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">Ro</span>(i, n) <span class="keyword">if</span> (sa[i] - k &gt;= <span class="number">1</span>) sb[sum[rnk[sa[i] - k]]--] = sa[i] - k;</span><br><span class="line">        <span class="built_in">For</span>(i, n - k + <span class="number">1</span>, n) sb[sum[rnk[i]]--] = i;</span><br><span class="line">        m = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">Fo</span>(i, n) brnk[sb[i]] = (rnk[sb[i]] ^ rnk[sb[i - <span class="number">1</span>]] <span class="keyword">or</span> </span><br><span class="line">                                rnk[sb[i] + k] ^ rnk[sb[i - <span class="number">1</span>] + k]) ? ++m : m;</span><br><span class="line">        <span class="built_in">cpy</span>(rnk, brnk);</span><br><span class="line">        <span class="built_in">cpy</span>(sa, sb);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    k = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">Fo</span>(i, n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (rnk[i] == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        j = sa[rnk[i] - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">while</span> (k <span class="keyword">and</span> s[i + k - <span class="number">1</span>] ^ s[j + k - <span class="number">1</span>])</span><br><span class="line">            k--;</span><br><span class="line">        <span class="keyword">while</span> (s[i + k] == s[j + k])</span><br><span class="line">            k++;</span><br><span class="line">        h[rnk[i]] = k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="PAM"><a href="#PAM" class="headerlink" title="PAM"></a>PAM</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">getpre</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(s[n] != s[n - len[p] - <span class="number">1</span>])</span><br><span class="line">		p = link[p];</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">extend</span><span class="params">(<span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> p;</span><br><span class="line">	</span><br><span class="line">	p = <span class="built_in">getpre</span>(last, i);</span><br><span class="line">	<span class="keyword">if</span>(!ch[p][s[i] - <span class="string">&#x27;a&#x27;</span>]) &#123;</span><br><span class="line">		len[++nodecnt] = len[p] + <span class="number">2</span>;</span><br><span class="line">		link[nodecnt] = ch[<span class="built_in">getpre</span>(link[p], i)][s[i] - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">		dep[nodecnt] = dep[link[nodecnt]] + <span class="number">1</span>;</span><br><span class="line">		ch[p][s[i] - <span class="string">&#x27;a&#x27;</span>] = nodecnt;</span><br><span class="line">	&#125;</span><br><span class="line">	last = ch[p][s[i] - <span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">	<span class="keyword">return</span> dep[last];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">len[<span class="number">1</span>] = <span class="number">-1</span>;</span><br><span class="line">link[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">其中点 <span class="number">1</span> 代表奇数串，点 <span class="number">0</span> 代表偶数串</span><br><span class="line">状态应当从下往上读再从上往下读，和 Trie 相反</span><br><span class="line">奇数串中最顶边只能读一次</span><br></pre></td></tr></table></figure>
+
+<h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><h3 id="第二类斯特林数"><a href="#第二类斯特林数" class="headerlink" title="第二类斯特林数"></a>第二类斯特林数</h3><p>$\begin{Bmatrix} n \m \end{Bmatrix}$ 表示 $n$ 个不同元素划分为 $m$ 个相同集合的方案数。</p>
+<p>$$\begin{Bmatrix} n \m \end{Bmatrix} &#x3D; \begin{Bmatrix} n - 1 \m - 1 \end{Bmatrix} + m\begin{Bmatrix} n - 1 \m \end{Bmatrix}$$ </p>
+<p>$$\begin{Bmatrix} n \m \end{Bmatrix}&#x3D;{\frac 1 {m!}}\sum_{k&#x3D;0}^m (-1)^k C(m,k)(m-k)^n$$</p>
+<p>$$n^m&#x3D;\sum_{k&#x3D;0}^m \begin{Bmatrix} m \k \end{Bmatrix} n^{\underline k}$$</p>
+<h4 id="DFT"><a href="#DFT" class="headerlink" title="DFT"></a>DFT</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">initwn</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> W = <span class="built_in">qpow</span>(G, (MOD - <span class="number">1</span>) / LEN);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line"></span><br><span class="line">    wn[LEN &gt;&gt; <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">For</span>(i, (LEN &gt;&gt; <span class="number">1</span>) + <span class="number">1</span>, LEN - <span class="number">1</span>) wn[i] = <span class="number">1LL</span> * wn[i - <span class="number">1</span>] * W % MOD;</span><br><span class="line">    <span class="built_in">Ro</span>(i, (LEN &gt;&gt; <span class="number">1</span>) - <span class="number">1</span>) wn[i] = wn[i &lt;&lt; <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">initrev</span><span class="params">(<span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, k;</span><br><span class="line"></span><br><span class="line">    k = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (len &gt;&gt; k &gt;&gt; <span class="number">1</span>) k++;</span><br><span class="line">    <span class="built_in">Fo</span>(i, len - <span class="number">1</span>) rev[i] = (rev[i &gt;&gt; <span class="number">1</span>] &gt;&gt; <span class="number">1</span>) | ((i &amp; <span class="number">1</span>) &lt;&lt; (k - <span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dft</span><span class="params">(Expr a, <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j, k, t;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Fo</span>(i, len - <span class="number">1</span>) <span class="keyword">if</span> (i &lt; rev[i]) std::<span class="built_in">swap</span>(a[i], a[rev[i]]);</span><br><span class="line">    <span class="keyword">for</span> (k = <span class="number">1</span>; k &lt; len; k &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i += k &lt;&lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; k; j++) &#123;</span><br><span class="line">                t = <span class="number">1LL</span> * wn[k + j] * a[i + j + k] % MOD;</span><br><span class="line">                <span class="built_in">qmod</span>(a[i + j + k] = a[i + j] + MOD - t);</span><br><span class="line">                <span class="built_in">qmod</span>(a[i + j] += t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">idft</span><span class="params">(Expr a, <span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, inv = MOD - MOD / len;</span><br><span class="line">    <span class="built_in">dft</span>(a, len);</span><br><span class="line">    std::<span class="built_in">reverse</span>(a + <span class="number">1</span>, a + len);</span><br><span class="line">    <span class="built_in">For</span>(i, <span class="number">0</span>, len - <span class="number">1</span>) a[i] = <span class="number">1LL</span> * a[i] * inv % MOD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="全家桶"><a href="#全家桶" class="headerlink" title="全家桶"></a>全家桶</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">exprinv</span><span class="params">(Expr res, Expr a, <span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> Expr b, a0;</span><br><span class="line">    <span class="type">int</span> n, len, i;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">assert</span>(a[<span class="number">0</span>]);</span><br><span class="line">    b[<span class="number">0</span>] = <span class="built_in">qpow</span>(a[<span class="number">0</span>], MOD - <span class="number">2</span>);</span><br><span class="line">    n = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &lt; lim) &#123;</span><br><span class="line">        len = n &lt;&lt; <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">copy</span>(a0, a, n &lt;&lt; <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">initrev</span>(len);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dft</span>(b, len);</span><br><span class="line">        <span class="built_in">dft</span>(a0, len);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            b[i] = b[i] * (<span class="number">2</span> - <span class="number">1ll</span> * a0[i] * b[i] % MOD + MOD) % MOD;</span><br><span class="line">        <span class="built_in">idft</span>(b, len);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i = n &lt;&lt; <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">            b[i] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">memset</span>(a0, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        n &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memcpy</span>(res, b, lim &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(b, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exprsqrt</span><span class="params">(Expr res, Expr a, <span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> Expr b, a0, invb;</span><br><span class="line">    <span class="type">int</span> n, len, i;</span><br><span class="line"></span><br><span class="line">    b[<span class="number">0</span>] = <span class="built_in">modsqrt</span>(a[<span class="number">0</span>]);</span><br><span class="line">    n = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &lt; lim) &#123;</span><br><span class="line">        len = n &lt;&lt; <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">copy</span>(a0, a, n &lt;&lt; <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">exprinv</span>(invb, b, n &lt;&lt; <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">initrev</span>(len);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dft</span>(b, len);</span><br><span class="line">        <span class="built_in">dft</span>(invb, len);</span><br><span class="line">        <span class="built_in">dft</span>(a0, len);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            b[i] = (b[i] + <span class="number">1ll</span> * a0[i] * invb[i]) % MOD;</span><br><span class="line">        <span class="built_in">idft</span>(b, len);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            b[i] = <span class="number">1ll</span> * b[i] * INV2 % MOD;</span><br><span class="line">        <span class="keyword">for</span> (i = n &lt;&lt; <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">            b[i] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        n &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memcpy</span>(res, b, lim &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(b, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(a0, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(invb, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exprdet</span><span class="params">(Expr res, Expr a, <span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; lim; i++)</span><br><span class="line">        res[i - <span class="number">1</span>] = <span class="number">1ll</span> * a[i] * i % MOD;</span><br><span class="line">    res[lim - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exprint</span><span class="params">(Expr res, Expr a, <span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = lim - <span class="number">1</span>; ~i; i--)</span><br><span class="line">        res[i] = <span class="number">1ll</span> * a[i - <span class="number">1</span>] * <span class="built_in">qpow</span>(i, MOD - <span class="number">2</span>) % MOD;</span><br><span class="line">    res[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exprln</span><span class="params">(Expr res, Expr a, <span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> Expr inva;</span><br><span class="line">    <span class="type">int</span> i, len = lim &lt;&lt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">exprinv</span>(inva, a, lim);</span><br><span class="line">    <span class="built_in">exprdet</span>(res, a, lim);</span><br><span class="line">    <span class="built_in">initrev</span>(len);</span><br><span class="line">    <span class="built_in">dft</span>(res, len);</span><br><span class="line">    <span class="built_in">dft</span>(inva, len);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        res[i] = <span class="number">1ll</span> * res[i] * inva[i] % MOD;</span><br><span class="line">    <span class="built_in">idft</span>(res, len);</span><br><span class="line">    <span class="built_in">exprint</span>(res, res, len);</span><br><span class="line">    <span class="keyword">for</span> (i = lim; i &lt; len; i++)</span><br><span class="line">        res[i] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(inva, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exprexp</span><span class="params">(Expr res, Expr a, <span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> Expr b, lnb;</span><br><span class="line">    <span class="type">int</span> n, len, i;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">assert</span>(a[<span class="number">0</span>] == <span class="number">0</span>);</span><br><span class="line">    b[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    n = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &lt; lim) &#123;</span><br><span class="line">        len = n &lt;&lt; <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">exprln</span>(lnb, b, n &lt;&lt; <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n&lt;&lt;<span class="number">1</span>; i++)</span><br><span class="line">            <span class="built_in">qmod</span>(lnb[i] = MOD + a[i] - lnb[i]);</span><br><span class="line">        <span class="built_in">qmod</span>(lnb[<span class="number">0</span>] = lnb[<span class="number">0</span>] + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">initrev</span>(len);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dft</span>(b, len);</span><br><span class="line">        <span class="built_in">dft</span>(lnb, len);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            b[i] = <span class="number">1ll</span> * b[i] * lnb[i] % MOD;</span><br><span class="line">        <span class="built_in">idft</span>(b, len);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i = n &lt;&lt; <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">            b[i] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        n &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memcpy</span>(res, b, lim &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(b, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(lnb, <span class="number">0</span>, len &lt;&lt; <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Miller-Rabin"><a href="#Miller-Rabin" class="headerlink" title="Miller-Rabin"></a>Miller-Rabin</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">miller_rabin</span><span class="params">(int64 p)</span> </span>&#123;</span><br><span class="line">    int64 x;</span><br><span class="line">    <span class="type">int</span> i, t, test;</span><br><span class="line">    int64 b, b2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (p == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    x = p - <span class="number">1</span>;</span><br><span class="line">    t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (~x &amp; <span class="number">1</span>) &#123;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        t++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Fo</span>(test, TIMES) &#123;</span><br><span class="line">        b = <span class="built_in">qpow</span>(<span class="built_in">randint</span>() % (p - <span class="number">1</span>) + <span class="number">1</span>, x, p);</span><br><span class="line">        <span class="built_in">Fo</span>(i, t) &#123;</span><br><span class="line">            b2 = <span class="built_in">qmul</span>(b, b, p);</span><br><span class="line">            <span class="keyword">if</span> (b2 == <span class="number">1</span> <span class="keyword">and</span> b != <span class="number">1</span> <span class="keyword">and</span> b != p - <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            b = b2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (b != <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Exact-Division"><a href="#Exact-Division" class="headerlink" title="Exact Division"></a>Exact Division</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">uint <span class="title">inv</span><span class="params">(uint n)</span> </span>&#123;</span><br><span class="line">    uint x = n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) x *= <span class="number">2</span> - n * x;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isdiv</span><span class="params">(uint a, uint b)</span> </span>&#123; <span class="keyword">return</span> a * <span class="built_in">inv</span>(b) &lt;= <span class="built_in">uint</span>(<span class="number">-1</span>) / b; &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="拉格朗日插值"><a href="#拉格朗日插值" class="headerlink" title="拉格朗日插值"></a>拉格朗日插值</h4><p>$$f(x) &#x3D; \sum_{i &#x3D; 0}^n y_i \prod_{j &#x3D; 0, j \neq i}^n \frac {x - x_j}{x_i - x_j}$$</p>
+<p>$$f(x) &#x3D; \left(\prod_{i &#x3D; 0}^n (x - x_i)\right)\left(\sum_{i &#x3D; 0}^n y_i \frac {w_i}{x - x_i}\right)$$</p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h4 id="虚树"><a href="#虚树" class="headerlink" title="虚树"></a>虚树</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> stk[N];</span><br><span class="line">    <span class="type">int</span> stop;</span><br><span class="line">    <span class="type">int</span> i, x, z;</span><br><span class="line"></span><br><span class="line">    stop = <span class="number">1</span>;</span><br><span class="line">    stk[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= idn; i++) &#123;</span><br><span class="line">        x = id[i];</span><br><span class="line">        <span class="keyword">while</span> (stop &gt; <span class="number">1</span> <span class="keyword">and</span> <span class="built_in">lca</span>(stk[stop - <span class="number">1</span>], x) ^ stk[stop - <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="built_in">addedge</span>(stk[stop - <span class="number">1</span>], stk[stop]);</span><br><span class="line">            stop--;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        z = <span class="built_in">lca</span>(stk[stop], x);</span><br><span class="line">        <span class="keyword">if</span> (z ^ stk[stop]) &#123;</span><br><span class="line">            <span class="built_in">addedge</span>(z, stk[stop]);</span><br><span class="line">            stop--;</span><br><span class="line">            <span class="keyword">if</span> (z ^ stk[stop]) </span><br><span class="line">                stk[++stop] = z;</span><br><span class="line">        &#125;</span><br><span class="line">        stk[++stop] = x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (stop &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">addedge</span>(stk[stop - <span class="number">1</span>], stk[stop]);</span><br><span class="line">        stop--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/13/learning-note/coursera-ml-intro-note/" rel="prev" title="Coursera 吴恩达机器学习入门课笔记（更新至第三课）">
+      <i class="fa fa-chevron-left"></i> Coursera 吴恩达机器学习入门课笔记（更新至第三课）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/02/otter-diary/tsukimaru-grew-to-level-19/" rel="next" title="Tsukimaru Grew to Level 19!">
+      Tsukimaru Grew to Level 19! <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#KMP"><span class="nav-number">1.0.1.</span> <span class="nav-text">KMP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Z-%E7%AE%97%E6%B3%95"><span class="nav-number">1.0.2.</span> <span class="nav-text">Z 算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SAM"><span class="nav-number">1.0.3.</span> <span class="nav-text">SAM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SA"><span class="nav-number">1.0.4.</span> <span class="nav-text">SA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PAM"><span class="nav-number">1.0.5.</span> <span class="nav-text">PAM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-number">2.</span> <span class="nav-text">数学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">第二类斯特林数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DFT"><span class="nav-number">2.1.1.</span> <span class="nav-text">DFT</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%AE%B6%E6%A1%B6"><span class="nav-number">2.2.</span> <span class="nav-text">全家桶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Miller-Rabin"><span class="nav-number">2.2.1.</span> <span class="nav-text">Miller-Rabin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Exact-Division"><span class="nav-number">2.2.2.</span> <span class="nav-text">Exact Division</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC"><span class="nav-number">2.2.3.</span> <span class="nav-text">拉格朗日插值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E6%A0%91"><span class="nav-number">3.0.1.</span> <span class="nav-text">虚树</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tsukimaru Oshawott</p>
+  <div class="site-description" itemprop="description">Tsukimaru 的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsukimaru Oshawott</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

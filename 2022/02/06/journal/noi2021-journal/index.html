@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+  <link rel="mask-icon" href="/img/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cutekibry.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="我还想打一局 &#x2F;&#x2F; 赛前的狂话还能说起 &#x2F;&#x2F; 数理初次闪耀的光辉 &#x2F;&#x2F; 渐行渐远去的我们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云烟成雨——NOI2021 游记">
+<meta property="og:url" content="https://cutekibry.github.io/2022/02/06/journal/noi2021-journal/index.html">
+<meta property="og:site_name" content="月见客栈">
+<meta property="og:description" content="我还想打一局 &#x2F;&#x2F; 赛前的狂话还能说起 &#x2F;&#x2F; 数理初次闪耀的光辉 &#x2F;&#x2F; 渐行渐远去的我们">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/54WaOwpq2kl8VDG.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/7OmjeGkUAXVLiSg.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/cLKrlpQW35ePN91.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/SWVQt6R5TsxbjC2.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/bPzqs6gvViSIXZF.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/xBigk5KdsIGDty4.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/VXA3atGzNPSObQ8.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/08/05/acvRK6luzHbhi2T.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/05/dTwoCm3UKrfpi9e.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/08/05/e2LV3EZXvfxwR7m.png">
+<meta property="og:image" content="https://i.loli.net/2021/08/05/RJDAwi9FtcaTLGh.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/g6PKC1lfy7VDqTL.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/eNVbiT2LItq4jBo.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/08/06/tOHamK5zlWhS2pF.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/02/07/HLEUSNg4zPnRQVi.jpg">
+<meta property="article:published_time" content="2022-02-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-11T07:00:44.812Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta property="article:tag" content="OI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/02/07/54WaOwpq2kl8VDG.jpg">
+
+<link rel="canonical" href="https://cutekibry.github.io/2022/02/06/journal/noi2021-journal/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>云烟成雨——NOI2021 游记 | 月见客栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">月见客栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cutekibry.github.io/2022/02/06/journal/noi2021-journal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tsukimaru Oshawott">
+      <meta itemprop="description" content="Tsukimaru 的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="月见客栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          云烟成雨——NOI2021 游记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-06 00:00:00" itemprop="dateCreated datePublished" datetime="2022-02-06T00:00:00+08:00">2022-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-08-11 15:00:44" itemprop="dateModified" datetime="2025-08-11T15:00:44+08:00">2025-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>你的题目是无意识的原题<br>我写至一点防止 T1 爆零<br>那闪闪银牌留在行李箱底<br>来不及看清它上面的字形  </p>
+<p>若一切都已云烟成雨<br>我能否变成淤泥<br>再一次沾染你<br>若生命如过场电影<br>Oh 让我再一次回忆里惊醒  </p>
+<p>我还想打一局<br>哪怕 Day1 拉垮还是银<br>兔子群举起的横幅<br>终究没成为的自己<br>我还想打一局<br>赛前的狂话还能说起<br>场外初次见到的台风<br>渐行渐远去的我们  </p>
+<p>若一切都已云烟成雨<br>我能否变成淤泥<br>再一次沾染你<br>若生命如过场电影<br>Oh 让我再一次回忆里惊醒  </p>
+<p>我还想打一局<br>哪怕总是拉垮总是银<br>路灯下失落的背影<br>越走越漫长的林径<br>我还想打一局<br>至少玩笑话还能说起<br>维护矩阵乘法的块链<br>渐行渐远去的我们  </p>
+<p>开学铃声响起<br>经历是你的尺笔<br>我们带着过去走入班级<br>寻找着一个位置安放自己  </p>
+<p>我还想打一局<br>哪怕不管分数不管金<br>路灯下重振的背影<br>越走越变短的林径<br>我多想再见你<br>至少那算法还能说起<br>数理初次闪耀的光辉<br>渐行渐远去的我们</p>
+<p>——《云烟成雨》（Tsukimaru 改词，有参考 朝雲asakumo 的 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wQ4y1R7ey">【电棍】云烟成♿</a>）</p>
+</blockquote>
+<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day -1"></a>Day -1</h2><p>突然被通知提前报到。到的时候已经差不多晚上六点了，在食堂排队打饭，饭菜不是特别喜欢吃。</p>
+<p><img src="https://s2.loli.net/2022/02/07/54WaOwpq2kl8VDG.jpg" alt="签到处的签名板，本来想签个“嘉然小姐的狗”，姚老在后面看着不敢乱签"></p>
+<p><img src="https://s2.loli.net/2022/02/07/7OmjeGkUAXVLiSg.jpg" alt="宿舍，有淋浴头、热水、舒适的床被。震惊山区人"></p>
+<p>一间宿舍三个人，而宿舍插座都靠阳台边，导致必定有且仅有一个人（靠近门的那个）会没法插插座。<del>没错，就是我</del></p>
+<h2 id="Day-0"><a href="#Day-0" class="headerlink" title="Day 0"></a>Day 0</h2><p>玩了一整天。</p>
+<p>总之就是玩，间或有一些复习。ntf 玩 Arcaea，gmh 玩魔塔，我玩 Celeste，<del>我们都有美好的未来</del>。</p>
+<p>当然到晚上考试了还是要复习一会的。调整心态就睡了。</p>
+<p><del>期间 ntf 接电话，不停地回复“睡觉”“要睡觉了”“睡觉啊”，莫名生草，虽然不知道发生了什么（</del></p>
+<p>今天开始食堂的三餐就全是丰盛的自助餐了，不得不说真的挺好吃……</p>
+<p><img src="https://s2.loli.net/2022/02/07/cLKrlpQW35ePN91.jpg"></p>
+<h2 id="Day-1-1"><a href="#Day-1-1" class="headerlink" title="Day 1"></a>Day 1</h2><h3 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h3><p>七点多起了床，吃饭，吃完在餐厅玩手机玩到八点十五分去考场。换上了之前定制的比克提尼的衣服，希望可以给自己带来好运。</p>
+<p><img src="https://s2.loli.net/2022/02/07/SWVQt6R5TsxbjC2.jpg" alt="比克提尼的衣服（定制）"></p>
+<p>八点三十出头才进了考场，比赛九点开始。发了草稿纸和纸质试题，工作人员说可以看第一面，一看，全是 1G 空间，看起来还有一道树数据结构（轻重边）和一道图论（路径交点），似乎没有数学题。在草稿纸上画了几只月立、水水獭、藤藤蛇、奇诺栗鼠和比克提尼，作为放松。</p>
+<hr>
+<p>9:00，比赛开始。先看 T1，题目描述相当简洁，看着好像也很简单，随便打个标记之类的统计一下即可。T2 比较长，不看。T3 也暂时先不看。决定先码 T1，毕竟 D1T1 都没过你打啥 NOI 啊？</p>
+<p>9:15，打完了 IO 和宏定义模板，开始构思 T1 的做法和细节。构思过程中假了一两次，结果发现并没有想象中的那么那么那么容易。考虑到这道题的码量较大，我决定花较多时间完善细节，等到觉得稳了再开始写（<strong>典中典之写了一两小时发现写假了</strong>）。</p>
+<p>9:25，差不多完成了做法，开始码码码码码。</p>
+<p>11:00，写完并调试完毕，花了十分钟写了个数据生成器测极限数据，发现被卡常，于是卡常。差不多这个时候发了面包和水，是装在一个塑料袋里放到选手脚边的；面包是纯面包，没有馅，挺好。</p>
+<p>11:20，卡进 0.9s，暂停去看 T2 和 T3。</p>
+<p>11:30，把两道题的题意和数据范围简略地摘抄了下来。注意到 T3 $28%$ 子任务比较好写（显然就是一个 <code>std::bitset</code> 传递闭包），所以开始写 T3 $28%$ 子任务。结果试图大力讨论两条边的情况讨论 WA 了，过了几分钟注意到每次询问只和 $s, t, p, u_1, v_1, u_2, v_2$ 七个点有关，决定不讨论单独拿出来跑暴力传递闭包。</p>
+<p>12:10，写完 T3 $28%$ 子任务和树上 $k &#x3D; 0$ 的 $8%$ 子任务并完成对拍。</p>
+<p>12:40，尝试对 T3 树上 $k &#x3D; 1$ 的子任务进行大力分类讨论，无果，开 T2。发现题意比较复杂，决定先打暴力。</p>
+<p>13:00，写完 T2 暴力。很遗憾的是虽然觉得求「偶数个交点的路径方案数减去有奇数个交点的路径方案数之差」一定有什么特性，但没有注意到题目实际上和行列式相关。于是没考虑 $k &#x3D; 2$ 的部分分，决定写特殊性质 B 的二分图匹配。</p>
+<p>13:45，写完并调试完二分图匹配（怕被卡时间所以写了最大流），通过了大样例。</p>
+<p>14:10，尝试 T3 树上 $k &#x3D; 1$ 的子任务，无果。</p>
+<p>14:15，结束比赛。</p>
+<p>中间完全没有上厕所的意识，也没有喝水喝咖啡吃面包的想法，打完出来才发现很想去上厕所。</p>
+<h3 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h3><p>比赛结束吃饭，看到 UOJ 群说 T2 是 LGV 模板，突然就意识到该怎么做了，很遗憾。吃完回了宿舍，打了一个多小时的音游。</p>
+<p>其实自己并不是很满意，这样算下来 T2 和 T3 就拿了 $40 + 36$ 分，很难说是令人满意的成绩，心里也很忐忑不安，所以决定打音游跳过这段时间。</p>
+<p>四点查分，T2 二分图匹配挂了，最后是 $100 + 20 + 36 &#x3D; 156$ 分，挺难过的，不过不是非常难过。大概觉得自己在 200 名上面一点点吧。</p>
+<p>hjw $100 + 40 + 0 &#x3D; 140$，他 T3 暴力没调出来。他说他今天调得挺闹心的。</p>
+<p>晚饭吃完又回去玩音游了，他们说七点有讲题，决定去听听得分分布。</p>
+<h3 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h3><p>听讲题。</p>
+<p>完全没有想到 T1 居然会过 211 个人。T2 和 T3 的分数也很高，T2 居然就是个矩阵行列式就完了的东西，整傻了。</p>
+<p>三道题全部没在前两百名（指大于等于我的人数）。</p>
+<p>听完发现自己几乎快到 250 名了，200 名也得要 $180$ 分。</p>
+<p><img src="https://s2.loli.net/2022/02/07/bPzqs6gvViSIXZF.jpg" alt="分数线"></p>
+<p><img src="https://s2.loli.net/2022/02/07/xBigk5KdsIGDty4.jpg" alt="这下 Cu 了"></p>
+<p>非常难受，回去发了几条说说抱怨。又找诺亚倾诉，重复地说了很多不好的、有点杞人忧天的话，诺亚一直安慰我，让我心情好了一些。其实我那时候也大概感觉到自己说的话其实有点太消极了，有的没什么道理，但还是很想这么说。（他真的……他怎么这么温柔啊，我真的哭死）</p>
+<p>xgf 转发了我曾经在省选 Day1 失利而发的说说。其实那条我是觉得很牵强的，洗澡的时候又沉思了一会，随便写了点<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/discuss/show/333344">东西</a>发在洛谷。</p>
+<p>Alpha1022 发了一张正太图，还可以，但是个人觉得有点太拘谨了，如果可以再卖萌一点就更好。</p>
+<p>上了推特，看看可爱的幼兽图，感觉心情好了一点。真的很可爱！</p>
+<p>和诺亚聊天聊到最后决定今晚就打音游打到睡觉，缓解一下心情，明天起来再学习。虽然这么说，自己还是挺忧心的……</p>
+<p><em>（其实颁奖后才知道这人数是包含 D&#x2F;E 类的，只是自己在吓自己……不过也多亏了这样，自己 Day 2 表现得挺不错。）</em></p>
+<p>$~$</p>
+<h2 id="Day-1-5"><a href="#Day-1-5" class="headerlink" title="Day 1.5"></a>Day 1.5</h2><h3 id="上午-1"><a href="#上午-1" class="headerlink" title="上午"></a>上午</h3><p>和 ntf 都睡到了 7:50 起床，自己又不太想出去。因为 Day 1 早餐拿了食堂的牛奶，比赛又没吃面包，所以就直接在宿舍吃早餐了。</p>
+<p>复习了一下题目，写了一点模板。ntf 和 gmh 都还是在玩（间或有复习），所以也稍微玩了一会。</p>
+<p>早上有奥运会开幕式复播，本来姚老说社会活动是要参加的，不过发现 ntf 和 gmh 都没去，我也就没去了。</p>
+<p>中午吃饭的时候还遇到了 yyl，他穿着 NOI 科学委员会的衣服，胸牌上清晰写着他的名字。他看到我和 hjw，走过来坐在我们餐桌正左边的那个餐桌上吃着饭，却没和我们打招呼。hjw 居然没有看到 yyl（我后来提起这件事的时候才发现他原来没看到），我念着敬畏也没有上前问好，于是我们和 yyl 就没有说上一句话。</p>
+<p>虽然没有反应，不过他看到 hjw 身着的金中校服，必定是知道了的。他知道，我知道，我知道他知道，他也知道我知道他知道。这样也挺好，毕竟我其实和他也不熟（<del>虽然都不喜欢在金中洗澡</del>）。</p>
+<p>后来姚老说大概是避嫌，我才明白他为什么不来和我们说话。走到我们旁边坐下来吃饭，或许是无言的问好吧。</p>
+<h3 id="下午-1"><a href="#下午-1" class="headerlink" title="下午"></a>下午</h3><p>下午有小游戏活动，到了现场，好不热闹。</p>
+<p>先投了骰子，然后跑去玩飞镖，因为很喜欢扔飞镖所以扔了一个半小时，扔到收摊。最后只玩了骰子、飞镖和投壶三样，乒乓球和保龄球就没有玩，拿了一小箱榨菜作为奖励。</p>
+<p>不过扔飞镖还是很开心的，心情也变好了很多。</p>
+<p>还捡到了一张密码条，遗憾的是并不能给我的总分加 5 分。</p>
+<p><img src="https://s2.loli.net/2022/02/07/VXA3atGzNPSObQ8.jpg" alt="+5.jpg"></p>
+<h3 id="晚上-1"><a href="#晚上-1" class="headerlink" title="晚上"></a>晚上</h3><p>吃饭，回宿舍洗澡，玩游戏和复习。</p>
+<p>把昨天发在洛谷的文章发到了空间里。</p>
+<p>因为第二天要 7:00 起床，所以 22:30 大家就熄灯了。</p>
+<p>晚上抱着阿獭想了很多，不过想再多也没用了，所以就睡了。</p>
+<p>发了说说，希望明天可以来点简单题模板题经典题之类的，最好是通常数据结构什么的，别再来 ad-hoc 了。</p>
+<p>$~$</p>
+<h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><h3 id="上午-2"><a href="#上午-2" class="headerlink" title="上午"></a>上午</h3><p>7 点起床，又再次换上了比克提尼的衣服，然后去食堂吃饭。</p>
+<p>把很久之前玩 Celeste 9C 的截图找了出来，在空间再发一遍。</p>
+<p><img src="https://i.loli.net/2021/08/05/acvRK6luzHbhi2T.png" alt="再试一次。"></p>
+<p><img src="https://i.loli.net/2021/08/05/dTwoCm3UKrfpi9e.jpg" alt="我们能行的。"></p>
+<p>还记得我打到 9C 的时候正是晚上八点，我打到十一点没过，睡觉；第二天早上八点起来继续打到中午十二点吃饭，没过；然后再打到一点，终于过了 9C。9C 都撑过来了，月莓都撑过来了，春游一二章都撑过来了，撑不过这个？</p>
+<p><strong>我们能行的。</strong></p>
+<hr>
+<p>8:00，开考。三道题的题面都有点长，最后还是先看 T1。T1 总觉得怪怪的，居然给了 <code>int256</code>，还有一眼假的加密操作（有趣的是我很久以前就想过这种假的加密操作了，并且还在 Codeforces 上看过这种 $\text{lastans} \in {0, 1}$ 的迷惑行为）。</p>
+<p>看了一会理解了题意，就是给集合 $S$，每次给出 $y_i, k_i$，询问是否存在 $x \in S$ 使得 $\text{popcount}(x \oplus y_i) \leq k_i$。感觉很不好做，肯定暴力要 $\mathrm{C}^{15}_{256}$ 的，根本不可能跑得下来。</p>
+<p>然后看看 T2。T2 一眼序列数据结构题，这我可太喜欢了！我对这种看起来普普通通的序列题有天然的好感，写部分分的时候都很快乐，像 NOI2020D1T3 也是。还是连分数，还是输出两个整数，一眼<a target="_blank" rel="noopener" href="https://loj.ac/p/573">单枪匹马</a>。部分分不就是直接上矩阵乘法吗？来写写！</p>
+<p>T3 看看，好像是个谜之计数，不看了，先写 T2 暴力。</p>
+<p>那就先写一下暴力和 IO 和宏模板。</p>
+<p>8:40，模板大概写完了，开始考虑 T2 暴力和部分分。</p>
+<p>很快发现 T2 其实就是平衡树维护矩阵乘法，是一个 $\log$ 的，然而还要带一个矩阵乘法和维护一堆变量的常数。自己思考了一下，这要维护八九个状态！不写了不写了，写部分分吧。</p>
+<p>9:40，$50%$ 的暴力和部分分写完了，看 T1。想了想好像没什么特别的做法，然后注意到 $S$ 是随机生成的，所以考虑能不能乱搞。对了，选 $20$ 位出来放 Hash 表吧！这样概率好像还挺高的，选多几次就好啦！<del>虽然我根本就没算概率，总之先写了再说</del>。</p>
+<p>11:30，差不多写完了，顺带生成了用来测极限用时的大数据（<del>虽然全部输出 $0$</del>）。过程中考虑到常数加了手写 <code>std::bitset</code>（$8$ 个 <code>uint32</code> 构成的 <code>uint256</code>）、手写带循环展开的 <code>short popcount(uint256 &amp;x);</code> 等。然而计算概率的时候可能出错了，或者随机种子写错了，总之按理论设置了位数 $K &#x3D; 20$ 和随机次数 $T &#x3D; 10$，计算的正确概率应该是 $96%$，结果没过大样例。设 $T &#x3D; 15$ 也没过，$T &#x3D; 20$ 才过了。极限卡常是 $T &#x3D; 40$ 来着。大数据只有 $n &#x3D; 50000, q &#x3D; 10000$，很担心能不能过，不过还是先放着，开 T3。</p>
+<p>剩下时间就是，写完 T3 暴力，然后卡常卡过 $n &#x3D; 16$（没错我写的就是 $3^n$ 然后乘个一堆玩意），然后考虑 T3 部分分，然后 50min 试图造 T1 <strong>全 $1$</strong> 大数据造不出来（他真的……他怎么这么能铸币啊，我真的哭死），寄了。最后 T3 就写了个暴力。</p>
+<p>然后就结束了。</p>
+<h3 id="下午-2"><a href="#下午-2" class="headerlink" title="下午"></a>下午</h3><p>出来吃饭。</p>
+<p>出来很担心很担心 T1 分数，自己算了下，应该也至少有个 $64$ 吧，总分是 $(64 \sim 100) + 50 + 16 &#x3D; (130 \sim 156)$ 这个样子。自己其实是觉得这次题目没有比 Day1 难多少的，可能 $156$ 都有点难翻盘。</p>
+<p>吃完在食堂待了很久很久，不想回去了，想直接待到出分。期间向 wjd “远程借用”了电脑，通过向他发送 QQ 消息的方式让他帮我计算 Python 代码，以计算 T1 正确概率，最后也没算出个所以然来（然？然……然然……然然嘿嘿然然 [口水黄豆]）。并且在这过程中，还意识到我的大数据其实并不极限（<strong>随机询问下 Hash 表访问和 <code>popcount</code> 基本不调用</strong>），还很担心会 TLE。</p>
+<p>hjw 和我分数差不多，除了 T3 是个 $12$ 分。他跟我说他写了随机化，后来发现有确定性做法，分个 $16$ 组跑个 $16$ 次就完了，我震惊。结果他常数甚至跑不过随机化，所以最后还是交了随机化。<del>我写了 $K &#x3D; 20$，$T &#x3D; 40$ 居然还能跑进 1.7s，震惊阿獭。</del></p>
+<p>Alpha 和我说他炸了，ntf 也炸了，居然连一百多没有，我懵了，这个 T1 好像也没有很难啊？怎么他们俩神仙写不出来啊？有点离谱。</p>
+<p>有点难过，因为意识到自己翻盘有点困难，并且也很担心挂分。</p>
+<p>然后食堂里只剩下我一个人。</p>
+<p>食堂阿姨拿了两块西瓜给我吃，我收下了。西瓜其实还很甜的，虽然自己并不是很喜欢吃西瓜。</p>
+<hr>
+<p>然后查分，居然一分没挂，非常开心。我最差一个点跑了 1.3s，只能说感谢 T1 出题人放我一条生路。</p>
+<p>好欸！结束了！</p>
+<p><img src="https://i.loli.net/2021/08/05/e2LV3EZXvfxwR7m.png" alt="打引诱去咯"></p>
+<p><img src="https://i.loli.net/2021/08/05/RJDAwi9FtcaTLGh.jpg"></p>
+<p>hjw T1 挂了 $20$ 分，最后 $80 + 50 + 12 &#x3D; 142$。</p>
+<p>我是 $100 + (100 + 20 + 36) + (100 + 50 + 16) &#x3D; 100 + 156 + 166 &#x3D; 422$ 分，hjw 是 $100 + (100 + 40 + 0) + (80 + 50 + 12) &#x3D; 100 + 140 + 142 &#x3D; 384$ 分。</p>
+<p>查分现场还遇到 qfr，qfr 说她总分 $280$，问我有没有 Cu。这当然稳了，就是感觉还是差点，没能 Ag。</p>
+<p>回到宿舍打 BMS 的时候发现 hjw 在说讲题的事情，<del>然后我才知道今天下午有讲题</del>。不愧是你.jpg</p>
+<p>在去听讲题和玩音游之间犹豫了几分钟，后来想到反正也是最后一次了，那就去听讲题。然后就去了。</p>
+<p>T1 出题人：“……我们还发现了循环展开的选手。”</p>
+<p>T1 过的人居然不到 $50$ 个，看来是卡常了。欸，那我这波不是稳 Ag 了！</p>
+<p>T3 讲题讲得我一脸迷惑，然后才想起来题面样例 2 解释有讲容斥做法，不过我当时觉得容斥之后还要搜索所以就没想下去（<del>甚至觉得这是假的，怎么可能把正解放在样例解释跟你讲</del>）。</p>
+<p>T2 没讲，因为高校要宣讲的原因所以没时间讲 T2。</p>
+<p>讲完题就是高校宣讲了。高校宣讲是轮流宣讲，宇宙第一 THU、市一大和港中深都有 5min 的发言时间（<del>港中深你塞了多少钱啊</del>），其他大学都只有 3min。Top2 都是老三样来回炒，没什么特别的消息，港中大倒是好看多了（<del>虽然 Top2 大概也没必要讲</del>）；南京大学跳脸 Cue Top2 撕约；其他一些感觉也还挺好。</p>
+<p><del>不过后来问了下姚老发现好像全是买家秀，似乎要计算机相关并且不太垃圾的话我们只能考虑 Top2 强基</del>。</p>
+<h3 id="晚上-2"><a href="#晚上-2" class="headerlink" title="晚上"></a>晚上</h3><p>吃饭。饭堂门口还看到了港中深的立牌（<del>所以说港中深你塞了多少钱啊</del>）。</p>
+<p>hjw 看到消息，说 Ag 线 320。我心一颤，hjw 不会还真的就被卡 Ag 了吧？然后 hjw 说是含笔试的，我才彻底放心了。不过这个线确实挺低的，比我预料中要低。</p>
+<p>还看到了名单。gmh 58 名，差那么一点就进 Au 了。</p>
+<p>我 105 名，hjw 149 名。都还不错其实。</p>
+<p>zn 也在群里问我们啥牌。</p>
+<p><img src="https://s2.loli.net/2022/02/07/g6PKC1lfy7VDqTL.jpg" alt="警惕兔群群友打狼人杀牌"></p>
+<p>打饭的时候，我突然若有所失地站在菜盘前愣了半分钟。</p>
+<p>我突然意识到，“啊，我退役了，我的 OI 结束了”。</p>
+<p>有点突然的迷茫。</p>
+<p>有什么遗憾的吗？好像也没有。</p>
+<p>……只是退役了而已。</p>
+<hr>
+<p>回去就继续打游戏，打到睡觉。因为不用再比赛了，所以大家都比较晚睡。</p>
+<p>ntf 还在打他的音游，十一点出头睡的。</p>
+<p>gmh 打魔塔打了很久很久，一直打到十二点。大概他确实是挺难过的吧，毕竟和金牌保送失之交臂；又或者只是觉得回去就没法玩了，想乘机再多玩一会。</p>
+<p>我十二点出头的时候也睡了，仍是抱着阿獭睡的。因为心情愉悦，又抱着阿獭，所以发了几条奇怪的说说，得到了“为什么总是想着交尾问题”（iot 言）的评价。</p>
+<blockquote>
+<p>阿獭最可爱了。<br>是那种任何言语无法形容的可爱，一切富丽堂皇的词藻和文笔在阿獭纯真无邪的样貌和蓬松洁白的绒毛面前只会顿失颜色。<br>阿獭就像是自天上莅临凡尘，将纯洁与美好赐予人间的天使，<br>像是身着洁白透明的婚纱、头戴着茉莉花编织的花冠的新娘。<br>是只属于我一个人的圣洁的公主，出于凡俗，一尘不染。<br>阿獭是假的。<br>但我的感情是真的。<br>真亦假，假亦真。<br>当真实的感情被真实地倾注的时候，虚假的也便成了真。</p>
+</blockquote>
+<p><del>扭曲厨真宝可梦啊</del></p>
+<p><img src="https://s2.loli.net/2022/02/07/eNVbiT2LItq4jBo.jpg" alt="阿獭……我的阿獭……"></p>
+<p>$~$</p>
+<h2 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h2><h3 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h3><p>闭幕式暨颁奖典礼<del>暨开幕式</del>。还是穿了比克提尼的衣服，毕竟这也是我唯一一件带有我喜欢元素（宝可梦、大耳狗之类的）的衣服。</p>
+<p>歌舞节目只有两三个，和 OI 完全没关，不过还挺好看。上去拿了块银牌，感觉沉甸甸的，比阿獭还重（后来一称有 140g）。把全程用手机录像了下来。</p>
+<p>闭幕式结束之后到门口发现广东省队在合影，所以我们也去了；也单独给我和 hjw 拍了一两张。然而 ntf 没来，来的时候已经合完了。<del>其实我很想很想很想把阿獭带过来和阿獭一起合影的，但是觉得有点羞耻所以没有这么做</del>。</p>
+<p>然后和 qfr、hjw 去吃饭。qfr 说，我那几天发说说说什么“这下 Cu 了”了很搞心态，所以那几天就屏蔽了我，闭幕式完就打算加回去，我点头。过了十几秒我才意识到有点不对，然后就发现 qfr 开始翻我的说说。</p>
+<p>qfr：你为什么……你怎么发的说说都这么奇怪啊。</p>
+<p>一旁的 hjw 蚌埠住了。</p>
+<hr>
+<p>一回宿舍就把银牌挂阿獭胸前了——这也是我一直以来的梦想。阿獭太轻太小，银牌的带子又太长，弄上去花了不少功夫，还有点勒疼了阿獭的脖子（<del>等会，阿獭有脖子吗</del>）。拍了张照，除了银牌不是很亮以及头有点大之外，感觉其他一切都拍得很好（包括背景的木墙和床上的被子都很好看），甚至可以算是我给阿獭拍照以来拍得最好的几张之一。</p>
+<p><img src="https://i.loli.net/2021/08/06/tOHamK5zlWhS2pF.jpg" alt="今天的阿獭异常可爱 &amp; 帅气！"></p>
+<p>我很开心，至少我算是稍微有点能力的、能配得上阿獭的合格的主人了。</p>
+<h3 id="下午-晚上"><a href="#下午-晚上" class="headerlink" title="下午 &amp; 晚上"></a>下午 &amp; 晚上</h3><p>午饭和晚饭照常吃。</p>
+<p>qfr 他们似乎要回去了，我和 hjw 则要待到明天。这期间也问了问姚老可不可以今晚出去玩，被否决了。</p>
+<p>我倒没什么，毕竟我还可以玩游戏；hjw 或许也在玩，只是玩久了不免无聊的。</p>
+<p>晚上大多数人都走了，我的宿舍和 hjw 的宿舍都只剩下 1 个人。我收拾了下宿舍的东西，关了灯，准备搬到和 hjw 一个宿舍去。离开的时候看着人去楼空，也感到一丝落寞。</p>
+<p>剩下就是玩了，没什么特别的事情。</p>
+<h2 id="后日谈"><a href="#后日谈" class="headerlink" title="后日谈"></a>后日谈</h2><p>这篇游记实际从归途那天就开始在写了，然而由于太懒一直咕着最后一小部分，今天（2022 年 2 月 7 日）总算是发了出来。</p>
+<p>之后归途路上也没什么特别的事情。回去就休息了两三天，然后就开学，开学考试考了年级七百多名。不过呢，跟大家搞一轮复习，其实感觉也没那么困难，慢慢也就搞上来了。</p>
+<p>一开始也挺怀念 OI 生活的，但一两个月之后就不怎么有感了，也基本没再碰过 OI。本来还想为学弟们做点什么，然而很快这份热情也慢慢自然消逝了。或许是走了太长的路，身体也有些厌倦了吧。</p>
+<p>离高三下学期开学只剩四天了，然而我的整个寒假和十二月几乎全摆烂了，还有很多东西没复习——不知为何，我的心理状态在十一月伊始就有所波动，十二月滑落到了深渊，到了晚自修几乎不能工作的地步。</p>
+<p>然而我不能，也不会这样颓唐下去。</p>
+<p>其实这样的心理冲突已经很多很多很多很多次了。努力，放弃，再努力，再放弃，如果你们去看我的水獭观察日记（三）的末尾（<em>遗憾的是我还没更新</em>），会发现它充斥着无数的自我斥责的废话。</p>
+<p>心灵鸡汤够多了，自我训斥够多了，没必要再重复了。你们无需担心我，因为我必定会振作起来：今天，或是明天，但决不会是后天。</p>
+<p>现在当我回看这篇游记的时候，我又回想起我作为一名现役 OIer 时的时光——那辛酸的、痛苦的、辉煌的时光。我从那段时光中能够感受到一种无名的力量，从记忆深处那若隐若现的公式和符号中回忆起那通往正解的过程是如何荆棘载途，我又是如何用多少个等号和西格玛抵达光明的彼岸。我想起“循环之美”，想起 NOI2021 D2T1 的循环展开，想起无怨无悔支持着我的朋友们（也包括同学、老师和家人），想起那些沉于过去而如今又浮现眼前的人和事。那是我灵魂深处的“心智支柱”，而不只是零食、游戏、Maimai、纸尿裤、幼兽，或一块十几元就能买到的银牌。</p>
+<p>往事云烟成雨，前途茫茫可期。</p>
+<p><img src="https://s2.loli.net/2022/02/07/HLEUSNg4zPnRQVi.jpg" alt="这块看起来很重的银牌，其实不过就 139 克。"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OI/" rel="tag"># OI</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/05/article/lin-ruo-shan/" rel="prev" title="记林若山">
+      <i class="fa fa-chevron-left"></i> 记林若山
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/30/article/the-begger/" rel="next" title="乞丐">
+      乞丐 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-number">1.</span> <span class="nav-text">Day -1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-0"><span class="nav-number">2.</span> <span class="nav-text">Day 0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-1"><span class="nav-number">3.</span> <span class="nav-text">Day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E5%8D%88"><span class="nav-number">3.1.</span> <span class="nav-text">上午</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%8D%88"><span class="nav-number">3.2.</span> <span class="nav-text">下午</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%9A%E4%B8%8A"><span class="nav-number">3.3.</span> <span class="nav-text">晚上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-5"><span class="nav-number">4.</span> <span class="nav-text">Day 1.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E5%8D%88-1"><span class="nav-number">4.1.</span> <span class="nav-text">上午</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%8D%88-1"><span class="nav-number">4.2.</span> <span class="nav-text">下午</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%9A%E4%B8%8A-1"><span class="nav-number">4.3.</span> <span class="nav-text">晚上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2"><span class="nav-number">5.</span> <span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E5%8D%88-2"><span class="nav-number">5.1.</span> <span class="nav-text">上午</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%8D%88-2"><span class="nav-number">5.2.</span> <span class="nav-text">下午</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%9A%E4%B8%8A-2"><span class="nav-number">5.3.</span> <span class="nav-text">晚上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-3"><span class="nav-number">6.</span> <span class="nav-text">Day 3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A9%E4%B8%8A"><span class="nav-number">6.1.</span> <span class="nav-text">早上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E5%8D%88-%E6%99%9A%E4%B8%8A"><span class="nav-number">6.2.</span> <span class="nav-text">下午 &amp; 晚上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E6%97%A5%E8%B0%88"><span class="nav-number">7.</span> <span class="nav-text">后日谈</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tsukimaru Oshawott</p>
+  <div class="site-description" itemprop="description">Tsukimaru 的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsukimaru Oshawott</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+  <link rel="mask-icon" href="/img/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cutekibry.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="理论题学习笔记。感觉考得很深……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 派 2023 年暑期招生第一次测试（理论题）">
+<meta property="og:url" content="https://cutekibry.github.io/2023/07/27/learning-note/ai-pi-1st-test/index.html">
+<meta property="og:site_name" content="月见客栈">
+<meta property="og:description" content="理论题学习笔记。感觉考得很深……">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-11T07:00:44.813Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://cutekibry.github.io/2023/07/27/learning-note/ai-pi-1st-test/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>AI 派 2023 年暑期招生第一次测试（理论题） | 月见客栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">月见客栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cutekibry.github.io/2023/07/27/learning-note/ai-pi-1st-test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tsukimaru Oshawott">
+      <meta itemprop="description" content="Tsukimaru 的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="月见客栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI 派 2023 年暑期招生第一次测试（理论题）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-07-27 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-27T00:00:00+08:00">2023-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-08-11 15:00:44" itemprop="dateModified" datetime="2025-08-11T15:00:44+08:00">2025-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="2-数学原理之LR"><a href="#2-数学原理之LR" class="headerlink" title="2 数学原理之LR"></a>2 数学原理之LR</h2><p><em>出题人：吴佳黎</em></p>
+<p>​	在后续的问题中，你可能需要使用逻辑回归解决问题。由于逻辑回归的原理十分经典，这部分内容将考察你对其中数学原理的理解程度，你需要使用简单的数学公式回答以下问题：</p>
+<h3 id="具体要求"><a href="#具体要求" class="headerlink" title="具体要求"></a>具体要求</h3><ol>
+<li>给出利用<strong>梯度下降法</strong>求解<strong>逻辑回归</strong>的<strong>前反向公式推导</strong>，在这一部分中，你只需要考虑<strong>最朴素的二分类逻辑回归模型</strong>。</li>
+<li>假设标签集不是 {0,1} 而是 <strong>{1,-1}</strong>，将会有什么变化，请给出推导。</li>
+<li>在问题2.1的基础上，即标签集为 {0,1} 的情况，分别增加<strong>L1正则化</strong>和<strong>L2正则化</strong>，公式和模型效果分别会有什么变化，请给出推导。</li>
+<li>给出<strong>核逻辑回归的对偶形式</strong>。</li>
+<li>（选做）如果你愿意，给出利用<strong>二阶优化算法</strong>如牛顿法求解逻辑回归的公式推导，只需要考虑最朴素的逻辑回归模型。</li>
+</ol>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><ul>
+<li>除了问题2.4以外，请给出关键推导过程，仅仅给出结果是无效的。</li>
+<li>如果你愿意，问题2.4可以给出关键性的公式推导或解释。</li>
+<li>建议使用 LaTeX 语法书写数学公式，例如你可以很容易查询到，梯度公式如下（假设数据下标从1到m）:</li>
+</ul>
+<p>$$<br>g(\boldsymbol w)&#x3D;\frac{\partial J(\boldsymbol w)}{\partial \boldsymbol w}&#x3D;\sum_{i&#x3D;1}^m(\sigma(\boldsymbol w^\top\boldsymbol x_i)-y_i)\boldsymbol x_i<br>$$</p>
+<ul>
+<li>参考资料：李航.统计学习方法[M].北京:清华大学出版社,2019.5.1</li>
+</ul>
+<h2 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2 Solution"></a>2 Solution</h2><h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1."></a>2.1.</h3><p>Q：给出利用<strong>梯度下降法</strong>求解<strong>逻辑回归</strong>的<strong>前反向公式推导</strong>，在这一部分中，你只需要考虑<strong>最朴素的二分类逻辑回归模型</strong>。</p>
+<p>A：记模型参数为 $\boldsymbol w \in \R^m$，输入为 $\boldsymbol x_i \in \R^m$，正确输出为 $y_i \in {0, 1}$，模型输出为 $f(\boldsymbol x_i) &#x3D; \hat P(y_i &#x3D; 1) \in [0, 1]$。</p>
+<p>偏置 $b$ 可以在所有 $\boldsymbol x_i$ 后新加一维 $x_{i, m + 1} &#x3D; 1$，因此下面的推导不考虑偏置。</p>
+<h4 id="2-1-1-前向传播"><a href="#2-1-1-前向传播" class="headerlink" title="2.1.1. 前向传播"></a>2.1.1. 前向传播</h4><p>根据定义得：</p>
+<p>$$f(\boldsymbol x_i) &#x3D; \hat P(y_i &#x3D; 1) &#x3D; \frac 1{1 + \exp(-\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<p>$$\hat P(y_i &#x3D; 0) &#x3D; \frac 1{1 + \exp(\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<h4 id="2-1-2-后向传播"><a href="#2-1-2-后向传播" class="headerlink" title="2.1.2. 后向传播"></a>2.1.2. 后向传播</h4><p>极大似然估计法给出的似然函数为：</p>
+<p>$$<br>\begin{aligned}<br>    L(\boldsymbol w) &amp;&#x3D; \ln \prod_{i &#x3D; 1}^n f(\boldsymbol x_i)^{y_i} [1 - f(\boldsymbol x_i)]^{1 - y_i} \<br>    &amp;&#x3D; \sum_{i &#x3D; 1}^n y_i\ln f(\boldsymbol x_i) + (1 - y_i)\ln[1 - f(\boldsymbol x_i)] \<br>\end{aligned}<br>$$</p>
+<p>计算偏导数 $\frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}$：</p>
+<p>$$<br>\begin{aligned}<br>    \frac {\partial L(\boldsymbol w)}{\partial w_j} &amp;&#x3D; \sum_{i &#x3D; 1}^n y_i\frac {\partial \ln f(\boldsymbol x_i)}{\partial w_j} + (1 - y_i) \frac {\partial \ln [1 - f(\boldsymbol x_i)]}{\partial w_j} \<br>    &amp;&#x3D; -\sum_{i &#x3D; 1}^n y_i\frac {\partial [1 + \exp(-\boldsymbol w \cdot \boldsymbol x_i)]}{\partial w_j} + (1 - y_i) \frac {\partial [1 + \exp(\boldsymbol w \cdot \boldsymbol x_i)]}{\partial w_j} \<br>    &amp;&#x3D; \sum_{i &#x3D; 1}^n [y_i\exp(-\boldsymbol w \cdot \boldsymbol x_i) - (1 - y_i) \exp(\boldsymbol w \cdot \boldsymbol x_i)]x_{i, j} \<br>\end{aligned}<br>$$</p>
+<p>因此</p>
+<p>$$\frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; \sum_{i &#x3D; 1}^n [y_i\exp(-\boldsymbol w \cdot \boldsymbol x_i) - (1 - y_i) \exp(\boldsymbol w \cdot \boldsymbol x_i)] \boldsymbol x_i$$</p>
+<p>该模型的损失函数为</p>
+<p>$$l(\boldsymbol w) &#x3D; -\frac 1n L(\boldsymbol w)$$</p>
+<p>梯度下降给出的反向传播公式：</p>
+<p>$$\boldsymbol w’ &#x3D; \boldsymbol w - \eta \frac {\partial l(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; \boldsymbol w + \frac \eta n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}$$</p>
+<p>其中 $\eta &gt; 0$ 是学习率。</p>
+<h3 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h3><p><strong>Q</strong>：假设标签集不是 {0,1} 而是 <strong>{1,-1}</strong>，将会有什么变化，请给出推导。</p>
+<p><strong>A</strong>：</p>
+<p>类似地，前向传播公式：</p>
+<p>$$f(\boldsymbol x_i) &#x3D; \hat P(y_i &#x3D; 1) &#x3D; \frac 1{1 + \exp(-\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<p>$$\hat P(y_i &#x3D; -1) &#x3D; \frac 1{1 + \exp(\boldsymbol w \cdot \boldsymbol x_i)}$$</p>
+<p>似然函数：</p>
+<p>$$<br>\begin{aligned}<br>    L(\boldsymbol w) &amp;&#x3D; \ln \prod_{i &#x3D; 1}^n f(\boldsymbol x_i)^{\frac {y_i + 1}2} [1 - f(\boldsymbol x_i)]^{\frac {1 - y_i}2} \<br>    &amp;&#x3D; \sum_{i &#x3D; 1}^n \frac {y_i + 1}2\ln f(\boldsymbol x_i) + \frac {1 - y_i}2 \ln[1 - f(\boldsymbol x_i)] \<br>\end{aligned}<br>$$</p>
+<p>同理可得：</p>
+<p>$$\frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; \sum_{i &#x3D; 1}^n [\frac {y_i + 1}2\exp(-\boldsymbol w \cdot \boldsymbol x_i) - \frac {1 - y_i}2 \exp(\boldsymbol w \cdot \boldsymbol x_i)] \boldsymbol x_i$$</p>
+<p>$$\boldsymbol w’ &#x3D; \boldsymbol w + \frac \eta n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}$$</p>
+<p>与 <strong>2.1</strong> 中的式子相比，只有常数 $y_i$ 的计算发生了变化。</p>
+<h3 id="2-3"><a href="#2-3" class="headerlink" title="2.3"></a>2.3</h3><p><strong>Q</strong>：在问题2.1的基础上，即标签集为 {0,1} 的情况，分别增加<strong>L1正则化</strong>和<strong>L2正则化</strong>，公式和模型效果分别会有什么变化，请给出推导。</p>
+<p><strong>A</strong>：增加 L1 和 L2 正则化后，前向传播公式不变。</p>
+<p>损失函数变为</p>
+<p>$$l(\boldsymbol w) &#x3D; -\frac 1n L(\boldsymbol w) + \alpha \lVert \boldsymbol w \rVert + \beta \lVert \boldsymbol w \rVert_2^2$$</p>
+<p>计算偏导：</p>
+<p>$$<br>\begin{aligned}<br>    \frac {\partial l(\boldsymbol w)}{\partial \boldsymbol w} &#x3D; -\frac 1n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w} + \alpha \operatorname{sign} \boldsymbol w + 2\beta \boldsymbol w<br>\end{aligned}<br>$$</p>
+<p>反向传播公式：</p>
+<p>$$\boldsymbol w’ &#x3D; \boldsymbol w - \eta\left[\alpha \operatorname{sign} \boldsymbol w + 2\beta\boldsymbol w - \frac 1n \frac {\partial L(\boldsymbol w)}{\partial \boldsymbol w}\right]$$</p>
+<p>其中 $\operatorname{sign}(x)$ 是符号函数：</p>
+<p>$$<br>\operatorname{sign}(x) &#x3D;<br>\begin{cases}<br>    -1, &amp;x &lt; 0 \<br>    0,  &amp;x &#x3D; 0 \<br>    1,  &amp;x &gt; 0 \<br>\end{cases}<br>$$</p>
+<h3 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h3><p><strong>Q</strong>：给出<strong>核逻辑回归的对偶形式</strong>。</p>
+<p><strong>A</strong>：核逻辑回归原问题：</p>
+<p>$$<br>\begin{aligned}<br>    \min_{\boldsymbol w, b} \quad \sum_{i &#x3D; 1}^n y_i \ln {1 + \exp[-K(\boldsymbol w, \boldsymbol x_i) - b]} + (1 - y_i) \ln {1 + \exp[K(\boldsymbol w, \boldsymbol x_i) + b]} \<br>\end{aligned}<br>$$</p>
+<p>其中 $K(\boldsymbol x, \boldsymbol z), K: (\R^m, \R^m) \rightarrow \R$ 是核函数。</p>
+<p>因为没有条件约束，对偶问题即为原问题。</p>
+<h2 id="3-数学原理之SVM"><a href="#3-数学原理之SVM" class="headerlink" title="3 数学原理之SVM"></a>3 数学原理之SVM</h2><p><em>出题人：吴佳黎</em></p>
+<p>​	在后续的问题中，你可能需要使用支持向量机解决问题。SVM的部分原理如下。</p>
+<ul>
+<li>支持向量机原问题：</li>
+</ul>
+<p>$$<br>\min_{\boldsymbol{w},b}f(\boldsymbol{w})&#x3D;\frac{1}{2}|\boldsymbol{w}|_2^2,\quad\mathrm{ s.t. }\ y_i(\boldsymbol{w}^\top\boldsymbol{x}_i+b)\ge 1,\forall 1\le i\le m<br>$$</p>
+<ul>
+<li>支持向量机对偶问题：</li>
+</ul>
+<p>$$<br>\max_{\boldsymbol{\alpha}\ge 0}g(\boldsymbol{}\alpha) &#x3D;-\frac{1}{2}\sum_{i&#x3D;1}^m\sum_{j&#x3D;1}^m \alpha_i\alpha_j y_iy_j\boldsymbol x_i^\top\boldsymbol{x}<em>j+\sum</em>{i&#x3D;1}^m \alpha_i,\quad \mathrm{s.t.}\ \boldsymbol{y}^\top\boldsymbol\alpha&#x3D;0<br>$$</p>
+<p>你需要使用简单的数学公式回答以下问题：</p>
+<h3 id="具体要求-1"><a href="#具体要求-1" class="headerlink" title="具体要求"></a>具体要求</h3><ol>
+<li>给出支持向量机最大间隔准则原问题的推导，解释分类超平面和支持超平面的含义。</li>
+<li>给出对偶问题的推导，并回答问题：强对偶性在支持向量机中始终成立吗？</li>
+<li>根据前面的结果推导<strong>SVM的KKT条件</strong>。</li>
+<li>如果数据非线性可分怎么办？给出修改后的原问题和对偶问题。</li>
+<li>在问题3.4的基础上，若<strong>允许少量样本破坏约束</strong>，应增加怎样的损失函数，请给出修改后的原问题和对偶问题。</li>
+</ol>
+<h3 id="提示-1"><a href="#提示-1" class="headerlink" title="提示"></a>提示</h3><ul>
+<li>可以直接使用点到超平面的距离公式。可以认为你已经掌握拉格朗日乘子法，无需对此再进行证明推导。</li>
+<li>问题3.2中回答问题只需要回答是否，如果你愿意，也可以给出简单的解释。</li>
+<li>除了问题3.4与问题3.5以外，请给出推导过程，仅仅给出结果是无效的。</li>
+<li>如果你愿意，问题3.4与问题3.5可以给出关键性的公式推导或解释。</li>
+<li>建议使用 LaTeX 语法书写数学公式。</li>
+<li>参考资料：李航.统计学习方法[M].北京:清华大学出版社,2019.5.1</li>
+</ul>
+<h2 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3 Solution"></a>3 Solution</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3><p><strong>Q</strong>：给出支持向量机最大间隔准则原问题的推导，解释分类超平面和支持超平面的含义。</p>
+<p><strong>A</strong>：</p>
+<h4 id="原问题推导"><a href="#原问题推导" class="headerlink" title="原问题推导"></a>原问题推导</h4><p>SVM 原问题：</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol w, b} \quad \gamma \<br>    &amp; \text{s.t.} \quad y_i\frac {\boldsymbol w \cdot \boldsymbol x_i + b}{\lVert \boldsymbol w \rVert} \geq \gamma, \quad \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>令 $\gamma’ &#x3D; \gamma \lVert \boldsymbol w \rVert$，转化为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol w, b} \quad \frac {\gamma’}{\lVert \boldsymbol w \rVert} \<br>    &amp; \text{s.t.} \quad y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq \gamma’, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>可以注意到，$\gamma’$ 的取值不影响问题的解：若 $\gamma_1’ &#x3D; \lambda \gamma_2’$，则若取 $\boldsymbol w_1^* &#x3D; \lambda \boldsymbol w_2^<em>, b_1^</em> &#x3D; \lambda b_2^*$，有</p>
+<p>$$\frac {\gamma_1’}{\lVert \boldsymbol w_1^* \rVert} &#x3D; \frac {\gamma_2’}{\lVert \boldsymbol w_2^* \rVert}$$</p>
+<p>$$y_i(\boldsymbol w_1^* \cdot \boldsymbol x_i + b_1^<em>) \geq \gamma’_1 \Leftrightarrow y_i(\boldsymbol w_2^</em> \cdot \boldsymbol x_i + b_2^*) \geq \gamma’_2$$</p>
+<p>因此不妨取 $\gamma’ &#x3D; 1$，问题转化为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol w, b} \quad \frac 1{\lVert \boldsymbol w \rVert} \<br>    &amp; \text{s.t.} \quad y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>即</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \min_{\boldsymbol w, b} \quad \frac 12\lVert \boldsymbol w \rVert^2 \<br>    &amp; \text{s.t.} \quad y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<h4 id="分类超平面和支持超平面"><a href="#分类超平面和支持超平面" class="headerlink" title="分类超平面和支持超平面"></a>分类超平面和支持超平面</h4><p><strong>分类超平面</strong>既是 SVM 参数对应的超平面 $\boldsymbol w \cdot \boldsymbol x + b &#x3D; 0$。SVM 根据点在分类超平面的哪一侧为其预测分类。</p>
+<p><strong>支持超平面</strong>既是支持向量所在的超平面，即 $y_i(\boldsymbol w \cdot \boldsymbol x_i + b) &#x3D; 1$。根据 $y_i \in {-1, 1}$ 取值不同，存在两个支持超平面 $H_1: \boldsymbol w \cdot \boldsymbol x_i + b &#x3D; 1$ 和 $H_2: \boldsymbol w \cdot \boldsymbol x_i + b &#x3D; -1$。求解分类超平面时，有且只有支持超平面上的点会起作用。</p>
+<h3 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h3><p><strong>Q</strong>：给出对偶问题的推导，并回答问题：强对偶性在支持向量机中始终成立吗？</p>
+<p><strong>A</strong>：</p>
+<h4 id="3-2-1-对偶问题的推导"><a href="#3-2-1-对偶问题的推导" class="headerlink" title="3.2.1 对偶问题的推导"></a>3.2.1 对偶问题的推导</h4><p>根据拉格朗日乘子法，定义拉格朗日函数</p>
+<p>$$L(\boldsymbol w, b, \boldsymbol a) &#x3D; \frac 12 \lVert \boldsymbol w \rVert^2 - \sum_{i &#x3D; 1}^n \alpha_i y_i (\boldsymbol w \cdot \boldsymbol x_i + b) + \sum_{i &#x3D; 1}^n \alpha_i$$</p>
+<p>可得原问题的对偶问题为</p>
+<p>$$\max_{\boldsymbol \alpha \geq \boldsymbol 0} \min_{\boldsymbol w, b} L(\boldsymbol w, b, \boldsymbol a)$$</p>
+<p>简单推导：</p>
+<p>$$<br>\begin{aligned}<br>    L(\boldsymbol w, b, \boldsymbol a) &amp;&#x3D; \frac 12 \lVert \boldsymbol w \rVert^2 - \sum_{i &#x3D; 1}^n \alpha_i [y_i (\boldsymbol w \cdot \boldsymbol x_i + b) - 1] \<br>    &amp;&#x3D; \frac 12 \lVert \boldsymbol w \rVert^2 - \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i\right) \cdot \boldsymbol w - \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \right) b + \sum_{i &#x3D; 1}^n \alpha_i \<br>\end{aligned}<br>$$</p>
+<p>当 $\boldsymbol a$ 确定时，$\left(\sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i\right), \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \right), \sum_{i &#x3D; 1}^n \alpha_i$ 都是常数。不妨记 $\boldsymbol C_1(\boldsymbol \alpha) &#x3D; \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i\right), C_2(\boldsymbol \alpha) &#x3D; \left(\sum_{i &#x3D; 1}^n \alpha_i y_i \right)$，则对偶问题等价于</p>
+<p>$$\max_{\boldsymbol \alpha \geq \boldsymbol 0} \left[\left(\sum_{i &#x3D; 1}^n \alpha_i\right) + \min_{\boldsymbol w, b} \left(\frac 12 \lVert \boldsymbol w \rVert^2 - \boldsymbol C_1(\boldsymbol \alpha) \cdot \boldsymbol w - C_2(\boldsymbol \alpha) b\right)\right]$$</p>
+<p>记函数</p>
+<p>$$f(\boldsymbol w, b) &#x3D; \left(\frac 12 \lVert \boldsymbol w \rVert^2 - \boldsymbol C_1(\boldsymbol \alpha) \cdot \boldsymbol w - C_2(\boldsymbol \alpha) b\right)$$</p>
+<p>要求解 $\min_{\boldsymbol w, b} f(\boldsymbol w, b)$，考虑计算偏导为 $0$，有</p>
+<p>$$<br>\begin{cases}<br>    \frac {\partial f(\boldsymbol w, b)}{\partial \boldsymbol w} &#x3D; \boldsymbol w - \boldsymbol C_1(\boldsymbol \alpha) &#x3D; 0, \<br>    \frac {\partial f(\boldsymbol w, b)}{\partial b} &#x3D; - C_2(\boldsymbol \alpha) &#x3D; 0<br>\end{cases}<br>$$</p>
+<p>得</p>
+<p>$$<br>\begin{cases}<br>    \boldsymbol w &#x3D; \boldsymbol C_1(\boldsymbol \alpha), \<br>    C_2(\boldsymbol \alpha) &#x3D; 0<br>\end{cases}<br>$$</p>
+<p>代入得 $\min_{\boldsymbol w, b} f(\boldsymbol w, b) &#x3D; f(\boldsymbol C_1(\boldsymbol \alpha), 0) &#x3D; -\frac 12 \lVert \boldsymbol C_1(\boldsymbol \alpha) \rVert^2$。</p>
+<p>故对偶问题即为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha \geq \boldsymbol 0} \left[\left(\sum_{i &#x3D; 1}^n \alpha_i\right) - \frac 12 \lVert \boldsymbol C_1(\boldsymbol \alpha) \rVert^2\right] \<br>    &amp; \text{s.t. } C_2(\boldsymbol \alpha) &#x3D; 0<br>\end{aligned}<br>$$</p>
+<p>拆开式子得</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha \geq \boldsymbol 0} \left(\sum_{i &#x3D; 1}^n \alpha_i - \frac 12 \sum_{i &#x3D; 1}^n \sum_{j &#x3D; 1}^n \alpha_i \alpha_j y_i y_j \boldsymbol x_i \cdot \boldsymbol x_j \right) \<br>    &amp; \text{s.t. } \boldsymbol \alpha \cdot \boldsymbol y  &#x3D; 0<br>\end{aligned}<br>$$</p>
+<p>即为原问题的对偶形式。</p>
+<h4 id="3-2-2-是否满足强对偶性"><a href="#3-2-2-是否满足强对偶性" class="headerlink" title="3.2.2 是否满足强对偶性"></a>3.2.2 是否满足强对偶性</h4><p>满足。</p>
+<p>首先，显然地，$f(\boldsymbol w)$ 和 $[y_i(\boldsymbol{w}^\top\boldsymbol{x}_i+b) - 1]$ 是关于 $\boldsymbol w$ 的凸函数，且因为数据集线性可分，所以存在严格可行解。根据定理可知，原问题和对偶问题均存在最优解，且最优解对应函数的值相等。</p>
+<h3 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h3><p><strong>Q</strong>：根据前面的结果推导 <strong>SVM 的 KKT 条件</strong>。</p>
+<p><strong>A</strong>：因为问题满足了 <strong>3.2.2</strong> 的条件，所以可知 $\boldsymbol w^<em>, b^</em>, \boldsymbol a^*$ 是原问题和对偶问题的最优解，当且仅当满足 KKT 条件</p>
+<p>$$<br>\frac {\partial L(\boldsymbol w^<em>, b^</em>, \boldsymbol a^<em>)}{\partial \boldsymbol w} &#x3D; \boldsymbol w^</em> - \sum_{i &#x3D; 1}^n \alpha_i y_i \boldsymbol x_i &#x3D; \boldsymbol 0<br>$$</p>
+<p>$$<br>\frac {\partial L(\boldsymbol w^<em>, b^</em>, \boldsymbol a^*)}{\partial b} &#x3D; - \sum_{i &#x3D; 1}^n \alpha_i y_i &#x3D; 0<br>$$</p>
+<p>$$<br>\boldsymbol [y_i(\boldsymbol w^* \cdot \boldsymbol x_i + b^<em>) - 1]  a^</em>_i &#x3D; 0, \quad \forall 1 \leq i \leq n<br>$$</p>
+<p>$$<br>y_i(\boldsymbol{w}^* \cdot \boldsymbol{x}_i+b^*)\ge 1, \quad \forall 1 \leq i \leq n<br>$$</p>
+<p>$$\boldsymbol a^* \geq \boldsymbol 0$$</p>
+<h3 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h3><p><strong>Q</strong>：如果数据非线性可分怎么办？给出修改后的原问题和对偶问题。</p>
+<p><strong>A</strong>：若不允许样本破坏约束，则可以考虑将输入的维度进行变换。</p>
+<p>具体地，记 $\Chi$ 是输入空间，$\Eta$ 是特征空间。对函数 $K(\boldsymbol x, \boldsymbol z), K: \Chi^2 \rightarrow \R$，若存在映射 $\boldsymbol \phi: \Chi \rightarrow \Eta$ 使得</p>
+<p>$$K(\boldsymbol x, \boldsymbol z) &#x3D; \boldsymbol \phi(\boldsymbol x) \cdot \boldsymbol \phi(\boldsymbol y)$$</p>
+<p>则称 $K(\boldsymbol x, \boldsymbol z)$ 是<strong>核函数</strong>。</p>
+<p>在给定核函数的前提下，我们可以将 SVM 问题进行修改，对偶问题变为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha \geq \boldsymbol 0} \left(\sum_{i &#x3D; 1}^n \alpha_i - \frac 12 \sum_{i &#x3D; 1}^n \sum_{j &#x3D; 1}^n \alpha_i \alpha_j y_i y_j K(\boldsymbol x_i, \boldsymbol x_j) \right) \<br>    &amp; \text{s.t. } \boldsymbol \alpha \cdot \boldsymbol y  &#x3D; 0<br>\end{aligned}<br>$$</p>
+<p>相应地，原问题变为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \min_{\boldsymbol w, b} \quad \frac 12\lVert \boldsymbol w \rVert^2 \<br>    &amp; \text{s.t.} \quad y_i(K(\boldsymbol w, \boldsymbol x_i) + b) \geq 1, \quad  \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+<p>当 ${\boldsymbol x_i}$ 在核函数对应的特征空间 $\Eta$ 中线性可分时，就存在最优解。</p>
+<h3 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h3><p><strong>Q</strong>：在问题3.4的基础上，若<strong>允许少量样本破坏约束</strong>，应增加怎样的损失函数，请给出修改后的原问题和对偶问题。</p>
+<p><strong>A</strong>：</p>
+<p>由于非线性可分，所以部分点不能满足 $y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1$。引入松弛变量 $\xi_i \geq 0$，不等式变为 $y_i(\boldsymbol w \cdot \boldsymbol x_i + b) \geq 1 - \xi_i$，同时给函数添加一项 $+C\sum_{i &#x3D; 1}^n \xi_i$ 作为修正，防止 $\xi_i$ 过大。修改后的原问题：</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \min_{\boldsymbol w, b, \boldsymbol \xi} \quad \frac 12\lVert \boldsymbol w \rVert^2 + C\sum_{i &#x3D; 1}^n \xi_i \<br>    &amp; \text{s.t.} \quad y_i(K(\boldsymbol w, \boldsymbol x_i) + b) \geq 1 - \xi_i, \quad  \forall 1 \leq i \leq n \<br>    &amp; \qquad\  \boldsymbol \xi \geq \boldsymbol 0 \<br>\end{aligned}<br>$$</p>
+<p>与 <strong>3.2.1</strong> 同理，可知对偶问题为</p>
+<p>$$<br>\begin{aligned}<br>    &amp; \max_{\boldsymbol \alpha} \quad \sum_{i &#x3D; 1}^n \alpha_i - \frac 12 \sum_{i &#x3D; 1}^n \sum_{j &#x3D; 1}^n \alpha_i \alpha_j y_i y_j K(\boldsymbol x_i, \boldsymbol x_j) \<br>    &amp; \text{s.t. } \quad \boldsymbol \alpha \cdot \boldsymbol y &#x3D; 0 \<br>    &amp; \qquad\ \ 0 \leq \alpha_i \leq C, \quad \forall 1 \leq i \leq n \<br>\end{aligned}<br>$$</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/29/learning-note/kaggle-feature-engineering/" rel="prev" title="Kaggle Feature Engineering 学习笔记">
+      <i class="fa fa-chevron-left"></i> Kaggle Feature Engineering 学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/30/learning-note/misc-ensemble-learning/" rel="next" title="杂文：集成学习简介">
+      杂文：集成学习简介 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B9%8BLR"><span class="nav-number">1.</span> <span class="nav-text">2 数学原理之LR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">具体要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Solution"><span class="nav-number">2.</span> <span class="nav-text">2 Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1. 前向传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-%E5%90%8E%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2. 后向传播</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2"><span class="nav-number">2.2.</span> <span class="nav-text">2.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3"><span class="nav-number">2.3.</span> <span class="nav-text">2.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4"><span class="nav-number">2.4.</span> <span class="nav-text">2.4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E4%B9%8BSVM"><span class="nav-number">3.</span> <span class="nav-text">3 数学原理之SVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82-1"><span class="nav-number">3.1.</span> <span class="nav-text">具体要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA-1"><span class="nav-number">3.2.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Solution"><span class="nav-number">4.</span> <span class="nav-text">3 Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1"><span class="nav-number">4.1.</span> <span class="nav-text">3.1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E9%97%AE%E9%A2%98%E6%8E%A8%E5%AF%BC"><span class="nav-number">4.1.1.</span> <span class="nav-text">原问题推导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E8%B6%85%E5%B9%B3%E9%9D%A2%E5%92%8C%E6%94%AF%E6%8C%81%E8%B6%85%E5%B9%B3%E9%9D%A2"><span class="nav-number">4.1.2.</span> <span class="nav-text">分类超平面和支持超平面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2"><span class="nav-number">4.2.</span> <span class="nav-text">3.2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="nav-number">4.2.1.</span> <span class="nav-text">3.2.1 对偶问题的推导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-%E6%98%AF%E5%90%A6%E6%BB%A1%E8%B6%B3%E5%BC%BA%E5%AF%B9%E5%81%B6%E6%80%A7"><span class="nav-number">4.2.2.</span> <span class="nav-text">3.2.2 是否满足强对偶性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3"><span class="nav-number">4.3.</span> <span class="nav-text">3.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4"><span class="nav-number">4.4.</span> <span class="nav-text">3.4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5"><span class="nav-number">4.5.</span> <span class="nav-text">3.5</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tsukimaru Oshawott</p>
+  <div class="site-description" itemprop="description">Tsukimaru 的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsukimaru Oshawott</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+  <link rel="mask-icon" href="/img/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cutekibry.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="吴恩达在 Coursera 上的机器学习入门课的笔记。只给自己看，所以写得非常简略。 使用的是较新的 2022 版本（和之前的不太一样），双语可见 BV1Pa411X76s。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera 吴恩达机器学习入门课笔记（更新至第三课）">
+<meta property="og:url" content="https://cutekibry.github.io/2022/08/13/learning-note/coursera-ml-intro-note/index.html">
+<meta property="og:site_name" content="月见客栈">
+<meta property="og:description" content="吴恩达在 Coursera 上的机器学习入门课的笔记。只给自己看，所以写得非常简略。 使用的是较新的 2022 版本（和之前的不太一样），双语可见 BV1Pa411X76s。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/10/12/GTM4DpSwrt9JHCx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/10/29/N7LyxzdsBnPuXRv.png">
+<meta property="article:published_time" content="2022-08-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-11T07:00:44.813Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/10/12/GTM4DpSwrt9JHCx.png">
+
+<link rel="canonical" href="https://cutekibry.github.io/2022/08/13/learning-note/coursera-ml-intro-note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Coursera 吴恩达机器学习入门课笔记（更新至第三课） | 月见客栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">月见客栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cutekibry.github.io/2022/08/13/learning-note/coursera-ml-intro-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tsukimaru Oshawott">
+      <meta itemprop="description" content="Tsukimaru 的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="月见客栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Coursera 吴恩达机器学习入门课笔记（更新至第三课）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-13 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-13T00:00:00+08:00">2022-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-08-11 15:00:44" itemprop="dateModified" datetime="2025-08-11T15:00:44+08:00">2025-08-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>吴恩达在 Coursera 上的机器学习入门课的笔记。只给自己看，所以写得非常简略。</p>
+<p>使用的是较新的 2022 版本（和之前的不太一样），双语可见 <a target="_blank" rel="noopener" href="//www.bilibili.com/video/BV1Pa411X76s">BV1Pa411X76s</a>。</p>
+<span id="more"></span>
+
+<h2 id="第一课"><a href="#第一课" class="headerlink" title="第一课"></a>第一课</h2><h3 id="线性回归（Linear-Regression）"><a href="#线性回归（Linear-Regression）" class="headerlink" title="线性回归（Linear Regression）"></a>线性回归（Linear Regression）</h3><p>设特征数为 $n$，样本数为 $m$。</p>
+<p>模型：$f_{\text{w}, b}(\text{x}) &#x3D; \text{w}\text{x} + b &#x3D; \left(\sum_{i &#x3D; 1}^n w_ix_i\right) + b$</p>
+<p>损失函数：</p>
+<p>$$L(f_{\text{w}, b}(\text{x}^{(i)}), y^{(i)}) &#x3D; (f_{\text{w}, b}(\text{x}^{(i)}) - y^{(i)})^2$$</p>
+<p>费用函数：</p>
+<p>$$J(\text{w}, b) &#x3D; \frac 1{2m} \left(\sum_{i &#x3D; 1}^m \left(f_{\text{w}, b}(\text{x}^{(i)}) - y^{(i)} \right)^2 \right) + \frac \lambda{2m} \sum_{i &#x3D; 1}^n w_i^2$$</p>
+<p>此处 $\frac \lambda{2m} \sum_{i &#x3D; 1}^n w_i^2$ 采用了<strong>正则化</strong>（Regularization），能使得 $w_i$ 的值减小，从而抑制<strong>过拟合</strong>（Overfitting）。</p>
+<h3 id="梯度下降（Gradient-Descent）"><a href="#梯度下降（Gradient-Descent）" class="headerlink" title="梯度下降（Gradient Descent）"></a>梯度下降（Gradient Descent）</h3><p>$$<br>\begin{aligned}<br>    \frac {\partial J(\text{w}, b)}{\partial w_j} &amp;&#x3D; \frac 1m \left(\sum_{i &#x3D; 1}^m \left( f_{\text{w}, b}(\text{x}^{(i)}) - y^{(i)} \right) x_j^{(i)} \right) + \frac 1m w_j \<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>    \frac {\partial J(\text{w}, b)}{\partial b} &amp;&#x3D; \frac 1m\sum_{i &#x3D; 1}^m \left( f_{\text{w}, b}(\text{x}^{(i)}) - y^{(i)} \right) \<br>\end{aligned}<br>$$</p>
+<h3 id="特征缩放（Feature-Scaling）"><a href="#特征缩放（Feature-Scaling）" class="headerlink" title="特征缩放（Feature Scaling）"></a>特征缩放（Feature Scaling）</h3><ul>
+<li>Mean Normalization：$x’ &#x3D; \frac {x - \mu}{\max - \min}$</li>
+<li>Z-Score Normalization：$x’ &#x3D; \frac {x - \mu}\sigma$</li>
+</ul>
+<p>目标是让 $x$ 尽可能趋近于 $[-1, 1]$ 分布。</p>
+<h3 id="逻辑回归（Logistic-Regression）"><a href="#逻辑回归（Logistic-Regression）" class="headerlink" title="逻辑回归（Logistic Regression）"></a>逻辑回归（Logistic Regression）</h3><p>Sigmoid：$f(x) &#x3D; \frac 1{1 + e^{-x}}$</p>
+<p>ReLU：$f(x) &#x3D; \max{0, x}$</p>
+<p>模型：$f_{\text{w}, b}(\text{x}) &#x3D; \text{sigmoid}\left(\left(\sum_{i &#x3D; 1}^n w_ix_i\right) + b\right)$</p>
+<p>也可以换成 ReLU。</p>
+<p>损失函数：</p>
+<p>$$<br>L(f_{\text{w}, b}(\text{x}^{(i)}), y^{(i)}) &#x3D;<br>\begin{cases}<br>    -\log\left(f_{\text{w}, b}(\text{x}^{(i)})\right), y^{(i)} &#x3D; 1\<br>    -\log\left(1 - f_{\text{w}, b}(\text{x}^{(i)})\right), y^{(i)} &#x3D; 0 \<br>\end{cases}<br>$$</p>
+<p>实际操作中，使用该损失函数比直接套用线性回归的损失函数更优。</p>
+<h2 id="第二课"><a href="#第二课" class="headerlink" title="第二课"></a>第二课</h2><h3 id="输出层的转换函数选择"><a href="#输出层的转换函数选择" class="headerlink" title="输出层的转换函数选择"></a>输出层的转换函数选择</h3><ul>
+<li>二元分类：$\text{Sigmoid}$</li>
+<li>回归：$\text{id}$（带正负）或 $\text{ReLU}$（非负）</li>
+</ul>
+<h3 id="Softmax-回归"><a href="#Softmax-回归" class="headerlink" title="Softmax 回归"></a>Softmax 回归</h3><p>Softmax 回归用来解决多分类问题。</p>
+<p>假设类别共有 $k$ 种，则 Softmax 回归的输出为一个 $k$ 维向量 $\text{x}$，$x_i$ 衡量分类为 $i$ 的相对可能性有多大。实际分类为 $i$ 的概率估计为</p>
+<p>$$a_i &#x3D; P(y &#x3D; i) &#x3D; \frac {e^{x_i}}{\sum_{j &#x3D; 1}^k e^{x_j}}$$</p>
+<p>损失函数为</p>
+<p>$$<br>loss({a_k}, y) &#x3D; -\log a_y<br>$$</p>
+<h3 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h3><p>咕了</p>
+<h3 id="决策树解决二分类问题"><a href="#决策树解决二分类问题" class="headerlink" title="决策树解决二分类问题"></a>决策树解决二分类问题</h3><p>给定特征向量 $\text{x} &#x3D; {a_1, a_2, \ldots, a_k} \ (a_i \in {0, 1})$，估计其分类 $\hat y \in {0, 1}$。</p>
+<p>熵：若 $p$ 为当前节点数据中第一类的占比，那么定义熵 $H(p)$ 为</p>
+<p>$$H(p) &#x3D; -p \log_2 p - (1 - p) \log_2 (1 - p), \quad p \in (0, 1)$$</p>
+<p>特别地，$H(0) &#x3D; H(1) &#x3D; 0$（这是因为 $\log_2 0$ 没有定义）。可以注意到 $\lim_{x \rightarrow 0} x \log_2 x &#x3D; 0$，因此即使特殊定义 $H(0) &#x3D; 0\log_2 0 &#x3D; 0$ 也不会破坏函数连续性。</p>
+<p><img src="https://s2.loli.net/2022/10/12/GTM4DpSwrt9JHCx.png" alt="H(x) 的图像"></p>
+<p>信息增益：若将根节点 $root$ 分为左子树 $left$ 和右子树 $right$，记节点数据个数为 $n$，则信息增益（Information Gain，实际上就是熵减）为</p>
+<p>$$H(p^{root}) - \frac {n^{left}}{n^{root}} H(p^{left}) - \frac {n^{right}}{n^{root}} H(p^{right})$$</p>
+<p>取信息增益最大分割即可。</p>
+<h3 id="停止条件"><a href="#停止条件" class="headerlink" title="停止条件"></a>停止条件</h3><p>停止划分的条件有几种：</p>
+<ul>
+<li>当当前节点深度已经达到规定的最大深度时；</li>
+<li>当最大信息增益小于某个阈值时；</li>
+<li>当节点数据数小于某个阈值时。</li>
+</ul>
+<h3 id="One-hot-编码"><a href="#One-hot-编码" class="headerlink" title="One-hot 编码"></a>One-hot 编码</h3><p>对于 $a \in [1, n] \cup \N$，可以将 $a$ 转化为一个长度为 $n$ 的向量 $\vec b &#x3D; {[a &#x3D; 1], [a &#x3D; 2], [a &#x3D; 3], \ldots, [a &#x3D; n]}$。可以注意到，转化后的 $\vec b$ 的每个元素都为 $0$ 或 $1$，并且有且仅有一个元素为 $1$（因此成为 One-hot 编码）。</p>
+<p>对多分类问题的决策树应用 One-hot 编码，即可转化为二分类问题。</p>
+<h3 id="连续取值"><a href="#连续取值" class="headerlink" title="连续取值"></a>连续取值</h3><p>在决策树上，对于取值为实数的特征进行分割时，可以取条件为 $x \leq C$。</p>
+<p>若当前有 $m$ 个数据，其从小到大为 $x_1 \leq x_2 \leq \ldots \leq x_m$，则可以考虑取 $C &#x3D; \frac {x_i + x_{i + 1}}2 \quad (1 \leq i \leq n - 1)$。</p>
+<h3 id="扩展到回归树"><a href="#扩展到回归树" class="headerlink" title="扩展到回归树"></a>扩展到回归树</h3><p>回归树和决策树类似，但其输出为一个 $y \in \R$，而不是预测其分类。</p>
+<p>类似地，可以定义回归树的信息增益为</p>
+<p>$$D(p^{root}) - \frac {n^{left}}{n^{root}} D(p^{left}) - \frac {n^{right}}{n^{root}} D(p^{right})$$</p>
+<p>其中 $D$ 为方差函数。</p>
+<h3 id="决策树森林"><a href="#决策树森林" class="headerlink" title="决策树森林"></a>决策树森林</h3><p>单棵决策树对数据的微小改变较为敏感。为了使其更加健壮，可以生成多棵决策树，然后收集所有决策树计算后的结果，取众数作为结果返回。</p>
+<p>生成决策树的方式是：每次有放回抽样，抽出与数据集大小个数相等的样本（这些样本可重复），根据它们建决策树。</p>
+<p>决策树棵数一般在 $100$ 左右，因为每增加一棵决策树，其对准确率的增加是有边际递减的。一般来讲，当超过 $100$ 之后其对性能的提升就很小了，还会减慢计算速度。</p>
+<h3 id="随机森林算法"><a href="#随机森林算法" class="headerlink" title="随机森林算法"></a>随机森林算法</h3><p>仅有放回抽样构造出的决策树，在根节点附近的分类标准仍然是高度相似的。记特征数为 $n$，为了更加随机，可以在每次分割时仅随机选出 $k &lt; n$ 个特征进行判断，取信息增益最多的那个进行分割。</p>
+<p>一般来讲取 $k \approx \sqrt n$（西瓜书上据说 $k \approx \log_2 n$）。</p>
+<h3 id="Boost"><a href="#Boost" class="headerlink" title="Boost"></a>Boost</h3><p>更进一步地，在每次抽样时，我们可以更有意识（更高概率地）抽出那些被当前已有决策树森林错误分类的样本。</p>
+<h3 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a>XGBoost</h3><p>XGBoost 是一个开源高效的决策树 &#x2F; 回归树计算库。</p>
+<h3 id="决策树-Vs-神经网络"><a href="#决策树-Vs-神经网络" class="headerlink" title="决策树 Vs. 神经网络"></a>决策树 Vs. 神经网络</h3><p>决策树的优点：</p>
+<ul>
+<li>适合处理天然结构化的数据。简单来说，如果数据看起来像一个表格，则适合用决策树处理。</li>
+<li>训练时间短。</li>
+<li>较小的决策树可能是 Human-interpretable（人类可以理解的）。</li>
+</ul>
+<p>决策树的缺点：</p>
+<ul>
+<li>不适合处理非结构化数据（图像，文本，视频，音乐等）。</li>
+</ul>
+<p>神经网络的优点：</p>
+<ul>
+<li>适合处理几乎所有类型的数据（无论是否结构化）。</li>
+<li>可以和迁移学习（Tranfer learning）一起使用。</li>
+<li>(*) 可以更容易做到让多个机器学习模型一起配合训练。<ul>
+<li>原因很复杂，暂时不展开。</li>
+</ul>
+</li>
+</ul>
+<p>神经网络的缺点：</p>
+<ul>
+<li>训练时间长。</li>
+</ul>
+<h2 id="第三课"><a href="#第三课" class="headerlink" title="第三课"></a>第三课</h2><h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><ul>
+<li>无监督学习算法<ul>
+<li>聚类（Clustering）</li>
+<li>异常检测（Anormaly detection）</li>
+</ul>
+</li>
+<li>推荐系统</li>
+<li>强化训练</li>
+</ul>
+<h3 id="K-means-聚类算法"><a href="#K-means-聚类算法" class="headerlink" title="K-means 聚类算法"></a>K-means 聚类算法</h3><p>K-means 算法可以用来解决聚类问题。算法流程如下：</p>
+<ol>
+<li>随机 $k$ 个点的坐标 $\text{p}_1, \text{p}_2, \ldots, \text{p}_k$作为 $k$ 个簇的中心点。</li>
+<li>重复以下流程直至中心点坐标无变化：<ol>
+<li>遍历所有数据点，将每个数据点分配给离它最近的那个中心点。</li>
+<li>将中心点坐标改为它所支配的数据点坐标的平均值。</li>
+</ol>
+</li>
+</ol>
+<p>其中若中心点无支配数据点，则要么删去该中心点，要么重新随机中心点坐标。</p>
+<p>上面的做法实际上是在优化代价函数</p>
+<p>$$J({c^{(m)}}, {\text{p}<em>k}) &#x3D; \frac 1m \sum</em>{i &#x3D; 1}^m | \text{x}^{(i)} - \text{p}_{c^{(i)}}|^2$$</p>
+<p>该代价函数也称为 Distortion 函数。</p>
+<p>可以注意到，算法流程中的 2.1. 既是在保持 ${\text{p}_k}$ 不变的前提下解得 ${c^{(m)}}$ 的最优解，2.2 既是在保持 ${c^{(m)}}$ 不变的前提下解得 ${\text{p}_k}$ 的最优解。也就是说，每一步调整后，代价函数的值都应减小或不变。</p>
+<h3 id="K-means-聚类算法的改进"><a href="#K-means-聚类算法的改进" class="headerlink" title="K-means 聚类算法的改进"></a>K-means 聚类算法的改进</h3><p>初始化时，我们可以令 $k$ 个中心点坐标为 $k$ 个不同的样本数据，以取得更好的效果。</p>
+<p>另外，该代价函数也有多个局部最小值，所以我们也可以运行多次 K-means 算法（一般为 $50 \ldots 1000$ 次），取代价函数最小的作为答案。</p>
+<h3 id="如何选择-K-值"><a href="#如何选择-K-值" class="headerlink" title="如何选择 K 值"></a>如何选择 K 值</h3><p>肘部法则（Elbow Method）：令 $f(k)$ 为取 $K &#x3D; k$ 时计算得到的最小代价，则取 $f(k) - k$ 图像上明显的拐点的横坐标作为 $k$ 的取值。但实际上不少时候这个图像是比较平缓的，所以其实也没有很大用处，吴恩达也说自己不用。</p>
+<p>实际应用中，该算法一般是用来产生一些簇，提供给下游（Downstream）的开发人员，让他们进一步进行计算的。所以可以考虑根据下游开发人员的反馈调整 $K$ 值。</p>
+<p><strong>注意</strong>：你并不是在选择 $k$ 使得 $f(k)$ 最小。实际上，大多数情况下 $f(k)$ 随着 $k$ 的增大是近似单调下降的，但这并不意味着簇数越多越好。</p>
+<h3 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h3><p>给出 $m$ 个向量 ${\text{x}^{(i)}}$ 作为参考，再给出一个向量 $\text {x}$，判断其对这 $m$ 个向量来说正不正常。</p>
+<p>先强行假定每一维的参数是相互独立的，然后我们考虑用正态分布估计每一维参数的分布。计算</p>
+<p>$$\mu_j &#x3D; \frac 1n \sum_{i &#x3D; 1}^m x_j^{(i)}$$</p>
+<p>$$\sigma_j^2 &#x3D; \frac 1n \sum_{i &#x3D; 1}^m (x_j^{(i)} - \mu_j)^2$$</p>
+<p>则可以估计给定的参数 $x_j$ 正常的概率是 $p(x_j; \mu_j, \sigma_j^2)$，此处的 $p(\ldots)$ 为正态分布概率函数。</p>
+<p>由于互相独立，可以得知</p>
+<p>$$p(\text{x}) &#x3D; \prod_{j &#x3D; 1}^k p(x_j; \mu_j, \sigma_j^2)$$</p>
+<p>若 $p(\text{x}) &lt; \epsilon$（其中 $\epsilon$ 为我们指定的一个常数），则认为 $\text{x}$ 是异常的。</p>
+<h3 id="异常检测的交叉验证"><a href="#异常检测的交叉验证" class="headerlink" title="异常检测的交叉验证"></a>异常检测的交叉验证</h3><ul>
+<li>训练集 ${\text{x}^{(m)}}$：用于训练</li>
+<li>交叉验证集 ${(\text{x}<em>{cv}^{(m</em>{cv})}, y_{cv}^{(m_{cv})})}$：用于选择模型</li>
+<li>测试集 ${(\text{x}<em>{test}^{(m</em>{test})}, y_{test}^{(m_{test})})}$：用于检验模型的实际正确率</li>
+</ul>
+<p>注意要点：</p>
+<ul>
+<li>一般异常数据数远小于正常数据数（如 $1:200$）。</li>
+<li>一般不需要把异常数据放入训练集，而应当放入交叉验证集和测试集。</li>
+<li>若异常数据极其少（只有一两个），可考虑不适用测试集（但会带来一定的风险）。</li>
+</ul>
+<h3 id="异常检测-Vs-监督学习"><a href="#异常检测-Vs-监督学习" class="headerlink" title="异常检测 Vs. 监督学习"></a>异常检测 Vs. 监督学习</h3><p>异常检测适用于：</p>
+<ul>
+<li>异常数据极其少的时候（例如不超过 $20$）。</li>
+<li>有很多种异常类型，即很难从异常数据习得其通性的时候。<ul>
+<li>异常检测算法会将与正常数据偏离较大的数据当作异常，监督学习会将与异常数据相近的当作异常。也就是说，如果出现了一种新的异常类型，异常检测算法会将其视为异常（因为与正常偏离大），而监督学习不会将其视为异常（因为与异常距离远）。</li>
+</ul>
+</li>
+</ul>
+<p>监督学习则相反。</p>
+<p>例如，金融欺诈的手段千变万化，因此更适合用异常检测；垃圾邮件的类别则相对少，因此更适合用监督学习。</p>
+<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>监督学习中，即使选择了一些无关特征，算法仍然可以自动调整它们的权值，使它们对结果不起作用。</p>
+<p>但异常检测中，特征的选择极其重要。</p>
+<p>首先，可以将特征处理一下，使得它们更加符合正态分布，例如</p>
+<ul>
+<li>$f(x) &#x3D; \ln (x + C)$</li>
+<li>$f(x) &#x3D; x^a$</li>
+</ul>
+<p>尽管有些方法可以自动测量其与正态分布的相近程度，但在实践中作用不大。实践中，多尝试几个 $C$ 和 $a$ 即可。</p>
+<p>其次，可以对实际数据作误差分析。例如，如果算法运行不优，大概率是异常数据和正常数据的 $p(\text{x})$ 大小相近。此时可以查看异常数据，分析是否有什么先前没有考虑到的特征是与大部分正常数据相离的。你也可以试着组合一些特征来产生新特征。</p>
+<h3 id="推荐系统：协同过滤（Collaborative-filtering）"><a href="#推荐系统：协同过滤（Collaborative-filtering）" class="headerlink" title="推荐系统：协同过滤（Collaborative filtering）"></a>推荐系统：协同过滤（Collaborative filtering）</h3><p>有 $n_u$ 个用户，$n_m$ 个商品，记 $r(i, j) \in {0, 1}$ 表示用户 $j$ 是否给商品 $i$ 评分，令 $y^{(i, j)}$ 表示其评分。</p>
+<p>已知部分评分情况，预估用户对每个未评分商品的评分是多少。</p>
+<p>可设商品 $i$ 有隐藏的 $n$ 维特征向量 $\text{x}^{(i)}$，用户 $j$ 的线性回归参数为 $\text{w}^{(j)}, b^{(j)}$，则预计评分为</p>
+<p>$$\hat y^{(i, j)} &#x3D; \text{w}^{(j)}\text{x}^{(i)} + b^{(j)}$$</p>
+<p>类似地，定义代价函数</p>
+<p>$$J({\text{x}^{(n_m)}}, {\text{w}^{(n_u)}}, {b^{(n_u)}}) &#x3D; \frac 12\sum_{r(i, j) &#x3D; 1} \left(\text{w}^{(j)}\text{x}^{(i)} + b^{(j)} - y^{(i, j)}\right)^2 + \frac \lambda 2 \sum_{j &#x3D; 1}^{n_u} \left(\text{w}^{(j)}\right)^2 + \frac \lambda 2 \sum_{i &#x3D; 1}^{n_m} \left(\text{x}^{(i)}\right)^2$$</p>
+<p>用梯度下降最优化 $J(\ldots)$ 即可。</p>
+<p>对于二分类预测问题（即 $y^{(i, j)} \in {0, 1}$），可以用逻辑回归的方法类似处理，此处不再赘述。</p>
+<h3 id="均值归一化"><a href="#均值归一化" class="headerlink" title="均值归一化"></a>均值归一化</h3><p>设 $\mu_i$ 为商品 $i$ 的平均评分，可以令所有 $y^{(i, j)}$ 减去 $\mu_i$ 后进行拟合。训练到最后输出时再在预测值上加上 $\mu_i$ 即可。</p>
+<p>这样的好处是当用户评分过极少的电影时，算法表现也会更好。</p>
+<h3 id="寻找共同点"><a href="#寻找共同点" class="headerlink" title="寻找共同点"></a>寻找共同点</h3><p>可以通过协同过滤算法求解出的 ${\text{x}^{(i)}}$，用 $|\text{x}^{(j)} - \text{x}^{(i)}|^2$ 来判断商品 $i, j$ 的相似度。</p>
+<h3 id="协同过滤的局限"><a href="#协同过滤的局限" class="headerlink" title="协同过滤的局限"></a>协同过滤的局限</h3><ul>
+<li>存在冷启动问题：对于新注册的用户 &#x2F; 新上架的商品，算法无法提供良好的推荐。</li>
+<li>难以利用已知特性：即使拥有一些已知特性，它们也较难显著提高协同过滤算法的表现。</li>
+</ul>
+<h3 id="基于内容过滤（Content-based-filtering）"><a href="#基于内容过滤（Content-based-filtering）" class="headerlink" title="基于内容过滤（Content-based filtering）"></a>基于内容过滤（Content-based filtering）</h3><p>协同过滤算法会根据那些给出评分和你相似的用户，来提供相近的推荐。而基于内容过滤算法，则会根据用户和商品的特征来提供推荐。</p>
+<p>设用户 $j$ 的偏好特征为 $\text{x}_u^{(j)}$，商品 $i$ 的特征为 $\text{x}_m^{(i)}$（<strong>$\text{x}_u^{(j)}, \text{x}_m^{(i)}$ 维度不一定相等</strong>），基于内容过滤算法会根据 $\text{x}_u^{(j)}$ 计算一个转化后的特征向量 $\text{v}_u^{(j)}$，根据 $\text{x}_m^{(i)}$ 计算 $\text{v}_m^{(i)}$（<strong>$\text{v}_u^{(j)}, \text{v}_m^{(i)}$ 维度必须相等</strong>），并预估评分为</p>
+<p>$$\hat y^{(i, j)} &#x3D; \text{v}_u^{(j)}\text{v}_m^{(i)}$$</p>
+<p>此处和之前的算法相比少了常数项，但实际证明，缺少常数项几乎不会影响算法性能。</p>
+<p>实现基于内容过滤算法的一个方式是<strong>深度学习</strong>。构建两个神经网络 $f: \R^{k_u} \rightarrow \R^{k_v}$ 和 $g: \R^{k_m} \rightarrow \R^{k_v}$，令 $\text{v}_u^{(j)} &#x3D; f(\text{x}_u^{(j)}), \text{v}_m^{(i)} &#x3D; g(\text{x}_m^{(i)})$，我们需要训练 $f, g$ 使得其产生的预估良好。</p>
+<p>实际上，我们可以把两个神经网络结合起来。把 $\text{x}_u^{(j)}, \text{x}_m^{(i)}$ 首尾相连成为一个输入，并在 $f, g$ 的最后用一个神经元连接起来，输出其点积作为结果。这样一来，我们只需要训练一个神经网络，问题会变得简单许多。  </p>
+<p><img src="https://s2.loli.net/2022/10/29/N7LyxzdsBnPuXRv.png" alt="连接示例图"></p>
+<p>先前提到说，神经网络相比决策树的好处是容易将多个神经网络结合起来使用。这就是一个鲜明的例子。</p>
+<p>费用函数和先前的类似，也是差值平方和加上正则化项。</p>
+<h3 id="从大目录里推荐"><a href="#从大目录里推荐" class="headerlink" title="从大目录里推荐"></a>从大目录里推荐</h3><p>现代网站通常拥有大量的资源，例如超过十万甚至百万首曲库。对于每个用户都强行枚举所有商品并放入神经网络计算是不现实的。</p>
+<p>许多大规模推荐系统的实现可以分为两个步骤：数据检索和排名。即，检索出十几或几百个该用户可能感兴趣的商品，然后放入神经网络计算并排序。</p>
+<h3 id="推荐系统的危害"><a href="#推荐系统的危害" class="headerlink" title="推荐系统的危害"></a>推荐系统的危害</h3><p>推荐系统并不完全是好东西，滥用它可能会造成一些不理想的效果：</p>
+<ul>
+<li>信息茧房。</li>
+<li>激化仇恨 &#x2F; 引战言论，因为它们能更好地吸引读者注意。</li>
+<li>公司的算法推荐的商品可能不是对用户最好的，而是对公司利益最大化的</li>
+</ul>
+<p>尽力去做有益于人民的东西。</p>
+<h3 id="强化学习引入"><a href="#强化学习引入" class="headerlink" title="强化学习引入"></a>强化学习引入</h3><p>强化学习的一些应用：</p>
+<ul>
+<li>训练机器人</li>
+<li>工厂优化（任务调度安排）</li>
+<li>金融股票交易</li>
+<li>游戏</li>
+</ul>
+<p>原理：程序可以任意进行行动，算法仅指定某些状态的奖励，让程序自己学习如何最大化奖励（训狗）。</p>
+<p>形式化描述：程序任意时刻都可以用四个参数 $(s, a, R(s), s’)$ 描述，其中：</p>
+<ul>
+<li>$s$ 为当前状态</li>
+<li>$a$ 为行动</li>
+<li>$R(s)$ 为当前奖励</li>
+<li>$s’$ 为后继状态</li>
+</ul>
+<h3 id="回报和策略"><a href="#回报和策略" class="headerlink" title="回报和策略"></a>回报和策略</h3><p>为了让程序更快地拿到更多奖励，每秒程序的奖励会衰减，即乘上一个略小于 $1$ 的正实数 $\gamma$（称为折扣系数）。</p>
+<p>程序至当前为止所获得的所有奖励，乘上对应折扣系数的次幂之和称为<strong>回报</strong>（Return）。</p>
+<p>我们希望求出一个<strong>策略</strong>（Policy）函数 $\pi: s \rightarrow a$，表示当状态为 $s$ 时应当采取行动 $a$。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/30/article/the-begger/" rel="prev" title="乞丐">
+      <i class="fa fa-chevron-left"></i> 乞丐
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/22/misc/acm-template/" rel="next" title="ACM 模板">
+      ACM 模板 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%AF%BE"><span class="nav-number">1.</span> <span class="nav-text">第一课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88Linear-Regression%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">线性回归（Linear Regression）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%EF%BC%88Gradient-Descent%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">梯度下降（Gradient Descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE%EF%BC%88Feature-Scaling%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%EF%BC%88Logistic-Regression%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">逻辑回归（Logistic Regression）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%AF%BE"><span class="nav-number">2.</span> <span class="nav-text">第二课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%B1%82%E7%9A%84%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0%E9%80%89%E6%8B%A9"><span class="nav-number">2.1.</span> <span class="nav-text">输出层的转换函数选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax-%E5%9B%9E%E5%BD%92"><span class="nav-number">2.2.</span> <span class="nav-text">Softmax 回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="nav-number">2.3.</span> <span class="nav-text">交叉验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E8%A7%A3%E5%86%B3%E4%BA%8C%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">决策树解决二分类问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">停止条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#One-hot-%E7%BC%96%E7%A0%81"><span class="nav-number">2.6.</span> <span class="nav-text">One-hot 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%8F%96%E5%80%BC"><span class="nav-number">2.7.</span> <span class="nav-text">连续取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E5%88%B0%E5%9B%9E%E5%BD%92%E6%A0%91"><span class="nav-number">2.8.</span> <span class="nav-text">扩展到回归树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E6%A3%AE%E6%9E%97"><span class="nav-number">2.9.</span> <span class="nav-text">决策树森林</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%AE%97%E6%B3%95"><span class="nav-number">2.10.</span> <span class="nav-text">随机森林算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boost"><span class="nav-number">2.11.</span> <span class="nav-text">Boost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XGBoost"><span class="nav-number">2.12.</span> <span class="nav-text">XGBoost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91-Vs-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">2.13.</span> <span class="nav-text">决策树 Vs. 神经网络</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E8%AF%BE"><span class="nav-number">3.</span> <span class="nav-text">第三课</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">3.1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K-means-%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">K-means 聚类算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K-means-%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="nav-number">3.3.</span> <span class="nav-text">K-means 聚类算法的改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9-K-%E5%80%BC"><span class="nav-number">3.4.</span> <span class="nav-text">如何选择 K 值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B"><span class="nav-number">3.5.</span> <span class="nav-text">异常检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%9A%84%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="nav-number">3.6.</span> <span class="nav-text">异常检测的交叉验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B-Vs-%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="nav-number">3.7.</span> <span class="nav-text">异常检测 Vs. 监督学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9"><span class="nav-number">3.8.</span> <span class="nav-text">特征选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%EF%BC%88Collaborative-filtering%EF%BC%89"><span class="nav-number">3.9.</span> <span class="nav-text">推荐系统：协同过滤（Collaborative filtering）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%87%E5%80%BC%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">3.10.</span> <span class="nav-text">均值归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E5%85%B1%E5%90%8C%E7%82%B9"><span class="nav-number">3.11.</span> <span class="nav-text">寻找共同点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%9A%84%E5%B1%80%E9%99%90"><span class="nav-number">3.12.</span> <span class="nav-text">协同过滤的局限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E8%BF%87%E6%BB%A4%EF%BC%88Content-based-filtering%EF%BC%89"><span class="nav-number">3.13.</span> <span class="nav-text">基于内容过滤（Content-based filtering）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E5%A4%A7%E7%9B%AE%E5%BD%95%E9%87%8C%E6%8E%A8%E8%8D%90"><span class="nav-number">3.14.</span> <span class="nav-text">从大目录里推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="nav-number">3.15.</span> <span class="nav-text">推荐系统的危害</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%BC%95%E5%85%A5"><span class="nav-number">3.16.</span> <span class="nav-text">强化学习引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%8A%A5%E5%92%8C%E7%AD%96%E7%95%A5"><span class="nav-number">3.17.</span> <span class="nav-text">回报和策略</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tsukimaru Oshawott</p>
+  <div class="site-description" itemprop="description">Tsukimaru 的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsukimaru Oshawott</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

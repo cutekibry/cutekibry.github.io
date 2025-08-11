@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+  <link rel="mask-icon" href="/img/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cutekibry.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Kaggle 的 Intro to Deep Learning 的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaggle Intro to Deep Learning 学习笔记">
+<meta property="og:url" content="https://cutekibry.github.io/2023/02/16/learning-note/kaggle-intro-to-deep-learning/index.html">
+<meta property="og:site_name" content="月见客栈">
+<meta property="og:description" content="Kaggle 的 Intro to Deep Learning 的笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.kaggleusercontent.com/kf/94853433/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..yQ6-AuSYkX5KS_f7osU1uA.claTNB4uwbDWq2zpl_AtHyPaKofrUEK1rrcsLlSC4ZGiBHpDDr_z91sTRQhPSFJ0dicLSP3_0A45nvsmoo3iZ1Nqzzwe2zhZ0QZIr8DOaeWJt89SHEkeI_jLPxdfX72QpZoOHxEULiViysAH1zOQJuxkfDeVznQkv_QFnSf1TYXPWo0y0-ZMMMKhev8ijSM2KI6TunfNkiyEszQ833yPhibR8NTLBTXgeB5EDU-tpcMkG6ki8Wlx41JlrhjzZfLTedE8DRU4W-BWvAnECSm7d6L16YpOkFJxpoXx3IN2Y8ku0-sjJajMLfzGEWVTfnlVanF1HK6pnrMnK2oYk1doENmboNZPxhrW3S5oHoTXVRVhUvYnKst6PvBa_GY34SiLCtdOR5QH7eenJM7o16UcZliSxjyFnl3hPPxrbW3SqEjY8AXs_27sFK03XgAaOZPttiQmG743__X_V4Msq809qmcI99SOILypY1_HS_2SaLrAXddu2-SIRLCzX3gocBczOrydi-xJ0N7e4FETqQu8j7jKZ1TfIsOxohE0DVN_gpdKjzlTsU_SgYRQwNtS6WEQgKtwjwN_0-AbZcoPin-QvI8fb6ZSEeCy__dlHf5o9jv43lAXumiVUz302YLH20qLFdfA5W4pL1TBlg28-NTyz0_HVs-VGO5x5SWgEobQkNE.7FccNx2hBZxUcfrBwbdMZw/__results___files/__results___12_0.png">
+<meta property="og:image" content="https://cutekibry.github.io/img/post/kaggle-intro-to-deep-learning/underfitting.png">
+<meta property="og:image" content="https://cutekibry.github.io/img/post/kaggle-intro-to-deep-learning/overfitting.png">
+<meta property="article:published_time" content="2023-02-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-17T16:00:00.000Z">
+<meta property="article:author" content="Tsukimaru Oshawott">
+<meta property="article:tag" content="Kaggle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.kaggleusercontent.com/kf/94853433/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..yQ6-AuSYkX5KS_f7osU1uA.claTNB4uwbDWq2zpl_AtHyPaKofrUEK1rrcsLlSC4ZGiBHpDDr_z91sTRQhPSFJ0dicLSP3_0A45nvsmoo3iZ1Nqzzwe2zhZ0QZIr8DOaeWJt89SHEkeI_jLPxdfX72QpZoOHxEULiViysAH1zOQJuxkfDeVznQkv_QFnSf1TYXPWo0y0-ZMMMKhev8ijSM2KI6TunfNkiyEszQ833yPhibR8NTLBTXgeB5EDU-tpcMkG6ki8Wlx41JlrhjzZfLTedE8DRU4W-BWvAnECSm7d6L16YpOkFJxpoXx3IN2Y8ku0-sjJajMLfzGEWVTfnlVanF1HK6pnrMnK2oYk1doENmboNZPxhrW3S5oHoTXVRVhUvYnKst6PvBa_GY34SiLCtdOR5QH7eenJM7o16UcZliSxjyFnl3hPPxrbW3SqEjY8AXs_27sFK03XgAaOZPttiQmG743__X_V4Msq809qmcI99SOILypY1_HS_2SaLrAXddu2-SIRLCzX3gocBczOrydi-xJ0N7e4FETqQu8j7jKZ1TfIsOxohE0DVN_gpdKjzlTsU_SgYRQwNtS6WEQgKtwjwN_0-AbZcoPin-QvI8fb6ZSEeCy__dlHf5o9jv43lAXumiVUz302YLH20qLFdfA5W4pL1TBlg28-NTyz0_HVs-VGO5x5SWgEobQkNE.7FccNx2hBZxUcfrBwbdMZw/__results___files/__results___12_0.png">
+
+<link rel="canonical" href="https://cutekibry.github.io/2023/02/16/learning-note/kaggle-intro-to-deep-learning/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Kaggle Intro to Deep Learning 学习笔记 | 月见客栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">月见客栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cutekibry.github.io/2023/02/16/learning-note/kaggle-intro-to-deep-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tsukimaru Oshawott">
+      <meta itemprop="description" content="Tsukimaru 的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="月见客栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Kaggle Intro to Deep Learning 学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-16 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-16T00:00:00+08:00">2023-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-18 00:00:00" itemprop="dateModified" datetime="2023-02-18T00:00:00+08:00">2023-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Kaggle 的 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/intro-to-deep-learning">Intro to Deep Learning</a> 的笔记。</p>
+<span id="more"></span>
+
+<h2 id="1-A-Single-Neuron"><a href="#1-A-Single-Neuron" class="headerlink" title="1. A Single Neuron"></a>1. A Single Neuron</h2><h3 id="创建单个神经元"><a href="#创建单个神经元" class="headerlink" title="创建单个神经元"></a>创建单个神经元</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> layers</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a network with 1 linear unit</span></span><br><span class="line">model = keras.Sequential([</span><br><span class="line">    layers.Dense(units=<span class="number">1</span>, input_shape=[<span class="number">3</span>])</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>layers.Dense()</code> 表示一个稠密层，<code>units</code> 表示该层输出元素个数，<code>input_shape=[height, width, channels]</code> 描述该层输入大小。</p>
+<p>用 <code>model.weights</code> 获取参数。</p>
+<h2 id="2-Deep-Neural-Networks"><a href="#2-Deep-Neural-Networks" class="headerlink" title="2. Deep Neural Networks"></a>2. Deep Neural Networks</h2><h3 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    <span class="comment"># the hidden ReLU layers</span></span><br><span class="line">    layers.Dense(units=<span class="number">4</span>, activation=<span class="string">&#x27;relu&#x27;</span>, input_shape=[<span class="number">2</span>]),</span><br><span class="line">    layers.Dense(units=<span class="number">3</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    <span class="comment"># the linear output layer </span></span><br><span class="line">    layers.Dense(units=<span class="number">1</span>),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用 <code>layers.Activation(&#39;relu&#39;)</code>。</p>
+<h3 id="其他激活函数"><a href="#其他激活函数" class="headerlink" title="其他激活函数"></a>其他激活函数</h3><p>ReLU：</p>
+<p>$$ReLU(x) &#x3D; \max{0, x}$$</p>
+<p>ELU：</p>
+<p>$$<br>ELU(x, \alpha) &#x3D;<br>\begin{cases}<br>    x, &amp;x \geq 0 \<br>    \alpha(e^x - 1), &amp;x &lt; 0<br>\end{cases}<br>$$</p>
+<p>SeLU：</p>
+<p>$$<br>SeLU(x) &#x3D;<br>\begin{cases}<br>    \lambda_{selu}x, &amp;x \geq 0 \<br>    \lambda_{selu}\alpha_{selu}(e^x - 1), &amp;x &lt; 0 \<br>\end{cases}<br>$$</p>
+<p>其中 $\alpha_{selu} \approx 1.6733, \lambda_{selu} \approx 1.0507$。</p>
+<h2 id="3-Stochastic-Gradient-Descent"><a href="#3-Stochastic-Gradient-Descent" class="headerlink" title="3. Stochastic Gradient Descent"></a>3. Stochastic Gradient Descent</h2><ul>
+<li>RMSE（Root Mean Square Error，均方根误差）</li>
+<li>MAE（Mean Absolute Error，平均绝对误差）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 钦定模型所用的 optimizer 和损失函数</span></span><br><span class="line">model.<span class="built_in">compile</span>(</span><br><span class="line">    optimizer=<span class="string">&quot;adam&quot;</span>,</span><br><span class="line">    loss=<span class="string">&quot;mae&quot;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">history = model.fit(</span><br><span class="line">    X_train, y_train,</span><br><span class="line">    validation_data=(X_valid, y_valid),</span><br><span class="line">    batch_size=<span class="number">256</span>,</span><br><span class="line">    epochs=<span class="number">10</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># convert the training history to a dataframe</span></span><br><span class="line">history_df = pd.DataFrame(history.history)</span><br><span class="line"><span class="comment"># use Pandas native plot method</span></span><br><span class="line">history_df[<span class="string">&#x27;loss&#x27;</span>].plot();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.kaggleusercontent.com/kf/94853433/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..yQ6-AuSYkX5KS_f7osU1uA.claTNB4uwbDWq2zpl_AtHyPaKofrUEK1rrcsLlSC4ZGiBHpDDr_z91sTRQhPSFJ0dicLSP3_0A45nvsmoo3iZ1Nqzzwe2zhZ0QZIr8DOaeWJt89SHEkeI_jLPxdfX72QpZoOHxEULiViysAH1zOQJuxkfDeVznQkv_QFnSf1TYXPWo0y0-ZMMMKhev8ijSM2KI6TunfNkiyEszQ833yPhibR8NTLBTXgeB5EDU-tpcMkG6ki8Wlx41JlrhjzZfLTedE8DRU4W-BWvAnECSm7d6L16YpOkFJxpoXx3IN2Y8ku0-sjJajMLfzGEWVTfnlVanF1HK6pnrMnK2oYk1doENmboNZPxhrW3S5oHoTXVRVhUvYnKst6PvBa_GY34SiLCtdOR5QH7eenJM7o16UcZliSxjyFnl3hPPxrbW3SqEjY8AXs_27sFK03XgAaOZPttiQmG743__X_V4Msq809qmcI99SOILypY1_HS_2SaLrAXddu2-SIRLCzX3gocBczOrydi-xJ0N7e4FETqQu8j7jKZ1TfIsOxohE0DVN_gpdKjzlTsU_SgYRQwNtS6WEQgKtwjwN_0-AbZcoPin-QvI8fb6ZSEeCy__dlHf5o9jv43lAXumiVUz302YLH20qLFdfA5W4pL1TBlg28-NTyz0_HVs-VGO5x5SWgEobQkNE.7FccNx2hBZxUcfrBwbdMZw/__results___files/__results___12_0.png"></p>
+<h2 id="4-Overfitting-and-Underfitting"><a href="#4-Overfitting-and-Underfitting" class="headerlink" title="4. Overfitting and Underfitting"></a>4. Overfitting and Underfitting</h2><p><img src="/img/post/kaggle-intro-to-deep-learning/underfitting.png" alt="Underfitting"></p>
+<p><img src="/img/post/kaggle-intro-to-deep-learning/overfitting.png" alt="Overfitting"></p>
+<h3 id="提前停止（Early-stopping）"><a href="#提前停止（Early-stopping）" class="headerlink" title="提前停止（Early stopping）"></a>提前停止（Early stopping）</h3><p>Keras 中，Early stopping 是一种回调（Callback）函数，每次迭代后都会执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.keras.callbacks <span class="keyword">import</span> EarlyStopping</span><br><span class="line"></span><br><span class="line">early_stopping = EarlyStopping(</span><br><span class="line">    min_delta=<span class="number">0.001</span>,</span><br><span class="line">    patience=<span class="number">20</span>,</span><br><span class="line">    restore_best_weights=<span class="literal">True</span>,</span><br><span class="line">)</span><br><span class="line"><span class="comment"># 当 20 次迭代内都没有使得验证集的损失函数值减小至少 0.001 时，停止训练</span></span><br><span class="line"></span><br><span class="line">history = model.fit(</span><br><span class="line">    X_train, y_train,</span><br><span class="line">    validation_data=(X_valid, y_valid),</span><br><span class="line">    batch_size=<span class="number">256</span>,</span><br><span class="line">    epochs=<span class="number">500</span>,</span><br><span class="line">    callbacks=[early_stopping], </span><br><span class="line">    verbose=<span class="number">0</span>,  <span class="comment"># 关闭日志输出</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">history_df = pd.DataFrame(history.history)</span><br><span class="line">history_df.loc[<span class="number">5</span>:, [<span class="string">&#x27;loss&#x27;</span>, <span class="string">&#x27;val_loss&#x27;</span>]].plot();</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Minimum validation loss: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(history_df[<span class="string">&#x27;val_loss&#x27;</span>].<span class="built_in">min</span>()))</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Dropout-and-Batch-Normalization"><a href="#5-Dropout-and-Batch-Normalization" class="headerlink" title="5. Dropout and Batch Normalization"></a>5. Dropout and Batch Normalization</h2><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p><code>layers.Dropout(rate=0.3)</code></p>
+<h3 id="Batch-Normalization（BN）"><a href="#Batch-Normalization（BN）" class="headerlink" title="Batch Normalization（BN）"></a>Batch Normalization（BN）</h3><p>BN 层拥有两个可训练的参数 $\mu, \beta$。首先，BN 会对输入参数进行正则化（$\mu &#x3D; 0, \sigma &#x3D; 1$），即 $x_i \leftarrow \frac {x_i - \mu}{\sqrt {\sigma^2 + \epsilon}}$；之后再让 $x_i \leftarrow \mu x_i + \beta$。这样可以在正则化数据的同时，又用 $\mu, \beta$ 作为还原参数，一定程度上保留原数据的分布。</p>
+<p>BN 层一般可以缓解梯度爆炸或梯度消失的问题，也能使训练变得更快。</p>
+<p><code>layers.BatchNormalization()</code></p>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    layers.Dense(<span class="number">1024</span>, activation=<span class="string">&#x27;relu&#x27;</span>, input_shape=[<span class="number">11</span>]),</span><br><span class="line">    layers.Dropout(<span class="number">0.3</span>),</span><br><span class="line">    layers.BatchNormalization(),</span><br><span class="line">    layers.Dense(<span class="number">1024</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    layers.Dropout(<span class="number">0.3</span>),</span><br><span class="line">    layers.BatchNormalization(),</span><br><span class="line">    layers.Dense(<span class="number">1024</span>, activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    layers.Dropout(<span class="number">0.3</span>),</span><br><span class="line">    layers.BatchNormalization(),</span><br><span class="line">    layers.Dense(<span class="number">1</span>),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Binary-Classification"><a href="#6-Binary-Classification" class="headerlink" title="6. Binary Classification"></a>6. Binary Classification</h2><h3 id="Cross-Entropy（交叉熵）"><a href="#Cross-Entropy（交叉熵）" class="headerlink" title="Cross-Entropy（交叉熵）"></a>Cross-Entropy（交叉熵）</h3><p>分类问题使用的损失函数，即 $-\ln p_x$。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([</span><br><span class="line">    layers.Dense(<span class="number">4</span>, activation=<span class="string">&#x27;relu&#x27;</span>, input_shape=[<span class="number">33</span>]),</span><br><span class="line">    layers.Dense(<span class="number">4</span>, activation=<span class="string">&#x27;relu&#x27;</span>),    </span><br><span class="line">    layers.Dense(<span class="number">1</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>),</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.<span class="built_in">compile</span>(</span><br><span class="line">    optimizer=<span class="string">&#x27;adam&#x27;</span>,</span><br><span class="line">    loss=<span class="string">&#x27;binary_crossentropy&#x27;</span>,</span><br><span class="line">    metrics=[<span class="string">&#x27;binary_accuracy&#x27;</span>],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Kaggle/" rel="tag"># Kaggle</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/15/learning-note/kaggle-pandas/" rel="prev" title="Kaggle Pandas 学习笔记">
+      <i class="fa fa-chevron-left"></i> Kaggle Pandas 学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/22/learning-note/kaggle-intermediate-machine-learning/" rel="next" title="Kaggle Intermediate Machine Learning 学习笔记">
+      Kaggle Intermediate Machine Learning 学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-A-Single-Neuron"><span class="nav-number">1.</span> <span class="nav-text">1. A Single Neuron</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%95%E4%B8%AA%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="nav-number">1.1.</span> <span class="nav-text">创建单个神经元</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Deep-Neural-Networks"><span class="nav-number">2.</span> <span class="nav-text">2. Deep Neural Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">2.1.</span> <span class="nav-text">创建网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">其他激活函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Stochastic-Gradient-Descent"><span class="nav-number">3.</span> <span class="nav-text">3. Stochastic Gradient Descent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Overfitting-and-Underfitting"><span class="nav-number">4.</span> <span class="nav-text">4. Overfitting and Underfitting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%89%8D%E5%81%9C%E6%AD%A2%EF%BC%88Early-stopping%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">提前停止（Early stopping）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Dropout-and-Batch-Normalization"><span class="nav-number">5.</span> <span class="nav-text">5. Dropout and Batch Normalization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dropout"><span class="nav-number">5.1.</span> <span class="nav-text">Dropout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Batch-Normalization%EF%BC%88BN%EF%BC%89"><span class="nav-number">5.2.</span> <span class="nav-text">Batch Normalization（BN）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Binary-Classification"><span class="nav-number">6.</span> <span class="nav-text">6. Binary Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Entropy%EF%BC%88%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%89"><span class="nav-number">6.1.</span> <span class="nav-text">Cross-Entropy（交叉熵）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">6.2.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tsukimaru Oshawott</p>
+  <div class="site-description" itemprop="description">Tsukimaru 的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsukimaru Oshawott</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
